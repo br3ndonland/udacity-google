@@ -7,7 +7,7 @@
 - [Intro](#intro)
 - [Markdown syntax](#markdown-syntax)
 - [Markdown methods](#markdown-methods)
-- [Apps that use Markdown](#apps-that-use-markdown)
+- [Markdown apps](#markdown-apps)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -22,7 +22,9 @@ I've gotten really into Markdown, and it's helped me keep track of my Udacity wo
 
 I will be posting my course notes on GitHub, so you can see how I use Markdown for the course. Our fellow Google Udacian @tophergates shared his notes as well (see [forum post](https://discussions.udacity.com/t/learning-resources-mobile-web-category/522382/18) and [GitHub](https://github.com/tophergates/mobile-web-specialist))
 
-I will share my methods here, and will post this file (*md.md*) on GitHub. I hope this is helpful!
+I will share my methods here, and will post this file (*md.md*) on [GitHub](https://github.com/br3ndonland/udacity-google/blob/master/md.md).
+
+I hope this is helpful!
 
 
 ## Markdown syntax
@@ -135,18 +137,19 @@ I still prefer to use HTML image tags, because they allow for more customization
 
 * When I begin a lesson, I create a new file in my text editor.
 * I use `H1` for the title at the top, like `# Lesson 3. An Overview of Service Worker`.
+* I usually reserve `H2` in case I want to break the lesson into different parts.
 * I paste in the sections of the lesson from the Udacity interface, and set each one to `H3`.
 	
 	<img src="img/markdown-methods-lesson01.png" alt="Copying lesson sections from Udacity" width="300px">
 
-* As I go through the lesson, I take notes on what I do in each step. My notes from Lesson 3 are a helpful example.
+* As I go through the lesson, I take notes on what I do in each step. My [notes from Lesson 3](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-03.md) are a helpful example.
 	- If I write code, I include it with code blocks.
-	- If I get stuck, I explain the steps I take to solve the problem.
+	- If I get stuck, I explain the steps I take to solve the problem. For example, I had a [Git issue during Lesson 3](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-03.md#0311-quiz-hijacking-requests-1-quiz).
 * At the end of the lesson, I use [DocToc](https://github.com/thlorenz/doctoc) to generate a Table of Contents from the headers.
-* I write feedback, and paste it into the feedback popup box in the Udacity lesson.
+* I write feedback and paste it into the feedback popup box in the Udacity lesson.
 
 
-## Apps that use Markdown
+## Markdown apps
 
 ### Social
 

@@ -1,4 +1,4 @@
-# Lesson 01. Intro
+# README and Lesson 01. Intro
 
 Udacity Grow with Google Scholarship
 
