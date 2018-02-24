@@ -16,18 +16,17 @@
 
 *Saturday, February 24, 2018*
 
-Hi Everyone! The `#massachusetts` Slack group had a great meeting today. One of the helpful things we discussed was using **Markdown** to keep documentation. **Markdown is a syntax for easy generation of HTML pages from plain text files.** It has most of the functionality of HTML while being much easier to read, and is very widely used (for example, READMEs on GitHub).
+The Udacity Grow with Google `#massachusetts` Slack group had a great meeting today. One of the helpful things we discussed was using **Markdown** to keep documentation. **Markdown is a syntax for easy generation of HTML pages from plain text files.** It has most of the functionality of HTML while being much easier to read, and is very widely used (for example, READMEs on GitHub).
 
 I've gotten really into Markdown, and it's helped me keep track of my Udacity work. It's really good to **capture the train of thought,** so you can retrace your steps and **retain what you have learned.**
 
-I will be posting my course notes on GitHub, so you can see how I use Markdown for the course. Our fellow Google Udacian @tophergates shared his notes as well (see [forum post](https://discussions.udacity.com/t/learning-resources-mobile-web-category/522382/18) and [GitHub](https://github.com/tophergates/mobile-web-specialist))
-
-I will share my methods here, and will post this file (*md.md*) on [GitHub](https://github.com/br3ndonland/udacity-google/blob/master/md.md).
+**I posted a Markdown guide and my course notes on [GitHub](https://github.com/br3ndonland/udacity-google) so you can see how I use Markdown for the course.** Our fellow Google Udacian @tophergates shared his notes as well (see [forum post](https://discussions.udacity.com/t/learning-resources-mobile-web-category/522382/18) and [GitHub](https://github.com/tophergates/mobile-web-specialist)).
 
 I hope this is helpful!
 
 
 ## Markdown syntax
+[(back to top)](#top)
 
 ### Resources
 
@@ -134,6 +133,7 @@ I still prefer to use HTML image tags, because they allow for more customization
 
 
 ## Markdown methods
+[(back to top)](#top)
 
 * When I begin a lesson, I create a new file in my text editor.
 * I use `H1` for the title at the top, like `# Lesson 3. An Overview of Service Worker`.
@@ -150,6 +150,7 @@ I still prefer to use HTML image tags, because they allow for more customization
 
 
 ## Markdown apps
+[(back to top)](#top)
 
 ### Social
 
@@ -307,3 +308,5 @@ Cons
 * Still needs more development.
 * Evernote import coming in 0.6.5
 * No dark themes yet
+
+[(back to top)](#top)
