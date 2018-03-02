@@ -10,72 +10,85 @@ br3ndonland
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Lesson](#lesson)
-  - [03.01. An Overview of Service Worker](#0301-an-overview-of-service-worker)
-  - [03.02. Quiz: Scoping Quiz](#0302-quiz-scoping-quiz)
-  - [03.03. Adding a Service Worker To the Project](#0303-adding-a-service-worker-to-the-project)
-  - [03.04. Quiz: Registering a Service Worker](#0304-quiz-registering-a-service-worker)
-  - [03.05. The Service Worker Lifecycle](#0305-the-service-worker-lifecycle)
-  - [03.06. Quiz: Enabling Service Worker Dev Tools](#0306-quiz-enabling-service-worker-dev-tools)
-  - [03.07. Quiz: Service Worker Dev Tools](#0307-quiz-service-worker-dev-tools)
-  - [03.08. Quiz: Service Worker Dev Tools 2](#0308-quiz-service-worker-dev-tools-2)
-  - [03.09. Service Worker Dev Tools Continued](#0309-service-worker-dev-tools-continued)
-  - [03.10. Hijacking Requests](#0310-hijacking-requests)
-  - [03.11. Quiz: Hijacking Requests 1 Quiz](#0311-quiz-hijacking-requests-1-quiz)
-  - [03.12. Hijacking Requests 2](#0312-hijacking-requests-2)
-  - [03.13. Quiz: Hijacking Requests 2 Quiz](#0313-quiz-hijacking-requests-2-quiz)
-  - [03.14. Hijacking Requests 3](#0314-hijacking-requests-3)
-  - [03.15. Quiz: Hijacking Requests 3 Quiz](#0315-quiz-hijacking-requests-3-quiz)
-  - [03.16. Caching and Serving Assets](#0316-caching-and-serving-assets)
-  - [03.17. Quiz: Install and Cache Quiz](#0317-quiz-install-and-cache-quiz)
-  - [03.18. Quiz: Cache Response Quiz](#0318-quiz-cache-response-quiz)
-  - [03.19. Updating the Static Cache](#0319-updating-the-static-cache)
-  - [03.20. Quiz: Update Your CSS Quiz](#0320-quiz-update-your-css-quiz)
-  - [03.21. Quiz: Update Your CSS 2](#0321-quiz-update-your-css-2)
-  - [03.22. Adding UX to the Update Process](#0322-adding-ux-to-the-update-process)
-  - [03.23. Quiz: Adding UX Quiz](#0323-quiz-adding-ux-quiz)
-  - [03.24. Triggering an Update](#0324-triggering-an-update)
-  - [03.25. Quiz: Triggering an Update Quiz](#0325-quiz-triggering-an-update-quiz)
-  - [03.26. Quiz: Caching the Page Skeleton](#0326-quiz-caching-the-page-skeleton)
+- [Service Worker basics](#service-worker-basics)
+  - [3.01. An Overview of Service Worker](#301-an-overview-of-service-worker)
+  - [3.02. Quiz: Scoping Quiz](#302-quiz-scoping-quiz)
+  - [3.03. Adding a Service Worker To the Project](#303-adding-a-service-worker-to-the-project)
+  - [3.04. Quiz: Registering a Service Worker](#304-quiz-registering-a-service-worker)
+  - [3.05. The Service Worker Lifecycle](#305-the-service-worker-lifecycle)
+  - [3.06. Quiz: Enabling Service Worker Dev Tools](#306-quiz-enabling-service-worker-dev-tools)
+  - [3.07. Quiz: Service Worker Dev Tools](#307-quiz-service-worker-dev-tools)
+  - [3.08. Quiz: Service Worker Dev Tools 2](#308-quiz-service-worker-dev-tools-2)
+  - [3.09. Service Worker Dev Tools Continued](#309-service-worker-dev-tools-continued)
+- [Service Worker and requests](#service-worker-and-requests)
+  - [3.10. Hijacking Requests](#310-hijacking-requests)
+  - [3.11. Quiz: Hijacking Requests 1 Quiz](#311-quiz-hijacking-requests-1-quiz)
+  - [3.12. Hijacking Requests 2](#312-hijacking-requests-2)
+  - [3.13. Quiz: Hijacking Requests 2 Quiz](#313-quiz-hijacking-requests-2-quiz)
+  - [3.14. Hijacking Requests 3](#314-hijacking-requests-3)
+  - [3.15. Quiz: Hijacking Requests 3 Quiz](#315-quiz-hijacking-requests-3-quiz)
+- [Service Worker and caching](#service-worker-and-caching)
+  - [3.16. Caching and Serving Assets](#316-caching-and-serving-assets)
+  - [3.17. Quiz: Install and Cache Quiz](#317-quiz-install-and-cache-quiz)
+  - [3.18. Quiz: Cache Response Quiz](#318-quiz-cache-response-quiz)
+  - [3.19. Updating the Static Cache](#319-updating-the-static-cache)
+  - [3.20. Quiz: Update Your CSS Quiz](#320-quiz-update-your-css-quiz)
+  - [3.21. Quiz: Update Your CSS 2](#321-quiz-update-your-css-2)
+  - [3.22. Adding UX to the Update Process](#322-adding-ux-to-the-update-process)
+  - [3.23. Quiz: Adding UX Quiz](#323-quiz-adding-ux-quiz)
+  - [3.24. Triggering an Update](#324-triggering-an-update)
+  - [3.25. Quiz: Triggering an Update Quiz](#325-quiz-triggering-an-update-quiz)
+  - [3.26. Quiz: Caching the Page Skeleton](#326-quiz-caching-the-page-skeleton)
 - [Feedback on Lesson 3](#feedback-on-lesson-3)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-## Lesson
-
-### 03.01. An Overview of Service Worker
+## Service Worker basics
 [(back to top)](#top)
+
+### 3.01. An Overview of Service Worker
 
 * **Service worker is a JavaScript file that sits between the browser and network requests.**
 * It returns a **promise**.
-* JavaScript has a strange pseudo camelCase.
 * `navigator.serviceWorker.register('/sw.js')`
-* [is serviceworker ready?](https://jakearchibald.github.io/isserviceworkerready/)
+* Jake made a website called [is serviceworker ready?](https://jakearchibald.github.io/isserviceworkerready/), to evaluate browser compatibility with different aspects of Service Worker.
 
 
-### 03.02. Quiz: Scoping Quiz
-[(back to top)](#top)
+### 3.02. Quiz: Scoping Quiz
 
-* Got this on my first try. The scope defines the URLs to be handled. ServiceWorker will handle any deeper URL, but not shallower URLs.
+Got this on my first try.
 
-[progressive](https://medium.com/javascript-scene/native-apps-are-doomed-ac397148a2c0)
+<details>
+	<summary><em>Solution</em></summary>
+	<p>
+		The scope defines the URLs to be handled. ServiceWorker will handle any deeper URL, but not shallower URLs.
+	</p>
+</details>
 
-### 03.03. Adding a Service Worker To the Project
-[(back to top)](#top)
 
-### 03.04. Quiz: Registering a Service Worker
-[(back to top)](#top)
+### 3.03. Adding a Service Worker To the Project
+
+### 3.04. Quiz: Registering a Service Worker
 
 * **This was the first coding task of the course.**
+*	*/js/sw/index.js* is the ServiceWorker.
+*	JavaScript doesn't have "private methods," but it's common to call methods starting with an underscore, like `this._openSocket();`, if they will only be called by other methods of this object.
+*	Service workers are limited to HTTPS, except localhost.
+
+
+*Git*
+
 * Add the register service worker command. We want the scope to be the whole origin, so the default scope is fine.
 * You don't actually need to stop the server to switch branches, but I did.
 	```bash
 	$ git reset --hard
 	$ git checkout task-register-sw
 	```
-*	*/js/sw/index.js* is the ServiceWorker.
-*	JavaScript doesn't have "private methods," but it's common to call methods starting with an underscore, like `this._openSocket();`, if they will only be called by other methods of this object.
+
+<details>
+	<summary><em>Solution</em></summary>
+
 *	Service registration code:
 	```javascript
 	IndexController.prototype._registerServiceWorker = function() {
@@ -90,46 +103,44 @@ br3ndonland
 	};
 	```
 *	Go to http://localhost:8889/ and type `registered`.
-*	I tried several times, but it didn't work, and dev tools didn't help. Based on my experience in the FSND, it's best not to get too hung up on quizzes.
-*	Answer:
-	-	I basically had the answer, just needed a little more code. 
-	-	I also needed to check my code in a different sequence:
-		+	Save the JavaScript file *IndexController.js*
-		+	Refresh http://localhost:8888/
-		+	Check JavaScript console with cmd+alt+j (note that Firefox developer tools separates the JavaScript console from the other dev tools)
-		+	Now go to http://localhost:8889/ and type `registered`.
-*	Service workers are limited to HTTPS, except localhost.
+*	I tried several times, but it didn't work, and dev tools didn't help.
+*	I basically had the answer, just needed a little more code. 
+*	I also needed to check my code in a different sequence:
+	-	Save the JavaScript file *IndexController.js*
+	-	Refresh http://localhost:8888/
+	-	Check JavaScript console with cmd+alt+j (note that Firefox developer tools separates the JavaScript console from the other dev tools)
+	-	Now go to http://localhost:8889/ and type `registered`.
+
+</details>
 
 
-### 03.05. The Service Worker Lifecycle
-[(back to top)](#top)
+### 3.05. The Service Worker Lifecycle
 
 
-### 03.06. Quiz: Enabling Service Worker Dev Tools
-[(back to top)](#top)
+### 3.06. Quiz: Enabling Service Worker Dev Tools
 
 * We will be using Chrome Canary.
 
 
-### 03.07. Quiz: Service Worker Dev Tools
-[(back to top)](#top)
+### 3.07. Quiz: Service Worker Dev Tools
 
 * The Resources tab is no longer there in Chrome Canary. The resources are just shown directly.
 * Typing "sw-waiting" into the test field shows there's a service worker waiting.
 
 
-### 03.08. Quiz: Service Worker Dev Tools 2
-[(back to top)](#top)
+### 3.08. Quiz: Service Worker Dev Tools 2
 
 
-### 03.09. Service Worker Dev Tools Continued
-[(back to top)](#top)
+### 3.09. Service Worker Dev Tools Continued
 
 * **The Sources panel of dev tools should have a Service Workers tab next to Scope and Watch with the option to "Force update on page load." I don't see it.** I found the [answer](https://discussions.udacity.com/t/solved-force-update-on-page-load-not-appearing-in-chrome-canary/528320/4) in the discussion forum: It's now on the Applications tab. I also tried Firefox developer edition, but couldn't find the equivalent setting.
 
 
-### 03.10. Hijacking Requests
+## Service Worker and requests
 [(back to top)](#top)
+
+
+### 3.10. Hijacking Requests
 
 * **Finally using the service worker to intercept requests and serve offline content!**
 * This part demonstrated **general request hijacking.**
@@ -142,8 +153,9 @@ br3ndonland
 	```
 
 
-### 03.11. Quiz: Hijacking Requests 1 Quiz
-[(back to top)](#top)
+### 3.11. Quiz: Hijacking Requests 1 Quiz
+
+*Git*
 
 * We had to checkout to a new branch.
 * I was getting an error:
@@ -196,7 +208,11 @@ br3ndonland
 	  console.log(event.request);
 	});
 	```
-	I had the HTML right on the first try, but didn't know how to set the content type so I checked the solution for that. So many curly braces.
+
+<details>
+	<summary><em>Solution</em></summary>
+
+*	I had the HTML right on the first try, but didn't know how to set the content type so I checked the solution for that. So many curly braces.
 	```javascript
 		self.addEventListener('fetch', function(event) {
 		  // respond to all requests with an html response
@@ -213,9 +229,9 @@ br3ndonland
 * Test on settings page at http://localhost:8889/ with "html-response"
 * The test verified. As recommended in the video, I disabled the "Force update on reload" option (to keep the JavaScript after reload), switched to offline mode in http://localhost:8889/ (not in dev tools), and the text still appears. Service worker is working!
 
+</details>
 
-### 03.12. Hijacking Requests 2
-[(back to top)](#top)
+### 3.12. Hijacking Requests 2
 
 * Now that we are able to respond to all requests with the same HTML, we will customize the response based on the input. This is **selective response hijacking.**
 * `fetch(url)`
@@ -231,8 +247,9 @@ br3ndonland
 	```
 
 
-### 03.13. Quiz: Hijacking Requests 2 Quiz
-[(back to top)](#top)
+### 3.13. Quiz: Hijacking Requests 2 Quiz
+
+*Git*
 
 * Checkout to the new branch:
 	```
@@ -243,6 +260,10 @@ br3ndonland
 	HEAD is now at adf8827... Responding with gif
 	```
 * Return a response if the request is for a .jpg.
+
+<details>
+	<summary><em>Solution</em></summary>
+
 * Here was my first attempt, based on what we had learned so far:
 	```javascript
 	self.addEventListener('fetch', function(event) {
@@ -270,9 +291,10 @@ br3ndonland
 	});
 	```
 
+</details>
 
-### 03.14. Hijacking Requests 3
-[(back to top)](#top)
+
+### 3.14. Hijacking Requests 3
 
 - New code from video:
 	```javascript
@@ -290,8 +312,8 @@ br3ndonland
 	});
 	```
 
-### 03.15. Quiz: Hijacking Requests 3 Quiz
-[(back to top)](#top)
+
+### 3.15. Quiz: Hijacking Requests 3 Quiz
 
 - Respond with Dr. Evil GIF instead of custom text.
 	```javascript
@@ -311,7 +333,11 @@ br3ndonland
 	  );
 	});
 	```
-* Git setup:
+
+
+*Git*
+
+* Checkout to the new branch:
 	```
 	$ git reset --hard
 	HEAD is now at adf8827 Responding with gif
@@ -329,6 +355,10 @@ br3ndonland
 
 	HEAD is now at de59554... Handling 404 and failure
 	```
+
+<details>
+	<summary><em>Solution</em></summary>
+
 * First attempt:
 	```javascript
 	self.addEventListener('fetch', function(event) {
@@ -369,9 +399,14 @@ br3ndonland
 	});
 	```
 
+</details>
 
-### 03.16. Caching and Serving Assets
+
+## Service Worker and caching
 [(back to top)](#top)
+
+
+### 3.16. Caching and Serving Assets
 
 - The cache API gives us the `caches` object on the global namespace.
 - Start the cache
@@ -398,14 +433,19 @@ br3ndonland
 * We can control caching when the service worker is installed.
 
 
-### 03.17. Quiz: Install and Cache Quiz
-[(back to top)](#top)
+### 3.17. Quiz: Install and Cache Quiz
 
-* Git
+*Git*
+
+* Checkout to the new branch:
 	```bash
 		$ git reset --hard
 		$ git checkout task-install
 	```
+
+<details>
+	<summary><em>Solution</em></summary>
+
 * Code
 	```javascript
 		self.addEventListener('install', function(event) {
@@ -431,16 +471,24 @@ br3ndonland
 * Refresh the app at http://localhost:8888/ 
 * Test on settings page at http://localhost:8889/ with "install-cached"
 
+</details>
 
-### 03.18. Quiz: Cache Response Quiz
-[(back to top)](#top)
 
-* Combining `event.respondWith()` and `cache.match()`.
-* Git
+### 3.18. Quiz: Cache Response Quiz
+
+Combining `event.respondWith()` and `cache.match()`.
+
+*Git*
+
+* Checkout to the new branch:
 	```bash
 	$ git reset --hard
 	$ git checkout origin/task-cache-response
 	```
+
+<details>
+	<summary><em>Solution</em></summary>
+
 * Code (Combined 17. Quiz: Install and Cache Quiz and 18. Quiz: Cache Response Quiz)
 	```javascript
 	self.addEventListener('install', function(event) {
@@ -473,16 +521,19 @@ br3ndonland
 * Test on settings page at http://localhost:8889/ with "cache-served"
 * At this point, we are starting to get a substantial amount of content offline.
 * They could have combined the git commits here. We were working with a different function in 18 than in 17, so we didn't really need a git reset.
-* Goals:
-	- Unobtrusive app updates
-	- Get the user onto the latest version
-	- Continually update cache of posts
-	- Cache photos
-	- Cache avatars
+
+</details>
+
+#### Goals
+
+* Unobtrusive app updates
+* Get the user onto the latest version
+* Continually update cache of posts
+* Cache photos
+* Cache avatars
 
 
-### 03.19. Updating the Static Cache
-[(back to top)](#top)
+### 3.19. Updating the Static Cache
 
 * Disabling force update on page load, to more closely simulate the end user experience.
 * We are now going to clear the old cache, so that updates show up, even after disabling force update on page load.
@@ -490,14 +541,19 @@ br3ndonland
 * Jake showed us the theme colors in the Sass .scss file at */public/scss/_theme.scss*.
 
 
-### 03.20. Quiz: Update Your CSS Quiz
-[(back to top)](#top)
+### 3.20. Quiz: Update Your CSS Quiz
 
-* Git
+*Git*
+
+* Checkout to new branch:
 	```bash
 		$ git reset --hard
 		$ git checkout origin/task-handling-updates
 	```
+
+<details>
+	<summary><em>Solution</em></summary>
+
 * Code: Jake says there's a "simple way" and a "scalable way."
 * Simple way:
 	- Change CSS
@@ -514,22 +570,24 @@ br3ndonland
 * Refresh the app at http://localhost:8888/ 
 * Test on settings page at http://localhost:8889/ with "new-cache-ready"
 * *Jake also recommends auto-generating hashes for filenames, so they can be updated and ensure the latest versions.*
-* Goals:
-	- ~~Unobtrusive app updates~~
-	- Get the user onto the latest version
-	- Continually update cache of posts
-	- Cache photos
-	- Cache avatars
+
+</details>
+
+#### Goals
+
+* ~~Unobtrusive app updates~~
+* Get the user onto the latest version
+* Continually update cache of posts
+* Cache photos
+* Cache avatars
 
 
-### 03.21. Quiz: Update Your CSS 2
-[(back to top)](#top)
+### 3.21. Quiz: Update Your CSS 2
 
 * Test on settings page at http://localhost:8889/ with "new-cache-used"
 
 
-### 03.22. Adding UX to the Update Process
-[(back to top)](#top)
+### 3.22. Adding UX to the Update Process
 
 * As we have learned, new service workers have to wait until the old one goes away before they are active in the browser. Let's do something better. We will include an update notification for the user. 
 * As we have seen, when a service worker is registered, it returns a promise. 
@@ -557,14 +615,19 @@ br3ndonland
 * We can tell the user about updates whether they are already present, in progress, or will start later.
 
 
-### 03.23. Quiz: Adding UX Quiz
-[(back to top)](#top)
+### 3.23. Quiz: Adding UX Quiz
 
-* Git
+*Git*
+
+* Checkout to new branch:
 	```bash
 	$ git reset --hard
 	$ git checkout origin/task-update-notify
 	```
+
+<details>
+	<summary><em>Solution</em></summary>
+
 * Code: For this exercise, we worked with *wittr/public/js/main/IndexController.js*.
 	```javascript
 	import PostsView from './views/Posts';
@@ -694,9 +757,10 @@ br3ndonland
 * Test on settings page at http://localhost:8889/ with "update-notify"
 * Got it working!
 
+</details>
 
-### 03.24. Triggering an Update
-[(back to top)](#top)
+
+### 3.24. Triggering an Update
 
 * Code previewed in intro video:
 	```javascript
@@ -718,14 +782,19 @@ br3ndonland
 	```
 
 
-### 03.25. Quiz: Triggering an Update Quiz
-[(back to top)](#top)
+### 3.25. Quiz: Triggering an Update Quiz
 
-* Git
+*Git*
+
+* Checkout to new branch:
 	```bash
 	$ git reset --hard
 	$ git checkout origin/task-update-reload
 	```
+
+<details>
+	<summary><em>Solution</em></summary>
+
 * Code:
 * *wittr/public/js/main/IndexController.js*
 	```javascript
@@ -865,23 +934,32 @@ br3ndonland
 * As before, you will see a notification that the app has changed, but now there is an option to refresh the page. Don't need to refresh again, we'll do this in the next step.
 * Test on settings page at http://localhost:8889/ with "update-reload"
 * You then have eight seconds to refresh.
-* Jake mentions SVGOMG for SVG compression
-* Goals:
-	- ~~Unobtrusive app updates~~
-	- ~~Get the user onto the latest version~~
-	- Continually update cache of posts
-	- Cache photos
-	- Cache avatars
+* Jake mentions SVGOMG for SVG compression.
+
+</details>
+
+#### Goals
+
+* ~~Unobtrusive app updates~~
+* ~~Get the user onto the latest version~~
+* Continually update cache of posts
+* Cache photos
+* Cache avatars
 
 
-### 03.26. Quiz: Caching the Page Skeleton
-[(back to top)](#top)
+### 3.26. Quiz: Caching the Page Skeleton
 
-* Git
+*Git*
+
+* Checkout to new branch:
 	```bash
 	$ git reset --hard
 	$ git checkout origin/task-page-skeleton
 	```
+
+<details>
+	<summary><em>Solution</em></summary>
+
 * Code:
 * In the service worker *sw/index.js*, cache `/skeleton` instead of the root page, and respond to requests for the root page with `/skeleton` instead:
 	```javascript
@@ -947,11 +1025,14 @@ br3ndonland
 	```
 * Refresh the app at http://localhost:8888/ and you will now need to also click "REFRESH" in the popup.
 * Test on settings page at http://localhost:8889/ with "serve-skeleton".
-* DONE WITH LESSON 3!!!
-		
-	![Top Gun Celebration GIF](img/top-gun.gif "Top Gun")
 
-* Next we will use "one of the web's most hated APIs," `IndexedDB`, and "tame" it to use the good aspects "without getting burned."
+</details>
+
+**DONE WITH LESSON 3!!!**
+		
+![Top Gun Celebration GIF](img/top-gun.gif "Top Gun")
+
+Next we will use "one of the web's most hated APIs," `IndexedDB`, and "tame" it to use the good aspects "without getting burned."
 
 
 ## Feedback on Lesson 3
@@ -960,5 +1041,9 @@ br3ndonland
 Long lesson, but very informative.
 
 I would encourage students to track their code and take notes in a separate Markdown file. It's very easy to lose data with all the git resets.
+
+[next lesson](udacity-google-04.md)
+
+[previous lesson](udacity-google-02.md)
 
 [(back to top)](#top)

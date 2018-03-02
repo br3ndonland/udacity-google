@@ -135,7 +135,7 @@ I still prefer to use HTML image tags, because they allow for more customization
 ## Markdown methods
 [(back to top)](#top)
 
-* When I begin a lesson, I create a new file in my text editor.
+* When I begin a Udacity lesson, I create a new file in my text editor.
 * I use `H1` for the title at the top, like `# Lesson 3. An Overview of Service Worker`.
 * I usually reserve `H2` in case I want to break the lesson into different parts.
 * I paste in the sections of the lesson from the Udacity interface, and set each one to `H3`.
@@ -154,9 +154,9 @@ I still prefer to use HTML image tags, because they allow for more customization
 
 ### Social
 
-#### This forum!
+#### Udacity discussion forums
 
-You can use Markdown formatting in your forum posts like I am here! See GitHub for the source code.
+You can use Markdown formatting in your forum posts. See GitHub for the source code.
 
 
 #### ~~Slack~~
@@ -167,6 +167,7 @@ Slack uses a simplified pseudo-Markdown and has [stated](https://get.slack.help/
 ### Text editors
 
 Most code editors have extensions for Markdown.
+
 
 #### Sublime Text
 
@@ -185,7 +186,6 @@ Here's how to set up Sublime Text for Markdown:
 You can see my full setup, including keybindings, on [GitHub](https://github.com/br3ndonland/general/blob/master/br3ndonland_terminal.md).
 
 
-
 #### Atom
 
 [Atom](https://atom.io/) has good Markdown support. See the [Flight Manual](https://flight-manual.atom.io/using-atom/sections/writing-in-atom/) for instructions.
@@ -198,11 +198,11 @@ I haven't used vscode, but they provide helpful [instructions](https://code.visu
 
 #### JupyterLab
 
-[JupyterLab](http://jupyterlab.readthedocs.io/en/latest/) is produced by [Project Jupyter](http://jupyter.org/). It is most widely used for scientific computing with Python, but supports many programming languages. It allows you to create "reproducible computational narratives," containing Markdown text interspersed with code chunks that you can run.
-
-They just released [some awesome updates](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) that I'm really excited about!
+[JupyterLab](http://jupyterlab.readthedocs.io/en/latest/) is produced by [Project Jupyter](http://jupyter.org/). It is most widely used for scientific computing with Python, but supports many programming languages. It allows you to create "reproducible computational narratives," containing Markdown text interspersed with code chunks that you can run. JupyterLab was previously Jupyter notebook. They just released [some awesome updates](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) that I'm really excited about!
 
 It is easiest to install JupyterLab through [Anaconda](http://jupyter.org/install).
+
+For examples of how to use Jupyter Notebook/JupyterLab, you can check out my [Python files](https://github.com/br3ndonland/udacity-fsnd/tree/master/01-fundamentals/python) from the Udacity Full Stack Web Developer Nanodegree program.
 
 
 #### RStudio

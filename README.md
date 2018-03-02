@@ -7,10 +7,15 @@ Brendon Smith
 br3ndonland
 
 
+## Intro
+
+This repository contains notes and resources from the [Udacity Grow with Google](https://www.udacity.com/grow-with-google) Scholarship challenge course.
+
+
 ## Background
 
 * Found the scholarship on Udacity's Facebook page while on the bus to NYC October 14, 2017.
-* Applied in December 2017. See udacity-google.md.
+* [Applied](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-00-apply.md) in December 2017.
 * Won the scholarship in January 2018!
 	
 	Social media message:
@@ -19,7 +24,7 @@ br3ndonland
 	> #GoogleUdacityScholars #GrowWithGoogle
 
 
-## Intro
+## Course intro
 
 *Chaitra Ramanathan and Nick Blumenthal, Udacity scholarship program managers*
 

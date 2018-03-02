@@ -3,12 +3,12 @@
 Brendon Smith | br3ndonland
 
 
-## background
+## Background
 
 Found the scholarship on Udacity's Facebook page while on the bus to NYC October 14, 2017.
 
 
-## [application](https://admissions.udacity.com/apply/grow-with-google-scholarships)
+## [Application](https://admissions.udacity.com/apply/grow-with-google-scholarships)
 
 There were three parts to the application:
 
