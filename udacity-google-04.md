@@ -1,5 +1,4 @@
-
-# Lesson 03. An Overview of Service Worker
+# Lesson 04. IndexedDB and Caching
 
 Udacity Grow with Google Scholarship
 
@@ -14,19 +13,13 @@ br3ndonland
 - [Intro](#intro)
   - [4.01. Introducing the IDB Promised Library](#401-introducing-the-idb-promised-library)
   - [4.02. Getting Started with IDB](#402-getting-started-with-idb)
-    - [Create database](#create-database)
-    - [Read from database](#read-from-database)
-    - [Add another value to the object store](#add-another-value-to-the-object-store)
   - [4.03. Quiz: Getting Started with IDB](#403-quiz-getting-started-with-idb)
-    - [Diving deeper into the API](#diving-deeper-into-the-api)
   - [4.04. Quiz: More IDB](#404-quiz-more-idb)
 - [Caching](#caching)
   - [4.05. Using the IDB Cache and Display Entries](#405-using-the-idb-cache-and-display-entries)
   - [4.06. Quiz: Using IDB Cache](#406-quiz-using-idb-cache)
   - [4.07. Quiz: Using IDB 2](#407-quiz-using-idb-2)
   - [4.08. Quiz: Cleaning IDB](#408-quiz-cleaning-idb)
-    - [Goals](#goals)
-    - [App performance changes](#app-performance-changes)
 - [Cache photos and avatars](#cache-photos-and-avatars)
   - [4.09. Cache Photos](#409-cache-photos)
   - [4.10. Quiz: Cache Photos Quiz](#410-quiz-cache-photos-quiz)
@@ -391,7 +384,6 @@ IndexController.prototype._onSocketMessage = function(data) {
 * Test on settings page at http://localhost:8889/ with "idb-store".
 
 </details>
-
 
 
 ### 4.07. Quiz: Using IDB 2

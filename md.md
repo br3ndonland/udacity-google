@@ -169,6 +169,16 @@ Slack uses a simplified pseudo-Markdown and has [stated](https://get.slack.help/
 Most code editors have extensions for Markdown.
 
 
+#### Dillinger
+
+[Dillinger](https://dillinger.io/) is a helpful online Markdown editor with live preview.
+
+
+#### Atom
+
+[Atom](https://atom.io/) has good Markdown support. See the [Flight Manual](https://flight-manual.atom.io/using-atom/sections/writing-in-atom/) for instructions.
+
+
 #### Sublime Text
 
 I currently use [Sublime Text](http://www.sublimetext.com/) for most of my coding. It's fast, responsive, and packages give it powerful features.
@@ -186,15 +196,12 @@ Here's how to set up Sublime Text for Markdown:
 You can see my full setup, including keybindings, on [GitHub](https://github.com/br3ndonland/general/blob/master/br3ndonland_terminal.md).
 
 
-#### Atom
-
-[Atom](https://atom.io/) has good Markdown support. See the [Flight Manual](https://flight-manual.atom.io/using-atom/sections/writing-in-atom/) for instructions.
-
-
 #### Visual Studio Code (vscode)
 
 I haven't used vscode, but they provide helpful [instructions](https://code.visualstudio.com/Docs/languages/markdown) on how to configure it for Markdown.
 
+
+### IDEs
 
 #### JupyterLab
 
@@ -218,15 +225,16 @@ For examples of how to use Jupyter Notebook/JupyterLab, you can check out my [Py
 
 I found Bear via [M.G. Siegler in 500 words on Medium](https://500ish.com/@mgsiegler).
 
-Pros
+*Pros*
 
 * Really nice Markdown editor. Uses a modified syntax called Polar Bear.
 * Supports internal relative links
 * Tags and subtags
 * Themes
 * Evernote migration and import
+* Writing tools, like word counts and read time
 
-Cons
+*Cons*
 
 * Apple only
 * Not encrypted
@@ -235,14 +243,14 @@ Cons
 
 #### [Dropbox Paper](https://www.dropbox.com/paper)
 
-Pros
+*Pros*
 
 * Markdown
 * Collaboration
 * Sync
 * Embedding works well
 
-Cons
+*Cons*
 
 * Paper files don't show up in your regular Dropbox file structure
 * No tags
@@ -253,7 +261,7 @@ Cons
 
 #### [Laverna](https://laverna.cc/) 
 
-Pros
+*Pros*
 
 * Encrypted
 * Markdown
@@ -263,7 +271,7 @@ Pros
 * Open source
 * Built with Electron
 
-Cons
+*Cons*
 
 * Evernote import?
 * No Android app yet
@@ -273,7 +281,7 @@ Cons
 
 #### [Standard Notes](https://standardnotes.org/getting-started)
 
-Pros
+*Pros*
 
 * Simple, dependable text note app
 * Note tagging
@@ -283,11 +291,11 @@ Pros
 * Backup to Dropbox and Google Drive
 * "Built to last"
 
-Cons
+*Cons*
 
 * Extensions only work on desktop and web.
 * Can't attach files from mobile devices.
-* [Evernote import](https://standardnotes.org/evernote): formatting, images, and attachments will not be copied over. Have to break up .enex into 250 MB segments.
+* [Evernote import](https://standardnotes.org/evernote): Formatting, images, and attachments will not be copied over. Have to break up .enex into 250 MB segments.
 * Not great with multimedia. Tried to drag and drop a movie, and it just displayed the movie instead of my notes.
 
 
@@ -295,18 +303,36 @@ Cons
 
 [Turtl blog on Tumblr](http://turtlapp.tumblr.com/)
 
-Pros
+*Pros*
 
 * Promising encrypted Evernote alternative
+* Evernote import coming in 0.6.5
 * Markdown
 * Sharing
 * Some multimedia support
 * Android app
 
-Cons
+*Cons*
 
-* Still needs more development.
-* Evernote import coming in 0.6.5
+* Still needs more development
 * No dark themes yet
+
+
+#### [Ulysses](https://ulyssesapp.com/)
+
+*Pros*
+
+* Nice interface
+* Markdown
+* Dark themes
+* Can also manage journal articles and research
+
+*Cons*
+
+* Apple only
+* Encryption?
+* Moved to expensive subscription model
+* Maintains article tags as "keywords," a fatal flaw shared by other apps like Papers
+
 
 [(back to top)](#top)
