@@ -2,6 +2,8 @@
 
 Udacity Grow with Google Scholarship
 
+[ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356) Lesson 1/4
+
 Brendon Smith
 
 br3ndonland
@@ -60,6 +62,7 @@ ES6 brings some much-needed modernization to JavaScript. This is the biggest upd
 3. Built-Ins
 4. Developer-Fu
 
+These lessons are part of the free [ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356).
 
 ### 6.02. Let and Const
 
@@ -286,26 +289,27 @@ displayPosts();
 
 #### Template Literals
 
-**Template literals** are essentially string literals that include embedded expressions.
+> **Template literals** are essentially string literals that include embedded expressions.
+> 
+> Denoted with backticks (` `` `) instead of single quotes (` '' `) or double quotes (` "" `), template literals can contain placeholders which are represented using `	` . This makes it much easier to build strings.
+> 
+> Here's the previous examples using template literals.
+> 
+> ```javascript
+> let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
+> ```
+> Returns: 
+> 
+> ```
+> Richard Kalehoff please see Mrs. Wilson in N231 to pick up your report card.
+> ```
+> 
+> By using template literals, you can drop the quotes along with the string concatenation operator. Also, you can reference the object's properties inside expressions.
 
-Denoted with backticks ( `` ) instead of single quotes ( '' ) or double quotes ( "" ), template literals can contain placeholders which are represented using `	`. This makes it much easier to build strings.
 
-Here's the previous examples using template literals.
+#### Quiz
 
-```javascript
-let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
-```
-Returns: 
-
-```
-Richard Kalehoff please see Mrs. Wilson in N231 to pick up your report card.
-```
-
-By using template literals, you can drop the quotes along with the string concatenation operator. Also, you can reference the object's properties inside expressions.
-
-Here, you try. Change the `greeting` string below to use a template literal. Also, feel free to swap in your name for the placeholder.
-
-*Quiz*
+Change the `greeting` string below to use a template literal. Also, feel free to swap in your name for the placeholder.
 
 ```javascript
 /*
@@ -591,11 +595,7 @@ Answer: NaN. Got it on my second try.
 
 ### 6.07. Quiz: Destructuring Arrays (1-3)
 
-*Directions*
-
 Use array destructuring to pull out the three colors from the array of things and store them into the variables one, two, and three.
-
-*Quiz*
 
 ```javascript
 /*
@@ -706,82 +706,82 @@ List of Colors
 
 #### Intro
 
-A recurring trend in ES6 is to remove unnecessary repetition in your code. By removing unnecessary repetition, your code becomes easier to read and more concise. This trend continues with the introduction of new shorthand ways for initializing objects and adding methods to objects.
-
-Let’s see what those look like.
+> A recurring trend in ES6 is to remove unnecessary repetition in your code. By removing unnecessary repetition, your code becomes easier to read and more concise. This trend continues with the introduction of new shorthand ways for initializing objects and adding methods to objects.
+> 
+> Let’s see what those look like.
 
 
 #### Object literal shorthand
 
-You’ve probably written code where an object is being initialized using the same property names as the variable names being assigned to them.
-
-But just in case you haven’t, here’s an example.
-
-```javascript
-let type = 'quartz';
-let color = 'rose';
-let carat = 21.29;
-
-const gemstone = {
-	type: type,
-	color: color,
-	carat: carat
-};
-
-console.log(gemstone);
-```
-
-Prints: `Object {type: "quartz", color: "rose", carat: 21.29}`
-
-Do you see the repetition? Doesn't `type: type`, `color: color`, and `carat: carat` seem redundant?
-
-The good news is that you can remove those duplicate variables names from object properties *if* the properties have the same name as the variables being assigned to them.
-
-Check it out!
-
-```javascript
-let type = 'quartz';
-let color = 'rose';
-let carat = 21.29;
-
-let gemstone = { type, color, carat };
-```
-
-
-Speaking of shorthand, there’s also a shorthand way to add methods to objects.
-
-To see how that looks, let’s start by adding a `calculateWorth()` method to our `gemstone` object. The `calculateWorth()` method will tell us how much our gemstone costs based on its `type`, `color`, and `carat`.
-
-```javascript
-let type = 'quartz';
-let color = 'rose';
-let carat = 21.29;
-
-const gemstone = {
-	type,
-	color,
-	carat,
-	calculateWorth: function() {
-		// will calculate worth of gemstone based on type, color, and carat
-	}
-};
-```
-
-In this example, an anonymous function is being assigned to the property `calculateWorth`, but is the **function** keyword really needed? In ES6, it’s not!
+> You’ve probably written code where an object is being initialized using the same property names as the variable names being assigned to them.
+> 
+> But just in case you haven’t, here’s an example.
+> 
+> ```javascript
+> let type = 'quartz';
+> let color = 'rose';
+> let carat = 21.29;
+> 
+> const gemstone = {
+> 	type: type,
+> 	color: color,
+> 	carat: carat
+> };
+> 
+> console.log(gemstone);
+> ```
+> 
+> Prints: `Object {type: "quartz", color: "rose", carat: 21.29}`
+> 
+> Do you see the repetition? Doesn't `type: type`, `color: color`, and `carat: carat` seem redundant?
+> 
+> The good news is that you can remove those duplicate variables names from object properties *if* the properties have the same name as the variables being assigned to them.
+> 
+> Check it out!
+> 
+> ```javascript
+> let type = 'quartz';
+> let color = 'rose';
+> let carat = 21.29;
+> 
+> let gemstone = { type, color, carat };
+> ```
+> 
+> 
+> Speaking of shorthand, there’s also a shorthand way to add methods to objects.
+> 
+> To see how that looks, let’s start by adding a `calculateWorth()` method to our `gemstone` object. The `calculateWorth()` method will tell us how much our gemstone costs based on its `type`, `color`, and `carat`.
+> 
+> ```javascript
+> let type = 'quartz';
+> let color = 'rose';
+> let carat = 21.29;
+> 
+> const gemstone = {
+> 	type,
+> 	color,
+> 	carat,
+> 	calculateWorth: function() {
+> 		// will calculate worth of gemstone based on type, color, and carat
+> 	}
+> };
+> ```
+> 
+> In this example, an anonymous function is being assigned to the property `calculateWorth`, but is the **function** keyword really needed? In ES6, it’s not!
 
 #### Shorthand method names
 
-Since you only need to reference the gemstone’s `calculateWorth` property in order to call the function, having the function keyword is redundant, so it can be dropped.
-
-```javascript
-let gemstone = {
-	type,
-	color,
-	carat,
-	calculateWorth() { ... }
-};
-```
-
+> Since you only need to reference the gemstone’s `calculateWorth` property in order to call the function, having the function keyword is redundant, so it can be dropped.
+> 
+> ```javascript
+> let gemstone = {
+> 	type,
+> 	color,
+> 	carat,
+> 	calculateWorth() { ... }
+> };
+> ```
+> 
 
 ### 6.09. Lesson 1 Checkup
 
@@ -1058,8 +1058,6 @@ for (let digits of digit) {
 
 ### 6.13. Quiz: Writing a For...of Loop (1-4)
 
-*Quiz*
-
 Write a for...of loop that:
 
 * loops through each day in the days array
@@ -1252,7 +1250,7 @@ Saturday
 > 
 > How about trying the spread operator?
 
-*Mini-Quiz*
+#### Mini-Quiz
 
 ```javascript
 /*

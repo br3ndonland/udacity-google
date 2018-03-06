@@ -18,9 +18,13 @@
 
 The Udacity Grow with Google `#massachusetts` Slack group had a great meeting today. One of the helpful things we discussed was using **Markdown** to keep documentation. **Markdown is a syntax for easy generation of HTML pages from plain text files.** It has most of the functionality of HTML while being much easier to read, and is very widely used (for example, READMEs on GitHub).
 
+Here's a comparison of the same code written in Markdown and HTML:
+
+<img src="img/markdown-html-comparison.png" alt="Markdown and HTML comparison" width="75%">
+
 I've gotten really into Markdown, and it's helped me keep track of my Udacity work. It's really good to **capture the train of thought,** so you can retrace your steps and **retain what you have learned.**
 
-**I posted a Markdown guide and my course notes on [GitHub](https://github.com/br3ndonland/udacity-google) so you can see how I use Markdown for the course.** Our fellow Google Udacian @tophergates shared his notes as well (see [forum post](https://discussions.udacity.com/t/learning-resources-mobile-web-category/522382/18) and [GitHub](https://github.com/tophergates/mobile-web-specialist)).
+**I posted a Markdown guide and my course notes on [GitHub](https://github.com/br3ndonland/udacity-google) so you can see how I use Markdown for the course.** Our fellow Google Udacians [@tophergates](https://github.com/tophergates/mobile-web-specialist)) and [@james-priest](https://james-priest.github.io/100-days-of-code-log-r2/) have shared their notes as well.
 
 I hope this is helpful!
 
