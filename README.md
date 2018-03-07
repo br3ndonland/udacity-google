@@ -50,6 +50,7 @@ This repository contains notes and resources from the [Udacity Grow with Google]
 
 Materials in this repository:
 
+* *[md.md](md.md)*: Guide to writing with Markdown
 * *[udacity-google-00-apply.md](udacity-google-00-apply.md)*: Program application
 * *[udacity-google-02.md](udacity-google-02.md)*: Intro to offline-first web apps
 * *[udacity-google-03.md](udacity-google-03.md)*: Overview of Service Worker for offline-first web apps
