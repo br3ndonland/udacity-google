@@ -37,7 +37,7 @@ br3ndonland
   - [7.19. Working with JavaScript Subclasses](#719-working-with-javascript-subclasses)
   - [7.20. Quiz: Building Classes and Subclasses (2-3)](#720-quiz-building-classes-and-subclasses-2-3)
   - [7.21. Lesson 2 Summary](#721-lesson-2-summary)
-- [Feedback on Lesson 7 (JavaScript lesson 2/4)](#feedback-on-lesson-7-javascript-lesson-24)
+- [Feedback on Lesson 7 (JavaScript ES6 lesson 2/4)](#feedback-on-lesson-7-javascript-es6-lesson-24)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -54,7 +54,9 @@ br3ndonland
 
 #### Arrow functions
 
-> ES6 introduces a new kind of function called the **arrow function**. Arrow functions are very similar to regular functions in behavior, but are quite different syntactically. The following code takes a list of names and converts each one to uppercase using a regular function:
+> ES6 introduces a new kind of function called the **arrow function**.
+> 
+> Arrow functions are very similar to regular functions in behavior, but are quite different syntactically. The following code takes a list of names and converts each one to uppercase using a regular function:
 > 
 > ```javascript
 > const upperizedNames = ['Farrin', 'Kagure', 'Asser'].map(function(name) { 
@@ -718,7 +720,7 @@ I didn't follow 7.08 very well. I worked on it early in the morning and I wasn't
 
 Take a look at the following code:
 
-```js
+```javascript
 function shippingLabel(name, address) {
   name = (typeof name !== 'undefined') ? name : 'Richard';
   address = (typeof address !== 'undefined') ?  address : 'Mountain View';
@@ -728,13 +730,13 @@ function shippingLabel(name, address) {
 
 Which of the following choices is the correct way to write the `shippingLabel()` function using default function parameters?
 
-```js
+```javascript
 function shippingLabel(name = '', address = '') {
   return `To ${name} In: ${address}`;
 }
 ```
 
-```js
+```javascript
 function shippingLabel(name, address) {
   name = name || 'Richard';
   address = address || 'Mountain View';
@@ -742,13 +744,13 @@ function shippingLabel(name, address) {
 }
 ```
 
-```js
+```javascript
 function shippingLabel(name, address) {
   return `To: ${name} In: ${address}`;
 }
 ```
 
-```js
+```javascript
 function shippingLabel(name = 'Richard', address = 'Mountain View') {
   return `To: ${name} In: ${address}`;
 }
@@ -759,7 +761,7 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 
 > Option 4 uses default function parameters correctly by setting the defaults directly to the parameters.
 
-```js
+```javascript
 function shippingLabel(name = 'Richard', address = 'Mountain View') {
   return `To: ${name} In: ${address}`;
 }
@@ -774,7 +776,7 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 
 > You can combine default function parameters with destructuring to create some pretty powerful functions!
 > 
-> ```js
+> ```javascript
 > function createGrid([width = 5, height = 5]) {
 >   return `Generates a ${width} x ${height} grid`;
 > }
@@ -797,7 +799,7 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 > 
 > There is a problem with this though, the following code will not work:
 > 
-> ```js
+> ```javascript
 > createGrid(); // throws an error
 > ```
 > 
@@ -807,7 +809,7 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 > 
 > This throws an error because `createGrid()` expects an array to be passed in that it will then destructure. Since the function was called without passing an array, it breaks. But, we can use default function parameters for this!
 > 
-> ```js
+> ```javascript
 > function createGrid([width = 5, height = 5] = []) {
 >   return `Generates a ${width} x ${height} grid`;
 > }
@@ -815,7 +817,7 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 > 
 > See that new `= []` in the function's parameter? If `createGrid()` is called without any argument then it will use this default empty array. And since the array is empty, there's nothing to destructure into `width` and `height`, so their default values will apply! So by adding `= []` to give the entire parameter a default, the following code will now work:
 > 
-> ```js
+> ```javascript
 > createGrid(); // Generates a 5 x 5 grid
 > ```
 > 
@@ -829,7 +831,7 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 
 Take a look at the following code:
 
-```js
+```javascript
 function houseDescriptor([houseColor = 'green', shutterColors = ['red']]) {
   return `I've a ${houseColor} house w/ ${shutterColors.join(' and ')} shutters`;
 }
@@ -861,7 +863,7 @@ Which of the following choices will run without throwing an error?
 
 > Just like array destructuring with array defaults, a function can have an object be a default parameter and use object destructuring:
 > 
-> ```js
+> ```javascript
 > function createSundae({scoops = 1, toppings = ['Hot Fudge']}) {
 >   const scoopText = scoops === 1 ? 'scoop' : 'scoops';
 >   return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(' and ')} toppings.`;
@@ -887,7 +889,7 @@ Which of the following choices will run without throwing an error?
 > 
 > Just like the array example before, if you try calling the function without any arguments it won't work:
 > 
-> ```js
+> ```javascript
 > createSundae(); // throws an error
 > ```
 > 
@@ -897,7 +899,7 @@ Which of the following choices will run without throwing an error?
 > 
 > We can prevent this issue by providing a default object to the function:
 > 
-> ```js
+> ```javascript
 > function createSundae({scoops = 1, toppings = ['Hot Fudge']} = {}) {
 >   const scoopText = scoops === 1 ? 'scoop' : 'scoops';
 >   return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(' and ')} toppings.`;
@@ -906,7 +908,7 @@ Which of the following choices will run without throwing an error?
 > 
 > By adding an empty object as the default parameter in case no arguments are provided, calling the function without any arguments now works.
 > 
-> ```js
+> ```javascript
 > createSundae(); // Your sundae has 1 scoop with Hot Fudge toppings.
 > ```
 > 
@@ -920,7 +922,7 @@ Which of the following choices will run without throwing an error?
 
 Take a look at the following code:
 
-```js
+```javascript
 function houseDescriptor({houseColor = 'green', shutterColors = ['red']} = {}) {
   return `I have a ${houseColor} house with ${shutterColors.join(' and ')} shutters`;
 }
@@ -953,25 +955,25 @@ Which of the following choices will run without throwing an error?
 
 > Default function parameters are a simple addition, but it makes our lives so much easier! One benefit of object defaults over array defaults is how they handle skipped options. Check this out:
 > 
-> ```js
+> ```javascript
 > function createSundae({scoops = 1, toppings = ['Hot Fudge']} = {}) { }
 > ```
 > 
 > With the `createSundae()` function using object defaults with destructuring, if you want to use the default value for `scoops` but change the `toppings`, then all you need to do is pass in an object with `toppings`:
 > 
-> ```js
+> ```javascript
 > createSundae({toppings: ['Hot Fudge', 'Sprinkles', 'Caramel']});
 > ```
 > 
 > Compare the above example with the same function that uses array defaults with destructuring.
 > 
-> ```js
+> ```javascript
 > function createSundae([scoops = 1, toppings = ['Hot Fudge']] = []) { }
 > ```
 > 
 > With this function setup, if you want to use the default number of scoops but change the toppings, you'd have to call your function a little...oddly:
 > 
-> ```js
+> ```javascript
 > createSundae([undefined, ['Hot Fudge', 'Sprinkles', 'Caramel']]);
 > ```
 > 
@@ -994,7 +996,7 @@ Your house has 1 floor(s) with red brick walls.
 ```
 
 Code:
-```js
+```javascript
 /*
  * Programming Quiz: Using Default Function Parameters (2-2)
  */
@@ -1024,7 +1026,7 @@ You basically have to tell the function two things:
 
 The sample code from the tests helps suggest the function formatting.
 
-```js
+```javascript
 // function
 function buildHouse({floors = 1, color = 'red', walls = 'brick'} = {}) {
 	return `Your house has ${floors} floor(s) with ${color} ${walls} walls.`;
@@ -1067,7 +1069,7 @@ Your house has 3 floor(s) with yellow brick walls.
 
 > Here's a quick peek of what a JavaScript class looks like:
 > 
-> ```js
+> ```javascript
 > class Dessert {
 >   constructor(calories = 250) {
 >     this.calories = calories;
@@ -1105,7 +1107,7 @@ Your house has 3 floor(s) with yellow brick walls.
 
 > Since ES6 classes are just a mirage and hide the fact that prototypal inheritance is actually going on under the hood, let's quickly look at how to create a "class" with ES5 code:
 > 
-> ```js
+> ```javascript
 > function Plane(numEngines) {
 >   this.numEngines = numEngines;
 >   this.enginesActive = false;
@@ -1140,7 +1142,7 @@ Your house has 3 floor(s) with yellow brick walls.
 
 > Here's what that same Plane class would look like if it were written using the new class syntax:
 > 
-> ```js
+> ```javascript
 > class Plane {
 >   constructor(numEngines) {
 >     this.numEngines = numEngines;
@@ -1159,7 +1161,7 @@ Your house has 3 floor(s) with yellow brick walls.
 
 > Let's convert this function into a class.
 > 
-> ```js
+> ```javascript
 > // ES5 Syntax
 > function Plane(numEngines) {
 >   this.numEngines = numEngines;
@@ -1180,7 +1182,7 @@ Your house has 3 floor(s) with yellow brick walls.
 > 
 > Everything inside the constructor function is now placed inside a method with the name constructor.
 > 
-> ```js
+> ```javascript
 > // ES6 Syntax
 > class Plane {
 >   constructor(numEngines) {
@@ -1194,7 +1196,7 @@ Your house has 3 floor(s) with yellow brick walls.
 > 
 > So this takes care of creating an object. Now the methods that all objects inherit are placed inside the class.
 > 
-> ```js
+> ```javascript
 > // ES6 Syntax
 > class Plane {
 >   constructor(numEngines) {
@@ -1217,7 +1219,7 @@ Your house has 3 floor(s) with yellow brick walls.
 > To drive this home, the functionality of these two is exactly the same. The class syntax is just a nicer way of writing it. In fact, we create new objects in exactly the
 > same way with this new class syntax.
 > 
-> ```js
+> ```javascript
 > // ES6 Syntax
 > class Plane {
 >   constructor(numEngines) {
@@ -1247,7 +1249,7 @@ Your house has 3 floor(s) with yellow brick walls.
 
 > Just to prove that there isn't anything special about `class`, check out this code:
 > 
-> ```js
+> ```javascript
 > class Plane {
 >   constructor(numEngines) {
 >     this.numEngines = numEngines;
@@ -1281,7 +1283,7 @@ Your house has 3 floor(s) with yellow brick walls.
 
 Take a look at the following code:
 
-```js
+```javascript
 class Animal {
   constructor(name = 'Sprinkles', energy = 100) {
     this.name = name;
@@ -1311,7 +1313,7 @@ Which of the following are true?
 
 > To add a static method, the keyword `static` is placed in front of the method name. Look at the `badWeather()` method in the code below.
 > 
-> ```js
+> ```javascript
 > class Plane {
 >   constructor(numEngines) {
 >     this.numEngines = numEngines;
@@ -1333,7 +1335,7 @@ Which of the following are true?
 > 
 > See how `badWeather()` has the word `static` in front of it while `startEngines()` doesn't? That makes `badWeather()` a method that's accessed directly on the `Plane` class, so you can call it like this:
 > 
-> ```js
+> ```javascript
 > Plane.badWeather([plane1, plane2, plane3]);
 > ```
 > 
@@ -1361,7 +1363,7 @@ Which of the following are true?
 > 
 > For example,
 > 
-> ```js
+> ```javascript
 > class Toy {
 >   // some class code
 > }
@@ -1373,7 +1375,7 @@ Which of the following are true?
 > Uncaught TypeError: Class constructor Toy cannot be invoked without 'new'
 > ```
 > 
-> ```js
+> ```javascript
 > const myToy2 = new Toy(); // this works!
 > ```
 
@@ -1382,7 +1384,7 @@ Which of the following are true?
 
 > Now that we've looked at creating classes in JavaScript. Let's use the new `super` and `extends` keywords to extend a class.
 > 
-> ```js
+> ```javascript
 > // ES6 --------------------------------------
 > class Tree {
 >   constructor(size = '10', leaves = {
@@ -1436,7 +1438,7 @@ Which of the following are true?
 
 > Let's see this same functionality, but written in ES5 code:
 > 
-> ```js
+> ```javascript
 > // ES5 --------------------------------------
 > function Tree() {
 >   this.size = size || 10;
@@ -1485,7 +1487,7 @@ Which of the following are true?
 
 > Let's hide the inner workings of these classes to compare how they're constructed.
 > 
-> ```js
+> ```javascript
 > // ES5 --------------------------------------
 > function Tree(size, leaves) {...}
 > Tree.prototype.changeSeason = function (season) {...}
@@ -1544,7 +1546,7 @@ Which of the following are true?
 
 > In a subclass constructor function, before `this` can be used, a call to the super class must be made.
 > 
-> ```js
+> ```javascript
 > class Apple {}
 > class GrannySmith extends Apple {
 >   constructor(tartnessLevel, energy) {
@@ -1559,7 +1561,7 @@ Which of the following are true?
 
 Take a look at the following code:
 
-```js
+```javascript
 class Toy {}
 class Dragon extends Toy {}
 const dragon1 = new Dragon();
@@ -1567,7 +1569,7 @@ const dragon1 = new Dragon();
 
 Given the code above, is the following statement true or false?
 
-```js
+```javascript
 dragon1 instanceof Toy;
 ```
 
@@ -1608,7 +1610,7 @@ Got it on my first try again.
 
 Create a `Bicycle` subclass that extends the `Vehicle` class. The `Bicycle` subclass should override `Vehicle`'s constructor function by changing the default values for `wheels` from `4` to `2` and `horn` from `'beep beep'` to `'honk honk'`.
 
-```js
+```javascript
 /*
  * Programming Quiz: Building Classes and Subclasses (2-3)
  */
@@ -1645,7 +1647,7 @@ honk honk
 <details>
 	<summary><em>Solution</em></summary>
 
-```js
+```javascript
 /*
  * Programming Quiz: Building Classes and Subclasses (2-3)
  */
@@ -1698,7 +1700,7 @@ myBike.honkHorn(); // honk honk
 
 ### 7.21. Lesson 2 Summary
 
-## Feedback on Lesson 7 (JavaScript lesson 2/4)
+## Feedback on Lesson 7 (JavaScript ES6 lesson 2/4)
 
 Very helpful! Thank you!
 

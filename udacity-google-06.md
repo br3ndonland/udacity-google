@@ -31,7 +31,7 @@ br3ndonland
   - [6.15. ...Rest Parameter](#615-rest-parameter)
   - [6.16. Quiz: Using the Rest Parameter (1-5)](#616-quiz-using-the-rest-parameter-1-5)
   - [6.17. Lesson 1 Summary](#617-lesson-1-summary)
-- [Feedback on Lesson 6 (JavaScript lesson 1/4)](#feedback-on-lesson-6-javascript-lesson-14)
+- [Feedback on Lesson 6 (JavaScript ES6 lesson 1/4)](#feedback-on-lesson-6-javascript-es6-lesson-14)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -1556,7 +1556,7 @@ console.log(average());
 
 ### 6.17. Lesson 1 Summary
 
-## Feedback on Lesson 6 (JavaScript lesson 1/4)
+## Feedback on Lesson 6 (JavaScript ES6 lesson 1/4)
 
 Very helpful! The documentation was great, and I understood everything well. Definitely glad I'm learning JavaScript after ES6 is available! So much better.
 
