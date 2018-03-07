@@ -1,5 +1,4 @@
-
-# Lesson 07. JavaScript Functions
+# Lesson 07. JavaScript ES6 Functions
 
 Udacity Grow with Google Scholarship
 

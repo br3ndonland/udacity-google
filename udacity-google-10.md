@@ -6,6 +6,7 @@ Brendon Smith
 
 br3ndonland
 
+
 ## I did it!
 
 I did it! I got through all the material for the challenge course! I will find out the results mid-April.
@@ -26,3 +27,16 @@ I did it! I got through all the material for the challenge course! I will find o
 > The fun doesn't stop here. We will be evaluating your course progress and engagement in the student community to determine the recipients of Nanodegree scholarships for the second phase of this program.
 > 
 > Stay tuned for the announcement of round two scholarship recipients on April 17!
+
+
+## Program feedback
+
+I was really pumped when I got this scholarship. And even more pumped when I started the lessons.
+
+I have been thinking about the progressive web app (PWA) topic for a while now. I think about it every time I look at my phone. I regularly prune my app collection to remove anything I don't use, but my Google Pixel XL still currently has >150 apps. That seems like too many. I think we are over-dependent on native apps. Native apps have their place, but have reduced the openness of the web and created clutter on our mobile devices. The future seems like it's going to be in blurring the line between websites and apps. I'm excited to be surfing the wave of PWAs!
+
+The timing was challenging as well. When the Grow with Google challenge course began, I had been working through the Udacity Full Stack Web Developer Nanodegree program (FSND). I was a a little bit stressed about the time limit on the challenge course, and about how to budget my time between the two programs. However, with the help of my Udacity FSND mentor, I came up with an effective approach. I worked up to a good pause point in the FSND, then worked through the Grow with Google materials, finishing about a month ahead of the deadline, and then got back to the FSND.
+
+Another challenging aspect for me was the participation. Social media can be distracting. It took me a little while to warm up to the forums and Slack, but I was glad I did. Two positive meetups of the social networking were meetups and pomodoros. I got to meet up with some fellow Udacious humans in Boston. I also learned about the pomodoro technique. It's like interval training for working, and really helped me get through the course materials efficiently.
+
+Thanks Udacity and Google!

@@ -1,4 +1,3 @@
-
 # Lesson 02. The benefits of offline first
 
 Udacity Grow with Google Scholarship
