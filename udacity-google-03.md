@@ -1,6 +1,8 @@
 # Lesson 03. An Overview of Service Worker
 
-Udacity Grow with Google Scholarship
+Udacity Grow with Google Scholarship challenge course
+
+Intermediate Web Developer track
 
 Brendon Smith
 

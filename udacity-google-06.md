@@ -1,6 +1,8 @@
 # Lesson 06. JavaScript ES6 Syntax
 
-Udacity Grow with Google Scholarship
+Udacity Grow with Google Scholarship challenge course
+
+Intermediate Web Developer track
 
 [ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356) Lesson 1/4
 

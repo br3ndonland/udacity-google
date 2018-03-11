@@ -16,7 +16,9 @@
 
 *Saturday, February 24, 2018*
 
-The Udacity Grow with Google `#massachusetts` Slack group had a great meeting today. One of the helpful things we discussed was using **Markdown** to keep documentation. **Markdown is a syntax for easy generation of HTML pages from plain text files.** It has most of the functionality of HTML while being much easier to read, and is very widely used (for example, READMEs on GitHub).
+The Udacity Grow with Google `#massachusetts` Slack group had a great meeting today. One of the helpful things we discussed was using **Markdown** to keep documentation. 
+
+**Markdown is a syntax for easy generation of HTML pages from plain text files.** It has most of the functionality of HTML while being much easier to read, and is very widely used (for example, READMEs on GitHub).
 
 Here's a comparison of the same code written in Markdown and HTML:
 
@@ -37,6 +39,7 @@ I hope this is helpful!
 * [MarkdownGuide](https://www.markdownguide.org/)
 * [GitHub-Flavored Markdown](https://guides.github.com/features/mastering-markdown/)
 * [Dillinger](https://dillinger.io/) is a helpful online Markdown editor with live preview.
+* [Turndown](https://domchristie.github.io/turndown/) is an HTML to Markdown converter.
 * [Udacity README course](https://www.udacity.com/course/writing-readmes--ud777)
 
 

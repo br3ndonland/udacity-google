@@ -1,6 +1,8 @@
 # Lesson 04. IndexedDB and Caching
 
-Udacity Grow with Google Scholarship
+Udacity Grow with Google Scholarship challenge course
+
+Intermediate Web Developer track
 
 Brendon Smith
 

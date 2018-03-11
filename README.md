@@ -1,8 +1,8 @@
+# README
 
+Udacity Grow with Google Scholarship challenge course
 
-# README and Lesson 01. Intro
-
-Udacity Grow with Google Scholarship
+Intermediate Web Developer track
 
 Brendon Smith
 
@@ -21,7 +21,7 @@ br3ndonland
 
 ## Background
 
-This repository contains notes and resources from the [Udacity Grow with Google](https://www.udacity.com/grow-with-google) Scholarship challenge course.
+This repository contains notes and resources from the [Udacity Grow with Google](https://www.udacity.com/grow-with-google) Scholarship challenge course, in the Intermediate Web Developer track.
 
 * Found out about the Grow with Google scholarship via Udacity's [Facebook](https://www.facebook.com/Udacity/posts/1250067568431912) and [Medium](https://medium.com/udacity/grow-with-google-50-000-new-scholarships-available-now-1aa0513430b6) posts, while on a bus to NYC for the [New York Coffee Festival](https://www.newyorkcoffeefestival.com/) on October 14, 2017.
 * [Applied](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-00-apply.md) in December 2017.
@@ -32,11 +32,13 @@ This repository contains notes and resources from the [Udacity Grow with Google]
 	> 
 	> #GoogleUdacityScholars #GrowWithGoogle
 
+	<img src="img/udacity-google-scholarship.png" alt="Udacity Grow with Google scholarship award" width="400px">
+
 * Started the challenge course materials February 21, 2018
 * Completed the challenge course materials on March 7, 2018
 
 
-## Course intro
+## Lesson 1. Course intro
 
 *Chaitra Ramanathan and Nick Blumenthal, Udacity scholarship program managers*
 
