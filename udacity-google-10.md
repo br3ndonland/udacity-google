@@ -8,19 +8,32 @@ Brendon Smith
 
 br3ndonland
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [I did it!](#i-did-it)
+- [Great work!](#great-work)
+- [Program feedback](#program-feedback)
+- [Program suggestions](#program-suggestions)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 
 ## I did it!
 
 I did it! I got through all the material for the challenge course! I will find out the results mid-April.
 
+<img src="img/udacity-google-complete.png" alt="Screenshot showing course completion" width="75%">
+
 <img src="img/celebration-01.gif" alt="GIF of kid on game show" width="200px">
-
 <img src="img/celebration-02.gif" alt="GIF of Kevin Bacon dancing" width="200px">
-
 <img src="img/celebration-03.gif" alt="GIF of WWE wrestler fist pumping" width="200px">
 
 
 ## Great work!
+
+Message from Udacity:
 
 > Congrats on completing the Mobile Web Specialist challenge course!
 > 
@@ -42,3 +55,8 @@ The **timing** was challenging. When the Grow with Google challenge course began
 Another challenging aspect for me was the **participation**. Social media can be distracting. It took me a little while to warm up to the forums and Slack, but I was glad I did. Two positive outcomes of the social networking were **meetups** and **pomodoros**. I got to meet up with some fellow Udacious humans in Boston. I also learned about the pomodoro technique. It's like interval training for working, and really helped me get through the course materials efficiently. My participation not only helped me, but the other students as well. I took detailed notes on the course materials and shared them on [GitHub](https://github.com/br3ndonland/udacity-google). Other students appreciated the organized, thorough notes. I also put together a [guide to writing with Markdown](md.md) to help other students maximize their documentation.
 
 Thanks Udacity and Google!
+
+
+## Program suggestions
+
+For the future, I would suggest presenting the ES6 lessons first, then updating the wittr app for ES6, so we can better understand and practice JavaScript ES6. It would also be great to have a more technical assessment of our performance (rather than just participation), but I understand that it would be difficult to evaluate 10K projects.

@@ -52,13 +52,14 @@ This repository contains notes and resources from the [Udacity Grow with Google]
 
 Materials in this repository:
 
-* *[md.md](md.md)*: Guide to writing with Markdown
-* *[udacity-google-00-apply.md](udacity-google-00-apply.md)*: Program application
-* *[udacity-google-02.md](udacity-google-02.md)*: Intro to offline-first web apps
-* *[udacity-google-03.md](udacity-google-03.md)*: Overview of Service Worker for offline-first web apps
-* *[udacity-google-04.md](udacity-google-04.md)*: IndexedDB and Caching for offline-first web apps
-* *[udacity-google-06.md](udacity-google-06.md)*: JavaScript ES6 Syntax
-* *[udacity-google-07.md](udacity-google-07.md)*: JavaScript ES6 Functions
-* *[udacity-google-08.md](udacity-google-08.md)*: JavaScript ES6 Built-Ins
-* *[udacity-google-09.md](udacity-google-09.md)*: JavaScript ES6 Developer-Fu
-* *[udacity-google-10.md](udacity-google-10.md)*: Program completion and feedback
+* [markdown-guide.md](markdown-guide.md): Guide to writing with Markdown
+* [udacity-google-00-apply.md](udacity-google-00-apply.md): Program application
+* [udacity-google-02.md](udacity-google-02.md): Intro to offline-first web apps
+* [udacity-google-03.md](udacity-google-03.md): Overview of Service Worker for offline-first web apps
+* [udacity-google-04.md](udacity-google-04.md): IndexedDB and Caching for offline-first web apps
+* [udacity-google-06.md](udacity-google-06.md): JavaScript ES6 Syntax
+* [udacity-google-07.md](udacity-google-07.md): JavaScript ES6 Functions
+* [udacity-google-08.md](udacity-google-08.md): JavaScript ES6 Built-Ins
+* [udacity-google-09.md](udacity-google-09.md): JavaScript ES6 Developer-Fu
+* [udacity-google-10.md](udacity-google-10.md): Program completion and feedback
+* [udacity-google-story.md](udacity-google-story.md): Developer story detailing my experience in the program

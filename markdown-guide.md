@@ -253,6 +253,11 @@ I found Bear via [M.G. Siegler in 500 words on Medium](https://500ish.com/@mgsie
 * Collaboration features could be better. No shared notebooks.
 
 
+#### [Day One](http://dayoneapp.com/)
+
+Day One [supports Markdown](http://help.dayoneapp.com/tips-and-tutorials/markdown-guide).
+
+
 #### [Dropbox Paper](https://www.dropbox.com/paper)
 
 *Pros*
@@ -289,11 +294,6 @@ I found Bear via [M.G. Siegler in 500 words on Medium](https://500ish.com/@mgsie
 * No Android app yet
 * No dark themes yet
 * No Markdown TOC
-
-
-#### [Day One](http://dayoneapp.com/)
-
-Day One [supports Markdown](http://help.dayoneapp.com/tips-and-tutorials/markdown-guide).
 
 
 #### [Standard Notes](https://standardnotes.org/getting-started)

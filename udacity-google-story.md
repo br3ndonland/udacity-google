@@ -33,15 +33,16 @@ Thanks Udacity and Google!
 
 Pomodoro intervals were really helpful for watching lessons. I found that each lesson took about one 25 minute pomodoro. After the 25 minutes, I would reflect on how well I used my time, and how I want to spend the next 25 minutes. Pomodoros helped me stay efficient and focused.
 
+
 ## Result
 
 My story was not selected.
 
-Slack:
+Slack announcement:
 
 > *WAY TO GO, SCHOLARS!* You exceeded our 1,000 story goal by submitting 1,193 of your amazing Student Stories to us! :man_dancing::dancer:
 > 
-> And now, we’d like to introduce the five Mobile Web finalists:
+> And now, we'd like to introduce the five Mobile Web finalists:
 > 
 > HUGE congrats to @jSick, @neuralnet, @derick_gross, @twip, and @Serenity :clap:
 > 
