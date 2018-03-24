@@ -151,7 +151,7 @@ I still prefer to use HTML image tags, because they allow for more customization
 
 * As I go through the lesson, I take notes on what I do in each step. My [notes from Lesson 3](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-03.md) are a helpful example.
 	- If I write code, I include it with code blocks.
-	- If I get stuck, I explain the steps I take to solve the problem. For example, I had a [Git issue during Lesson 3](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-03.md#0311-quiz-hijacking-requests-1-quiz).
+	- If I get stuck, I explain the steps I take to solve the problem. For example, I had a [Git issue during Lesson 3](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-03.md#311-quiz-hijacking-requests-1-quiz).
 * At the end of the lesson, I use [DocToc](https://github.com/thlorenz/doctoc) to generate a Table of Contents from the headers.
 * I write feedback and paste it into the feedback popup box in the Udacity lesson.
 
@@ -160,6 +160,11 @@ I still prefer to use HTML image tags, because they allow for more customization
 [(back to top)](#top)
 
 ### Social
+
+### Gitter
+
+[Gitter](https://gitter.im/) uses Markdown formatting for chats. See their [Markdown basics](https://gitter.zendesk.com/hc/en-us/articles/200176682-Markdown-basics) support article.
+
 
 #### Udacity discussion forums
 
@@ -284,6 +289,11 @@ I found Bear via [M.G. Siegler in 500 words on Medium](https://500ish.com/@mgsie
 * No Android app yet
 * No dark themes yet
 * No Markdown TOC
+
+
+#### [Day One](http://dayoneapp.com/)
+
+Day One [supports Markdown](http://help.dayoneapp.com/tips-and-tutorials/markdown-guide).
 
 
 #### [Standard Notes](https://standardnotes.org/getting-started)
