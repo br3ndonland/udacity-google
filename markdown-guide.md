@@ -4,17 +4,15 @@ Brendon Smith
 
 br3ndonland
 
-## TOC
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+## Table of Contents
 
 - [Intro](#intro)
 - [Markdown syntax](#markdown-syntax)
+  - [Syntactic suggestions](#syntactic-suggestions)
   - [Resources](#resources)
-  - [Suggestions](#suggestions)
-  - [File paths](#file-paths)
-  - [Images](#images)
 - [Markdown methods](#markdown-methods)
 - [Markdown apps](#markdown-apps)
   - [Text editors](#text-editors)
@@ -40,22 +38,20 @@ I have also been looking for an alternative to Evernote, with Markdown instead o
 
 I hope this is helpful!
 
+[(Back to TOC)](#table-of-contents)
+
 
 ## Markdown syntax
-[(Back to TOC)](#toc)
 
-### Resources
-
-* [MarkdownGuide](https://www.markdownguide.org/)
-* [GitHub-Flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-* [Dillinger](https://dillinger.io/) is a helpful online Markdown editor with live preview.
-* [Turndown](https://domchristie.github.io/turndown/) is an HTML to Markdown converter.
-* [Udacity README course](https://www.udacity.com/course/writing-readmes--ud777)
-
-
-### Suggestions
+### Syntactic suggestions
 
 Here are a few pointers:
+
+
+#### File extensions
+
+* Several different extensions can be used, including .md, .mdown, and .markdown.
+* **I prefer to use .md for brevity and consistency.**
 
 
 #### Headers
@@ -63,14 +59,15 @@ Here are a few pointers:
 * Create headers with `#`. Each `#` increases header level (`##` is outline level two), up to six levels.
 * **For organization, I reserve H1 (`#`) for the title of the file at the top. Major headers begin with H2 (`##`).**
 * **For clarity, I leave one blank line after each header, and two blank lines before the next header.**
-* **For navigation in Markdown files, it is also helpful to include [(Back to TOC)](#toc) links under the major headers for easy navigation back to the top of the document.** Simply write `[(Back to TOC)](#toc)`.
-* I use the headers to create a **Table of Contents (TOC)** at the beginning of the files with [DocToc](https://github.com/thlorenz/doctoc). JupyterLab and RStudio have inline TOC displays that are really nice. See [below](#jupyterlab).
+* I use the headers to create a **Table of Contents (TOC)** at the beginning of the files with [DocToc](https://github.com/thlorenz/doctoc). JupyterLab and RStudio have inline TOC displays ([see below](#jupyterlab)). **I add `## Table of Contents` before the TOC for navigation.**
+* **I include [(Back to TOC)](#table-of-contents) links after each section for easy navigation back to the table of contents.** Simply write `[(Back to TOC)](#table-of-contents)`.
 
 
 #### Text
 
 * **Bold text:** use **double star at beginning and end of text to bold**
 * **Italics:** *Single star with no space before and after.* _Underscores also work._
+* **I prefer to indent Markdown text with tabs at two-space width.** Four spaces can be read by some systems as code blocks.
 
 
 #### Lists
@@ -130,13 +127,13 @@ Fenced code blocks inside triple backticks
 		```
 
 
-### File paths
+#### File paths
 
 * Local disk: use UNIX format file paths
 * Dropbox URLs: **To use Dropbox links in Markdown, change the end of the link from dl=0 to dl=1.** In this way, images can be embedded and datasets can be referenced by URL without having to download a local copy.
 
 
-### Images
+#### Images
 
 ```text
 ![Alt text that appears below the image in the output](/path/to/img.jpg "Optional title that will show up when you hover over the image in the output")`
@@ -145,12 +142,24 @@ Fenced code blocks inside triple backticks
 I still prefer to use HTML image tags, because they allow for more customization:
 
 ```text
-<img src="/path/to/img.jpg" alt="Alt text" width="75%">
+<img src="/path/to/img.jpg" alt="Alt text" class="" width="75%">
 ```
+
+[(Back to TOC)](#table-of-contents)
+
+
+### Resources
+
+* [MarkdownGuide](https://www.markdownguide.org/)
+* [GitHub-Flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+* [Dillinger](https://dillinger.io/) is a helpful online Markdown editor with live preview.
+* [Turndown](https://domchristie.github.io/turndown/) is an HTML to Markdown converter.
+* [Udacity README course](https://www.udacity.com/course/writing-readmes--ud777)
+
+[(Back to TOC)](#table-of-contents)
 
 
 ## Markdown methods
-[(Back to TOC)](#toc)
 
 * When I begin a Udacity lesson, I create a new file in my text editor.
 * I use `H1` for the title at the top, like `# Lesson 3. An Overview of Service Worker`.
@@ -165,9 +174,10 @@ I still prefer to use HTML image tags, because they allow for more customization
 * At the end of the lesson, I use [DocToc](https://github.com/thlorenz/doctoc) to generate a Table of Contents from the headers.
 * I write feedback and paste it into the feedback popup box in the Udacity lesson.
 
+[(Back to TOC)](#table-of-contents)
+
 
 ## Markdown apps
-[(Back to TOC)](#toc)
 
 ### Text editors
 
@@ -200,12 +210,17 @@ You can see my full setup, including keybindings, on [GitHub](https://github.com
 
 I haven't used vscode, but they provide helpful [instructions](https://code.visualstudio.com/Docs/languages/markdown) on how to configure it for Markdown.
 
+[(Back to TOC)](#table-of-contents)
+
 
 ### IDEs
 
+IDE = Integrated Development Environment
+
+
 #### JupyterLab
 
-* [JupyterLab](http://jupyterlab.readthedocs.io/en/latest/) is produced by [Project Jupyter](http://jupyter.org/). It is most widely used for scientific computing with Python, but supports many programming languages. It allows you to create "reproducible computational narratives," containing Markdown text interspersed with code chunks that you can run. JupyterLab was previously Jupyter notebook. They released [some awesome updates](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) that I'm really excited about!
+* [JupyterLab](http://jupyterlab.readthedocs.io/en/latest/) is produced by [Project Jupyter](http://jupyter.org/). It is most widely used for scientific computing with Python, but supports many programming languages. It allows you to create "reproducible computational narratives," containing Markdown text interspersed with code chunks that you can run. JupyterLab was previously Jupyter notebook. They released [some awesome updates](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) that I'm looking forward to using.
 * It is easiest to install JupyterLab through [Anaconda](http://jupyter.org/install).
 * For examples of how to use Jupyter Notebook/JupyterLab, you can check out my [Python files](https://github.com/br3ndonland/udacity-fsnd/tree/master/01-fundamentals/python) from the Udacity Full Stack Web Developer Nanodegree program.
 
@@ -215,6 +230,8 @@ I haven't used vscode, but they provide helpful [instructions](https://code.visu
 * [RStudio](https://www.rstudio.com/) is an IDE for the R programming language, used mostly for statistics and data science.
 * Like JupyterLab, RMarkdown documents contain Markdown text with functional R code chunks.
 * I have written up a [guide to R](https://rpubs.com/br3ndonland/Rguide), and an [example of scientific data analysis](https://rpubs.com/br3ndonland/Rproteomics-2016-Nrf1), using RMarkdown. They're currently hosted on the free [RPubs](https://rpubs.com/br3ndonland) site, but I'm working on moving them over to GitHub so you can see the source code.
+
+[(Back to TOC)](#table-of-contents)
 
 
 ### Note apps
@@ -407,6 +424,8 @@ From WordPress
 		> As far as I can tell, Marxico doesn't really support round-tripping MarkDown <--> Evernote. Once it's in Evernote, and you make changes there, then getting Markdown back can be problematic, since Evernote can use pretty full HTML. If it works for you, then that's great (or or if I'm not understanding their web site then please correct me), but let's be careful about turning this into something that it's not.
 * [StackEdit](https://stackedit.io/): In-browser Markdown editor with live preview. Uses PageDown, the engine powering the Markdown capabilities of the Stack Exchange forums.
 
+[(Back to TOC)](#table-of-contents)
+
 
 ### Social apps
 
@@ -425,4 +444,4 @@ You can use Markdown formatting in your forum posts. See GitHub for the source c
 Slack uses a simplified pseudo-Markdown and has [stated](https://get.slack.help/hc/en-us/articles/202288908#a-note-about-markdown) that it will not be building in full Markdown capabilities.
 
 
-[(Back to TOC)](#toc)
+[(Back to TOC)](#table-of-contents)
