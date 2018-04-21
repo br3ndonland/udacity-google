@@ -122,7 +122,7 @@ Fenced code blocks inside triple backticks
 
     ```python
     name = input("Please type your name: ")
-    print('Great job', name - '!', 'Keep practicing your Python!')
+    print('Great job', name + '!', 'Keep practicing your Python!')
     ```
 
 #### File paths
@@ -225,7 +225,7 @@ IDE = Integrated Development Environment
 
 - [RStudio](https://www.rstudio.com/) is an IDE for the R programming language, used mostly for statistics and data science.
 - Like JupyterLab, RMarkdown documents contain Markdown text with functional R code chunks.
-- I have written up a [guide to R](https://rpubs.com/br3ndonland/Rguide), and an [example of scientific data analysis](https://rpubs.com/br3ndonland/Rproteomics-2016-Nrf1), using RMarkdown. They're currently hosted on the free [RPubs](https://rpubs.com/br3ndonland) site, but I'm working on moving them over to GitHub so you can see the source code.
+- I have written up a [guide to R](https://rpubs.com/br3ndonland/Rguide), and an [example of scientific data analysis](https://github.com/br3ndonland/R-proteomics-Nrf1), using RMarkdown.
 
 [(Back to TOC)](#table-of-contents)
 
