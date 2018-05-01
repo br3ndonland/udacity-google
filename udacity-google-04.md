@@ -8,10 +8,9 @@ Brendon Smith
 
 br3ndonland
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Intro](#intro)
   - [4.01. Introducing the IDB Promised Library](#401-introducing-the-idb-promised-library)
   - [4.02. Getting Started with IDB](#402-getting-started-with-idb)
@@ -31,39 +30,33 @@ br3ndonland
   - [4.14. Outro](#414-outro)
 - [Feedback on Lesson 4](#feedback-on-lesson-4)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
 ## Intro
-[(back to top)](#top)
 
 ### 4.01. Introducing the IDB Promised Library
 
-* This will be a crash course in IndexedDB
-* The wittr app will benefit from a **database**. It will allow us to add and remove posts as needed.
-* **IndexedDB** allows us to create a **database** for the app. You will generally have one database per app, with multiple **object stores**.
-* The database object stores can contain JavaScript objects, strings, numbers, dates, or arrays.
-* Changes are made to the database with **transactions**. Transactions are atomic-if one part fails, none of the changes are applied.
-* **Indexes** (indices?) organize data by properties.
+- This will be a crash course in IndexedDB
+- The wittr app will benefit from a **database**. It will allow us to add and remove posts as needed.
+- **IndexedDB** allows us to create a **database** for the app. You will generally have one database per app, with multiple **object stores**.
+- The database object stores can contain JavaScript objects, strings, numbers, dates, or arrays.
+- Changes are made to the database with **transactions**. Transactions are atomic-if one part fails, none of the changes are applied.
+- **Indexes** (indices?) organize data by properties.
 
-	<img src="img/udacity-google-04-0101.png" alt="Organizing IndexeDB with indexes" width="400px">
+  <img src="img/udacity-google-04-0101.png" alt="Organizing IndexeDB with indexes" width="400px">
 
-* Why does IndexedDB have a bad reputation?
-	- The API is "a little... horrid" and it can create spaghetti code.
-	- It has its own event-based promise system (it predates promises) that can be confusing.
-* Jake believes in teaching the web platform rather than libraries, but in this case, we will use **[IndexedDB Promised (idb)](https://github.com/jakearchibald/idb)**, which Jake created. It mirrors the IndexedDB API and uses promises instead of events.
-
+- Why does IndexedDB have a bad reputation?
+  - The API is "a little... horrid" and it can create spaghetti code.
+  - It has its own event-based promise system (it predates promises) that can be confusing.
+- Jake believes in teaching the web platform rather than libraries, but in this case, we will use **[IndexedDB Promised (idb)](https://github.com/jakearchibald/idb)**, which Jake created. It mirrors the IndexedDB API and uses promises instead of events.
 
 ### 4.02. Getting Started with IDB
 
-* Navigate to http://localhost:8888/idb-test which is currently just a blank page with a script tag to import `idb`.
-* Jake walked through some of the code in `idb`.
-
+- Navigate to [http://localhost:8888/idb-test](http://localhost:8888/idb-test) which is currently just a blank page with a script tag to import `idb`.
+- Jake walked through some of the code in `idb`.
 
 #### Create database
 
-* `createObjectStore`: Jake referred to [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/createObjectStore). Jake creates an object store named 'keyval'.
-* `IDBObjectStore.put()`: [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/put)
+- `createObjectStore`: Jake referred to [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/createObjectStore). Jake creates an object store named 'keyval'.
+- `IDBObjectStore.put()`: [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/put)
 
 ```javascript
 import idb from 'idb';
@@ -73,7 +66,6 @@ var dbPromise = idb.open('test-db', 1, function(upgradeDb) {
   keyValStore.put('world', 'hello');
 });
 ```
-
 
 #### Read from database
 
@@ -89,7 +81,6 @@ dbPromise.then(function(db) {
 
 #### Add another value to the object store
 
-
 ```javascript
 dbPromise.then(function(db) {
   var tx = db.transaction('keyval', 'readwrite');
@@ -103,23 +94,23 @@ dbPromise.then(function(db) {
 });
 ```
 
-
 ### 4.03. Quiz: Getting Started with IDB
 
-*Git*
+Git
 
-* Checkout to new branch:
-	```bash
-	$ git reset --hard
-	$ git checkout origin/page-skeleton
-	```
+- Checkout to new branch:
+
+  ```shell
+  $ git reset --hard
+  $ git checkout origin/page-skeleton
+  ```
 
 <details>
-	<summary><em>Solution</em></summary>
+  <summary><em>Solution</em></summary>
 
 Based on the code [above](#add-another-value-to-the-object-store):
 
-*public/js/idb-test/index.js*
+Code in *public/js/idb-test/index.js*
 
 ```javascript
 dbPromise.then(function(db) {
@@ -134,13 +125,12 @@ dbPromise.then(function(db) {
 });
 ```
 
-* Refresh the app at http://localhost:8888/ 
-* Test on settings page at http://localhost:8889/ with "idb-animal".
+- Refresh the app at [http://localhost:8888/](http://localhost:8888/)
+- Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "idb-animal".
 
 </details>
 
 "If you're still alive at this point, you're doing really well."
-
 
 #### Diving deeper into the API
 
@@ -198,26 +188,23 @@ dbPromise
   });
 ```
 
-
 ### 4.04. Quiz: More IDB
 
-*Task*
+Task: Create an index that sorts people by age.
 
-Create an index that sorts people by age.
+Git
 
+- Checkout to new branch:
 
-*Git*
-
-* Checkout to new branch:
-	```bash
-	$ git reset --hard
-	$ git checkout origin/task-idb-people
-	```
+  ```shell
+  $ git reset --hard
+  $ git checkout origin/task-idb-people
+  ```
 
 <details>
-	<summary><em>Solution</em></summary>
+  <summary><em>Solution</em></summary>
 
-*public/js/idb-test/index.js*
+Code in *public/js/idb-test/index.js*
 
 ```javascript
 // upgrade database
@@ -251,56 +238,60 @@ dbPromise
   });
 ```
 
-* Test on settings page at http://localhost:8889/ with "idb-age".
-* We can cycle through the people objects one at a time using **cursors**. I have used cursor objects in Python before (see my [SQL database analysis project](https://github.com/br3ndonland/udacity-fsnd03-p01-logs)).
-	```javascript
-	dbPromise
-	  .then(function(db) {
-	    var tx = db.transaction('people');
-	    var peopleStore = tx.objectStore('people');
-	    var ageIndex = peopleStore.index('age');
+- Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "idb-age".
+- We can cycle through the people objects one at a time using **cursors**. I have used cursor objects in Python before (see my [SQL database analysis project](https://github.com/br3ndonland/udacity-fsnd03-p01-logs)).
 
-	    return ageIndex.openCursor();
-	  })
-	  .then(function(cursor) {
-	    if (!cursor) return;
-	    console.log('Cursored at:', cursor.value.name);
-	    return cursor.continue();
-	  });
-	```
-* We can store the cursor cycle as a function, a "neat trick":
-	```javascript
-	dbPromise
-	  .then(function(db) {
-	    var tx = db.transaction('people');
-	    var peopleStore = tx.objectStore('people');
-	    var ageIndex = peopleStore.index('age');
+  ```javascript
+  dbPromise
+    .then(function(db) {
+      var tx = db.transaction('people');
+      var peopleStore = tx.objectStore('people');
+      var ageIndex = peopleStore.index('age');
 
-	    return ageIndex.openCursor();
-	  })
-	  .then(function logPerson(cursor) {
-	    if (!cursor) return;
-	    console.log('Cursored at:', cursor.value.name);
-	    // cursor.update(newValue)
-	    // cursor.delete()
-	    return cursor.continue().then(logPerson);
-	  })
-	  .then(function() {
-	    console.log('Done cursoring');
-	  });
-	```
+      return ageIndex.openCursor();
+    })
+    .then(function(cursor) {
+      if (!cursor) return;
+      console.log('Cursored at:', cursor.value.name);
+      return cursor.continue();
+    });
+  ```
 
-* To restore the repo to this point in the future:	
-	```bash
-	$ git reset --hard
-	$ git checkout origin/idb-cursoring
-	```
+- We can store the cursor cycle as a function, a "neat trick":
+
+  ```javascript
+  dbPromise
+    .then(function(db) {
+      var tx = db.transaction('people');
+      var peopleStore = tx.objectStore('people');
+      var ageIndex = peopleStore.index('age');
+
+      return ageIndex.openCursor();
+    })
+    .then(function logPerson(cursor) {
+      if (!cursor) return;
+      console.log('Cursored at:', cursor.value.name);
+      // cursor.update(newValue)
+      // cursor.delete()
+      return cursor.continue().then(logPerson);
+    })
+    .then(function() {
+      console.log('Done cursoring');
+    });
+  ```
+
+- To restore the repo to this point in the future:
+
+  ```shell
+  $ git reset --hard
+  $ git checkout origin/idb-cursoring
+  ```
 
 </details>
 
+[(Back to TOC)](#table-of-contents)
 
 ## Caching
-[(back to top)](#top)
 
 ### 4.05. Using the IDB Cache and Display Entries
 
@@ -308,34 +299,34 @@ Next, we will create a database for wittr posts. The posts will still arrive via
 
 <img src="img/udacity-google-04-0501.png" alt="Using the IDB Cache and Display Entries" width="400px">
 
-* *public/js/main/IndexController.js*
-* The `IndexController._openSocket` method is called to open the Web Socket.
-* `IndexController._openSocket` listens for the message event, and passes data to the `IndexController._onSocketMessage` method.
-* `IndexController._onSocketMessage` parses JSON data and passes it to `IndexController._postsView.addPosts`.
-
+- *public/js/main/IndexController.js*
+- The `IndexController._openSocket` method is called to open the Web Socket.
+- `IndexController._openSocket` listens for the message event, and passes data to the `IndexController._onSocketMessage` method.
+- `IndexController._onSocketMessage` parses JSON data and passes it to `IndexController._postsView.addPosts`.
 
 ### 4.06. Quiz: Using IDB Cache
 
-*Git*
+Git
 
-* Checkout to new branch:
-	```bash
-	$ git reset --hard
-	$ git checkout origin/task-idb-store
-	```
+- Checkout to new branch:
 
-*Task*
+  ```shell
+  $ git reset --hard
+  $ git checkout origin/task-idb-store
+  ```
+
+Task
 
 > Your task is to return a Promise for a database called 'wittr' that has an object store called 'wittrs' that uses 'id' as its key and has an index called called 'by-date', which is sorted by the 'time' property.
-> 
+>
 > Once you've done that, you'll need to add messages to the database. Down in the IndexController._onSocketMessage method, the database has been fetched. Your task is to add each of the messages to the Wittr store. Note that we're not using the entries in the database yet - we'll do that in the next chapter.
 
 If the database gets messed up, run `indexedDB.deleteDatabase('wittr')` in DevTools to reset.
 
 <details>
-	<summary><em>Solution</em></summary>
+  <summary><em>Solution</em></summary>
 
-*public/js/main/IndexController.js*
+Code in *public/js/main/IndexController.js*
 
 ```javascript
 // Open the database
@@ -382,28 +373,28 @@ IndexController.prototype._onSocketMessage = function(data) {
 };
 ```
 
-* Refresh the app at http://localhost:8888/ 
-* Test on settings page at http://localhost:8889/ with "idb-store".
+- Refresh the app at [http://localhost:8888/](http://localhost:8888/)
+- Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "idb-store".
 
 </details>
-
 
 ### 4.07. Quiz: Using IDB 2
 
 We now have wittr posts in the database, but we need to serve posts from IDB wittrs before opening the web socket.
 
-*Git*
+Git
 
-* Checkout to new branch:
-	```bash
-	$ git reset --hard
-	$ git checkout origin/task-show-stored
-	```
+- Checkout to new branch:
+
+  ```shell
+  $ git reset --hard
+  $ git checkout origin/task-show-stored
+  ```
 
 <details>
-	<summary><em>Solution</em></summary>
+  <summary><em>Solution</em></summary>
 
-*public/js/main/IndexController.js*
+Code in *public/js/main/IndexController.js*
 
 ```javascript
 IndexController.prototype._showCachedMessages = function() {
@@ -433,12 +424,10 @@ IndexController.prototype._showCachedMessages = function() {
 };
 ```
 
-
-* Refresh the app at http://localhost:8888/ 
-* Test on settings page at http://localhost:8889/ with "serve-skeleton".
+- Refresh the app at [http://localhost:8888/](http://localhost:8888/)
+- Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "serve-skeleton".
 
 </details>
-
 
 ### 4.08. Quiz: Cleaning IDB
 
@@ -446,16 +435,17 @@ So far, so good, but we have only been adding posts to the database. We can't ju
 
 In this task, we will modify the database so it only has 30 wittr items at a time.
 
-*Git*
+Git
 
-* Checkout to new branch:
-	```bash
-	$ git reset --hard
-	$ git checkout origin/task-clean-db
-	```
+- Checkout to new branch:
+
+  ```shell
+  $ git reset --hard
+  $ git checkout origin/task-clean-db
+  ```
 
 <details>
-	<summary><em>Solution</em></summary>
+  <summary><em>Solution</em></summary>
 
 *public/js/main/IndexController.js*, `IndexController._onSocketMessage` method
 
@@ -484,7 +474,7 @@ IndexController.prototype._onSocketMessage = function(data) {
         return cursor.advance(30);
       })
       .then(function deletePost(cursor) {
-      	// if the entry is undefined, stop
+        // if the entry is undefined, stop
         if (!cursor) return;
         cursor.delete();
         // otherwise continue looping through and deleting posts
@@ -496,59 +486,57 @@ IndexController.prototype._onSocketMessage = function(data) {
 };
 ```
 
-* Refresh the app at http://localhost:8888/ 
-* Test on settings page at http://localhost:8889/ with "idb-clean".
+- Refresh the app at [http://localhost:8888/](http://localhost:8888/)
+- Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "idb-clean".
 
 </details>
 
-
 #### Goals
 
-* ~~Unobtrusive app updates~~
-* ~~Get the user onto the latest version~~
-* ~~Continually update cache of posts~~
-* Cache photos
-* Cache avatars
-
+- ~~Unobtrusive app updates~~
+- ~~Get the user onto the latest version~~
+- ~~Continually update cache of posts~~
+- Cache photos
+- Cache avatars
 
 #### App performance changes
 
-* Perfect: Not much change, but "perfect doesn't really exist."
-* Slow: Content renders much more quickly.
-* Lie-Fi: Users actually get content, instead of a blank screen.
-* Offline: Users still get content.
-* Images are still slow or broken, so we will fix those next.
+- Perfect: Not much change, but "perfect doesn't really exist."
+- Slow: Content renders much more quickly.
+- Lie-Fi: Users actually get content, instead of a blank screen.
+- Offline: Users still get content.
+- Images are still slow or broken, so we will fix those next.
 
+[(Back to TOC)](#table-of-contents)
 
 ## Cache photos and avatars
-[(back to top)](#top)
 
 ### 4.09. Cache Photos
 
-* We want to cache photos as they appear.
-* If we retrieve images from the cache API, it's more memory efficient and renders faster:
+- We want to cache photos as they appear.
+- If we retrieve images from the cache API, it's more memory efficient and renders faster:
 
-	<img src="img/udacity-google-04-0901.png" alt="Caching and serving photos from service worker" width="400px">
+  <img src="img/udacity-google-04-0901.png" alt="Caching and serving photos from service worker" width="400px">
 
-* Images will be stored in a separate cache from the other static content. This allows the photos to live on between different versions of the app.
-* We will be working with a responsive image. It has different sizes based on the viewport width.
-* Using responses multiple times: `response.json();` cannot be re-read with `response.blob();`. Once the data are read in as json, it disappears from memory. This applies to `event.respondWith(response);` as well. This is a problem for our photos. We want to open a cache, fetch from the network, and send the response both to the cache and the browser. To fix this, we clone the response with `response.clone()`. A clone goes to the cache, and the original response gets sent to the page.
-
+- Images will be stored in a separate cache from the other static content. This allows the photos to live on between different versions of the app.
+- We will be working with a responsive image. It has different sizes based on the viewport width.
+- Using responses multiple times: `response.json();` cannot be re-read with `response.blob();`. Once the data are read in as json, it disappears from memory. This applies to `event.respondWith(response);` as well. This is a problem for our photos. We want to open a cache, fetch from the network, and send the response both to the cache and the browser. To fix this, we clone the response with `response.clone()`. A clone goes to the cache, and the original response gets sent to the page.
 
 ### 4.10. Quiz: Cache Photos Quiz
 
-*Git*
+Git
 
-* Checkout to new branch:
-	```bash
-	$ git reset --hard
-	$ git checkout origin/task-cache-photos
-	```
+- Checkout to new branch:
 
-*public/js/sw/index.js* (the service worker script)
+  ```shell
+  $ git reset --hard
+  $ git checkout origin/task-cache-photos
+  ```
+
+Code in *public/js/sw/index.js* (the service worker script)
 
 <details>
-	<summary><em>Solution</em></summary>
+  <summary><em>Solution</em></summary>
 
 ```javascript
 function servePhoto(request) {
@@ -579,22 +567,23 @@ function servePhoto(request) {
 }
 ```
 
-* Refresh the app at http://localhost:8888/ 
-* Test on settings page at http://localhost:8889/ with "cache-photos".
+- Refresh the app at [http://localhost:8888/](http://localhost:8888/)
+- Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "cache-photos".
 
 </details>
-
 
 ### 4.11. Cleaning Photo Cache
 
 As we saw in [4.08. Quiz: Cleaning IDB](#408-quiz-cleaning-idb), we eventually need to clear out the cache. We can't keep adding to it infinitely.
 
 If we want to remove specific entries from the cache, we can use `cache.delete`, passing in the URL or the request of the thing we want to delete:
+
 ```javascript
 cache.delete(request);
 ```
 
 There's also a `cache.keys` method that returns a Promise providing all the requests for entries in the cache:
+
 ```javascript
 cache.keys().then(function(requests) {
   // ...
@@ -603,21 +592,21 @@ cache.keys().then(function(requests) {
 
 Next, we will clean the image cache.
 
-
 ### 4.12. Quiz: Cleaning Photo Cache Quiz
 
-*Git*
+Git
 
-* Checkout to new branch:
-	```bash
-	$ git reset --hard
-	$ git checkout origin/task-clean-photos
-	```
+- Checkout to new branch:
+
+  ```shell
+  $ git reset --hard
+  $ git checkout origin/task-clean-photos
+  ```
 
 Implement the `IndexController._cleanImageCache` method in *public/js/main/IndexController.js*.
 
 <details>
-	<summary><em>Solution</em></summary>
+  <summary><em>Solution</em></summary>
 
 ```javascript
 IndexController.prototype._cleanImageCache = function() {
@@ -663,20 +652,18 @@ IndexController.prototype._cleanImageCache = function() {
 };
 ```
 
-* Refresh the app at http://localhost:8888/ 
-* Test on settings page at http://localhost:8889/ with "cache-clean".
+- Refresh the app at [http://localhost:8888/](http://localhost:8888/)
+- Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "cache-clean".
 
 </details>
 
+#### Goals after 4.12
 
-#### Goals
-
-* ~~Unobtrusive app updates~~
-* ~~Get the user onto the latest version~~
-* ~~Continually update cache of posts~~
-* ~~Cache photos~~
-* Cache avatars
-
+- ~~Unobtrusive app updates~~
+- ~~Get the user onto the latest version~~
+- ~~Continually update cache of posts~~
+- ~~Cache photos~~
+- Cache avatars
 
 ### 4.13. Quiz: Caching Avatars
 
@@ -689,18 +676,19 @@ Final task! Caching avatars. Avatars are also responsive images, but they vary b
           /avatars/sam-3x.jpb 3x">
 ```
 
-*Git*
+Git
 
-* Checkout to new branch:
-	```bash
-	$ git reset --hard
-	$ git checkout origin/task-cache-avatars
-	```
+- Checkout to new branch:
+
+  ```shell
+  $ git reset --hard
+  $ git checkout origin/task-cache-avatars
+  ```
 
 Call and implement the `serveAvatar` function in *public/js/sw/index.js* (the service worker script)
 
 <details>
-	<summary><em>Solution</em></summary>
+  <summary><em>Solution</em></summary>
 
 *Call the `serveAvatar` function from within the `fetch` event handler:*
 
@@ -742,41 +730,38 @@ function serveAvatar(request) {
 }
 ```
 
-* Refresh the app at http://localhost:8888/ 
-* Test on settings page at http://localhost:8889/ with "cache-avatars".
+- Refresh the app at [http://localhost:8888/](http://localhost:8888/)
+- Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "cache-avatars".
 
 </details>
 
-
 ### 4.14. Outro
 
-#### Goals
+#### Goals complete
 
-* ~~Unobtrusive app updates~~
-* ~~Get the user onto the latest version~~
-* ~~Continually update cache of posts~~
-* ~~Cache photos~~
-* ~~Cache avatars~~
+- ~~Unobtrusive app updates~~
+- ~~Get the user onto the latest version~~
+- ~~Continually update cache of posts~~
+- ~~Cache photos~~
+- ~~Cache avatars~~
 
 **We're now completely offline first!**
 
+#### App performance changes complete
 
-#### App performance changes
-
-* Perfect: Not much change, but "perfect doesn't really exist."
-* Slow: Content renders instantly.
-* Lie-Fi: Users get content instantly, instead of a blank screen.
-* Offline: Users get content, and a non-disruptive custom error, instead of error page.
+- Perfect: Not much change, but "perfect doesn't really exist."
+- Slow: Content renders instantly.
+- Lie-Fi: Users get content instantly, instead of a blank screen.
+- Offline: Users get content, and a non-disruptive custom error, instead of error page.
 
 <img src="img/udacity-google-05-0101.png" alt="Offline web apps completion" width="75%">
-
 
 ## Feedback on Lesson 4
 
 Again, a very informative and helpful lesson. It would be nice to use Udacity's browser-based quiz system instead of all the git resets, but I understand that it would be difficult to demo the app without a local clone of the git repo.
 
-[next lesson](udacity-google-05.md)
+[next lesson](udacity-google-06.md)
 
 [previous lesson](udacity-google-03.md)
 
-[(back to top)](#top)
+[(Back to TOC)](#table-of-contents)

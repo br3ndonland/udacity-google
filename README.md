@@ -26,21 +26,13 @@ This repository contains notes and resources from the [Udacity Grow with Google]
 - Started the challenge course materials February 21, 2018
 - Completed the challenge course materials on March 7, 2018
 
-## Lesson 1. Course intro
-
-Chaitra Ramanathan and Nick Blumenthal, Udacity scholarship program managers
-
-- There were >100K applicants.
-- They selected 50K "passionate, motivated, and resilient scholars" for all four tracks in the program. The intermediate web developer section has 10K people.
-- Three months to complete the challenge course (ends on April 11, 2018).
-- Six month follow-up [Mobile Web Specialist Nanodegree program](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024) awarded based on "progress and performance in this initial three month challenge course, as well as your contributions to the student community." Participation is important. Use forum and Slack.
-
 ## Course materials
 
 Materials in this repository:
 
 - [markdown-guide.md](markdown-guide.md): Guide to writing with Markdown
 - [udacity-google-00-apply.md](udacity-google-00-apply.md): Program application
+- [udacity-google-01.md](udacity-google-01.md): Course intro
 - [udacity-google-02.md](udacity-google-02.md): Intro to offline-first web apps
 - [udacity-google-03.md](udacity-google-03.md): Overview of Service Worker for offline-first web apps
 - [udacity-google-04.md](udacity-google-04.md): IndexedDB and Caching for offline-first web apps
