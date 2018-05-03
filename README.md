@@ -1,5 +1,7 @@
 # README
 
+<img src="img/udacity-google-scholarship.png" alt="Udacity Grow with Google scholarship award" width="400px">
+
 Udacity Grow with Google Scholarship challenge course
 
 Intermediate Web Developer track
@@ -12,19 +14,25 @@ br3ndonland
 
 This repository contains notes and resources from the [Udacity Grow with Google](https://www.udacity.com/grow-with-google) Scholarship challenge course, in the Intermediate Web Developer track.
 
+The [Grow with Google scholarship program](https://www.udacity.com/grow-with-google) is an initiative designed to help people make career changes into coding. I was accepted to the intermediate web developer track to learn techniques for building progressive web apps. There was a three month challenge round, after which the top participants move on to a more advanced Mobile Web Specialist program.
+
+Here's how it went down:
+
 - Found out about the Grow with Google scholarship via Udacity's [Facebook](https://www.facebook.com/Udacity/posts/1250067568431912) and [Medium](https://medium.com/udacity/grow-with-google-50-000-new-scholarships-available-now-1aa0513430b6) posts, while on a bus to NYC for the [New York Coffee Festival](https://www.newyorkcoffeefestival.com/) on October 14, 2017.
 - [Applied](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-00-apply.md) in December 2017.
 - Won the scholarship in January 2018!
 
   Social media message:
-  > I won a web development scholarship from Udacity and Google! I was accepted to the intermediate web developer track. There is a three month challenge round. If I do well, I can win another scholarship to a more advanced Mobile Web Specialist program.
+  >I won a web development scholarship from Udacity and Google! I was accepted to the intermediate web developer track. There is a three month challenge round. If I do well, I can win another scholarship to a more advanced Mobile Web Specialist program.
   >
-  > #GoogleUdacityScholars #GrowWithGoogle
+  >#GoogleUdacityScholars #GrowWithGoogle
 
-  <img src="img/udacity-google-scholarship.png" alt="Udacity Grow with Google scholarship award" width="400px">
-
-- Started the challenge course materials February 21, 2018
-- Completed the challenge course materials on March 7, 2018
+- Started the challenge course materials February 21, 2018.
+- Completed the challenge course materials on March 7, 2018. The course taught us how to build progressive web apps and use the new features in JavaScript ES6.
+- Attended five local meetups.
+- Started building a collaborative open-source transportation app, [MBTAccess](https://growwithgooglema.github.io/gwg-mbta/), in April 2018.
+- **Ranked in the top 10% of 10,000 students in the intermediate web developer track.** Ranking was based on completing all course materials, as well as participation in the Slack workspace, discussion forum, and meetups.
+- **Won a full scholarship to the [Google Mobile Web Specialist Nanodegree program](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024).**
 
 ## Course materials
 

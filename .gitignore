@@ -1,0 +1,4 @@
+misc
+*.code-workspace
+*.sublime-workspace
+*.sublime-project
