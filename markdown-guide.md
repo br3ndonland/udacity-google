@@ -4,9 +4,8 @@ Brendon Smith
 
 br3ndonland
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [Table of Contents](#table-of-contents)
 - [Intro](#intro)
 - [Markdown syntax](#markdown-syntax)
   - [Syntactic suggestions](#syntactic-suggestions)
@@ -33,7 +32,7 @@ I have also been looking for an alternative to Evernote, with Markdown instead o
 
 I hope this is helpful!
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ## Markdown syntax
 
@@ -52,7 +51,7 @@ Suggestions for standardized Markdown formatting have been provided by [markdown
 - **For organization, I reserve H1 (`#`) for the title of the file at the top. Major headers begin with H2 (`##`).**
 - I use headers to create a **Table of Contents (TOC)** at the beginning of the file.
   - **I add `## Table of Contents` before the TOC for navigation.**
-  - **I include [(Back to TOC)](#table-of-contents) links after each section for easy navigation back to the table of contents.** Simply write `[(Back to TOC)](#table-of-contents)`.
+  - **I include [(Back to top)](#top) links after each section for easy navigation back to the table of contents.** Simply write `[(Back to top)](#top)`.
   - I add and auto-update TOCs in vscode with the [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) extension.
   - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one), JupyterLab and RStudio provide inline TOC displays ([see below](#jupyterlab)).
   - Prior to vscode, I was adding and updating TOCs with [DocToc](https://github.com/thlorenz/doctoc) from the command line.
@@ -60,7 +59,7 @@ Suggestions for standardized Markdown formatting have been provided by [markdown
 #### Text
 
 - **Bold text:** use **double star at beginning and end of text to bold**
-- **Italics:** *Single star with no space before and after.- _Underscores also work._
+- **Italics:** *Single star with no space before and after.* _Underscores also work._
 - **I prefer to indent Markdown text with two spaces.** Four spaces can be read by some systems as code blocks.
 
 #### Lists
@@ -91,9 +90,9 @@ Fenced code blocks inside triple backticks
   ```
 
 - In GitHub-Flavored Markdown, you can specify the language next to the first set of triple backticks for syntax highlighting:
-  - Bash
+  - Shell
 
-    ```bash
+    ```shell
     $ git reset --hard
     $ git checkout origin/task-page-skeleton
     ```
@@ -101,21 +100,28 @@ Fenced code blocks inside triple backticks
   - JavaScript
 
     ```javascript
-    // have new service worker take over right when refresh is pressed
-    self.skipWaiting()
-
-    // from a page
-    reg.installing.postMessage({foo: 'bar'});
-
-    // in the service worker
-    self.addEventListener('message', function(event) {
-      event.data; // {foo: 'bar'}
-    });
-
-    // when the new service worker has taken over, signal page reload
-    navigator.serviceWorker.addEventListener('controllerchange', function() {
-      // navigator.serviceWorker.controller has changed
-      });
+    const viewModel = {
+      toggleList: () => {
+        let selection = dropdown.value
+        let markers = markersArray.filter(marker => marker.city === selection)
+        let li = document.querySelectorAll('li')
+        if (selection === 'All') {
+          li.forEach(li => {
+            li.classList.remove('d-none')
+          })
+        } else {
+          li.forEach(li => {
+            let markerTitles = markers.map(marker => marker.title)
+            let liText = li.textContent
+            if (markerTitles.includes(liText)) {
+              li.classList.remove('d-none')
+            } else {
+              li.classList.add('d-none')
+            }
+          })
+        }
+      }
+    }
     ```
 
   - Python
@@ -142,7 +148,7 @@ Fenced code blocks inside triple backticks
 <img src="/path/to/img.jpg" alt="Alt text" class="" width="75%">
 ```
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ### Resources
 
@@ -154,7 +160,7 @@ Fenced code blocks inside triple backticks
 - [Turndown](https://domchristie.github.io/turndown/) is an HTML to Markdown converter.
 - [Udacity README course](https://www.udacity.com/course/writing-readmes--ud777)
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ## Markdown methods
 
@@ -165,13 +171,12 @@ Fenced code blocks inside triple backticks
 
   <img src="img/markdown-methods-lesson01.png" alt="Copying lesson sections from Udacity" width="300px">
 
-- As I go through the lesson, I take notes on what I do in each step. My [notes from Lesson 3](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-03.md) are a helpful example.
-  - If I write code, I include it with code blocks.
+- As I go through the lesson, I keep a computational narrative explaining what I do at each step.
+  - I include code blocks to show the code I'm writing.
   - If I get stuck, I explain the steps I take to solve the problem. For example, I had a [Git issue during Lesson 3](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-03.md#311-quiz-hijacking-requests-1-quiz).
-- At the end of the lesson, I use [DocToc](https://github.com/thlorenz/doctoc) to generate a Table of Contents from the headers.
-- I write feedback and paste it into the feedback popup box in the Udacity lesson.
+- At the end of the lesson, I generate a Table of Contents from the headers.
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ## Markdown apps
 
@@ -194,7 +199,6 @@ Here's how to set up Sublime Text for Markdown:
   - MarkdownEditing
   - Markdown Preview
   - MarkdownLivePreview: Has some issues with lack of wrapping in the previews. See [GitHub Issue tracker](https://github.com/math2001/MarkdownLivePreview/issues/34).
-- You can see my full setup, including keybindings, on [GitHub](https://github.com/br3ndonland/general/blob/master/computer-setup.md).
 
 #### Visual Studio Code (vscode)
 
@@ -207,9 +211,10 @@ Here's how to set up Sublime Text for Markdown:
   - Easier keyboard shortcuts than Sublime Text (with the exception of hyperlink insertion, which I added with a [keybinding](https://github.com/neilsustc/vscode-markdown/issues/20))
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
   - Lints Markdown files based on style recommendations for standardizing code.
-- You can see my full setup, including keybindings, on [GitHub](https://github.com/br3ndonland/general/blob/master/computer-setup.md).
 
-[(Back to TOC)](#table-of-contents)
+Full vscode configuration is available via [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) with [this public GitHub gist](https://gist.github.com/br3ndonland/01b625629ef98ec7a919a7b927d0ddaf).
+
+[(Back to top)](#top)
 
 ### IDEs
 
@@ -217,37 +222,37 @@ IDE = Integrated Development Environment
 
 #### JupyterLab
 
-- [JupyterLab](http://jupyterlab.readthedocs.io/en/latest/) is produced by [Project Jupyter](http://jupyter.org/). It is most widely used for scientific computing with Python, but supports many programming languages. It allows you to create "reproducible computational narratives," containing Markdown text interspersed with code chunks that you can run. JupyterLab was previously Jupyter notebook. They released [some awesome updates](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) that I'm looking forward to using.
-- It is easiest to install JupyterLab through [Anaconda](http://jupyter.org/install).
-- For examples of how to use Jupyter Notebook/JupyterLab, you can check out my [Python files](https://github.com/br3ndonland/udacity-fsnd/tree/master/01-fundamentals/python) from the Udacity Full Stack Web Developer Nanodegree program.
+- [JupyterLab](http://jupyterlab.readthedocs.io/en/latest/) is produced by [Project Jupyter](http://jupyter.org/). It is most widely used for scientific computing with Python, but supports many programming languages. It allows you to create "reproducible computational narratives," containing Markdown text interspersed with code chunks that you can run. JupyterLab has [some awesome features](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) and was previously Jupyter notebook.
+- It is easiest to install JupyterLab through [Anaconda](http://jupyter.org/install). It can also be installed from [Homebrew](https://brew.sh).
+- For examples of how to use Jupyter Notebook/JupyterLab, you can check out my [Udacity Full Stack Web Developer Nanodegree program repo](https://github.com/br3ndonland/udacity-fsnd).
 
 #### RStudio
 
 - [RStudio](https://www.rstudio.com/) is an IDE for the R programming language, used mostly for statistics and data science.
-- Like JupyterLab, RMarkdown documents contain Markdown text with functional R code chunks.
-- I have written up a [guide to R](https://rpubs.com/br3ndonland/Rguide), and an [example of scientific data analysis](https://github.com/br3ndonland/R-proteomics-Nrf1), using RMarkdown.
+- Like JupyterLab, R Markdown documents contain Markdown text with functional R code chunks.
+- I have provided an example of scientific data analysis with R Markdown on [GitHub](https://github.com/br3ndonland/R-proteomics-Nrf1).
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ### Note apps
 
 #### [Bear](http://www.bear-writer.com/)
 
-I found Bear via [M.G. Siegler in 500 words on Medium](https://500ish.com/@mgsiegler).
-
 ##### Bear Pros
 
-- Uses a modified syntax called Polar Bear.
-- Supports internal relative links
+- This is one of the best Markdown note apps.
+- Supports Markdown. Uses a modified syntax called Polar Bear.
 - Tags and subtags
 - Themes
+- Syntax highlighting
+- Supports internal relative links
 - Evernote migration and import
 - Writing tools, like word counts and read time
+- Reasonably-priced subscription plan
 
 ##### Bear Cons
 
 - Apple only
-- Paid premium plan
 - Not encrypted
 - Collaboration features could be better. No shared notebooks.
 
@@ -259,7 +264,7 @@ Day One [supports Markdown](http://help.dayoneapp.com/tips-and-tutorials/markdow
 
 ##### Dropbox Paper Pros
 
-- Markdown
+- Markdown export
 - Collaboration
 - Sync
 - Embedding works well
@@ -269,8 +274,26 @@ Day One [supports Markdown](http://help.dayoneapp.com/tips-and-tutorials/markdow
 - Paper files don't show up in your regular Dropbox file structure
 - No tags
 - No themes
+- No internal linking
+- Only has H1-H2. H3 shows up as bold when downloading Markdown files.
 - PDFs embedded in Dropbox Paper documents don’t lead to the actual PDF when clicked, in the mobile apps.
 - PDF thumbnails are too large when inserted as single PDFs. When two or more files are inserted, the thumbnails are next to each other and the size is more reasonable. Needs a "view as attachment" option like Evernote.
+
+#### [iA Writer](https://ia.net/writer)
+
+iA = information Architects
+
+##### iA Writer pros
+
+- Cross-platform
+- Light/dark themes
+- Currently just a one-time payment model, though that will probably change.
+
+##### iA Writer cons
+
+- Lacks some of the features of Bear
+- No syntax highlighting
+- Multimedia?
 
 #### [Inkdrop](https://www.inkdrop.info/)
 
@@ -350,6 +373,7 @@ From WordPress
 ##### Turtl Cons
 
 - Still needs more development
+- Not sure how dependable this app will be. The developers don't even own a MacBook.
 - No dark themes yet
 
 #### [Typora](https://typora.io/)
@@ -382,7 +406,7 @@ From WordPress
 - Apple only
 - Encryption?
 - Moved to expensive subscription model
-- Maintains article tags as "keywords," a fatal flaw shared by other apps like Papers
+- Maintains article tags as "keywords," a fatal flaw shared by other apps like [Papers](https://www.readcube.com/papers/).
 
 ### In-browser editors
 
@@ -399,7 +423,7 @@ From WordPress
 - [StackEdit](https://stackedit.io/): In-browser Markdown editor with live preview. Uses PageDown, the engine powering the Markdown capabilities of the Stack Exchange forums.
 - Udacity discussion forums: You can use Markdown formatting in your forum posts.
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ### Social apps
 
@@ -411,4 +435,4 @@ From WordPress
 
 Slack uses a simplified pseudo-Markdown and has [stated](https://get.slack.help/hc/en-us/articles/202288908#a-note-about-markdown) that it will not be building in full Markdown capabilities.
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
