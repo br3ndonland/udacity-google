@@ -1,51 +1,54 @@
-# Lesson 07. JavaScript ES6 Functions
+# JavaScript ES6 Functions
 
-Udacity Grow with Google Scholarship challenge course
+<a href="https://www.udacity.com/">
+  <img src="https://s3-us-west-1.amazonaws.com/udacity-content/rebrand/svg/logo.min.svg" width="300" alt="Udacity logo">
+</a>
 
-Intermediate Web Developer track
+[ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356) lesson 2/4
 
-[ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356) Lesson 2/4
+Udacity Google Mobile Web Specialist Nanodegree program part 3 lesson 05
+
+Udacity Grow with Google Scholarship challenge course lesson 07
 
 Brendon Smith
 
-br3ndonland
+[br3ndonland](https://github.com/br3ndonland)
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [Table of Contents](#table-of-contents)
 - [JavaScript Arrow Functions](#javascript-arrow-functions)
-  - [7.01. Updates to Functions](#701-updates-to-functions)
-  - [7.02. Arrow Functions](#702-arrow-functions)
-  - [7.03. Using Arrow Functions](#703-using-arrow-functions)
-  - [7.04. Quiz: Convert Function into an Arrow Function (2-1)](#704-quiz-convert-function-into-an-arrow-function-2-1)
-  - [7.05. Arrow Functions Recap](#705-arrow-functions-recap)
+  - [2.01. Updates to Functions](#201-updates-to-functions)
+  - [2.02. Arrow Functions](#202-arrow-functions)
+  - [2.03. Using Arrow Functions](#203-using-arrow-functions)
+  - [2.04. Quiz: Convert Function into an Arrow Function (2-1)](#204-quiz-convert-function-into-an-arrow-function-2-1)
+  - [2.05. Arrow Functions Recap](#205-arrow-functions-recap)
 - [JavaScript "this"](#javascript-this)
-  - [7.06. Arrow Functions and the "this" Keyword](#706-arrow-functions-and-the-this-keyword)
-  - [7.07. "this" and Regular Functions](#707-this-and-regular-functions)
-  - [7.08. "this" and Arrow Functions](#708-this-and-arrow-functions)
-  - [7.09. Default Function Parameters](#709-default-function-parameters)
-  - [7.10. Defaults and Destructuring](#710-defaults-and-destructuring)
-  - [7.11. Quiz: Using Default Function Parameters (2-2)](#711-quiz-using-default-function-parameters-2-2)
+  - [2.06. Arrow Functions and the "this" Keyword](#206-arrow-functions-and-the-this-keyword)
+  - [2.07. "this" and Regular Functions](#207-this-and-regular-functions)
+  - [2.08. "this" and Arrow Functions](#208-this-and-arrow-functions)
+  - [2.09. Default Function Parameters](#209-default-function-parameters)
+  - [2.10. Defaults and Destructuring](#210-defaults-and-destructuring)
+  - [2.11. Quiz: Using Default Function Parameters (2-2)](#211-quiz-using-default-function-parameters-2-2)
 - [JavaScript Classes](#javascript-classes)
-  - [7.12. Class Preview](#712-class-preview)
-  - [7.13. JavaScript's Illusion of Classes](#713-javascripts-illusion-of-classes)
-  - [7.14. JavaScript Classes](#714-javascript-classes)
-  - [7.15. Convert a Function to a Class](#715-convert-a-function-to-a-class)
-  - [7.16. Working with JavaScript Classes](#716-working-with-javascript-classes)
-  - [7.17. Super and Extends](#717-super-and-extends)
-  - [7.18. Extending Classes from ES5 to ES6](#718-extending-classes-from-es5-to-es6)
-  - [7.19. Working with JavaScript Subclasses](#719-working-with-javascript-subclasses)
-  - [7.20. Quiz: Building Classes and Subclasses (2-3)](#720-quiz-building-classes-and-subclasses-2-3)
-  - [7.21. Lesson 2 Summary](#721-lesson-2-summary)
-- [Feedback on Lesson 7 (JavaScript ES6 lesson 2/4)](#feedback-on-lesson-7-javascript-es6-lesson-24)
+  - [2.12. Class Preview](#212-class-preview)
+  - [2.13. JavaScript's Illusion of Classes](#213-javascripts-illusion-of-classes)
+  - [2.14. JavaScript Classes](#214-javascript-classes)
+  - [2.15. Convert a Function to a Class](#215-convert-a-function-to-a-class)
+  - [2.16. Working with JavaScript Classes](#216-working-with-javascript-classes)
+  - [2.17. Super and Extends](#217-super-and-extends)
+  - [2.18. Extending Classes from ES5 to ES6](#218-extending-classes-from-es5-to-es6)
+  - [2.19. Working with JavaScript Subclasses](#219-working-with-javascript-subclasses)
+  - [2.20. Quiz: Building Classes and Subclasses (2-3)](#220-quiz-building-classes-and-subclasses-2-3)
+  - [2.21. Lesson 2 Summary](#221-lesson-2-summary)
+- [Feedback on JavaScript ES6 lesson 2/4](#feedback-on-javascript-es6-lesson-24)
 
 ## JavaScript Arrow Functions
 
-### 7.01. Updates to Functions
+### 2.01. Updates to Functions
 
 > Functions are one of the primary data structures in JavaScript; they've been around *forever*.
 
-### 7.02. Arrow Functions
+### 2.02. Arrow Functions
 
 #### Arrow functions
 
@@ -102,7 +105,7 @@ const upperizedNames = ['Farrin', 'Kagure', 'Asser']
   .map( name => name.toUpperCase() );
 ```
 
-#### 7.02 Mini-Quiz Question
+#### 2.02 Mini-Quiz Question
 
 Take a look at the following code:
 
@@ -135,11 +138,11 @@ Got it on my first try by evaluating the checklist [above](#convert-a-function-t
 
 </details>
 
-### 7.03. Using Arrow Functions
+### 2.03. Using Arrow Functions
 
 #### Intro
 
-> **Regular functions can be either function declarations or function expressions, however arrow functions are *always- expressions.** In fact, their full name is "arrow function expressions", so they can only be used where an expression is valid. This includes being:
+> **Regular functions can be either function declarations or function expressions, but arrow functions are *always* expressions.** In fact, their full name is "arrow function expressions", so they can only be used where an expression is valid. This includes being:
 >
 > - stored in a variable,
 > - passed as an argument to a function,
@@ -189,7 +192,7 @@ Got it on my first try by evaluating the checklist [above](#convert-a-function-t
 > Here's your chocolate ice cream in a waffle cone.
 > ```
 
-#### 7.03 Mini-Quiz Question 1 of 2
+#### 2.03 Mini-Quiz Question 1 of 2
 
 Which of the following choices have correctly formatted arrow functions?
 
@@ -261,7 +264,7 @@ const bigVowels = vowels.map( letter => letter.toUpperCase() );
 > - it uses curly braces to wrap the function body
 > - and a return statement needs to be used to actually return something from the function.
 
-#### 7.03 Mini-Quiz Question 2 of 2
+#### 2.03 Mini-Quiz Question 2 of 2
 
 Using your knowledge of how arrow functions work with automatic returns and curly braces, which of the following choices have correctly formatted arrow functions?
 
@@ -322,7 +325,7 @@ Again, I evaluated the checklist [above](#convert-a-function-to-an-arrow-functio
 > - arrow functions are only _expressions_
 >   - there's no such thing as an arrow function declaration
 
-### 7.04. Quiz: Convert Function into an Arrow Function (2-1)
+### 2.04. Quiz: Convert Function into an Arrow Function (2-1)
 
 Convert the function passed to the `map()` method into an arrow function.
 
@@ -391,7 +394,7 @@ console.log(...squares);
 
 </details>
 
-### 7.05. Arrow Functions Recap
+### 2.05. Arrow Functions Recap
 
 Arrow functions allow us to remove
 
@@ -399,17 +402,17 @@ Arrow functions allow us to remove
 - `return`
 - `{ }`
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ## JavaScript "this"
 
-### 7.06. Arrow Functions and the "this" Keyword
+### 2.06. Arrow Functions and the "this" Keyword
 
 - **Finally, the mystical "this"!**
 - The value of "this" depends on how the function is called.
 - In arrow functions, the value of "this" depends on where it's located in the code.
 
-### 7.07. "this" and Regular Functions
+### 2.07. "this" and Regular Functions
 
 #### Intro to `this`
 
@@ -420,40 +423,48 @@ Arrow functions allow us to remove
 ##### 1. A new object
 
 > If the function is called with `new`:
+>
 > ```javascript
 > const mySundae = new Sundae('Chocolate', ['Sprinkles', 'Hot Fudge']);
 > ```
+>
 > In the code above, the value of `this` inside the `Sundae` constructor function is a new object because it was called with `new`.
 
 ##### 2. A specified object
 
 > If the function is invoked with `call`/`apply`:
+>
 > ```javascript
 > const result = obj1.printName.call(obj2);
 > ```
+>
 > In the code above, the value of `this` inside `printName()` will refer to `obj2` since the first parameter of `call()` is to explicitly set what `this` refers to.
 
 ##### 3. A context object
 
 > If the function is a method of an object:
+>
 > ```javascript
 > data.teleport();
 > ```
+>
 > In the code above, the value of `this` inside `teleport()` will refer to `data`.
 
 ##### 4. The global object or undefined
 
 > If the function is called with no context:
+>
 > ```javascript
 > teleport();
 > ```
+>
 > In the code above, the value of `this` inside `teleport()` is either the global object or, if in strict mode, it's `undefined`.
 
 #### Tip
 
 > TIP: `this` in JavaScript is a complicated topic. We just did a quick overview, but for an in-depth look at how `this` is determined, check out [this All Makes Sense Now!](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch2.md) from Kyle Simpson's book series [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/README.md).
 
-#### 7.07 Mini-Quiz Question 1 of 2
+#### 2.07 Mini-Quiz Question 1 of 2
 
 What is the value of `this` inside the `Train` constructor function below?
 
@@ -474,7 +485,7 @@ a new object
 
 </details>
 
-#### 7.07 Mini-Quiz Question 2 of 2
+#### 2.07 Mini-Quiz Question 2 of 2
 
 What is the value of `this` inside the `increaseSpeed()` function below?
 
@@ -497,9 +508,9 @@ the `redTrain` object
 
 </details>
 
-### 7.08. "this" and Arrow Functions
+### 2.08. "this" and Arrow Functions
 
-I didn't follow 7.08 very well. I worked on it early in the morning and I wasn't really awake yet.
+I didn't follow 2.08 very well. I worked on it early in the morning and I wasn't really awake yet.
 
 > With regular functions, the value of `this` is set based on _how the function is called_. With arrow functions, the value of `this` is based on the _function's surrounding context_. In other words, the value of `this` _inside_ an arrow function is the same as the value of `this` _outside_ the function.
 >
@@ -640,7 +651,7 @@ I didn't follow 7.08 very well. I worked on it early in the morning and I wasn't
 >
 > Yeah, this doesn't work for the same reason - arrow functions inherit their `this` value from their surrounding context. Outside of the `addScoop()` method, the value of `this` is the global object. So if `addScoop()` is an arrow function, the value of `this` _inside_ `addScoop()` is the global object. Which then makes the value of `this` in the function passed to `setTimeout()` also set to the global object!
 
-### 7.09. Default Function Parameters
+### 2.09. Default Function Parameters
 
 #### Intro to default function parameters
 
@@ -660,6 +671,7 @@ I didn't follow 7.08 very well. I worked on it early in the morning and I wasn't
 > ```
 >
 > Returns:
+>
 > ```text
 > Welcome Student!
 > Welcome James!
@@ -683,16 +695,20 @@ I didn't follow 7.08 very well. I worked on it early in the morning and I wasn't
 > greet('James'); // Welcome James!
 > greet('Richard', 'Howdy'); // Howdy Richard!
 > ```
->     Returns:
->     Welcome Student!
->     Welcome James!
->     Howdy Richard!
+>
+> Returns:
+>
+> ```text
+> Welcome Student!
+> Welcome James!
+> Howdy Richard!
+> ```
 >
 > Wow, that's a lot less code, so much cleaner, and significantly easier to read!
 >
-> To create a default parameter, you add an equal sign (` = `) and then whatever you want the parameter to default to if an argument is not provided. In the code above, both parameters have default values of strings, but they can be any JavaScript type!
+> To create a default parameter, you add an equal sign and then whatever you want the parameter to default to if an argument is not provided. In the code above, both parameters have default values of strings, but they can be any JavaScript type!
 
-#### 7.09 Mini-Quiz Question
+#### 2.09 Mini-Quiz Question
 
 Take a look at the following code:
 
@@ -745,7 +761,7 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 
 </details>
 
-### 7.10. Defaults and Destructuring
+### 2.10. Defaults and Destructuring
 
 #### Defaults and destructuring arrays
 
@@ -803,7 +819,7 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 > Generates a 5 x 5 grid
 > ```
 
-#### 7.10 Mini-Quiz Question 1 of 2
+#### 2.10 Mini-Quiz Question 1 of 2
 
 Take a look at the following code:
 
@@ -894,7 +910,7 @@ Which of the following choices will run without throwing an error?
 > Your sundae has 1 scoop with Hot Fudge toppings.
 > ```
 
-#### 7.10 Mini-Quiz Question 2 of 2
+#### 2.10 Mini-Quiz Question 2 of 2
 
 Take a look at the following code:
 
@@ -956,7 +972,7 @@ Which of the following choices will run without throwing an error?
 >
 > **Unless you've got a strong reason to use array defaults with array destructuring, we recommend going with object defaults with object destructuring!**
 
-### 7.11. Quiz: Using Default Function Parameters (2-2)
+### 2.11. Quiz: Using Default Function Parameters (2-2)
 
 Create a `buildHouse()` function that accepts an object as a default parameter. The object should set the following properties to these default values:
 
@@ -1036,11 +1052,11 @@ Your house has 3 floor(s) with yellow brick walls.
 
 </details>
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ## JavaScript Classes
 
-### 7.12. Class Preview
+### 2.12. Class Preview
 
 #### Class Preview
 
@@ -1069,14 +1085,14 @@ Your house has 3 floor(s) with yellow brick walls.
 >
 > There are a bunch of new keywords and syntax to play with when creating JavaScript classes. But, before we jump into the specifics of how to write JavaScript classes, we want to point out a rather confusing part about JavaScript compared with class-based languages.
 
-### 7.13. JavaScript's Illusion of Classes
+### 2.13. JavaScript's Illusion of Classes
 
 - In other languages, we use functions to create classes and provide inheritance.
-- JavaScript is not a class-based language. The classes are just a mirage over prototypal inheritance.
+- **JavaScript is not a class-based language. The classes are just a mirage over prototypal inheritance.**
 - In JavaScript, we use functions to create objects.
 - JavaScript links objects together by "prototypal inheritance."
 
-### 7.14. JavaScript Classes
+### 2.14. JavaScript Classes
 
 #### ES5 "Class" Recap
 
@@ -1130,7 +1146,7 @@ Your house has 3 floor(s) with yellow brick walls.
 > }
 > ```
 
-### 7.15. Convert a Function to a Class
+### 2.15. Convert a Function to a Class
 
 > Let's convert this function into a class.
 >
@@ -1186,8 +1202,7 @@ Your house has 3 floor(s) with yellow brick walls.
 >
 > `startEngines()` exists on the prototype explicitly in the pre-class way of writing it. Now it appears inside the class but the functionality is exactly the same.
 >
-> Also it looks like `startEngines()` and this `constructor()` method are the same kind of method but the constructor method is not on the prototype. It's a new special method that
-> exists in a class and is used to initialize new objects.
+> Also it looks like `startEngines()` and this `constructor()` method are the same kind of method but the constructor method is not on the prototype. It's a new special method that exists in a class and is used to initialize new objects.
 >
 > To drive this home, the functionality of these two is exactly the same. The class syntax is just a nicer way of writing it. In fact, we create new objects in exactly the
 > same way with this new class syntax.
@@ -1215,7 +1230,7 @@ Your house has 3 floor(s) with yellow brick walls.
 >
 > If you already understand prototypal inheritance then you already have a good understanding of how `class` and class methods work.
 
-### 7.16. Working with JavaScript Classes
+### 2.16. Working with JavaScript Classes
 
 #### Class is just a function
 
@@ -1251,7 +1266,7 @@ Your house has 3 floor(s) with yellow brick walls.
 >
 > Did you notice that there aren't any commas between the method definitions in the Class? Commas are not used to separate properties or methods in a Class. If you add them, you'll get a `SyntaxError` of `unexpected token ,`
 
-#### 7.16 Mini-Quiz Question
+#### 2.16 Mini-Quiz Question
 
 Take a look at the following code:
 
@@ -1271,8 +1286,8 @@ class Animal {
 Which of the following are true?
 
 - the `eat()` method ends up `onAnimal.prototype`
-- typeof Animal === 'class'
-- typeof Animal === 'function'
+- `typeof Animal === 'class'`
+- `typeof Animal === 'function'`
 
 <details>
   <summary><em>Solution</em></summary>
@@ -1349,7 +1364,7 @@ Which of the following are true?
 > const myToy2 = new Toy(); // this works!
 > ```
 
-### 7.17. Super and Extends
+### 2.17. Super and Extends
 
 > Now that we've looked at creating classes in JavaScript. Let's use the new `super` and `extends` keywords to extend a class.
 >
@@ -1450,7 +1465,7 @@ Which of the following are true?
 >
 > Both this code and the class-style code above achieve the same functionality.
 
-### 7.18. Extending Classes from ES5 to ES6
+### 2.18. Extending Classes from ES5 to ES6
 
 > Let's hide the inner workings of these classes to compare how they're constructed.
 >
@@ -1501,7 +1516,7 @@ Which of the following are true?
 >
 > Also, calling a prototype method also takes a lot less code in the new class format too.
 
-### 7.19. Working with JavaScript Subclasses
+### 2.19. Working with JavaScript Subclasses
 
 > Like most of the new additions, there's a lot less setup code and it's a lot cleaner syntax to create a subclass using `class`, `super`, and `extends`.
 >
@@ -1521,7 +1536,7 @@ Which of the following are true?
 > }
 > ```
 
-#### 7.19 Mini-Quiz Question 1 of 2
+#### 2.19 Mini-Quiz Question 1 of 2
 
 Take a look at the following code:
 
@@ -1546,7 +1561,7 @@ Got it on my first try.
 
 </details>
 
-#### 7.19 Mini-Quiz Question 2 of 2
+#### 2.19 Mini-Quiz Question 2 of 2
 
 Let's say that a `Toy` class exists and that a `Dragon` class extends the `Toy` class.
 
@@ -1566,7 +1581,7 @@ Got it on my first try again.
 
 </details>
 
-### 7.20. Quiz: Building Classes and Subclasses (2-3)
+### 2.20. Quiz: Building Classes and Subclasses (2-3)
 
 Quiz
 
@@ -1659,14 +1674,14 @@ myBike.honkHorn(); // honk honk
 
 </details>
 
-### 7.21. Lesson 2 Summary
+### 2.21. Lesson 2 Summary
 
-## Feedback on Lesson 7 (JavaScript ES6 lesson 2/4)
+## Feedback on JavaScript ES6 lesson 2/4
 
 Very helpful! Thank you!
 
-[next lesson](udacity-google-08.md)
+[Next lesson](es6-3-built-ins.md)
 
-[previous lesson](udacity-google-06.md)
+[Previous lesson](es6-1-syntax.md)
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)

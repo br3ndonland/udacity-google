@@ -1,58 +1,61 @@
-# Lesson 08. JavaScript Built-Ins
+# JavaScript Built-Ins
 
-Udacity Grow with Google Scholarship challenge course
+<a href="https://www.udacity.com/">
+  <img src="https://s3-us-west-1.amazonaws.com/udacity-content/rebrand/svg/logo.min.svg" width="300" alt="Udacity logo">
+</a>
 
-Intermediate Web Developer track
+[ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356) lesson 3/4
 
-[ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356) Lesson 3/4
+Udacity Google Mobile Web Specialist Nanodegree program part 3 lesson 06
+
+Udacity Grow with Google Scholarship challenge course lesson 08
 
 Brendon Smith
 
-br3ndonland
+[br3ndonland](https://github.com/br3ndonland)
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [Table of Contents](#table-of-contents)
 - [Symbols](#symbols)
-  - [8.01. New Built-ins](#801-new-built-ins)
-  - [8.02. Symbols Intro](#802-symbols-intro)
-  - [8.03. Symbols](#803-symbols)
-  - [8.04. Iteration & Iterable Protocols](#804-iteration-iterable-protocols)
+  - [3.01. New Built-ins](#301-new-built-ins)
+  - [3.02. Symbols Intro](#302-symbols-intro)
+  - [3.03. Symbols](#303-symbols)
+  - [3.04. Iteration & Iterable Protocols](#304-iteration--iterable-protocols)
 - [Sets](#sets)
-  - [8.05. Sets](#805-sets)
-  - [8.06. Modifying Sets](#806-modifying-sets)
-  - [8.07. Working with Sets](#807-working-with-sets)
-  - [8.08. Sets & Iterators](#808-sets-iterators)
-  - [8.09. Quiz: Using Sets](#809-quiz-using-sets)
-  - [8.10. WeakSets](#810-weaksets)
-  - [8.11. Quiz: Working With WeakSets](#811-quiz-working-with-weaksets)
+  - [3.05. Sets](#305-sets)
+  - [3.06. Modifying Sets](#306-modifying-sets)
+  - [3.07. Working with Sets](#307-working-with-sets)
+  - [3.08. Sets & Iterators](#308-sets--iterators)
+  - [3.09. Quiz: Using Sets](#309-quiz-using-sets)
+  - [3.10. WeakSets](#310-weaksets)
+  - [3.11. Quiz: Working With WeakSets](#311-quiz-working-with-weaksets)
 - [Maps](#maps)
-  - [8.12. Maps](#812-maps)
-  - [8.13. Creating & Modifying Maps](#813-creating-modifying-maps)
-  - [8.14. Working with Maps](#814-working-with-maps)
-  - [8.15. Looping Through Maps](#815-looping-through-maps)
-  - [8.16. WeakMaps](#816-weakmaps)
+  - [3.12. Maps](#312-maps)
+  - [3.13. Creating & Modifying Maps](#313-creating--modifying-maps)
+  - [3.14. Working with Maps](#314-working-with-maps)
+  - [3.15. Looping Through Maps](#315-looping-through-maps)
+  - [3.16. WeakMaps](#316-weakmaps)
 - [Promises](#promises)
-  - [8.17. Promises Intro](#817-promises-intro)
-  - [8.18. Promises](#818-promises)
-  - [8.19. More Promises](#819-more-promises)
+  - [3.17. Promises Intro](#317-promises-intro)
+  - [3.18. Promises](#318-promises)
+  - [3.19. More Promises](#319-more-promises)
 - [Proxies](#proxies)
-  - [8.20. Proxies Intro](#820-proxies-intro)
-  - [8.21. Proxies](#821-proxies)
-  - [8.22. Proxies vs. ES5 Getter/Setter](#822-proxies-vs-es5-gettersetter)
-  - [8.23. Proxies Recap](#823-proxies-recap)
+  - [3.20. Proxies Intro](#320-proxies-intro)
+  - [3.21. Proxies](#321-proxies)
+  - [3.22. Proxies vs. ES5 Getter/Setter](#322-proxies-vs-es5-gettersetter)
+  - [3.23. Proxies Recap](#323-proxies-recap)
 - [Generators](#generators)
-  - [8.24. Generators](#824-generators)
-  - [8.25. Generators & Iterators](#825-generators-iterators)
-  - [8.26. Sending Data into/out of a Generator](#826-sending-data-intoout-of-a-generator)
-  - [8.27. Lesson 3 Summary](#827-lesson-3-summary)
-- [Feedback on Lesson 8 (JavaScript ES6 lesson 3/4)](#feedback-on-lesson-8-javascript-es6-lesson-34)
+  - [3.24. Generators](#324-generators)
+  - [3.25. Generators & Iterators](#325-generators--iterators)
+  - [3.26. Sending Data into/out of a Generator](#326-sending-data-intoout-of-a-generator)
+  - [3.27. Lesson 3 Summary](#327-lesson-3-summary)
+- [Feedback on JavaScript ES6 lesson 3/4](#feedback-on-javascript-es6-lesson-34)
 
 ## Symbols
 
-### 8.01. New Built-ins
+### 3.01. New Built-ins
 
-### 8.02. Symbols Intro
+### 3.02. Symbols Intro
 
 - Symbols are a new "primitive data type" for JavaScript. A symbol is used to uniquely identify properties within an object.
 - Previous primitive data types were:
@@ -62,7 +65,7 @@ br3ndonland
   - null
   - undefined
 
-### 8.03. Symbols
+### 3.03. Symbols
 
 > A **symbol** is a unique and immutable data type that is often used to identify object properties.
 >
@@ -137,7 +140,7 @@ br3ndonland
 >
 > By changing the bowl’s properties to use symbols, each property is a unique Symbol and the first banana doesn’t get overwritten by the second banana.
 
-### 8.04. Iteration & Iterable Protocols
+### 3.04. Iteration & Iterable Protocols
 
 > Before you move on, let’s spend some time looking at two new protocols in ES6:
 >
@@ -210,7 +213,7 @@ br3ndonland
 
 ## Sets
 
-### 8.05. Sets
+### 3.05. Sets
 
 #### A Set in Mathematics
 
@@ -272,7 +275,7 @@ br3ndonland
 >
 > Notice the example above automatically removes the duplicate entry `"Super Mario Bros."` when the Set is created. Pretty neat!
 
-#### 8.05 Mini-Quiz Question
+#### 3.05 Mini-Quiz Question
 
 Select the collections below that represent a Set in JavaScript.
 
@@ -295,7 +298,7 @@ First try. Sets make a lot of sense. Thank you ES6!
 
 </details>
 
-### 8.06. Modifying Sets
+### 3.06. Modifying Sets
 
 > After you’ve created a Set, you’ll probably want to add and delete items from the Set. So how do you that? You use the appropriately named, `.add()` and `.delete()` methods:
 >
@@ -329,7 +332,7 @@ First try. Sets make a lot of sense. Thank you ES6!
 >
 >`.add()` returns the `Set` if an item is successfully added. On the other hand, `.delete()` returns a Boolean (`true` or `false`) depending on successful deletion.
 
-### 8.07. Working with Sets
+### 3.07. Working with Sets
 
 #### Checking The Length
 
@@ -376,13 +379,13 @@ First try. Sets make a lot of sense. Thank you ES6!
 >
 > **TIP:** The `.keys()` method will behave the exact same way as the `.values()` method by returning the values of a Set within a new Iterator Object. The `.keys()` method is an alias for the .values() method for similarity with maps. You’ll see the `.keys()` method later in this lesson during the Maps section.
 
-### 8.08. Sets & Iterators
+### 3.08. Sets & Iterators
 
 #### Intro
 
 > The last step to working with Sets is looping over them.
 >
-> If you remember back to our discussion on the new *iterable and iterator protocols- in ES6, then you’ll recall that Sets are built-in iterables. This means two things in terms of looping:
+> If you remember back to our discussion on the new *iterable and iterator protocols* in ES6, then you’ll recall that Sets are built-in iterables. This means two things in terms of looping:
 >
 > 1. You can use the Set’s default iterator to step through each item in a Set, one by one.
 > 2. You can use the new `for...of` loop to loop through each item in a Set.
@@ -449,7 +452,7 @@ First try. Sets make a lot of sense. Thank you ES6!
 > black
 > ```
 
-### 8.09. Quiz: Using Sets
+### 3.09. Quiz: Using Sets
 
 Quiz
 
@@ -525,7 +528,7 @@ Set { 'chocolate chip', 'cookies and cream', 'vanilla' }
 
 </details>
 
-### 8.10. WeakSets
+### 3.10. WeakSets
 
 #### What is a WeakSet
 
@@ -589,7 +592,7 @@ Set { 'chocolate chip', 'cookies and cream', 'vanilla' }
 >
 > The point in time when garbage collection happens depends on a lot of different factors. Check out [MDN’s documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management#Garbage_collection) to learn more about the algorithms used to handle garbage collection in JavaScript.
 
-### 8.11. Quiz: Working With WeakSets
+### 3.11. Quiz: Working With WeakSets
 
 Quiz
 
@@ -652,34 +655,35 @@ console.log(uniqueFlavors)
 
 ## Maps
 
-### 8.12. Maps
+### 3.12. Maps
 
 > - Maps and Sets are both **iterable** which means you can loop over them
 > - WeakMaps and WeakSets **don't prevent objects from being garbage collected**.
-> - **Maps are collections of key-value pairs**, Sets are collections of unique values.
+> - **Maps are collections of key-value pairs**,
 >
-> ```js
-> {
->   key1: value1
->   richard: 'is awesome'
->   james: 'is also cool'
-> }
-> ```
+>   ```js
+>   {
+>     key1: value1
+>     richard: 'is awesome'
+>     james: 'is also cool'
+>   }
+>   ```
 >
-> Whereas Sets are **collections of unique values**.
+> - whereas Sets are **collections of unique values**.
 >
-> ```js
-> [val1, val2, val3]
-> ```
+>   ```js
+>   [val1, val2, val3]
+>   ```
 >
-> You could say that Sets are to arrays as maps are to objects.
+> - You could say that Sets are to arrays as maps are to objects.
 >
-> ```text
-> Sets :: Arrays
-> Maps :: Objects
-> ```
+>   ```text
+>   Sets :: Arrays
+>   Maps :: Objects
+>   ```
+>
 
-### 8.13. Creating & Modifying Maps
+### 3.13. Creating & Modifying Maps
 
 #### Maps intro
 
@@ -761,7 +765,7 @@ console.log(uniqueFlavors)
 >
 > The `.delete()` method returns `true` if a key-value pair is successfully deleted from the `Map` object, and `false` if unsuccessful. The return value of `.set()` is the `Map` object itself if successful.
 
-### 8.14. Working with Maps
+### 3.14. Working with Maps
 
 > After you’ve built your Map, you can use the `.has()` method to check if a key-value pair exists in your Map by passing it a key.
 >
@@ -792,7 +796,7 @@ console.log(uniqueFlavors)
 > 75.68
 > ```
 
-### 8.15. Looping Through Maps
+### 3.15. Looping Through Maps
 
 #### Intro to looping through maps
 
@@ -865,7 +869,7 @@ console.log(uniqueFlavors)
 >
 > However, when you use a `for..of` loop with a Map, you don’t exactly get back a key or a value. Instead, the key-value pair is split up into an array where the first element is the key and the second element is the value. If only there were a way to fix this?
 
-#### 8.15 Mini-Quiz Question
+#### 3.15 Mini-Quiz Question
 
 ```js
 /*
@@ -943,7 +947,7 @@ for (const member of members) {
 >
 > Notice how with the help of an arrow function, the `forEach` loop reads fairly straightforward. For each `value` and `key` in `members`, log the `value` and `key` to the console.
 
-### 8.16. WeakMaps
+### 3.16. WeakMaps
 
 > **TIP:** If you’ve gone through the WeakSets section, then this section should be somewhat of a review. WeakMaps exhibit the same behavior as a WeakSets, except WeakMaps work with key-values pairs instead of individual items.
 
@@ -1009,13 +1013,13 @@ for (const member of members) {
 
 ## Promises
 
-### 8.17. Promises Intro
+### 3.17. Promises Intro
 
 **Promises are used to handle asynchronous requests.** It's like an IOU for a task. The computer will work on it and get back to you with the response.
 
 > Do this thing now, then notify me when it's done so I can pick up where I left off.
 
-### 8.18. Promises
+### 3.18. Promises
 
 #### Intro to promises
 
@@ -1106,7 +1110,7 @@ for (const member of members) {
 >
 > As you can see, the first function that's passed to `.then()` will be called and passed the data that the Promise's `resolve` function used. In this case, the function would receive the `sundae` object. The second function will be called and passed the data that the Promise's `reject` function was called with. In this case, the function receives the error message "Sorry, we're out of that flavor :-(" that the `reject` function was called with in the Promise code above.
 
-### 8.19. More Promises
+### 3.19. More Promises
 
 > Promises are an incredibly powerful addition to the language. A ton of both existing and future changes make use of them. So being able to work with and write JavaScript Promises is vital.
 >
@@ -1122,11 +1126,11 @@ for (const member of members) {
 
 ## Proxies
 
-### 8.20. Proxies Intro
+### 3.20. Proxies Intro
 
 Proxies are objects that stand in for other objects and handle all their interactions.
 
-### 8.21. Proxies
+### 3.21. Proxies
 
 #### Intro to proxies
 
@@ -1255,9 +1259,9 @@ Proxies are objects that stand in for other objects and handle all their interac
 >
 > As you can see, there are a lot of traps that let the proxy manage how it handles calls back and forth to the proxied object.
 
-### 8.22. Proxies vs. ES5 Getter/Setter
+### 3.22. Proxies vs. ES5 Getter/Setter
 
-> Initially, it can be a bit unclear as to why proxies are all that beneficial when there are already getter and setter methods provided in ES5. With ES5's getter and setter methods, you need to know _before hand_ the properties that are going to be get/set:
+> Initially, it can be a bit unclear as to why proxies are all that beneficial when there are already getter and setter methods provided in ES5. With ES5's getter and setter methods, you need to know _beforehand_ the properties that are going to be get/set:
 >
 > ```js
 > var obj = {
@@ -1315,7 +1319,7 @@ Proxies are objects that stand in for other objects and handle all their interac
 >
 > So some functionality of proxy objects may seem similar to existing ES5 getter/setter methods. But with proxies, you do not need to initialize the object with getters/setters for each property when the object is initialized.
 
-### 8.23. Proxies Recap
+### 3.23. Proxies Recap
 
 > A proxy object sits between a real object and the calling code. The calling code interacts with the proxy instead of the real object. To create a proxy:
 >
@@ -1330,7 +1334,7 @@ Proxies are objects that stand in for other objects and handle all their interac
 
 ## Generators
 
-### 8.24. Generators
+### 3.24. Generators
 
 #### Intro to generators
 
@@ -1373,7 +1377,7 @@ Proxies are objects that stand in for other objects and handle all their interac
 > If we _do_ want to be able to pause a function mid-execution, then we'll need a new type of function available to us in ES6 - generator functions! Let's look at one:
 >
 > ```js
-> function- getEmployee() {
+> function* getEmployee() {
 >     console.log('the function has started');
 >
 >     const names = ['Amanda', 'Diego', 'Joe', 'James', 'Kagure', 'Kavita', 'Orit'];
@@ -1405,26 +1409,26 @@ Which of the following are valid generators? Pay attention to the placement of t
 
 If you're not sure, try running them in your browser's console.
 
-- `function- names() { /- */ }`
-- `function - names() { /- */ }`
-- `function *names() { /- */ }`
+- `function* names() { /* */ }`
+- `function * names() { /* */ }`
+- `function *names() { /* */ }`
 
 <details>
   <summary><em>Solution</em></summary>
 
 My first try was just the first option (which is actually the community consensus syntax), but I realized it would be all of them and got it on my second try.
 
-- `function- names() { /- */ }`
-- `function - names() { /- */ }`
-- `function *names() { /- */ }`
+- `function* names() { /* */ }`
+- `function * names() { /* */ }`
+- `function *names() { /* */ }`
 
 > The asterisk of the generator can actually be placed anywhere between the `function` keyword and the function's name. So all three of these are valid generator declarations!
 >
-> The community has coalesced into having the asterisk appear right next to the `function` keyword (i.e. `function- name() { … }`). But there others that recommend having the asterisk touch the function's name instead. So it's important to realize that the asterisk indicates that it is a generator but that the placement of the asterisk is not important.
+> The community has coalesced into having the asterisk appear right next to the `function` keyword (i.e. `function* name() { … }`). But there others that recommend having the asterisk touch the function's name instead. So it's important to realize that the asterisk indicates that it is a generator but that the placement of the asterisk is not important.
 
 </details>
 
-### 8.25. Generators & Iterators
+### 3.25. Generators & Iterators
 
 > **WARNING:** We looked at iteration in a previous section, so if you're rusty on it, better check it out again because they're resurfacing here with generators!
 >
@@ -1456,7 +1460,7 @@ My first try was just the first option (which is actually the community consensu
 > The `yield` keyword is new and was introduced with ES6. It can only be used inside generator functions. `yield` is what causes the generator to pause. Let's add yield to our generator and give it a try:
 >
 > ```js
-> function- getEmployee() {
+> function* getEmployee() {
 >     console.log('the function has started');
 >
 >     const names = ['Amanda', 'Diego', 'Joe', 'James', 'Kagure', 'Kavita', 'Orit'];
@@ -1505,7 +1509,7 @@ My first try was just the first option (which is actually the community consensu
 > Instead of logging the names to the console and then pausing, let's have the code "return" the name and then pause.
 >
 > ```js
-> function- getEmployee() {
+> function* getEmployee() {
 >     console.log('the function has started');
 >
 >     const names = ['Amanda', 'Diego', 'Joe', 'James', 'Kagure', 'Kavita', 'Orit'];
@@ -1534,7 +1538,7 @@ My first try was just the first option (which is actually the community consensu
 How many times will the iterator's .next() method need to be called to fully complete/"use up" the udacity generator function below:
 
 ```js
-function- udacity() {
+function* udacity() {
     yield 'Richard';
     yield 'James'
 }
@@ -1553,14 +1557,14 @@ function- udacity() {
 >
 > The first call to `.next()` will start the function and run to the first `yield`. The second call to `.next()` will pick up where things left off and run to the second `yield`. The third and final call to `.next()` will pick up where things left off again and run to the end of the function.
 
-### 8.26. Sending Data into/out of a Generator
+### 3.26. Sending Data into/out of a Generator
 
 #### Intro to sending data
 
 > So we can get data out of a generator by using the `yield` keyword. We can also send data back _into_ the generator, too. We do this using the `.next()` method:
 >
 > ```js
-> function- displayResponse() {
+> function* displayResponse() {
 >     const response = yield;
 >     console.log(`Your response is "${response}"!`);
 > }
@@ -1577,7 +1581,7 @@ function- udacity() {
 > So the `yield` keyword is used to pause a generator _and_ used to send data outside of the generator, and then the `.next()` method is used to pass data `into` the generator. Here's an example that makes use of both of these to cycle through a list of names one at a time:
 >
 > ```js
-> function- getEmployee() {
+> function* getEmployee() {
 >     const names = ['Amanda', 'Diego', 'Joe', 'James', 'Kagure', 'Kavita', 'Orit'];
 >     const facts = [];
 >
@@ -1594,13 +1598,13 @@ function- udacity() {
 > // get the first name out of the generator
 > let name = generatorIterator.next().value;
 >
-> // pass data in *and- get the next name
+> // pass data in *and* get the next name
 > name = generatorIterator.next(`${name} is cool!`).value;
 >
-> // pass data in *and- get the next name
+> // pass data in *and* get the next name
 > name = generatorIterator.next(`${name} is awesome!`).value;
 >
-> // pass data in *and- get the next name
+> // pass data in *and* get the next name
 > name = generatorIterator.next(`${name} is stupendous!`).value;
 >
 > // you get the idea
@@ -1620,7 +1624,7 @@ function- udacity() {
 What will happen if the following code is run?
 
 ```js
-function- createSundae() {
+function* createSundae() {
     const toppings = [];
 
     toppings.push(yield);
@@ -1662,14 +1666,16 @@ The `toppings` array will have `undefined` as its last item
 >
 > Generators will also be used heavily in upcoming additions to the JavaScript language. One upcoming feature that will make use of them is [async functions](https://github.com/tc39/ecmascript-asyncawait).
 
-### 8.27. Lesson 3 Summary
+### 3.27. Lesson 3 Summary
 
-## Feedback on Lesson 8 (JavaScript ES6 lesson 3/4)
+## Feedback on JavaScript ES6 lesson 3/4
 
 Informative and helpful lesson.
 
-[next lesson](udacity-google-09.md)
+Lesson 3.26 on generators mentions async functions. Async/await was introduced in ES2017. See my notes in [ajax-3-fetch.md](../ajax/ajax-3-fetch.md).
 
-[previous lesson](udacity-google-07.md)
+[Next lesson](es6-4-developer-fu.md)
 
-[(Back to TOC)](#table-of-contents)
+[Previous lesson](es6-2-functions.md)
+
+[(Back to top)](#top)

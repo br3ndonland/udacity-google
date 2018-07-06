@@ -1,39 +1,42 @@
-# Lesson 06. JavaScript ES6 Syntax
+# JavaScript ES6 Syntax
 
-Udacity Grow with Google Scholarship challenge course
+<a href="https://www.udacity.com/">
+  <img src="https://s3-us-west-1.amazonaws.com/udacity-content/rebrand/svg/logo.min.svg" width="300" alt="Udacity logo">
+</a>
 
-Intermediate Web Developer track
+[ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356) lesson 1/4
 
-[ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356) Lesson 1/4
+Udacity Google Mobile Web Specialist Nanodegree program part 3 lesson 04
+
+Udacity Grow with Google Scholarship challenge course lesson 06
 
 Brendon Smith
 
-br3ndonland
+[br3ndonland](https://github.com/br3ndonland)
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [Table of Contents](#table-of-contents)
 - [Lesson plan](#lesson-plan)
 - [Lesson Part 1: Declaring Variables](#lesson-part-1-declaring-variables)
-  - [6.01. Harmony, ES6, ES2015](#601-harmony-es6-es2015)
-  - [6.02. Let and Const](#602-let-and-const)
-  - [6.03. Quiz: Using Let and Const (1-1)](#603-quiz-using-let-and-const-1-1)
-  - [6.04. Template Literals](#604-template-literals)
-  - [6.05. Quiz: Build an HTML Fragment (1-2)](#605-quiz-build-an-html-fragment-1-2)
-  - [6.06. Destructuring](#606-destructuring)
-  - [6.07. Quiz: Destructuring Arrays (1-3)](#607-quiz-destructuring-arrays-1-3)
-  - [6.08. Object Literal Shorthand](#608-object-literal-shorthand)
-  - [6.09. Lesson 1 Checkup](#609-lesson-1-checkup)
+  - [1.01. Harmony, ES6, ES2015](#101-harmony-es6-es2015)
+  - [1.02. Let and Const](#102-let-and-const)
+  - [1.03. Quiz: Using Let and Const (1-1)](#103-quiz-using-let-and-const-1-1)
+  - [1.04. Template Literals](#104-template-literals)
+  - [1.05. Quiz: Build an HTML Fragment (1-2)](#105-quiz-build-an-html-fragment-1-2)
+  - [1.06. Destructuring](#106-destructuring)
+  - [1.07. Quiz: Destructuring Arrays (1-3)](#107-quiz-destructuring-arrays-1-3)
+  - [1.08. Object Literal Shorthand](#108-object-literal-shorthand)
+  - [1.09. Lesson 1 Checkup](#109-lesson-1-checkup)
 - [Lesson Part 2: Iteration](#lesson-part-2-iteration)
-  - [6.10. Iteration](#610-iteration)
-  - [6.11. Family of For Loops](#611-family-of-for-loops)
-  - [6.12. For...of Loop](#612-forof-loop)
-  - [6.13. Quiz: Writing a For...of Loop (1-4)](#613-quiz-writing-a-forof-loop-1-4)
-  - [6.14. Spread... Operator](#614-spread-operator)
-  - [6.15. ...Rest Parameter](#615-rest-parameter)
-  - [6.16. Quiz: Using the Rest Parameter (1-5)](#616-quiz-using-the-rest-parameter-1-5)
-  - [6.17. Lesson 1 Summary](#617-lesson-1-summary)
-- [Feedback on Lesson 6 (JavaScript ES6 lesson 1/4)](#feedback-on-lesson-6-javascript-es6-lesson-14)
+  - [1.10. Iteration](#110-iteration)
+  - [1.11. Family of For Loops](#111-family-of-for-loops)
+  - [1.12. For...of Loop](#112-forof-loop)
+  - [1.13. Quiz: Writing a For...of Loop (1-4)](#113-quiz-writing-a-forof-loop-1-4)
+  - [1.14. Spread... Operator](#114-spread-operator)
+  - [1.15. ...Rest Parameter](#115-rest-parameter)
+  - [1.16. Quiz: Using the Rest Parameter (1-5)](#116-quiz-using-the-rest-parameter-1-5)
+  - [1.17. Lesson 1 Summary](#117-lesson-1-summary)
+- [Feedback on JavaScript ES6 lesson 1/4](#feedback-on-javascript-es6-lesson-14)
 
 ## Lesson plan
 
@@ -44,7 +47,7 @@ br3ndonland
 
 ## Lesson Part 1: Declaring Variables
 
-### 6.01. Harmony, ES6, ES2015
+### 1.01. Harmony, ES6, ES2015
 
 > Welcome to the course on ES6! We're glad you're here! 👋
 >
@@ -61,7 +64,9 @@ ES6 brings some much-needed modernization to JavaScript. This is the biggest upd
 
 These lessons are part of the free [ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356).
 
-### 6.02. Let and Const
+The [ES6 spec](https://www.ecma-international.org/ecma-262/6.0/) came out in June 2015.
+
+### 1.02. Let and Const
 
 #### Intro
 
@@ -159,7 +164,7 @@ Answer: Richard. Got it on the first try.
 >
 > There are some arguments that can be made for using `var` in situations where you want to globally define variables, but this is often considered bad practice and should be avoided. From now on, we suggest ditching `var` in place of using `let` and `const`.
 
-### 6.03. Quiz: Using Let and Const (1-1)
+### 1.03. Quiz: Using Let and Const (1-1)
 
 Quiz
 
@@ -227,25 +232,24 @@ displayPosts();
 
 </details>
 
-### 6.04. Template Literals
+### 1.04. Template Literals
 
 #### Intro to template literals
 
 > Prior to ES6, the old way to concatenate strings together was by using the string concatenation operator ( + ).
 >
 > ```javascript
->     const student = {
->       name: 'Richard Kalehoff',
->       guardian: 'Mr. Kalehoff'
->     };
+> const student = {
+>   name: 'Richard Kalehoff',
+>   guardian: 'Mr. Kalehoff'
+> };
 >
->     const teacher = {
->       name: 'Mrs. Wilson',
->       room: 'N231'
->     }
+> const teacher = {
+>   name: 'Mrs. Wilson',
+>   room: 'N231'
+> }
 >
->     let message = student.name + ' please see ' + teacher.name + ' in ' + teacher.room + ' to pick up your report card.';
->
+> let message = student.name + ' please see ' + teacher.name + ' in ' + teacher.room + ' to pick up your report card.';
 > ```
 >
 > Returns:
@@ -277,7 +281,7 @@ displayPosts();
 > ```
 > However, that’s changed with the introduction of **template literals** (previously referred to as "template strings" in development releases of ES6).
 >
-> *NOTE:- As an alternative to using the string concatenation operator ( + ), you can use the String's concat() method, but both options are rather clunky for simulating true string interpolation.
+> *NOTE:* As an alternative to using the string concatenation operator ( + ), you can use the `concat()` method, but both options are rather clunky for simulating true string interpolation.
 
 #### Template Literals
 
@@ -285,11 +289,23 @@ displayPosts();
 >
 > Denoted with backticks instead of single quotes or double quotes, template literals can contain placeholders which are represented using backticks. This makes it much easier to build strings.
 >
-> Here's the previous examples using template literals.
+> Here's the previous example using template literals.
 >
 > ```javascript
+> const student = {
+>   name: 'Richard Kalehoff',
+>   guardian: 'Mr. Kalehoff'
+> };
+>
+> const teacher = {
+>   name: 'Mrs. Wilson',
+>   room: 'N231'
+> }
+>
 > let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
+> console.log(message);
 > ```
+>
 > Returns:
 >
 > ```text
@@ -298,9 +314,32 @@ displayPosts();
 >
 > By using template literals, you can drop the quotes along with the string concatenation operator. Also, you can reference the object's properties inside expressions.
 
+Template literals are similar to [Python new style string formatting](https://pyformat.info/), so they made sense to me.
+
+Here's the code from above in Python for comparison:
+
+```python
+student = {
+  "name": "Richard Kalehoff",
+  "guardian": "Mr. Kalehoff"
+  }
+
+teacher = {
+  "name": "Mrs. Wilson",
+  "room": "N231"
+  }
+
+message = ('{} please see {} in {} to pick up your report card.'
+           .format(student['name'], teacher['name'], teacher['room']))
+print(message)
+
+```
+
+The JSON is read by Python as a dictionary. Note that it is no longer necessary to `import json` or parse the JSON with `json.loads(student)`.
+
 #### Quiz
 
-Change the `greeting` string below to use a template literal. Also, feel free to swap in your name for the placeholder.
+>Change the `greeting` string below to use a template literal. Also, feel free to swap in your name for the placeholder.
 
 ```javascript
 /*
@@ -359,7 +398,7 @@ console.log(greeting);
 >
 > TIP: Embedded expressions inside template literals can do more than just reference variables. You can perform operations, call functions and use loops inside embedded expressions!
 
-### 6.05. Quiz: Build an HTML Fragment (1-2)
+### 1.05. Quiz: Build an HTML Fragment (1-2)
 
 Quiz
 
@@ -458,7 +497,7 @@ console.log(createAnimalTradingCardHTML(cheetah));
 
 </details>
 
-### 6.06. Destructuring
+### 1.06. Destructuring
 
 #### Intro to destructuring
 
@@ -579,7 +618,7 @@ Answer: NaN. Got it on my second try.
 
 > Correct! Calling `getArea()` will return `NaN`. When you destructure the object and store the `getArea()` method into the `getArea` variable, it no longer has access to `this` in the `circle` object which results in an area that is `NaN`.
 
-### 6.07. Quiz: Destructuring Arrays (1-3)
+### 1.07. Quiz: Destructuring Arrays (1-3)
 
 Use array destructuring to pull out the three colors from the array of things and store them into the variables one, two, and three.
 
@@ -687,7 +726,7 @@ List of Colors
 
 </details>
 
-### 6.08. Object Literal Shorthand
+### 1.08. Object Literal Shorthand
 
 #### Intro to object literal shorthand
 
@@ -719,7 +758,7 @@ List of Colors
 >
 > Do you see the repetition? Doesn't `type: type`, `color: color`, and `carat: carat` seem redundant?
 >
-> The good news is that you can remove those duplicate variables names from object properties *if- the properties have the same name as the variables being assigned to them.
+> The good news is that you can remove those duplicate variables names from object properties *if* the properties have the same name as the variables being assigned to them.
 >
 > Check it out!
 >
@@ -765,7 +804,7 @@ List of Colors
 > };
 > ```
 
-### 6.09. Lesson 1 Checkup
+### 1.09. Lesson 1 Checkup
 
 We're about halfway through the lesson.
 
@@ -776,11 +815,11 @@ Declaring variables:
 - destructuring
 - object literal shorthand
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ## Lesson Part 2: Iteration
 
-### 6.10. Iteration
+### 1.10. Iteration
 
 Iteration will be an important concept for the rest of the lesson.
 
@@ -799,7 +838,7 @@ James and Richard explained it with a `for` loop.
 - ES6 features a new **iterable protocol** that allows JavaScript objects to **define their iteration behavior**.
 - The new **for... of loop** iterates over iterable objects.
 
-### 6.11. Family of For Loops
+### 1.11. Family of For Loops
 
 #### Intro to loops
 
@@ -911,7 +950,7 @@ James and Richard explained it with a `for` loop.
 >
 > NOTE: The **forEach loop** is another type of for loop in JavaScript. However, `forEach()` is actually an array method, so it can only be used exclusively with arrays. There is also no way to stop or break a forEach loop. If you need that type of behavior in your loop, you’ll have to use a basic for loop.
 
-### 6.12. For...of Loop
+### 1.12. For...of Loop
 
 #### Intro to for of loops
 
@@ -975,6 +1014,14 @@ for (let digits of digit) {
 }
 ```
 
+Equivalent loop in Python:
+
+```python
+digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+for digit in digits:
+  print(digit)
+```
+
 ##### Additional benefits of for...of loops
 
 > But wait, there’s more! The for...of loop also has some additional benefits that fix the weaknesses of the for and for...in loops.
@@ -1033,7 +1080,7 @@ for (let digits of digit) {
 > 9
 > ```
 
-### 6.13. Quiz: Writing a For...of Loop (1-4)
+### 1.13. Quiz: Writing a For...of Loop (1-4)
 
 Write a for...of loop that:
 
@@ -1140,7 +1187,7 @@ Saturday
 
 </details>
 
-### 6.14. Spread... Operator
+### 1.14. Spread... Operator
 
 #### Intro to spread operator
 
@@ -1242,7 +1289,7 @@ console.log(produce);
 <details>
   <summary><em>Solution</em></summary>
 
-Got it on the first try! Was trying out Pomodoros with @Bree on Slack. Completed 6.14 in one 25 minute Pomodoro.
+Got it on the first try! Was trying out Pomodoros with @Bree on Slack. Completed 1.14 in one 25 minute Pomodoro.
 
 ```javascript
 const fruits = ["apples", "bananas", "pears"];
@@ -1273,11 +1320,11 @@ console.log(produce);
 
 </details>
 
-### 6.15. ...Rest Parameter
+### 1.15. ...Rest Parameter
 
 #### Intro to rest parameter
 
-> If you can use the spread operator to *spread- an array into multiple elements, then certainly there should be a way to bundle multiple elements back into an array, right?
+> If you can use the spread operator to *spread* an array into multiple elements, then certainly there should be a way to bundle multiple elements back into an array, right?
 >
 > In fact, there is! It’s called the **rest parameter**, and it’s another new addition in ES6.
 
@@ -1381,7 +1428,7 @@ console.log(produce);
 >
 > This version of the `sum()` function is both **more concise** and is **easier to read**. Also, notice the for...in loop has been replaced with the new **for...of loop**.
 
-### 6.16. Quiz: Using the Rest Parameter (1-5)
+### 1.16. Quiz: Using the Rest Parameter (1-5)
 
 Directions:
 
@@ -1520,14 +1567,12 @@ console.log(average());
 
 </details>
 
-### 6.17. Lesson 1 Summary
+### 1.17. Lesson 1 Summary
 
-## Feedback on Lesson 6 (JavaScript ES6 lesson 1/4)
+## Feedback on JavaScript ES6 lesson 1/4
 
 Very helpful! The documentation was great, and I understood everything well. Definitely glad I'm learning JavaScript after ES6 is available! So much better.
 
-[next lesson](udacity-google-07.md)
+[Next lesson](es6-02-functions.md)
 
-[previous lesson](udacity-google-04.md)
-
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)

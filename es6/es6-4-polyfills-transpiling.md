@@ -1,44 +1,49 @@
-# Lesson 09. JavaScript Developer-Fu
+# JavaScript Polyfills and Transpiling
 
-Udacity Grow with Google Scholarship challenge course
+<a href="https://www.udacity.com/">
+  <img src="https://s3-us-west-1.amazonaws.com/udacity-content/rebrand/svg/logo.min.svg" width="300" alt="Udacity logo">
+</a>
 
-Intermediate Web Developer track
+[ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356) lesson 4/4
 
-[ES6 - JavaScript Improved course](https://www.udacity.com/course/es6-javascript-improved--ud356) Lesson 4/4
+Udacity Google Mobile Web Specialist Nanodegree program part 3 lesson 07
+
+Udacity Grow with Google Scholarship challenge course lesson 09
 
 Brendon Smith
 
-br3ndonland
+[br3ndonland](https://github.com/br3ndonland)
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [Table of Contents](#table-of-contents)
 - [Intro](#intro)
-  - [9.01. The Web is Growing Up](#901-the-web-is-growing-up)
-  - [9.02. Old and New Browsers](#902-old-and-new-browsers)
-  - [9.03. ES6 Specification](#903-es6-specification)
-  - [9.04. Supported Features](#904-supported-features)
-  - [9.05. The Web is Eternal](#905-the-web-is-eternal)
+  - [4.01. The Web is Growing Up](#401-the-web-is-growing-up)
+  - [4.02. Old and New Browsers](#402-old-and-new-browsers)
+  - [4.03. ES6 Specification](#403-es6-specification)
+  - [4.04. Supported Features](#404-supported-features)
+  - [4.05. The Web is Eternal](#405-the-web-is-eternal)
 - [Polyfills](#polyfills)
-  - [9.06. Polyfills](#906-polyfills)
-  - [9.07. Using Polyfills](#907-using-polyfills)
-  - [9.08. Polyfill Walkthrough](#908-polyfill-walkthrough)
-  - [9.09. Other Uses for Polyfills](#909-other-uses-for-polyfills)
+  - [4.06. Polyfills](#406-polyfills)
+  - [4.07. Using Polyfills](#407-using-polyfills)
+  - [4.08. Polyfill Walkthrough](#408-polyfill-walkthrough)
+  - [4.09. Other Uses for Polyfills](#409-other-uses-for-polyfills)
 - [Transpiling](#transpiling)
-  - [9.10. Transpiling](#910-transpiling)
-  - [9.11. Using Babel](#911-using-babel)
-  - [9.12. Transpiling Walkthrough](#912-transpiling-walkthrough)
-  - [9.13. Transpiling Recap](#913-transpiling-recap)
-  - [9.14. Course Summary](#914-course-summary)
+  - [4.10. Transpiling](#410-transpiling)
+  - [4.11. Using Babel](#411-using-babel)
+  - [4.12. Transpiling Walkthrough](#412-transpiling-walkthrough)
+  - [4.13. Transpiling Recap](#413-transpiling-recap)
+  - [4.14. Course Summary](#414-course-summary)
 - [Feedback on Lesson 9 (JavaScript ES6 lesson 4/4)](#feedback-on-lesson-9-javascript-es6-lesson-44)
 
 ## Intro
 
 **This lesson will show us how to write ES6 code, even when browsers haven't caught up to the latest features yet.**
 
-### 9.01. The Web is Growing Up
+**ES6 is also referred to as ES2015.**
 
-### 9.02. Old and New Browsers
+### 4.01. The Web is Growing Up
+
+### 4.02. Old and New Browsers
 
 #### Code doesn't work in old browsers
 
@@ -67,7 +72,7 @@ The code from the course throws errors in old browsers like Safari 9 and IE 11
 >
 > **NOTE:** The code we've been looking at in this course is not supported by older browsers. Older browsers that were developed prior to the release of ES6 were developed to support the version of JavaScript at the time (which was ES5.1). If you try running any ES6 code in an older browser, it won't work.
 
-### 9.03. ES6 Specification
+### 4.03. ES6 Specification
 
 #### Intro to ES6 Specification
 
@@ -91,7 +96,7 @@ section 14.2
 
 </details>
 
-### 9.04. Supported Features
+### 4.04. Supported Features
 
 #### How Can You Know What Features Browsers Support
 
@@ -112,7 +117,7 @@ section 14.2
 >
 > - [http://kangax.github.io/compat-table/es6/](http://kangax.github.io/compat-table/es6/)
 
-#### 9.04 Quiz Question
+#### 4.04 Quiz Question
 
 Looking at the ECMAScript Compatibility Table, what kind of information does the first _colored_ column display?
 
@@ -130,13 +135,13 @@ The status of all ES6 features supported by your current browser.
 
 </details>
 
-### 9.05. The Web is Eternal
+### 4.05. The Web is Eternal
 
 As developers, we need to always be learning and adapting as the web does.
 
 ## Polyfills
 
-### 9.06. Polyfills
+### 4.06. Polyfills
 
 Richard and James use the analogy of filling a hole in the wall with spackling (UK brand name is Polyfilla).
 
@@ -144,7 +149,7 @@ In JavaScript, a **polyfill** is:
 
 > a JavaScript file that patches a hole by replicating some native feature that's missing.
 
-### 9.07. Using Polyfills
+### 4.07. Using Polyfills
 
 #### What is a polyfill
 
@@ -173,7 +178,7 @@ As you can see, a polyfill is just regular JavaScript.
 
 This code is a simple polyfill (check it out on MDN), but there's also a significantly more robust one, [here](https://github.com/mathiasbynens/String.prototype.startsWith/blob/master/startswith.js)
 
-#### 9.07 Quiz Question
+#### 4.07 Quiz Question
 
 Why does the `startsWith()` polyfill begin with the following line?:
 
@@ -196,7 +201,7 @@ I thought it would just check for `startsWith`, but didn't realize that overwrit
 
 </details>
 
-### 9.08. Polyfill Walkthrough
+### 4.08. Polyfill Walkthrough
 
 > Remember that a polyfill is used to fill a hole in a browser that doesn't yet support the native feature.
 >
@@ -220,7 +225,7 @@ I thought it would just check for `startsWith`, but didn't realize that overwrit
 >
 > Then it returns `true` or `false` if the string that's passed in is the same as the string that we're looking at.
 
-### 9.09. Other Uses for Polyfills
+### 4.09. Other Uses for Polyfills
 
 #### Polyfills aren't only for patching missing JavaScript features
 
@@ -239,7 +244,7 @@ I thought it would just check for `startsWith`, but didn't realize that overwrit
 
 ## Transpiling
 
-### 9.10. Transpiling
+### 4.10. Transpiling
 
 - **Compiling:** source code -> machine code. Reduces abstraction.
 - **Transpiling:** source code -> another source code at the same level of abstraction.
@@ -259,7 +264,7 @@ Transpiler
 
 </details>
 
-### 9.11. Using Babel
+### 4.11. Using Babel
 
 #### Intro to Babel
 
@@ -311,7 +316,7 @@ const james = new Student('James', 'Electrical Engineering');
 >
 > - install [Node](https://nodejs.org/) (which will automatically install NPM)
 
-### 9.12. Transpiling Walkthrough
+### 4.12. Transpiling Walkthrough
 
 **Note that Richard has selected the MIT license for his materials. I have correspondingly also selected the MIT license for my course repo.**
 
@@ -332,7 +337,7 @@ const james = new Student('James', 'Electrical Engineering');
 
 <img src="img/udacity-google-09-1201-npm-dependencies.png" alt="NPM dependencies of project" width="75%">
 
-### 9.13. Transpiling Recap
+### 4.13. Transpiling Recap
 
 > NOTE: As of the creation of this course (circa Winter 2016), most of ES6 is supported by the current set of browsers. But that's "most", not "all", unfortunately. And that's also referring to "current" browsers. There are plenty of older browsers that do not support many, if any, of the new ES6 additions. However, it is safe to say that pretty much every browser supports the previous version of the language (ES5.1).
 >
@@ -340,18 +345,14 @@ const james = new Student('James', 'Electrical Engineering');
 >
 > So, to have your cake and eat it too, you can write in ES6 and then use a transpiler to convert it to ES5 code. This lets you transform your project's code base to the newest version of the language while still letting it run everywhere. Then, once all of the browsers your app has to run on fully support ES6 code, you can stop transpiling your code and just serve the straight ES6 code, directly!
 
-### 9.14. Course Summary
+### 4.14. Course Summary
 
 <img src="img/udacity-google-09-1401-summary.png" alt="Course Summary" width="75%">
-
-**ES6 is also referred to as ES2015.**
 
 ## Feedback on Lesson 9 (JavaScript ES6 lesson 4/4)
 
 Informative and helpful lesson.
 
-[next lesson](udacity-google-10.md)
+[Previous lesson](es6-3-built-ins.md)
 
-[previous lesson](udacity-google-08.md)
-
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)

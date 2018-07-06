@@ -1,57 +1,62 @@
-# Lesson 03. An Overview of Service Worker
+# An Overview of Service Worker
 
-Udacity Grow with Google Scholarship challenge course
+<a href="https://www.udacity.com/">
+  <img src="https://s3-us-west-1.amazonaws.com/udacity-content/rebrand/svg/logo.min.svg" width="300" alt="Udacity logo">
+</a>
 
-Intermediate Web Developer track
+[Offline Web Applications by Google course](https://www.udacity.com/course/offline-web-applications--ud899) lesson 2/3
+
+Udacity Google Mobile Web Specialist Nanodegree program part 2 lesson 17
+
+Udacity Grow with Google Scholarship challenge course lesson 03
 
 Brendon Smith
 
 br3ndonland
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [Table of Contents](#table-of-contents)
 - [Service Worker basics](#service-worker-basics)
-  - [3.01. An Overview of Service Worker](#301-an-overview-of-service-worker)
-  - [3.02. Quiz: Scoping Quiz](#302-quiz-scoping-quiz)
-  - [3.03. Adding a Service Worker To the Project](#303-adding-a-service-worker-to-the-project)
-  - [3.04. Quiz: Registering a Service Worker](#304-quiz-registering-a-service-worker)
-  - [3.05. The Service Worker Lifecycle](#305-the-service-worker-lifecycle)
-  - [3.06. Quiz: Enabling Service Worker Dev Tools](#306-quiz-enabling-service-worker-dev-tools)
-  - [3.07. Quiz: Service Worker Dev Tools](#307-quiz-service-worker-dev-tools)
-  - [3.08. Quiz: Service Worker Dev Tools 2](#308-quiz-service-worker-dev-tools-2)
-  - [3.09. Service Worker Dev Tools Continued](#309-service-worker-dev-tools-continued)
+  - [2.01. An Overview of Service Worker](#201-an-overview-of-service-worker)
+  - [2.02. Quiz: Scoping Quiz](#202-quiz-scoping-quiz)
+  - [2.03. Adding a Service Worker To the Project](#203-adding-a-service-worker-to-the-project)
+  - [2.04. Quiz: Registering a Service Worker](#204-quiz-registering-a-service-worker)
+  - [2.05. The Service Worker Lifecycle](#205-the-service-worker-lifecycle)
+  - [2.06. Quiz: Enabling Service Worker Dev Tools](#206-quiz-enabling-service-worker-dev-tools)
+  - [2.07. Quiz: Service Worker Dev Tools](#207-quiz-service-worker-dev-tools)
+  - [2.08. Quiz: Service Worker Dev Tools 2](#208-quiz-service-worker-dev-tools-2)
+  - [2.09. Service Worker Dev Tools Continued](#209-service-worker-dev-tools-continued)
 - [Service Worker and requests](#service-worker-and-requests)
-  - [3.10. Hijacking Requests](#310-hijacking-requests)
-  - [3.11. Quiz: Hijacking Requests 1 Quiz](#311-quiz-hijacking-requests-1-quiz)
-  - [3.12. Hijacking Requests 2](#312-hijacking-requests-2)
-  - [3.13. Quiz: Hijacking Requests 2 Quiz](#313-quiz-hijacking-requests-2-quiz)
-  - [3.14. Hijacking Requests 3](#314-hijacking-requests-3)
-  - [3.15. Quiz: Hijacking Requests 3 Quiz](#315-quiz-hijacking-requests-3-quiz)
+  - [2.10. Hijacking Requests](#210-hijacking-requests)
+  - [2.11. Quiz: Hijacking Requests 1 Quiz](#211-quiz-hijacking-requests-1-quiz)
+  - [2.12. Hijacking Requests 2](#212-hijacking-requests-2)
+  - [2.13. Quiz: Hijacking Requests 2 Quiz](#213-quiz-hijacking-requests-2-quiz)
+  - [2.14. Hijacking Requests 3](#214-hijacking-requests-3)
+  - [2.15. Quiz: Hijacking Requests 3 Quiz](#215-quiz-hijacking-requests-3-quiz)
 - [Service Worker and caching](#service-worker-and-caching)
-  - [3.16. Caching and Serving Assets](#316-caching-and-serving-assets)
-  - [3.17. Quiz: Install and Cache Quiz](#317-quiz-install-and-cache-quiz)
-  - [3.18. Quiz: Cache Response Quiz](#318-quiz-cache-response-quiz)
-  - [3.19. Updating the Static Cache](#319-updating-the-static-cache)
-  - [3.20. Quiz: Update Your CSS Quiz](#320-quiz-update-your-css-quiz)
-  - [3.21. Quiz: Update Your CSS 2](#321-quiz-update-your-css-2)
-  - [3.22. Adding UX to the Update Process](#322-adding-ux-to-the-update-process)
-  - [3.23. Quiz: Adding UX Quiz](#323-quiz-adding-ux-quiz)
-  - [3.24. Triggering an Update](#324-triggering-an-update)
-  - [3.25. Quiz: Triggering an Update Quiz](#325-quiz-triggering-an-update-quiz)
-  - [3.26. Quiz: Caching the Page Skeleton](#326-quiz-caching-the-page-skeleton)
-- [Feedback on Lesson 3](#feedback-on-lesson-3)
+  - [2.16. Caching and Serving Assets](#216-caching-and-serving-assets)
+  - [2.17. Quiz: Install and Cache Quiz](#217-quiz-install-and-cache-quiz)
+  - [2.18. Quiz: Cache Response Quiz](#218-quiz-cache-response-quiz)
+  - [2.19. Updating the Static Cache](#219-updating-the-static-cache)
+  - [2.20. Quiz: Update Your CSS Quiz](#220-quiz-update-your-css-quiz)
+  - [2.21. Quiz: Update Your CSS 2](#221-quiz-update-your-css-2)
+  - [2.22. Adding UX to the Update Process](#222-adding-ux-to-the-update-process)
+  - [2.23. Quiz: Adding UX Quiz](#223-quiz-adding-ux-quiz)
+  - [2.24. Triggering an Update](#224-triggering-an-update)
+  - [2.25. Quiz: Triggering an Update Quiz](#225-quiz-triggering-an-update-quiz)
+  - [2.26. Quiz: Caching the Page Skeleton](#226-quiz-caching-the-page-skeleton)
+- [Lesson feedback](#lesson-feedback)
 
 ## Service Worker basics
 
-### 3.01. An Overview of Service Worker
+### 2.01. An Overview of Service Worker
 
 - **Service worker is a JavaScript file that sits between the browser and network requests.**
 - It returns a **promise**.
 - `navigator.serviceWorker.register('/sw.js')`
 - Jake made a website called [is serviceworker ready?](https://jakearchibald.github.io/isserviceworkerready/), to evaluate browser compatibility with different aspects of Service Worker.
 
-### 3.02. Quiz: Scoping Quiz
+### 2.02. Quiz: Scoping Quiz
 
 Got this on my first try.
 
@@ -62,12 +67,12 @@ Got this on my first try.
   </p>
 </details>
 
-### 3.03. Adding a Service Worker To the Project
+### 2.03. Adding a Service Worker To the Project
 
-### 3.04. Quiz: Registering a Service Worker
+### 2.04. Quiz: Registering a Service Worker
 
 - **This was the first coding task of the course.**
-- */js/sw/index.js- is the ServiceWorker.
+- */js/sw/index.js* is the ServiceWorker.
 - JavaScript doesn't have "private methods," but it's common to call methods starting with an underscore, like `this._openSocket();`, if they will only be called by other methods of this object.
 - Service workers are limited to HTTPS, except localhost.
 
@@ -110,28 +115,28 @@ Git
 
 </details>
 
-### 3.05. The Service Worker Lifecycle
+### 2.05. The Service Worker Lifecycle
 
-### 3.06. Quiz: Enabling Service Worker Dev Tools
+### 2.06. Quiz: Enabling Service Worker Dev Tools
 
 - We will be using Chrome Canary.
 
-### 3.07. Quiz: Service Worker Dev Tools
+### 2.07. Quiz: Service Worker Dev Tools
 
 - The Resources tab is no longer there in Chrome Canary. The resources are just shown directly.
 - Typing "sw-waiting" into the test field shows there's a service worker waiting.
 
-### 3.08. Quiz: Service Worker Dev Tools 2
+### 2.08. Quiz: Service Worker Dev Tools 2
 
-### 3.09. Service Worker Dev Tools Continued
+### 2.09. Service Worker Dev Tools Continued
 
 - **The Sources panel of dev tools should have a Service Workers tab next to Scope and Watch with the option to "Force update on page load." I don't see it.** I found the [answer](https://discussions.udacity.com/t/solved-force-update-on-page-load-not-appearing-in-chrome-canary/528320/4) in the discussion forum: It's now on the Applications tab. I also tried Firefox developer edition, but couldn't find the equivalent setting.
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ## Service Worker and requests
 
-### 3.10. Hijacking Requests
+### 2.10. Hijacking Requests
 
 - **Finally using the service worker to intercept requests and serve offline content!**
 - This part demonstrated **general request hijacking.**
@@ -144,7 +149,7 @@ Git
     });
   ```
 
-### 3.11. Quiz: Hijacking Requests 1 Quiz
+### 2.11. Quiz: Hijacking Requests 1 Quiz
 
 Git
 
@@ -166,7 +171,8 @@ Git
   Switched to branch 'task-custom-response'
   ```
 
-  But then the *sw/index.js- file was blank.
+  But then the *sw/index.js* file was blank.
+
   I had to go back to master, find the branch on origin, and delete the branch I made:
 
   ```text
@@ -231,11 +237,12 @@ Git
 
 </details>
 
-### 3.12. Hijacking Requests 2
+### 2.12. Hijacking Requests 2
 
 - Now that we are able to respond to all requests with the same HTML, we will customize the response based on the input. This is **selective response hijacking.**
-- `fetch(url)`
-- `fetch` is a much improved version of `XMLHTTPRequest`. `XMLHTTPRequest` sucks. "Much of the XHR API is over 15 years old." The syntax is strange: It says XML, though it deals with other file types, it says HTTP, although it works with filesystem also, and Request, even though the returned object is a strange mixture of request and response. The event handler puts you in "callback hell."
+- We will need to work with HTTP requests.
+- **The original JavaScript HTTP request method `XMLHTTPRequest` sucks. The XHR API is over 15 years old. The syntax is strange: It says XML, though it deals with other file types, it says HTTP, although it works with filesystem also, and Request, even though the returned object is a strange mixture of request and response. The event handler puts you in "callback hell."**
+- The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is an improvement over the [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
 
   ```javascript
   fetch('/foo').then(function(response)) {
@@ -247,7 +254,7 @@ Git
   })
   ```
 
-### 3.13. Quiz: Hijacking Requests 2 Quiz
+### 2.13. Quiz: Hijacking Requests 2 Quiz
 
 Git
 
@@ -298,7 +305,7 @@ Git
 
 </details>
 
-### 3.14. Hijacking Requests 3
+### 2.14. Hijacking Requests 3
 
 - New code from video:
 
@@ -317,7 +324,7 @@ Git
   });
   ```
 
-### 3.15. Quiz: Hijacking Requests 3 Quiz
+### 2.15. Quiz: Hijacking Requests 3 Quiz
 
 - Respond with Dr. Evil GIF instead of custom text.
 
@@ -409,11 +416,11 @@ Git
 
 </details>
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
 ## Service Worker and caching
 
-### 3.16. Caching and Serving Assets
+### 2.16. Caching and Serving Assets
 
 - The cache API gives us the `caches` object on the global namespace.
 - Start the cache
@@ -447,7 +454,7 @@ Git
 
 - We can control caching when the service worker is installed.
 
-### 3.17. Quiz: Install and Cache Quiz
+### 2.17. Quiz: Install and Cache Quiz
 
 Git
 
@@ -490,7 +497,7 @@ Git
 
 </details>
 
-### 3.18. Quiz: Cache Response Quiz
+### 2.18. Quiz: Cache Response Quiz
 
 Combining `event.respondWith()` and `cache.match()`.
 
@@ -551,14 +558,14 @@ Git
 - Cache photos
 - Cache avatars
 
-### 3.19. Updating the Static Cache
+### 2.19. Updating the Static Cache
 
 - Disabling force update on page load, to more closely simulate the end user experience.
 - We are now going to clear the old cache, so that updates show up, even after disabling force update on page load.
 - We can use `caches.delete(cacheName)` or `caches.keys();`
 - Jake showed us the theme colors in the Sass .scss file at */public/scss/_theme.scss*.
 
-### 3.20. Quiz: Update Your CSS Quiz
+### 2.20. Quiz: Update Your CSS Quiz
 
 Git
 
@@ -591,7 +598,7 @@ Git
 
 </details>
 
-#### Goals after 3.20
+#### Goals after 2.20
 
 - ~~Unobtrusive app updates~~
 - Get the user onto the latest version
@@ -599,11 +606,11 @@ Git
 - Cache photos
 - Cache avatars
 
-### 3.21. Quiz: Update Your CSS 2
+### 2.21. Quiz: Update Your CSS 2
 
 - Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "new-cache-used"
 
-### 3.22. Adding UX to the Update Process
+### 2.22. Adding UX to the Update Process
 
 - As we have learned, new service workers have to wait until the old one goes away before they are active in the browser. Let's do something better. We will include an update notification for the user.
 - As we have seen, when a service worker is registered, it returns a promise.
@@ -634,7 +641,7 @@ Git
 - `navigator.serviceWorker.controller` refers to the service worker controlling the current page.
 - We can tell the user about updates whether they are already present, in progress, or will start later.
 
-### 3.23. Quiz: Adding UX Quiz
+### 2.23. Quiz: Adding UX Quiz
 
 Git
 
@@ -783,7 +790,7 @@ Git
 
 </details>
 
-### 3.24. Triggering an Update
+### 2.24. Triggering an Update
 
 - Code previewed in intro video:
 
@@ -805,7 +812,7 @@ Git
     });
   ```
 
-### 3.25. Quiz: Triggering an Update Quiz
+### 2.25. Quiz: Triggering an Update Quiz
 
 Git
 
@@ -968,7 +975,7 @@ Git
 
 </details>
 
-#### Goals after 3.25
+#### Goals after 2.25
 
 - ~~Unobtrusive app updates~~
 - ~~Get the user onto the latest version~~
@@ -976,7 +983,7 @@ Git
 - Cache photos
 - Cache avatars
 
-### 3.26. Quiz: Caching the Page Skeleton
+### 2.26. Quiz: Caching the Page Skeleton
 
 Git
 
@@ -1060,22 +1067,18 @@ Git
 
 </details>
 
-**DONE WITH LESSON 3!!!**
-
-![Top Gun Celebration GIF](img/top-gun.gif "Top Gun")
-
 Next we will use "one of the web's most hated APIs," `IndexedDB`, and "tame" it to use the good aspects "without getting burned."
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
 
-## Feedback on Lesson 3
+## Lesson feedback
 
 Long lesson, but very informative.
 
 I would encourage students to track their code and take notes in a separate Markdown file. It's very easy to lose data with all the git resets.
 
-[next lesson](udacity-google-04.md)
+[Next lesson](offline-3-indexeddb.md)
 
-[previous lesson](udacity-google-02.md)
+[Previous lesson](offline-1-benefits.md)
 
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)

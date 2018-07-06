@@ -1,38 +1,43 @@
-# Lesson 04. IndexedDB and Caching
+# IndexedDB and Caching
 
-Udacity Grow with Google Scholarship challenge course
+<a href="https://www.udacity.com/">
+  <img src="https://s3-us-west-1.amazonaws.com/udacity-content/rebrand/svg/logo.min.svg" width="300" alt="Udacity logo">
+</a>
 
-Intermediate Web Developer track
+[Offline Web Applications by Google course](https://www.udacity.com/course/offline-web-applications--ud899) lesson 3/3
+
+Udacity Google Mobile Web Specialist Nanodegree program part 3 lesson 08
+
+Udacity Grow with Google Scholarship challenge course lesson 04
 
 Brendon Smith
 
 br3ndonland
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
-- [Table of Contents](#table-of-contents)
 - [Intro](#intro)
-  - [4.01. Introducing the IDB Promised Library](#401-introducing-the-idb-promised-library)
-  - [4.02. Getting Started with IDB](#402-getting-started-with-idb)
-  - [4.03. Quiz: Getting Started with IDB](#403-quiz-getting-started-with-idb)
-  - [4.04. Quiz: More IDB](#404-quiz-more-idb)
+  - [3.01. Introducing the IDB Promised Library](#301-introducing-the-idb-promised-library)
+  - [3.02. Getting Started with IDB](#302-getting-started-with-idb)
+  - [3.03. Quiz: Getting Started with IDB](#303-quiz-getting-started-with-idb)
+  - [3.04. Quiz: More IDB](#304-quiz-more-idb)
 - [Caching](#caching)
-  - [4.05. Using the IDB Cache and Display Entries](#405-using-the-idb-cache-and-display-entries)
-  - [4.06. Quiz: Using IDB Cache](#406-quiz-using-idb-cache)
-  - [4.07. Quiz: Using IDB 2](#407-quiz-using-idb-2)
-  - [4.08. Quiz: Cleaning IDB](#408-quiz-cleaning-idb)
+  - [3.05. Using the IDB Cache and Display Entries](#305-using-the-idb-cache-and-display-entries)
+  - [3.06. Quiz: Using IDB Cache](#306-quiz-using-idb-cache)
+  - [3.07. Quiz: Using IDB 2](#307-quiz-using-idb-2)
+  - [3.08. Quiz: Cleaning IDB](#308-quiz-cleaning-idb)
 - [Cache photos and avatars](#cache-photos-and-avatars)
-  - [4.09. Cache Photos](#409-cache-photos)
-  - [4.10. Quiz: Cache Photos Quiz](#410-quiz-cache-photos-quiz)
-  - [4.11. Cleaning Photo Cache](#411-cleaning-photo-cache)
-  - [4.12. Quiz: Cleaning Photo Cache Quiz](#412-quiz-cleaning-photo-cache-quiz)
-  - [4.13. Quiz: Caching Avatars](#413-quiz-caching-avatars)
-  - [4.14. Outro](#414-outro)
-- [Feedback on Lesson 4](#feedback-on-lesson-4)
+  - [3.09. Cache Photos](#309-cache-photos)
+  - [3.10. Quiz: Cache Photos Quiz](#310-quiz-cache-photos-quiz)
+  - [3.11. Cleaning Photo Cache](#311-cleaning-photo-cache)
+  - [3.12. Quiz: Cleaning Photo Cache Quiz](#312-quiz-cleaning-photo-cache-quiz)
+  - [3.13. Quiz: Caching Avatars](#313-quiz-caching-avatars)
+  - [3.14. Outro](#314-outro)
+- [Lesson feedback](#lesson-feedback)
 
 ## Intro
 
-### 4.01. Introducing the IDB Promised Library
+### 3.01. Introducing the IDB Promised Library
 
 - This will be a crash course in IndexedDB
 - The wittr app will benefit from a **database**. It will allow us to add and remove posts as needed.
@@ -48,7 +53,7 @@ br3ndonland
   - It has its own event-based promise system (it predates promises) that can be confusing.
 - Jake believes in teaching the web platform rather than libraries, but in this case, we will use **[IndexedDB Promised (idb)](https://github.com/jakearchibald/idb)**, which Jake created. It mirrors the IndexedDB API and uses promises instead of events.
 
-### 4.02. Getting Started with IDB
+### 3.02. Getting Started with IDB
 
 - Navigate to [http://localhost:8888/idb-test](http://localhost:8888/idb-test) which is currently just a blank page with a script tag to import `idb`.
 - Jake walked through some of the code in `idb`.
@@ -94,7 +99,7 @@ dbPromise.then(function(db) {
 });
 ```
 
-### 4.03. Quiz: Getting Started with IDB
+### 3.03. Quiz: Getting Started with IDB
 
 Git
 
@@ -188,7 +193,7 @@ dbPromise
   });
 ```
 
-### 4.04. Quiz: More IDB
+### 3.04. Quiz: More IDB
 
 Task: Create an index that sorts people by age.
 
@@ -293,7 +298,7 @@ dbPromise
 
 ## Caching
 
-### 4.05. Using the IDB Cache and Display Entries
+### 3.05. Using the IDB Cache and Display Entries
 
 Next, we will create a database for wittr posts. The posts will still arrive via a web socket,but can be served offline as well from `idb`.
 
@@ -304,7 +309,7 @@ Next, we will create a database for wittr posts. The posts will still arrive via
 - `IndexController._openSocket` listens for the message event, and passes data to the `IndexController._onSocketMessage` method.
 - `IndexController._onSocketMessage` parses JSON data and passes it to `IndexController._postsView.addPosts`.
 
-### 4.06. Quiz: Using IDB Cache
+### 3.06. Quiz: Using IDB Cache
 
 Git
 
@@ -378,7 +383,7 @@ IndexController.prototype._onSocketMessage = function(data) {
 
 </details>
 
-### 4.07. Quiz: Using IDB 2
+### 3.07. Quiz: Using IDB 2
 
 We now have wittr posts in the database, but we need to serve posts from IDB wittrs before opening the web socket.
 
@@ -429,7 +434,7 @@ IndexController.prototype._showCachedMessages = function() {
 
 </details>
 
-### 4.08. Quiz: Cleaning IDB
+### 3.08. Quiz: Cleaning IDB
 
 So far, so good, but we have only been adding posts to the database. We can't just keep adding posts indefinitely.
 
@@ -511,7 +516,7 @@ IndexController.prototype._onSocketMessage = function(data) {
 
 ## Cache photos and avatars
 
-### 4.09. Cache Photos
+### 3.09. Cache Photos
 
 - We want to cache photos as they appear.
 - If we retrieve images from the cache API, it's more memory efficient and renders faster:
@@ -522,7 +527,7 @@ IndexController.prototype._onSocketMessage = function(data) {
 - We will be working with a responsive image. It has different sizes based on the viewport width.
 - Using responses multiple times: `response.json();` cannot be re-read with `response.blob();`. Once the data are read in as json, it disappears from memory. This applies to `event.respondWith(response);` as well. This is a problem for our photos. We want to open a cache, fetch from the network, and send the response both to the cache and the browser. To fix this, we clone the response with `response.clone()`. A clone goes to the cache, and the original response gets sent to the page.
 
-### 4.10. Quiz: Cache Photos Quiz
+### 3.10. Quiz: Cache Photos Quiz
 
 Git
 
@@ -572,7 +577,7 @@ function servePhoto(request) {
 
 </details>
 
-### 4.11. Cleaning Photo Cache
+### 3.11. Cleaning Photo Cache
 
 As we saw in [4.08. Quiz: Cleaning IDB](#408-quiz-cleaning-idb), we eventually need to clear out the cache. We can't keep adding to it infinitely.
 
@@ -592,7 +597,7 @@ cache.keys().then(function(requests) {
 
 Next, we will clean the image cache.
 
-### 4.12. Quiz: Cleaning Photo Cache Quiz
+### 3.12. Quiz: Cleaning Photo Cache Quiz
 
 Git
 
@@ -657,7 +662,7 @@ IndexController.prototype._cleanImageCache = function() {
 
 </details>
 
-#### Goals after 4.12
+#### Goals after 3.12
 
 - ~~Unobtrusive app updates~~
 - ~~Get the user onto the latest version~~
@@ -665,7 +670,7 @@ IndexController.prototype._cleanImageCache = function() {
 - ~~Cache photos~~
 - Cache avatars
 
-### 4.13. Quiz: Caching Avatars
+### 3.13. Quiz: Caching Avatars
 
 Final task! Caching avatars. Avatars are also responsive images, but they vary by density rather than width. The URL pattern is, correspondingly, a little different than for other images:
 
@@ -735,7 +740,7 @@ function serveAvatar(request) {
 
 </details>
 
-### 4.14. Outro
+### 3.14. Outro
 
 #### Goals complete
 
@@ -756,12 +761,10 @@ function serveAvatar(request) {
 
 <img src="img/udacity-google-05-0101.png" alt="Offline web apps completion" width="75%">
 
-## Feedback on Lesson 4
+## Lesson feedback
 
 Again, a very informative and helpful lesson. It would be nice to use Udacity's browser-based quiz system instead of all the git resets, but I understand that it would be difficult to demo the app without a local clone of the git repo.
 
-[next lesson](udacity-google-06.md)
+[Previous lesson](offline-2-sw.md)
 
-[previous lesson](udacity-google-03.md)
-
-[(Back to TOC)](#table-of-contents)
+[(Back to top)](#top)
