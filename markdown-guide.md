@@ -127,8 +127,8 @@ Fenced code blocks inside triple backticks
   - Python
 
     ```python
-    name = input("Please type your name: ")
-    print('Great job', name + '!', 'Keep practicing your Python!')
+    name = input('Please type your name: ')
+    print('Great job {}!, Keep practicing your Python!'.format(name))
     ```
 
 #### File paths
@@ -173,7 +173,7 @@ Fenced code blocks inside triple backticks
 
 - As I go through the lesson, I keep a computational narrative explaining what I do at each step.
   - I include code blocks to show the code I'm writing.
-  - If I get stuck, I explain the steps I take to solve the problem. For example, I had a [Git issue during Lesson 3](https://github.com/br3ndonland/udacity-google/blob/master/udacity-google-03.md#311-quiz-hijacking-requests-1-quiz).
+  - If I get stuck, I explain the steps I take to solve the problem.
 - At the end of the lesson, I generate a Table of Contents from the headers.
 
 [(Back to top)](#top)
@@ -252,9 +252,11 @@ IDE = Integrated Development Environment
 
 ##### Bear Cons
 
-- Apple only
+- Apple only. Need Android app.
 - Not encrypted
 - Collaboration features could be better. No shared notebooks.
+- Sidebar should be more condensed.
+- Web clipper needs some work. Doesn't properly capture text on all sites.
 
 #### [Day One](http://dayoneapp.com/)
 
