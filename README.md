@@ -30,11 +30,11 @@ Here's how it went down:
   >#GoogleUdacityScholars #GrowWithGoogle
 
 - Started the challenge course materials February 21, 2018.
-- Completed the challenge course materials on March 7, 2018. The course taught us how to build progressive web apps and use the new features in JavaScript ES6.
+- Completed the challenge course materials on March 7, 2018 (working on Udacity basically full time). The course taught us how to build progressive web apps and use the new features in JavaScript ES6.
 - Attended five local meetups.
-- Started building a collaborative open-source transportation app, [MBTAccess](https://github.com/growwithgooglema/gwg-mbta), in April 2018.
+- Started building a collaborative open-source transportation app, [MBTAccess](https://github.com/growwithgooglema/mbtaccess), in April 2018.
 - **Ranked in the top 10% of 10,000 students in the intermediate web developer track.** Ranking was based on completing all course materials, as well as participation in the Slack workspace, discussion forum, and meetups.
-- **Won a full scholarship to the [Google Mobile Web Specialist Nanodegree program](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024).**
+- **Won a full scholarship to the [Google Mobile Web Specialist Nanodegree program](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024).** See my [udacity-google-mws](https://github.com/br3ndonland/udacity-google-mws) repo for materials from the Nanodegree program.
 
 ## Course materials
 
