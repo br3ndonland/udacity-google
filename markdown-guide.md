@@ -98,42 +98,51 @@ Fenced code blocks inside triple backticks
 
   - JavaScript
 
-    ```javascript
-    const viewModel = {
-      toggleList: () => {
-        let selection = dropdown.value
-        let markers = markersArray.filter(marker => marker.city === selection)
-        let li = document.querySelectorAll('li')
-        if (selection === 'All') {
-          li.forEach(li => {
-            li.classList.remove('d-none')
-          })
-        } else {
-          li.forEach(li => {
-            let markerTitles = markers.map(marker => marker.title)
-            let liText = li.textContent
-            if (markerTitles.includes(liText)) {
-              li.classList.remove('d-none')
-            } else {
-              li.classList.add('d-none')
-            }
-          })
-        }
+    ```js
+    // FizzBuzz from Trevor Dixon
+    // https://stackoverflow.com/a/17623252
+
+    const fizzBuzz = () => {
+      for (let i = 1; i <= 100; i++) {
+        let out = ''
+        if (i % 3 === 0) out += 'Fizz'
+        if (i % 5 === 0) out += 'Buzz'
+        console.log(out || i)
       }
     }
+    fizzBuzz()
     ```
 
   - Python
 
-    ```python
-    name = input('Please type your name: ')
-    print('Great job {}!, Keep practicing your Python!'.format(name))
+    ```py
+    """
+    FizzBuzz
+    https://medium.freecodecamp.org/a-software-engineering-survival-guide-fe3eafb47166
+    """
+
+
+    def fizzbuzz():
+        """Write a program that prints the numbers from 1 to 100.
+        For multiples of three print 'Fizz' instead of the number.
+        For multiples of five print 'Buzz'.
+        For numbers which are multiples of both three and five print 'FizzBuzz'.
+        """
+        for i in range(1, 101):
+            if i % 3 == 0 and i % 5 == 0:
+                print("FizzBuzz")
+            elif i % 3 == 0:
+                print("Fizz")
+            elif i % 5 == 0:
+                print("Buzz")
+            else:
+                print(i)
+
+
+    if __name__ == "__main__":
+        fizzbuzz()
+
     ```
-
-#### File paths
-
-- Local disk: use UNIX format file paths
-- Dropbox URLs: **To use Dropbox links in Markdown, change the end of the link from dl=0 to dl=1.** In this way, images can be embedded and datasets can be referenced by URL without having to download a local copy.
 
 #### Images
 
