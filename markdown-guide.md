@@ -50,8 +50,8 @@ Suggestions for standardized Markdown formatting have been provided by [markdown
 - Create headers with `#`. Each `#` increases header level (`##` is outline level two), up to six levels.
 - **For organization, I reserve H1 (`#`) for the title of the file at the top. Major headers begin with H2 (`##`).**
 - I use headers to create a **Table of Contents (TOC)** at the beginning of the file.
-  - **I add `## Table of Contents` before the TOC for navigation.**
-  - **I include [(Back to top)](#top) links after each section for easy navigation back to the table of contents.** Simply write `[(Back to top)](#top)`.
+  - **I add `## Table of Contents` before the TOC for navigation.** I also include `<!-- omit in toc -->`, which tells the VSCode Markdown All In One extension not to put the `## Table of Contents` header itself into the TOC.
+  - **I include [(Back to top)](#top) links after each section for easy navigation back to the top of the page.** Simply write `[(Back to top)](#top)`.
   - I add and auto-update TOCs in vscode with the [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) extension.
   - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one), JupyterLab and RStudio provide inline TOC displays ([see below](#jupyterlab)).
   - Prior to vscode, I was adding and updating TOCs with [DocToc](https://github.com/thlorenz/doctoc) from the command line.
@@ -59,7 +59,7 @@ Suggestions for standardized Markdown formatting have been provided by [markdown
 #### Text
 
 - **Bold text:** use **double star at beginning and end of text to bold**
-- **Italics:** *Single star with no space before and after.* _Underscores also work._
+- **Italics:** *Single star with no space before and after.* Note that _underscores also work._
 - **I prefer to indent Markdown text with two spaces.** Four spaces can be read by some systems as code blocks.
 
 #### Lists
@@ -71,9 +71,8 @@ Suggestions for standardized Markdown formatting have been provided by [markdown
 
 1. Ordered lists
 2. Like this
-    - And you can add in unordered lists.
-    - Like this
-3. Inside of ordered lists.
+    - And you can add in unordered lists within ordered lists like this.
+    - Adding an unordered list within an ordered list requires two levels of indentation.
 
 #### Code
 
@@ -89,12 +88,12 @@ Fenced code blocks inside triple backticks
   like this
   ```
 
-- In GitHub-Flavored Markdown, you can specify the language next to the first set of triple backticks for syntax highlighting:
+- In GitHub-Flavored Markdown, you can specify the language next to the first set of triple backticks for syntax highlighting. Each language has a full name (like `python`), and an abbreviation (like `py`). The full list of supported languages can be found in [GitHub's Linguist repo](https://github.com/github/linguist), which is used to detect languages on GitHub. The *[languages.yml](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)* contains a list of the available abbreviations (called "extensions" in the YAML) for each language.
   - Shell
 
-    ```shell
-    $ git reset --hard
-    $ git checkout origin/task-page-skeleton
+    ```sh
+    git status
+    git commit
     ```
 
   - JavaScript
