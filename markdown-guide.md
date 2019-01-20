@@ -276,42 +276,52 @@ For examples of how to use Jupyter Notebook/JupyterLab, you can check out my [Ud
 
 ### Note apps
 
-#### [Bear](http://www.bear-writer.com/)
+Also see [Notable's comparison table](https://raw.githubusercontent.com/fabiospampinato/notable/master/resources/comparison/table.png).
 
-##### Bear Pros
+#### [Bear](https://bear.app/)
+
+##### Bear pros
 
 - This is one of the best Markdown note apps.
 - Supports Markdown. Uses a modified syntax called Polar Bear.
-- Tags and subtags
+- Tags and subtags (nested tags)
+- Untagged notes easily identified
 - Themes
 - Syntax highlighting
 - Supports internal relative links
-- Evernote migration and import
+- Evernote migration and import (though not perfect-see cons below)
 - Writing tools, like word counts and read time
 - Reasonably-priced subscription plan
 
-##### Bear Cons
+##### Bear cons
 
-- Apple only. Need Android app.
+- Apple only (macOS, iOS, iCloud), with [no plans to support Android](https://bear.app/faq/What%20about%20Bear%20for%20web,%20Android,%20or%20Windows/).
 - Not encrypted
 - Collaboration features could be better. No shared notebooks.
 - Sidebar should be more condensed.
 - Web clipper needs some work. Doesn't properly capture text on all sites.
+- Evernote import doesn't convert Evernote internal note links to Bear note links. Joplin also has this same issue, and it's a major barrier for switching from Evernote.
 
-#### [Day One](http://dayoneapp.com/)
+#### [Day One](https://dayoneapp.com/)
 
-Day One [supports Markdown](http://help.dayoneapp.com/tips-and-tutorials/markdown-guide).
+##### Day One pros
+
+- Day One [supports Markdown](http://help.dayoneapp.com/tips-and-tutorials/markdown-guide).
+
+##### Day One cons
+
+- Subscription service
 
 #### [Dropbox Paper](https://www.dropbox.com/paper)
 
-##### Dropbox Paper Pros
+##### Dropbox Paper pros
 
 - Markdown export
 - Collaboration
 - Sync
 - Embedding works well
 
-##### Dropbox Paper Cons
+##### Dropbox Paper cons
 
 - Paper files don't show up in your regular Dropbox file structure
 - No tags
@@ -336,18 +346,84 @@ iA = information Architects
 - Lacks some of the features of Bear
 - No syntax highlighting
 - Multimedia?
+- Evernote import?
 
 #### [Inkdrop](https://www.inkdrop.info/)
 
-[Features](https://www.inkdrop.info/features): Markdown, themes, encryption, cross-platform. Seems to be like Bear, but cross-platform. Check out the developer's [Medium blog](https://blog.inkdrop.info).
+##### Inkdrop pros
+
+- [Features](https://www.inkdrop.info/features):
+  - Markdown
+  - Themes
+  - Encryption
+  - Cross-platform. Seems to be like Bear, but cross-platform.
+  - Check out the developer's [Medium blog](https://blog.inkdrop.info).
+
+##### Inkdrop cons
+
+- Subscription plan
+- Android app has poor reviews (~3.3 rating)
+
+#### [Joplin](https://joplin.cozic.net/)
+
+##### Joplin pros
+
+- Open-source
+- Desktop is Electron, mobile is React Native.
+- Flexible cloud sync
+- Markdown format
+- Evernote import
+
+##### Joplin cons
+
+- Evernote to Joplin migration not ideal (see below).
+- Documentation on the website is okay, but [contributing guidelines](https://github.com/laurent22/joplin/blob/master/CONTRIBUTING.md) are not well delineated. The code and stack should be clearly explained so people can easily contribute. I should know roughly where I need to go in the codebase to add a feature.
+- Laurent Cozic only makes $60/month on Patreon. Not sustainable.
+
+##### Evernote to Joplin migration
+
+- Tried this on 201809
+- Export Evernote notebook to .enex.
+- Joplin -> Import -> ENEX
+  - Images came through
+  - Formatting generally came through well.
+- Updates needed
+  - Critical
+    - **Internal note links import as Evernote links, not Joplin links. This is a critical issue for me.**
+      - Example:
+        - Joplin internal note link: `:/cddf8681528148b9aad5077198e58a4a`
+        - Evernote internal note link: `evernote:///view/6168869/s55/426ec3ae-6cad-48c7-aab3-b300845063ef/426ec3ae-6cad-48c7-aab3-b300845063ef/`
+    - Links sometimes also just lead to the top note result in the notebook, rather than the specific note needed.
+    - Note URL not yet available (issue #[427](https://github.com/laurent22/joplin/issues/427)). This will be important for clipped news articles.
+    - Bold text comes through as big section breaks (see issue #[767](https://github.com/laurent22/joplin/issues/767))
+      - I had to un-bold all the headers I put into my notes.
+  - Enhancements
+    - Evernote code blocks not transferring in as Markdown code blocks.
+    - Markdown TOC (issue #[478](https://github.com/laurent22/joplin/issues/478))
+    - Searching in notes: The search bar only searches notes, but doesn't reveal results within the note. See #[382](https://github.com/laurent22/joplin/issues/382).
 
 #### [Jottings](http://jottingsapp.com/)
 
-iOS note app with Markdown, tagging, and Dropbox sync.
+iOS-only note app with Markdown, tagging, and Dropbox sync.
+
+#### [Journey](https://2appstudio.com/journey/)
+
+##### Journey pros
+
+- Encrypted
+- Cross-platform
+- Google Drive sync
+- Import from Day One, Evernote, etc
+
+##### Journey cons
+
+- Forces Google login before allowing access to app on Mac. This is a problem because Google Drive sync is not allowed when [Google Advanced Protection Program](https://landing.google.com/advancedprotection/) is enabled.
+- Subscription options
+- Vague Evernote import capabilities
 
 #### [Laverna](https://laverna.cc/)
 
-##### Laverna Pros
+##### Laverna pros
 
 - Encrypted
 - Markdown
@@ -357,29 +433,50 @@ iOS note app with Markdown, tagging, and Dropbox sync.
 - Open source
 - Built with Electron
 
-##### Laverna Cons
+##### Laverna cons
 
 - Evernote import?
 - No Android app yet
 - No dark themes yet
 - No Markdown TOC
+- Development coming along slowly
+
+#### [Notable](https://github.com/fabiospampinato/notable)
+
+Heard about Notable via the [Changelog weekly email #238](https://email.changelog.com/t/t-614770D9C810C3FD2540EF23F30FEDED).
+
+##### Notable pros
+
+From the [README](https://github.com/fabiospampinato/notable/blob/master/README.md):
+
+> The markdown-based note-taking app that doesn't suck.
+>
+> I couldn't find a note-taking app that ticked all the boxes I'm interested in: notes are written and rendered in GitHub-flavored Markdown, no WYSIWYG, no proprietary formats, I can run a search & replace across all notes, notes support attachments, the app isn't bloated, the app has a pretty interface, tags are indefinitely nestable and can import Evernote notes (because that's what I was using before).
+>
+> So I built my own.
+
+The developer has made extensive comparisons with other note apps. See [Notable's comparison table](https://raw.githubusercontent.com/fabiospampinato/notable/master/resources/comparison/table.png).
+
+##### Notable cons
+
+- No mobile app yet
 
 #### [Simplenote](https://simplenote.com/)
 
 From WordPress
 
-##### Simplenote Pros
+##### Simplenote pros
 
 - Markdown support
 
-##### Simplenote Cons
+##### Simplenote cons
 
 - Evernote import?
 - Multimedia?
 
 #### [Standard Notes](https://standardnotes.org/getting-started)
 
-##### Standard Notes Pros
+##### Standard Notes pros
 
 - Simple, dependable text note app
 - Note tagging
@@ -389,21 +486,47 @@ From WordPress
 - Backup to Dropbox and Google Drive
 - "Built to last"
 
-##### Standard Notes Cons
+##### Standard Notes cons
 
-- Extensions only work on desktop and web.
-- Can't attach files from mobile devices.
-- Not great with multimedia. Tried to drag and drop a movie, and it just displayed the movie instead of my notes.
-- [Evernote import](https://standardnotes.org/evernote): Formatting, images, and attachments will not be copied over. Have to break up .enex into 250 MB segments.
+- User interface is generally not intuitive.
+  - The Account -> Encryption section says "8/8 notes and tags encrypted." Why would I want to combine the number of notes with the number of tags?
+- Very difficult to even figure out how to log in to my account online. Apparently there are separate accounts for the web app and premium? I think it's the [dashboard](https://dashboard.standardnotes.org/).
+- Extensions make it way too confusing.
+  - I have to select different editors? I don't want a different editor for every task, I want to use one editor for all tasks.
+  - Extensions used to only work on desktop and web (they now work on mobile apparently).
+- Attachments
+  - Can't attach files from mobile devices.
+  - Not great with multimedia. Tried to drag and drop a movie, and it just displayed the movie instead of my notes.
+- [Evernote import](https://standardnotes.org/evernote):
+  - Formatting, images, and attachments will not be copied over.
+  - Have to break up .enex into 250 MB segments.
+  - Import is not intuitive. Importing anything goes through import backup, but most imports are not backups.
+  - **Doesn't do a good job of Evernote HTML to Markdown conversion.** Loses file attachments and lists, doesn't recognize headers. The options are either retain HTML, or strip all formatting.
   - My response to email survey:
     > *Have you ever tried Standard Notes Extended?*
     > No. If I became a regular user, I would happily pay for Extended. I'm not regularly using Standard Notes because I'm heavily invested in Evernote. I've been using it for six years, and have a 4 GB database with ~4400 tagged notes. I would love to migrate from Evernote to another service, converting from rich text to Markdown and encrypting my data, while keeping my multimedia attachments. Bear is one example of this type of migration, but I don't use Bear because it's Apple-only.
+
+#### [Trilium Notes](https://github.com/zadam/trilium)
+
+Heard about Trilium via the [Changelog weekly email #237](https://email.changelog.com/t/t-2599C05F2D5B961E2540EF23F30FEDED).
+
+##### Trilium pros
+
+- Evernote import: I haven't tried it yet, so I can't comment on import of formatting, internal links, etc.
+- Code editing with syntax highlighting
+- Also supports mind mapping
+- Encryption
+
+##### Trilium cons
+
+- Work in progress
+- No mobile app yet
 
 #### [Turtl](https://turtlapp.com/)
 
 [Turtl blog on Tumblr](http://turtlapp.tumblr.com/)
 
-##### Turtl Pros
+##### Turtl pros
 
 - Promising encrypted Evernote alternative
 - Evernote import coming in 0.6.5
@@ -412,15 +535,15 @@ From WordPress
 - Some multimedia support
 - Android app
 
-##### Turtl Cons
+##### Turtl cons
 
-- Still needs more development
+- Still needs more development, and development has been very slow.
 - Not sure how dependable this app will be. The developers don't even own a MacBook.
 - No dark themes yet
 
 #### [Typora](https://typora.io/)
 
-##### Typora Pros
+##### Typora pros
 
 - File list panel, allowing you to use any cloud service to sync.
 - CSS configurable
@@ -428,7 +551,7 @@ From WordPress
 - Document export
 - Footnote feature is cool
 
-##### Typora Cons
+##### Typora cons
 
 - Feature-poor
 - Not for android
@@ -436,19 +559,19 @@ From WordPress
 
 #### [Ulysses](https://ulyssesapp.com/)
 
-##### Ulysses Pros
+##### Ulysses pros
 
 - Nice interface
 - Markdown
 - Dark themes
 - Can also manage journal articles and research
 
-##### Ulysses Cons
+##### Ulysses cons
 
-- Apple only
+- Apple only (macOS/iOS)
 - Encryption?
-- Moved to expensive subscription model
-- Maintains article tags as "keywords," a fatal flaw shared by other apps like [Papers](https://www.readcube.com/papers/).
+- Moved to subscription model
+- Maintains article tags as "keywords," a fatal flaw shared by other apps like [Papers](https://www.readcube.com/papers/). See my notes on citation managers in [this public GitHub Gist](https://gist.github.com/br3ndonland/8d4a9853922b475918faf1687163e7fc)
 
 ### In-browser editors
 
@@ -475,6 +598,6 @@ From WordPress
 
 #### ~~Slack~~
 
-Slack uses a simplified pseudo-Markdown and has [stated](https://get.slack.help/hc/en-us/articles/202288908#a-note-about-markdown) that it will not be building in full Markdown capabilities.
+Slack uses a simplified pseudo-Markdown to format messages. I call it "slackdown." On the [Slack "Format your messages" page](https://get.slack.help/hc/en-us/articles/202288908-Format-your-messages), Slack states that it will not be building in full Markdown capabilities.
 
 [(Back to top)](#top)
