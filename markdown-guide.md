@@ -230,9 +230,41 @@ IDE = Integrated Development Environment
 
 #### JupyterLab
 
-- [JupyterLab](http://jupyterlab.readthedocs.io/en/latest/) is produced by [Project Jupyter](http://jupyter.org/). It is most widely used for scientific computing with Python, but supports many programming languages. It allows you to create "reproducible computational narratives," containing Markdown text interspersed with code chunks that you can run. JupyterLab has [some awesome features](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) and was previously Jupyter notebook.
-- It is easiest to install JupyterLab through [Anaconda](http://jupyter.org/install). It can also be installed from [Homebrew](https://brew.sh).
-- For examples of how to use Jupyter Notebook/JupyterLab, you can check out my [Udacity Full Stack Web Developer Nanodegree program repo](https://github.com/br3ndonland/udacity-fsnd).
+[JupyterLab](http://jupyterlab.readthedocs.io/en/latest/) is produced by [Project Jupyter](http://jupyter.org/). It is most widely used for scientific computing with Python, but supports many programming languages. It allows you to create "reproducible computational narratives," containing Markdown text interspersed with code chunks that you can run. JupyterLab has [some awesome features](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) and was previously Jupyter notebook.
+
+I would suggest using [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) within a Pipenv virtual environment. I use the [Homebrew](https://brew.sh) package manager on macOS to install Python 3, the [Pipenv](https://pipenv.readthedocs.io/en/latest/) virtual environment tool, and [Jupyter](https://jupyter.org). Here are some setup instructions:
+
+- Install Homebrew from the command line as described on the [Homebrew website](https://brew.sh).
+- After installing Homebrew, install the necessary Homebrew packages from the command line:
+
+  ```sh
+  brew install python3
+  brew install pipenv
+  brew install jupyter
+  ```
+
+- Once installation of Homebrew and its packages is complete, navigate to the desired directory, or [clone a repository from GitHub](https://help.github.com/articles/cloning-a-repository/).
+
+  ```sh
+  cd path/to/a/directory
+  git clone
+  ```
+
+- Finally, install the virtual environment with Pipenv, which includes [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) and the other necessary packages, and launch JupyterLab to run the Jupyter Notebook.
+
+  ```sh
+  cd tdi-proposal
+  pipenv install
+  pipenv shell
+  # Install any JupyterLab extensions at this point
+  (pipenv) $ jupyter labextension install @jupyterlab/toc
+  # Launch JupyterLab
+  (pipenv) $ jupyter lab
+  ```
+
+I previously used [Anaconda](https://www.anaconda.com/) to manage my Python and R distributions, and now use Homebrew. I switched because Anaconda is not as flexible or general as Homebrew, not as important for virtual environments now that we have Pipenv, and is a very large installation that is difficult to manage and uninstall.
+
+For examples of how to use Jupyter Notebook/JupyterLab, you can check out my [Udacity Full Stack Web Developer Nanodegree program repo](https://github.com/br3ndonland/udacity-fsnd).
 
 #### RStudio
 
