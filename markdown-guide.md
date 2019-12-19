@@ -83,7 +83,7 @@ Fenced code blocks inside triple backticks
     git commit
     ```
 
-  - JavaScript _fizzbuzz.js_, ES6, formatted with [Prettier](https://prettier.io/)): `javascript` or `js`
+  - JavaScript _fizzbuzz.js_, ES6, formatted with [Prettier](https://prettier.io/): `javascript` or `js`
 
     ```js
     const fizzBuzz = () => {
@@ -96,7 +96,7 @@ Fenced code blocks inside triple backticks
     }
     ```
 
-  - Python _fizzbuzz.py_, Python 3, formatted with [Black](https://black.readthedocs.io/en/stable/)): `python` or `py`
+  - Python _fizzbuzz.py_, Python 3, formatted with [Black](https://black.readthedocs.io/en/stable/): `python` or `py`
 
     ```py
     def fizzbuzz():
