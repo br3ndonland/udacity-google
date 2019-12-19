@@ -1,16 +1,12 @@
 # Markdown guide
 
-Brendon Smith
-
-br3ndonland
+Brendon Smith ([br3ndonland](https://github.com/br3ndonland))
 
 ## Table of Contents <!-- omit in toc -->
 
-- [Intro](#intro)
 - [Markdown syntax](#markdown-syntax)
   - [Syntactic suggestions](#syntactic-suggestions)
-  - [Resources](#resources)
-- [Markdown methods](#markdown-methods)
+  - [General Markdown resources](#general-markdown-resources)
 - [Markdown apps](#markdown-apps)
   - [Text editors](#text-editors)
   - [IDEs](#ides)
@@ -18,21 +14,11 @@ br3ndonland
   - [In-browser editors](#in-browser-editors)
   - [Social apps](#social-apps)
 
-## Intro
+**Markdown is a simplified HTML syntax.** It has most of the functionality of HTML while being much easier to read, and is very widely used (for example, READMEs on GitHub).
 
-**Markdown is a syntax for easy generation of HTML pages from plain text files.** It has most of the functionality of HTML while being much easier to read, and is very widely used (for example, READMEs on GitHub).
-
-Here's a comparison of the same code written in Markdown and HTML:
+Here's a comparison of the same code written in Markdown and HTML (using Sublime Text):
 
 <img src="img/markdown-html-comparison.png" alt="Markdown and HTML comparison" width="75%">
-
-When coding projects, I keep **computational narratives** describing what I do at each step, like journals or lab notebooks. I learned how to keep computational narratives from scientific computing in Jupyter Notebook/JupyterLab and RMarkdown. Computational narratives capture my train of thought, so I can retrace my steps, retain what I have learned, and teach others.
-
-I have also been looking for an alternative to Evernote, with Markdown instead of rich text.
-
-I hope this is helpful!
-
-[(Back to top)](#top)
 
 ## Markdown syntax
 
@@ -58,15 +44,15 @@ Suggestions for standardized Markdown formatting have been provided by [markdown
 
 #### Text
 
-- **Bold text:** use **double star at beginning and end of text to bold**
-- **Italics:** _Single star with no space before and after._ Note that _underscores also work._
+- **Bold text:** use **double star at beginning and end of text to bold.**
+- _Italics:_ use _underscores or single stars with no space before and after._
 - **I prefer to indent Markdown text with two spaces.** Four spaces can be read by some systems as code blocks.
 
 #### Lists
 
 - **Lists should be preceded by a blank line.**
 - Single `*`, `-`, or `+` at beginning of line, followed by tab or space.
-  - Indent with tab for next outline level
+  - Indent for next outline level
     - Like this
 
 1. Ordered lists
@@ -90,20 +76,16 @@ Fenced code blocks inside triple backticks
 
 - In GitHub-Flavored Markdown, you can specify the language next to the first set of triple backticks for syntax highlighting. Each language has a full name (like `python`), and an abbreviation (like `py`). The full list of supported languages can be found in [GitHub's Linguist repo](https://github.com/github/linguist), which is used to detect languages on GitHub. The _[languages.yml](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)_ contains a list of the available abbreviations (called "extensions" in the YAML) for each language.
 
-  - Shell
+  - Shell: `shell` or `sh`
 
     ```sh
     git status
     git commit
     ```
 
-  - JavaScript
+  - JavaScript _fizzbuzz.js_, ES6, formatted with [Prettier](https://prettier.io/)): `javascript` or `js`
 
     ```js
-    // FizzBuzz
-    // https://medium.freecodecamp.org/a-software-engineering-survival-guide-fe3eafb47166
-    // https://stackoverflow.com/a/17623252
-
     const fizzBuzz = () => {
       for (let i = 1; i <= 100; i++) {
         let out = ""
@@ -112,19 +94,11 @@ Fenced code blocks inside triple backticks
         console.log(out || i)
       }
     }
-    fizzBuzz()
     ```
 
-  - Python
+  - Python _fizzbuzz.py_, Python 3, formatted with [Black](https://black.readthedocs.io/en/stable/)): `python` or `py`
 
     ```py
-    """
-    FizzBuzz
-    https://medium.freecodecamp.org/a-software-engineering-survival-guide-fe3eafb47166
-    """
-    ```
-
-
     def fizzbuzz():
         """Print 1-100
         Multiples of 3: Fizz
@@ -138,11 +112,6 @@ Fenced code blocks inside triple backticks
             if i % 5 == 0:
                 out += "Buzz"
             print(out or i)
-
-
-    if __name__ == "__main__":
-        fizzbuzz()
-
     ```
 
 #### Images
@@ -151,15 +120,17 @@ Fenced code blocks inside triple backticks
 ![Alt text that appears below the image in the output](/path/to/img.jpg "Optional title that will show up when you hover over the image in the output")`
 ```
 
-**I still prefer to use HTML image tags, because they allow for more customization:**
+**I still prefer to use HTML image tags, because they allow for more customization.** In particular, it's useful to set width on SVG.
 
 ```text
-<img src="/path/to/img.jpg" alt="Alt text" class="" width="75%">
+<img src="https://s3-us-west-1.amazonaws.com/udacity-content/rebrand/svg/logo.min.svg" width="150" alt="Udacity logo">
 ```
+
+<img src="https://s3-us-west-1.amazonaws.com/udacity-content/rebrand/svg/logo.min.svg" width="150" alt="Udacity logo">
 
 [(Back to top)](#top)
 
-### Resources
+### General Markdown resources
 
 - [MarkdownGuide](https://www.markdownguide.org/)
 - [markdownlint syntax suggestions](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
@@ -168,22 +139,6 @@ Fenced code blocks inside triple backticks
 - [Dillinger](https://dillinger.io/) is a helpful online Markdown editor with live preview.
 - [Turndown](https://domchristie.github.io/turndown/) is an HTML to Markdown converter.
 - [Udacity README course](https://www.udacity.com/course/writing-readmes--ud777)
-
-[(Back to top)](#top)
-
-## Markdown methods
-
-- When I begin a Udacity lesson, I create a new file in my text editor.
-- I use `H1` for the title at the top, like `# Lesson 3. An Overview of Service Worker`.
-- I usually reserve `H2` in case I want to break the lesson into different parts.
-- I paste in the sections of the lesson from the Udacity interface, and set each one to `H3`.
-
-  <img src="img/markdown-methods-lesson01.png" alt="Copying lesson sections from Udacity" width="300px">
-
-- As I go through the lesson, I keep a computational narrative explaining what I do at each step.
-  - I include code blocks to show the code I'm writing.
-  - If I get stuck, I explain the steps I take to solve the problem.
-- At the end of the lesson, I generate a Table of Contents from the headers.
 
 [(Back to top)](#top)
 
@@ -213,15 +168,20 @@ Here's how to set up Sublime Text for Markdown:
 
 **In my opinion, vscode is currently the best editor for working with Markdown.** Here's why:
 
-- Built in live preview
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  - Autoformatter for Markdown files
+  - In addition to formatting Markdown itself, it actually formats source code inside fenced code blocks. Awesome feature.
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
   - TOC auto-generation and update
   - Live TOC in explorer panel
   - Easier keyboard shortcuts than Sublime Text (with the exception of hyperlink insertion, which I added with a [keybinding](https://github.com/neilsustc/vscode-markdown/issues/20))
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
   - Lints Markdown files based on style recommendations for standardizing code.
+- Built in live preview
 
-Full vscode configuration is available via [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) with [this public GitHub gist](https://gist.github.com/br3ndonland/01b625629ef98ec7a919a7b927d0ddaf).
+Full vscode configuration is available via [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) with [this public GitHub gist](https://gist.github.com/br3ndonland/23b59819e3db207dde7af9c19fb33eaf).
+
+See [Markdown and Visual Studio Code](https://code.visualstudio.com/Docs/languages/markdown) for more info.
 
 [(Back to top)](#top)
 
@@ -277,7 +237,7 @@ For examples of how to use Jupyter Notebook/JupyterLab, you can check out my [Ud
 
 ### Note apps
 
-Also see [Notable's comparison table](https://raw.githubusercontent.com/fabiospampinato/notable/master/resources/comparison/table.png).
+Also see [Notable's comparison table](https://notable.md/static/images/comparison.png).
 
 #### [Bear](https://bear.app/)
 
@@ -292,16 +252,17 @@ Also see [Notable's comparison table](https://raw.githubusercontent.com/fabiospa
 - Supports internal relative links
 - Evernote migration and import (though not perfect-see cons below)
 - Writing tools, like word counts and read time
+- Note encryption (see [blog post announcing Bear 1.7](https://blog.bear.app/2019/09/bear-1-7-is-here-with-note-encryption-bear-lock-live-note-links-and-more/))
+- Password and FaceID lock
 - Reasonably-priced subscription plan
 
 ##### Bear cons
 
 - Apple only (macOS, iOS, iCloud), with [no plans to support Android](https://bear.app/faq/What%20about%20Bear%20for%20web,%20Android,%20or%20Windows/).
-- Not encrypted
 - Collaboration features could be better. No shared notebooks.
 - Sidebar should be more condensed.
 - Web clipper needs some work. Doesn't properly capture text on all sites.
-- Evernote import doesn't convert Evernote internal note links to Bear note links. Joplin also has this same issue, and it's a major barrier for switching from Evernote.
+- Evernote import doesn't convert Evernote internal note links to Bear note links. Joplin also has this same issue, and it's a major barrier for switching from Evernote. If you would like to switch from Evernote to Bear, you can try running my [el2bl](https://github.com/br3ndonland/el2bl) script on your Evernote exports.
 
 #### [Day One](https://dayoneapp.com/)
 
@@ -312,6 +273,7 @@ Also see [Notable's comparison table](https://raw.githubusercontent.com/fabiospa
 ##### Day One cons
 
 - Subscription service
+- Google Drive sync requires Google login, so you can't use it if you have [Advanced Protection](https://landing.google.com/advancedprotection/) enabled.
 
 #### [Dropbox Paper](https://www.dropbox.com/paper)
 
@@ -442,13 +404,13 @@ iOS-only note app with Markdown, tagging, and Dropbox sync.
 - No Markdown TOC
 - Development coming along slowly
 
-#### [Notable](https://github.com/fabiospampinato/notable)
+#### [Notable](https://notable.md/)
 
 Heard about Notable via the [Changelog weekly email #238](https://email.changelog.com/t/t-614770D9C810C3FD2540EF23F30FEDED).
 
 ##### Notable pros
 
-From the [README](https://github.com/fabiospampinato/notable/blob/master/README.md):
+From the [README](https://github.com/notable/notable/blob/master/README.md):
 
 > The markdown-based note-taking app that doesn't suck.
 >
@@ -456,7 +418,7 @@ From the [README](https://github.com/fabiospampinato/notable/blob/master/README.
 >
 > So I built my own.
 
-The developer has made extensive comparisons with other note apps. See [Notable's comparison table](https://raw.githubusercontent.com/fabiospampinato/notable/master/resources/comparison/table.png).
+The developer has made extensive comparisons with other note apps. See [Notable's comparison table](https://notable.md/static/images/comparison.png).
 
 ##### Notable cons
 
