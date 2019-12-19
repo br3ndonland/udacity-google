@@ -46,7 +46,7 @@ Brendon Smith
 
 ### 2.01. Updates to Functions
 
-> Functions are one of the primary data structures in JavaScript; they've been around *forever*.
+> Functions are one of the primary data structures in JavaScript; they've been around _forever_.
 
 ### 2.02. Arrow Functions
 
@@ -57,17 +57,17 @@ Brendon Smith
 > Arrow functions are very similar to regular functions in behavior, but are quite different syntactically. The following code takes a list of names and converts each one to uppercase using a regular function:
 >
 > ```javascript
-> const upperizedNames = ['Farrin', 'Kagure', 'Asser'].map(function(name) {
->   return name.toUpperCase();
-> });
+> const upperizedNames = ["Farrin", "Kagure", "Asser"].map(function(name) {
+>   return name.toUpperCase()
+> })
 > ```
 >
 > The code below does the same thing except instead of passing a regular function to the `map()` method, it passes an arrow function. Notice the arrow in the arrow function (`=>`) in the code below:
 >
 > ```javascript
-> const upperizedNames = ['Farrin', 'Kagure', 'Asser'].map(
->   name => name.toUpperCase()
-> );
+> const upperizedNames = ["Farrin", "Kagure", "Asser"].map(name =>
+>   name.toUpperCase()
+> )
 > ```
 >
 > The only change to the code above is the code inside the `map()` method. It takes a regular function and changes it to use an arrow function.
@@ -77,9 +77,9 @@ Brendon Smith
 #### Convert a function to an arrow function
 
 ```javascript
-const upperizedNames = ['Farrin', 'Kagure', 'Asser'].map(function(name) {
-  return name.toUpperCase();
-});
+const upperizedNames = ["Farrin", "Kagure", "Asser"].map(function(name) {
+  return name.toUpperCase()
+})
 ```
 
 With the function above, there are only a few steps for converting the existing "normal" function into an arrow function:
@@ -95,14 +95,14 @@ Converting a normal function into an arrow function:
 
 ```javascript
 // es5
-const upperizedNames = ['Farrin', 'Kagure', 'Asser']
-  .map(function(name) {
-    return name.toUpperCase();
-  });
+const upperizedNames = ["Farrin", "Kagure", "Asser"].map(function(name) {
+  return name.toUpperCase()
+})
 
 // es6
-const upperizedNames = ['Farrin', 'Kagure', 'Asser']
-  .map( name => name.toUpperCase() );
+const upperizedNames = ["Farrin", "Kagure", "Asser"].map(name =>
+  name.toUpperCase()
+)
 ```
 
 #### 2.02 Mini-Quiz Question
@@ -110,12 +110,23 @@ const upperizedNames = ['Farrin', 'Kagure', 'Asser']
 Take a look at the following code:
 
 ```javascript
-const names = ['Afghanistan', 'Aruba', 'Bahamas', 'Chile', 'Fiji', 'Gabon',
-                'Luxembourg', 'Nepal', 'Singapore', 'Uganda', 'Zimbabwe'];
+const names = [
+  "Afghanistan",
+  "Aruba",
+  "Bahamas",
+  "Chile",
+  "Fiji",
+  "Gabon",
+  "Luxembourg",
+  "Nepal",
+  "Singapore",
+  "Uganda",
+  "Zimbabwe"
+]
 
 const longNames = names.filter(function(name) {
-  return name.length > 6;
-});
+  return name.length > 6
+})
 ```
 
 Which of the following choices does the same thing, but replaces .filter()'s function with an arrow function?
@@ -129,7 +140,7 @@ Which of the following choices does the same thing, but replaces .filter()'s fun
   <summary><em>Solution</em></summary>
 
 ```javascript
-const longNames = names.filter( name => name.length > 6 );
+const longNames = names.filter(name => name.length > 6)
 ```
 
 Got it on my first try by evaluating the checklist [above](#convert-a-function-to-an-arrow-function).
@@ -142,7 +153,7 @@ Got it on my first try by evaluating the checklist [above](#convert-a-function-t
 
 #### Intro
 
-> **Regular functions can be either function declarations or function expressions, but arrow functions are *always* expressions.** In fact, their full name is "arrow function expressions", so they can only be used where an expression is valid. This includes being:
+> **Regular functions can be either function declarations or function expressions, but arrow functions are _always_ expressions.** In fact, their full name is "arrow function expressions", so they can only be used where an expression is valid. This includes being:
 >
 > - stored in a variable,
 > - passed as an argument to a function,
@@ -151,13 +162,13 @@ Got it on my first try by evaluating the checklist [above](#convert-a-function-t
 > One confusing syntax is when an arrow function is stored in a variable.
 >
 > ```javascript
-> const greet = name => `Hello ${name}!`;
+> const greet = name => `Hello ${name}!`
 > ```
 >
 > In the code above, the arrow function is stored in the greet variable and you'd call it like this:
 >
 > ```javascript
-> greet('Asser');
+> greet("Asser")
 > ```
 >
 > Returns: `Hello Asser!`
@@ -174,20 +185,25 @@ Got it on my first try by evaluating the checklist [above](#convert-a-function-t
 >
 > ```javascript
 > // empty parameter list requires parentheses
-> const sayHi = () => console.log('Hello Udacity Student!');
-> sayHi();
+> const sayHi = () => console.log("Hello Udacity Student!")
+> sayHi()
 > ```
+>
 > Prints:
+>
 > ```text
 > Hello Udacity Student!
 > ```
 >
 > ```javascript
 > // multiple parameters requires parentheses
-> const orderIceCream = (flavor, cone) => console.log(`Here's your ${flavor} ice cream in a ${cone} cone.`);
-> orderIceCream('chocolate', 'waffle');
+> const orderIceCream = (flavor, cone) =>
+>   console.log(`Here's your ${flavor} ice cream in a ${cone} cone.`)
+> orderIceCream("chocolate", "waffle")
 > ```
+>
 > Prints:
+>
 > ```text
 > Here's your chocolate ice cream in a waffle cone.
 > ```
@@ -198,26 +214,26 @@ Which of the following choices have correctly formatted arrow functions?
 
 ```javascript
 setTimeout(() => {
-  console.log('starting the test');
-  test.start();
-}, 2000);
+  console.log("starting the test")
+  test.start()
+}, 2000)
 ```
 
 ```javascript
-setTimeout( _ => {
-  console.log('starting the test');
-  test.start();
-}, 2000);
+setTimeout(_ => {
+  console.log("starting the test")
+  test.start()
+}, 2000)
 ```
 
 ```javascript
-const vowels = 'aeiou'.split('');
-const bigVowels = vowels.map( (letter) => letter.toUpperCase() );
+const vowels = "aeiou".split("")
+const bigVowels = vowels.map(letter => letter.toUpperCase())
 ```
 
 ```javascript
-const vowels = 'aeiou'.split('');
-const bigVowels = vowels.map( letter => letter.toUpperCase() );
+const vowels = "aeiou".split("")
+const bigVowels = vowels.map(letter => letter.toUpperCase())
 ```
 
 <details>
@@ -225,7 +241,7 @@ const bigVowels = vowels.map( letter => letter.toUpperCase() );
 
 > All four options are valid uses of arrow functions.
 
-*[Additional notes from James Priest](https://github.com/james-priest/100-days-of-code-log-r2/blob/master/ES6-Functions.md#solution-1):*
+_[Additional notes from James Priest](https://github.com/james-priest/100-days-of-code-log-r2/blob/master/ES6-Functions.md#solution-1):_
 
 > If there's no parameter to the function, you just use a pair of empty parentheses like option 1.
 >
@@ -240,9 +256,9 @@ const bigVowels = vowels.map( letter => letter.toUpperCase() );
 > All of the arrow functions we've been looking at have only had a single expression as the function body:
 >
 > ```javascript
-> const upperizedNames = ['Farrin', 'Kagure', 'Asser'].map(
->   name => name.toUpperCase()
-> );
+> const upperizedNames = ["Farrin", "Kagure", "Asser"].map(name =>
+>   name.toUpperCase()
+> )
 > ```
 >
 > This format of the function body is called the "**concise body syntax**". The concise syntax:
@@ -253,10 +269,10 @@ const bigVowels = vowels.map( letter => letter.toUpperCase() );
 > If you need more than just a single line of code in your arrow function's body, then you can use the "**block body syntax**".
 >
 > ```javascript
-> const upperizedNames = ['Farrin', 'Kagure', 'Asser'].map( name => {
->   name = name.toUpperCase();
->   return `${name} has ${name.length} characters in their name`;
-> });
+> const upperizedNames = ["Farrin", "Kagure", "Asser"].map(name => {
+>   name = name.toUpperCase()
+>   return `${name} has ${name.length} characters in their name`
+> })
 > ```
 >
 > Important things to keep in mind with the block syntax:
@@ -269,18 +285,21 @@ const bigVowels = vowels.map( letter => letter.toUpperCase() );
 Using your knowledge of how arrow functions work with automatic returns and curly braces, which of the following choices have correctly formatted arrow functions?
 
 ```javascript
-const colors = ['red', 'blue', 'yellow', 'orange', 'black'];
-const crazyColors = color.map( color => {
-  const jumble = color.split('').reverse();
-  return jumble.join('') + '!';
-});
+const colors = ["red", "blue", "yellow", "orange", "black"]
+const crazyColors = color.map(color => {
+  const jumble = color.split("").reverse()
+  return jumble.join("") + "!"
+})
 ```
 
 ```javascript
-const colors = ['red', 'blue', 'yellow', 'orange', 'black'];
-const crazyColors = color.map( color => {
-  color.split('').reverse().join('') + '!';
-});
+const colors = ["red", "blue", "yellow", "orange", "black"]
+const crazyColors = color.map(color => {
+  color
+    .split("")
+    .reverse()
+    .join("") + "!"
+})
 ```
 
 ```javascript
@@ -289,8 +308,14 @@ const crazyColors = color.map( color => return color.split('').reverse().join(''
 ```
 
 ```javascript
-const colors = ['red', 'blue', 'yellow', 'orange', 'black'];
-const crazyColors = color.map( color => color.split('').reverse().join('') + '!' );
+const colors = ["red", "blue", "yellow", "orange", "black"]
+const crazyColors = color.map(
+  color =>
+    color
+      .split("")
+      .reverse()
+      .join("") + "!"
+)
 ```
 
 <details>
@@ -300,7 +325,7 @@ Again, I evaluated the checklist [above](#convert-a-function-to-an-arrow-functio
 
 > Options 1 and 4 both use correct syntax for arrow functions.
 
-*[Additional notes from James Priest](https://github.com/james-priest/100-days-of-code-log-r2/blob/master/ES6-Functions.md#solution-2):*
+_[Additional notes from James Priest](https://github.com/james-priest/100-days-of-code-log-r2/blob/master/ES6-Functions.md#solution-2):_
 
 > 1. Option 1 is correct. Because the arrow function uses curly braces, there has to be a `return` in there somewhere for something to actually be returned.
 > 2. Option 2 is not correct because it has curly braces and no `return`. This function runs, but nothing gets returned to crazyColors.
@@ -320,6 +345,7 @@ Again, I evaluated the checklist [above](#convert-a-function-to-an-arrow-functio
 > **WARNING:** Everything's not all ponies and rainbows though, and there are definitely times when you might not want to use an arrow function. So before you wipe from your memory how to write a traditional function, check out these implications:
 >
 > - there's a gotcha with the `this` keyword in arrow functions
+>
 >   - go to the next lesson to find out the details!
 >
 > - arrow functions are only _expressions_
@@ -336,10 +362,10 @@ Convert the function passed to the `map()` method into an arrow function.
 
 // convert to an arrow function
 const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(function(square) {
-  return square - square;
-});
+  return square - square
+})
 
-console.log(...squares);
+console.log(...squares)
 ```
 
 <details>
@@ -356,24 +382,23 @@ I walked through the steps and example code [above](#convert-a-function-to-an-ar
 
 ```javascript
 // es5
-const upperizedNames = ['Farrin', 'Kagure', 'Asser']
-  .map(function(name) {
-    return name.toUpperCase();
-  });
+const upperizedNames = ["Farrin", "Kagure", "Asser"].map(function(name) {
+  return name.toUpperCase()
+})
 
 // es6
-const upperizedNames = ['Farrin', 'Kagure', 'Asser']
-  .map( name => name.toUpperCase() );
+const upperizedNames = ["Farrin", "Kagure", "Asser"].map(name =>
+  name.toUpperCase()
+)
 ```
 
 Got it on my first try!
 
 ```javascript
 // converted from normal to arrow function
-const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  .map( square => square - square );
+const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(square => square - square)
 
-console.log(...squares);
+console.log(...squares)
 ```
 
 ```text
@@ -425,7 +450,7 @@ Arrow functions allow us to remove
 > If the function is called with `new`:
 >
 > ```javascript
-> const mySundae = new Sundae('Chocolate', ['Sprinkles', 'Hot Fudge']);
+> const mySundae = new Sundae("Chocolate", ["Sprinkles", "Hot Fudge"])
 > ```
 >
 > In the code above, the value of `this` inside the `Sundae` constructor function is a new object because it was called with `new`.
@@ -435,7 +460,7 @@ Arrow functions allow us to remove
 > If the function is invoked with `call`/`apply`:
 >
 > ```javascript
-> const result = obj1.printName.call(obj2);
+> const result = obj1.printName.call(obj2)
 > ```
 >
 > In the code above, the value of `this` inside `printName()` will refer to `obj2` since the first parameter of `call()` is to explicitly set what `this` refers to.
@@ -445,7 +470,7 @@ Arrow functions allow us to remove
 > If the function is a method of an object:
 >
 > ```javascript
-> data.teleport();
+> data.teleport()
 > ```
 >
 > In the code above, the value of `this` inside `teleport()` will refer to `data`.
@@ -455,7 +480,7 @@ Arrow functions allow us to remove
 > If the function is called with no context:
 >
 > ```javascript
-> teleport();
+> teleport()
 > ```
 >
 > In the code above, the value of `this` inside `teleport()` is either the global object or, if in strict mode, it's `undefined`.
@@ -469,7 +494,7 @@ Arrow functions allow us to remove
 What is the value of `this` inside the `Train` constructor function below?
 
 ```javascript
-const redTrain = new Train('red');
+const redTrain = new Train("red")
 ```
 
 - the `window` object
@@ -490,8 +515,8 @@ a new object
 What is the value of `this` inside the `increaseSpeed()` function below?
 
 ```javascript
-const redTrain = new Train('red');
-redTrain.increaseSpeed(25);
+const redTrain = new Train("red")
+redTrain.increaseSpeed(25)
 ```
 
 - the `window` object
@@ -519,19 +544,19 @@ I didn't follow 2.08 very well. I worked on it early in the morning and I wasn't
 > ```javascript
 > // constructor
 > function IceCream() {
->   this.scoops = 0;
+>   this.scoops = 0
 > }
 >
 > // adds scoop to ice cream
 > IceCream.prototype.addScoop = function() {
 >   setTimeout(function() {
->     this.scoops++;
->     console.log('scoop added!');
->   }, 500);
-> };
+>     this.scoops++
+>     console.log("scoop added!")
+>   }, 500)
+> }
 >
-> const dessert = new IceCream();
-> dessert.addScoop();
+> const dessert = new IceCream()
+> dessert.addScoop()
 > ```
 >
 > Prints:
@@ -539,10 +564,11 @@ I didn't follow 2.08 very well. I worked on it early in the morning and I wasn't
 > ```text
 > scoop added!
 > ```
+>
 > After running the code above, you'd _think_ that `dessert.scoops` would be 1 after half a millisecond. But, unfortunately, it's not:
 >
 > ```javascript
-> console.log(dessert.scoops);
+> console.log(dessert.scoops)
 > ```
 >
 > Prints:
@@ -556,7 +582,7 @@ I didn't follow 2.08 very well. I worked on it early in the morning and I wasn't
 > The function passed to `setTimeout()` is called without `new`, without `call()`, without `apply()`, and without a context object. That means the value of `this` inside the function is the global object and **NOT** the `dessert` object. So what actually happened was that a new `scoops` variable was created (with a default value of `undefined`) and was then incremented (`undefined + 1` results in `NaN`):
 >
 > ```javascript
-> console.log(scoops);
+> console.log(scoops)
 > ```
 >
 > Prints:
@@ -570,26 +596,26 @@ I didn't follow 2.08 very well. I worked on it early in the morning and I wasn't
 > ```javascript
 > // constructor
 > function IceCream() {
->   this.scoops = 0;
+>   this.scoops = 0
 > }
 >
 > // adds scoop to ice cream
 > IceCream.prototype.addScoop = function() {
->   const cone = this; // sets `this` to the `cone` variable
+>   const cone = this // sets `this` to the `cone` variable
 >   setTimeout(function() {
->     cone.scoops++; // references the `cone` variable
->     console.log('scoop added!');
->   }, 0.5);
-> };
+>     cone.scoops++ // references the `cone` variable
+>     console.log("scoop added!")
+>   }, 0.5)
+> }
 >
-> const dessert = new IceCream();
-> dessert.addScoop();
+> const dessert = new IceCream()
+> dessert.addScoop()
 > ```
 >
 > The code above _will_ work because instead of using `this` inside the function, it sets the cone variable to this and then looks up the cone variable when the function is called. This works because it's using the value of the this outside the function. So if we check the number of scoops in our dessert right now, we'll see the correct value of `1`:
 >
 > ```javascript
-> console.log(dessert.scoops);
+> console.log(dessert.scoops)
 > ```
 >
 > Prints:
@@ -603,25 +629,26 @@ I didn't follow 2.08 very well. I worked on it early in the morning and I wasn't
 > ```javascript
 > // constructor
 > function IceCream() {
->   this.scoops = 0;
+>   this.scoops = 0
 > }
 >
 > // adds scoop to ice cream
 > IceCream.prototype.addScoop = function() {
->   setTimeout(() => { // an arrow function is passed to setTimeout
->     this.scoops++;
->     console.log('scoop added!');
->   }, 0.5);
-> };
+>   setTimeout(() => {
+>     // an arrow function is passed to setTimeout
+>     this.scoops++
+>     console.log("scoop added!")
+>   }, 0.5)
+> }
 >
-> const dessert = new IceCream();
-> dessert.addScoop();
+> const dessert = new IceCream()
+> dessert.addScoop()
 > ```
 >
 > Since arrow functions inherit their this value from the surrounding context, this code works!
 >
 > ```javascript
-> console.log(dessert.scoops);
+> console.log(dessert.scoops)
 > ```
 >
 > > **Prints:**<br>
@@ -634,19 +661,20 @@ I didn't follow 2.08 very well. I worked on it early in the morning and I wasn't
 > ```javascript
 > // constructor
 > function IceCream() {
->     this.scoops = 0;
+>   this.scoops = 0
 > }
 >
 > // adds scoop to ice cream
-> IceCream.prototype.addScoop = () => { // addScoop is now an arrow function
+> IceCream.prototype.addScoop = () => {
+>   // addScoop is now an arrow function
 >   setTimeout(() => {
->     this.scoops++;
->     console.log('scoop added!');
->   }, 0.5);
-> };
+>     this.scoops++
+>     console.log("scoop added!")
+>   }, 0.5)
+> }
 >
-> const dessert = new IceCream();
-> dessert.addScoop();
+> const dessert = new IceCream()
+> dessert.addScoop()
 > ```
 >
 > Yeah, this doesn't work for the same reason - arrow functions inherit their `this` value from their surrounding context. Outside of the `addScoop()` method, the value of `this` is the global object. So if `addScoop()` is an arrow function, the value of `this` _inside_ `addScoop()` is the global object. Which then makes the value of `this` in the function passed to `setTimeout()` also set to the global object!
@@ -659,15 +687,15 @@ I didn't follow 2.08 very well. I worked on it early in the morning and I wasn't
 >
 > ```javascript
 > function greet(name, greeting) {
->   name = (typeof name !== 'undefined') ?  name : 'Student';
->   greeting = (typeof greeting !== 'undefined') ?  greeting : 'Welcome';
+>   name = typeof name !== "undefined" ? name : "Student"
+>   greeting = typeof greeting !== "undefined" ? greeting : "Welcome"
 >
->   return `${greeting} ${name}!`;
+>   return `${greeting} ${name}!`
 > }
 >
-> greet(); // Welcome Student!
-> greet('James'); // Welcome James!
-> greet('Richard', 'Howdy'); // Howdy Richard!
+> greet() // Welcome Student!
+> greet("James") // Welcome James!
+> greet("Richard", "Howdy") // Howdy Richard!
 > ```
 >
 > Returns:
@@ -687,13 +715,13 @@ I didn't follow 2.08 very well. I worked on it early in the morning and I wasn't
 > Default function parameters are quite easy to read since they're placed in the function's parameter list:
 >
 > ```javascript
-> function greet(name = 'Student', greeting = 'Welcome') {
->   return `${greeting} ${name}!`;
+> function greet(name = "Student", greeting = "Welcome") {
+>   return `${greeting} ${name}!`
 > }
 >
-> greet(); // Welcome Student!
-> greet('James'); // Welcome James!
-> greet('Richard', 'Howdy'); // Howdy Richard!
+> greet() // Welcome Student!
+> greet("James") // Welcome James!
+> greet("Richard", "Howdy") // Howdy Richard!
 > ```
 >
 > Returns:
@@ -714,37 +742,37 @@ Take a look at the following code:
 
 ```javascript
 function shippingLabel(name, address) {
-  name = (typeof name !== 'undefined') ? name : 'Richard';
-  address = (typeof address !== 'undefined') ?  address : 'Mountain View';
-  return `To: ${name} In: ${address}`;
+  name = typeof name !== "undefined" ? name : "Richard"
+  address = typeof address !== "undefined" ? address : "Mountain View"
+  return `To: ${name} In: ${address}`
 }
 ```
 
 Which of the following choices is the correct way to write the `shippingLabel()` function using default function parameters?
 
 ```javascript
-function shippingLabel(name = '', address = '') {
-  return `To ${name} In: ${address}`;
+function shippingLabel(name = "", address = "") {
+  return `To ${name} In: ${address}`
 }
 ```
 
 ```javascript
 function shippingLabel(name, address) {
-  name = name || 'Richard';
-  address = address || 'Mountain View';
-  return `To: ${name} In: ${address}`;
+  name = name || "Richard"
+  address = address || "Mountain View"
+  return `To: ${name} In: ${address}`
 }
 ```
 
 ```javascript
 function shippingLabel(name, address) {
-  return `To: ${name} In: ${address}`;
+  return `To: ${name} In: ${address}`
 }
 ```
 
 ```javascript
-function shippingLabel(name = 'Richard', address = 'Mountain View') {
-  return `To: ${name} In: ${address}`;
+function shippingLabel(name = "Richard", address = "Mountain View") {
+  return `To: ${name} In: ${address}`
 }
 ```
 
@@ -754,8 +782,8 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 > Option 4 uses default function parameters correctly by setting the defaults directly to the parameters.
 
 ```javascript
-function shippingLabel(name = 'Richard', address = 'Mountain View') {
-  return `To: ${name} In: ${address}`;
+function shippingLabel(name = "Richard", address = "Mountain View") {
+  return `To: ${name} In: ${address}`
 }
 ```
 
@@ -769,13 +797,13 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 >
 > ```javascript
 > function createGrid([width = 5, height = 5]) {
->   return `Generates a ${width} x ${height} grid`;
+>   return `Generates a ${width} x ${height} grid`
 > }
 >
-> createGrid([]); // Generates a 5 x 5 grid
-> createGrid([2]); // Generates a 2 x 5 grid
-> createGrid([2, 3]); // Generates a 2 x 3 grid
-> createGrid([undefined, 3]); // Generates a 5 x 3 grid
+> createGrid([]) // Generates a 5 x 5 grid
+> createGrid([2]) // Generates a 2 x 5 grid
+> createGrid([2, 3]) // Generates a 2 x 3 grid
+> createGrid([undefined, 3]) // Generates a 5 x 3 grid
 > ```
 >
 > Returns:
@@ -792,7 +820,7 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 > There is a problem with this though, the following code will not work:
 >
 > ```javascript
-> createGrid(); // throws an error
+> createGrid() // throws an error
 > ```
 >
 > ```text
@@ -803,14 +831,14 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 >
 > ```javascript
 > function createGrid([width = 5, height = 5] = []) {
->   return `Generates a ${width} x ${height} grid`;
+>   return `Generates a ${width} x ${height} grid`
 > }
 > ```
 >
 > See that new `= []` in the function's parameter? If `createGrid()` is called without any argument then it will use this default empty array. And since the array is empty, there's nothing to destructure into `width` and `height`, so their default values will apply! So by adding `= []` to give the entire parameter a default, the following code will now work:
 >
 > ```javascript
-> createGrid(); // Generates a 5 x 5 grid
+> createGrid() // Generates a 5 x 5 grid
 > ```
 >
 > Returns:
@@ -824,8 +852,8 @@ function shippingLabel(name = 'Richard', address = 'Mountain View') {
 Take a look at the following code:
 
 ```javascript
-function houseDescriptor([houseColor = 'green', shutterColors = ['red']]) {
-  return `I've a ${houseColor} house w/ ${shutterColors.join(' and ')} shutters`;
+function houseDescriptor([houseColor = "green", shutterColors = ["red"]]) {
+  return `I've a ${houseColor} house w/ ${shutterColors.join(" and ")} shutters`
 }
 ```
 
@@ -841,7 +869,7 @@ Which of the following choices will run without throwing an error?
 
 > Options 2 and 4 are the only choices that will run correctly without throwing an error.
 
-*[Additional notes from James Priest](https://github.com/james-priest/100-days-of-code-log-r2/blob/master/ES6-Functions.md#solution-7):*
+_[Additional notes from James Priest](https://github.com/james-priest/100-days-of-code-log-r2/blob/master/ES6-Functions.md#solution-7):_
 
 > - Since `houseDescriptor` is expecting only a single argument (an array) to be passed in, Option 1 has to be incorrect since it's calling the function with two arguments.
 > - Option 2 is correct.
@@ -855,18 +883,20 @@ Which of the following choices will run without throwing an error?
 > Just like array destructuring with array defaults, a function can have an object be a default parameter and use object destructuring:
 >
 > ```javascript
-> function createSundae({scoops = 1, toppings = ['Hot Fudge']}) {
->   const scoopText = scoops === 1 ? 'scoop' : 'scoops';
->   return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(' and ')} toppings.`;
+> function createSundae({ scoops = 1, toppings = ["Hot Fudge"] }) {
+>   const scoopText = scoops === 1 ? "scoop" : "scoops"
+>   return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(
+>     " and "
+>   )} toppings.`
 > }
 >
-> createSundae({});
+> createSundae({})
 > // Your sundae has 1 scoop with Hot Fudge toppings.
-> createSundae({scoops: 2});
+> createSundae({ scoops: 2 })
 > // Your sundae has 2 scoops with Hot Fudge toppings.
-> createSundae({scoops: 2, toppings: ['Sprinkles']});
+> createSundae({ scoops: 2, toppings: ["Sprinkles"] })
 > // Your sundae has 2 scoops with Sprinkles toppings.
-> createSundae({toppings: ['Cookie Dough']});
+> createSundae({ toppings: ["Cookie Dough"] })
 > // Your sundae has 1 scoop with Cookie Dough toppings.
 > ```
 >
@@ -882,7 +912,7 @@ Which of the following choices will run without throwing an error?
 > Just like the array example before, if you try calling the function without any arguments it won't work:
 >
 > ```javascript
-> createSundae(); // throws an error
+> createSundae() // throws an error
 > ```
 >
 > ```text
@@ -892,16 +922,18 @@ Which of the following choices will run without throwing an error?
 > We can prevent this issue by providing a default object to the function:
 >
 > ```javascript
-> function createSundae({scoops = 1, toppings = ['Hot Fudge']} = {}) {
->   const scoopText = scoops === 1 ? 'scoop' : 'scoops';
->   return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(' and ')} toppings.`;
+> function createSundae({ scoops = 1, toppings = ["Hot Fudge"] } = {}) {
+>   const scoopText = scoops === 1 ? "scoop" : "scoops"
+>   return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(
+>     " and "
+>   )} toppings.`
 > }
 > ```
 >
 > By adding an empty object as the default parameter in case no arguments are provided, calling the function without any arguments now works.
 >
 > ```javascript
-> createSundae(); // Your sundae has 1 scoop with Hot Fudge toppings.
+> createSundae() // Your sundae has 1 scoop with Hot Fudge toppings.
 > ```
 >
 > Returns:
@@ -915,8 +947,13 @@ Which of the following choices will run without throwing an error?
 Take a look at the following code:
 
 ```javascript
-function houseDescriptor({houseColor = 'green', shutterColors = ['red']} = {}) {
-  return `I have a ${houseColor} house with ${shutterColors.join(' and ')} shutters`;
+function houseDescriptor({
+  houseColor = "green",
+  shutterColors = ["red"]
+} = {}) {
+  return `I have a ${houseColor} house with ${shutterColors.join(
+    " and "
+  )} shutters`
 }
 ```
 
@@ -933,7 +970,7 @@ Which of the following choices will run without throwing an error?
 
 > Actually, every single one of these function calls will work correctly!
 
-*[Additional notes from James Priest](https://github.com/james-priest/100-days-of-code-log-r2/blob/master/ES6-Functions.md#solution-8):*
+_[Additional notes from James Priest](https://github.com/james-priest/100-days-of-code-log-r2/blob/master/ES6-Functions.md#solution-8):_
 
 > The only option that would NOT work is:
 >
@@ -947,25 +984,25 @@ Which of the following choices will run without throwing an error?
 > Default function parameters are a simple addition, but it makes our lives so much easier! One benefit of object defaults over array defaults is how they handle skipped options. Check this out:
 >
 > ```javascript
-> function createSundae({scoops = 1, toppings = ['Hot Fudge']} = {}) { }
+> function createSundae({ scoops = 1, toppings = ["Hot Fudge"] } = {}) {}
 > ```
 >
 > With the `createSundae()` function using object defaults with destructuring, if you want to use the default value for `scoops` but change the `toppings`, then all you need to do is pass in an object with `toppings`:
 >
 > ```javascript
-> createSundae({toppings: ['Hot Fudge', 'Sprinkles', 'Caramel']});
+> createSundae({ toppings: ["Hot Fudge", "Sprinkles", "Caramel"] })
 > ```
 >
 > Compare the above example with the same function that uses array defaults with destructuring.
 >
 > ```javascript
-> function createSundae([scoops = 1, toppings = ['Hot Fudge']] = []) { }
+> function createSundae([scoops = 1, toppings = ["Hot Fudge"]] = []) {}
 > ```
 >
 > With this function setup, if you want to use the default number of scoops but change the toppings, you'd have to call your function a little...oddly:
 >
 > ```javascript
-> createSundae([undefined, ['Hot Fudge', 'Sprinkles', 'Caramel']]);
+> createSundae([undefined, ["Hot Fudge", "Sprinkles", "Caramel"]])
 > ```
 >
 > Since arrays are positionally based, we have to pass `undefined` to "skip" over the first argument (and accept the default) to get to the second argument.
@@ -996,9 +1033,9 @@ Code:
 // your code goes here
 
 // tests
-console.log(buildHouse());
-console.log(buildHouse({}));
-console.log(buildHouse({floors: 3, color: 'yellow'}));
+console.log(buildHouse())
+console.log(buildHouse({}))
+console.log(buildHouse({ floors: 3, color: "yellow" }))
 ```
 
 Output:
@@ -1021,14 +1058,14 @@ The sample code from the tests helps suggest the function formatting.
 
 ```javascript
 // function
-function buildHouse({floors = 1, color = 'red', walls = 'brick'} = {}) {
-  return `Your house has ${floors} floor(s) with ${color} ${walls} walls.`;
+function buildHouse({ floors = 1, color = "red", walls = "brick" } = {}) {
+  return `Your house has ${floors} floor(s) with ${color} ${walls} walls.`
 }
 
 // tests
-console.log(buildHouse());
-console.log(buildHouse({}));
-console.log(buildHouse({floors: 3, color: 'yellow'}));
+console.log(buildHouse())
+console.log(buildHouse({}))
+console.log(buildHouse({ floors: 3, color: "yellow" }))
 ```
 
 ```text
@@ -1065,18 +1102,18 @@ Your house has 3 floor(s) with yellow brick walls.
 > ```javascript
 > class Dessert {
 >   constructor(calories = 250) {
->     this.calories = calories;
+>     this.calories = calories
 >   }
 > }
 >
 > class IceCream extends Dessert {
 >   constructor(flavor, calories, toppings = []) {
->     super(calories);
->     this.flavor = flavor;
->     this.toppings = toppings;
+>     super(calories)
+>     this.flavor = flavor
+>     this.toppings = toppings
 >   }
 >   addTopping(topping) {
->     this.toppings.push(topping);
+>     this.toppings.push(topping)
 >   }
 > }
 > ```
@@ -1100,21 +1137,21 @@ Your house has 3 floor(s) with yellow brick walls.
 >
 > ```javascript
 > function Plane(numEngines) {
->   this.numEngines = numEngines;
->   this.enginesActive = false;
+>   this.numEngines = numEngines
+>   this.enginesActive = false
 > }
 >
 > // methods "inherited" by all instances
-> Plane.prototype.startEngines = function () {
->   console.log('starting engines...');
->   this.enginesActive = true;
-> };
+> Plane.prototype.startEngines = function() {
+>   console.log("starting engines...")
+>   this.enginesActive = true
+> }
 >
-> const richardsPlane = new Plane(1);
-> richardsPlane.startEngines();
+> const richardsPlane = new Plane(1)
+> richardsPlane.startEngines()
 >
-> const jamesPlane = new Plane(4);
-> jamesPlane.startEngines();
+> const jamesPlane = new Plane(4)
+> jamesPlane.startEngines()
 > ```
 >
 > In the code above, the `Plane` function is a constructor function that will create new Plane objects. The data for a specific Plane object is passed to the `Plane` function and is set on the object. Methods that are "inherited" by each Plane object are placed on the `Plane.prototype` object. Then `richardsPlane` is created with one engine while `jamesPlane` is created with 4 engines. Both objects, however, use the same `startEngines` method to activate their respective engines.
@@ -1135,13 +1172,13 @@ Your house has 3 floor(s) with yellow brick walls.
 > ```javascript
 > class Plane {
 >   constructor(numEngines) {
->     this.numEngines = numEngines;
->     this.enginesActive = false;
+>     this.numEngines = numEngines
+>     this.enginesActive = false
 >   }
 >
 >   startEngines() {
->     console.log('starting engines…');
->     this.enginesActive = true;
+>     console.log("starting engines…")
+>     this.enginesActive = true
 >   }
 > }
 > ```
@@ -1153,20 +1190,20 @@ Your house has 3 floor(s) with yellow brick walls.
 > ```javascript
 > // ES5 Syntax
 > function Plane(numEngines) {
->   this.numEngines = numEngines;
->   this.enginesActive = false;
+>   this.numEngines = numEngines
+>   this.enginesActive = false
 > }
 >
-> Plane.prototype.startEngines = function () {
->   console.log('starting engines...');
->   this.enginesActive = true;
+> Plane.prototype.startEngines = function() {
+>   console.log("starting engines...")
+>   this.enginesActive = true
 > }
 >
-> var richardsPlane = new Plane(1);
-> richardsPlane.startEngines();
+> var richardsPlane = new Plane(1)
+> richardsPlane.startEngines()
 >
-> var jamesPlane = new Plane(4);
-> jamesPlane.startEngines();
+> var jamesPlane = new Plane(4)
+> jamesPlane.startEngines()
 > ```
 >
 > Everything inside the constructor function is now placed inside a method with the name constructor.
@@ -1175,8 +1212,8 @@ Your house has 3 floor(s) with yellow brick walls.
 > // ES6 Syntax
 > class Plane {
 >   constructor(numEngines) {
->     this.numEngines = numEngines;
->     this.enginesActive = false;
+>     this.numEngines = numEngines
+>     this.enginesActive = false
 >   }
 > }
 > ```
@@ -1189,13 +1226,13 @@ Your house has 3 floor(s) with yellow brick walls.
 > // ES6 Syntax
 > class Plane {
 >   constructor(numEngines) {
->     this.numEngines = numEngines;
->     this.enginesActive = false;
+>     this.numEngines = numEngines
+>     this.enginesActive = false
 >   }
 >
 >   startEngines() {
->     console.log('starting engines...');
->     this.enginesActive = true;
+>     console.log("starting engines...")
+>     this.enginesActive = true
 >   }
 > }
 > ```
@@ -1211,21 +1248,21 @@ Your house has 3 floor(s) with yellow brick walls.
 > // ES6 Syntax
 > class Plane {
 >   constructor(numEngines) {
->     this.numEngines = numEngines;
->     this.enginesActive = false;
+>     this.numEngines = numEngines
+>     this.enginesActive = false
 >   }
 >
 >   startEngines() {
->     console.log('starting engines...');
->     this.enginesActive = true;
+>     console.log("starting engines...")
+>     this.enginesActive = true
 >   }
 > }
 >
-> var richardsPlane = new Plane(1);
-> richardsPlane.startEngines();
+> var richardsPlane = new Plane(1)
+> richardsPlane.startEngines()
 >
-> var jamesPlane = new Plane(1);
-> jamesPlane.startEngines();
+> var jamesPlane = new Plane(1)
+> jamesPlane.startEngines()
 > ```
 >
 > If you already understand prototypal inheritance then you already have a good understanding of how `class` and class methods work.
@@ -1239,17 +1276,17 @@ Your house has 3 floor(s) with yellow brick walls.
 > ```javascript
 > class Plane {
 >   constructor(numEngines) {
->     this.numEngines = numEngines;
->     this.enginesActive = false;
+>     this.numEngines = numEngines
+>     this.enginesActive = false
 >   }
 >
 >   startEngines() {
->     console.log('starting engines…');
->     this.enginesActive = true;
+>     console.log("starting engines…")
+>     this.enginesActive = true
 >   }
 > }
 >
-> typeof Plane; // function
+> typeof Plane // function
 > ```
 >
 > Returns:
@@ -1258,9 +1295,7 @@ Your house has 3 floor(s) with yellow brick walls.
 > function
 > ```
 >
->
 > That's right—it's just a function! There isn't even a new type added to JavaScript.
->
 >
 > ⚠️ Where Are All The Commas? ⚠️
 >
@@ -1272,13 +1307,13 @@ Take a look at the following code:
 
 ```javascript
 class Animal {
-  constructor(name = 'Sprinkles', energy = 100) {
-    this.name = name;
-    this.energy = energy;
+  constructor(name = "Sprinkles", energy = 100) {
+    this.name = name
+    this.energy = energy
   }
 
   eat(food) {
-    this.energy += food / 3;
+    this.energy += food / 3
   }
 }
 ```
@@ -1303,19 +1338,19 @@ Which of the following are true?
 > ```javascript
 > class Plane {
 >   constructor(numEngines) {
->     this.numEngines = numEngines;
->     this.enginesActive = false;
+>     this.numEngines = numEngines
+>     this.enginesActive = false
 >   }
 >
 >   static badWeather(planes) {
 >     for (plane of planes) {
->       plane.enginesActive = false;
+>       plane.enginesActive = false
 >     }
 >   }
 >
 >   startEngines() {
->     console.log('starting engines…');
->     this.enginesActive = true;
+>     console.log("starting engines…")
+>     this.enginesActive = true
 >   }
 > }
 > ```
@@ -1323,7 +1358,7 @@ Which of the following are true?
 > See how `badWeather()` has the word `static` in front of it while `startEngines()` doesn't? That makes `badWeather()` a method that's accessed directly on the `Plane` class, so you can call it like this:
 >
 > ```javascript
-> Plane.badWeather([plane1, plane2, plane3]);
+> Plane.badWeather([plane1, plane2, plane3])
 > ```
 >
 > **NOTE:** A little hazy on how constructor functions, class methods, or prototypal inheritance works? We've got a course on it! Check out [Object Oriented JavaScript](https://www.udacity.com/course/object-oriented-javascript--ud015).
@@ -1331,20 +1366,20 @@ Which of the following are true?
 #### Benefits of classes
 
 > 1. Less setup
->     - There's a lot less code that you need to write to create a function
+>    - There's a lot less code that you need to write to create a function
 > 2. Clearly defined constructor function
->     - Inside the class definition, you can clearly specify the constructor function.
+>    - Inside the class definition, you can clearly specify the constructor function.
 > 3. Everything's contained
->     - All code that's needed for the class is contained in the class declaration. Instead of having the constructor function in one place, then adding methods to the prototype one-by-one, you can do everything all at once!
+>    - All code that's needed for the class is contained in the class declaration. Instead of having the constructor function in one place, then adding methods to the prototype one-by-one, you can do everything all at once!
 
 #### Things to look out for when using classes
 
 > 1. `class` is not magic
->     - The `class` keyword brings with it a lot of mental constructs from other, class-based languages. It doesn't magically add this functionality to JavaScript classes.
+>    - The `class` keyword brings with it a lot of mental constructs from other, class-based languages. It doesn't magically add this functionality to JavaScript classes.
 > 2. `class` is a mirage over prototypal inheritance
->     - We've said this many times before, but under the hood, a JavaScript class just uses prototypal inheritance.
+>    - We've said this many times before, but under the hood, a JavaScript class just uses prototypal inheritance.
 > 3. Using classes requires the use of `new`
->     - When creating a new instance of a JavaScript class, the `new` keyword **must be used**
+>    - When creating a new instance of a JavaScript class, the `new` keyword **must be used**
 >
 > For example,
 >
@@ -1353,7 +1388,7 @@ Which of the following are true?
 >   // some class code
 > }
 >
-> const myToy1 = Toy(); // throws an error
+> const myToy1 = Toy() // throws an error
 > ```
 >
 > ```text
@@ -1361,7 +1396,7 @@ Which of the following are true?
 > ```
 >
 > ```javascript
-> const myToy2 = new Toy(); // this works!
+> const myToy2 = new Toy() // this works!
 > ```
 
 ### 2.17. Super and Extends
@@ -1371,46 +1406,50 @@ Which of the following are true?
 > ```javascript
 > // ES6 --------------------------------------
 > class Tree {
->   constructor(size = '10', leaves = {
->       spring: 'green',
->       summer: 'green',
->       fall: 'orange',
->       winter: null}) {
->     this.size = size;
->     this.leaves = leaves;
->     this.leafColor = null;
+>   constructor(
+>     size = "10",
+>     leaves = {
+>       spring: "green",
+>       summer: "green",
+>       fall: "orange",
+>       winter: null
+>     }
+>   ) {
+>     this.size = size
+>     this.leaves = leaves
+>     this.leafColor = null
 >   }
 >
 >   changeSeason(season) {
->     this.leafColor = this.leaves[season];
->     if (season === 'spring') {
->       this.size += 1;
+>     this.leafColor = this.leaves[season]
+>     if (season === "spring") {
+>       this.size += 1
 >     }
 >   }
 > }
 >
 > class Maple extends Tree {
 >   constructor(syrupQty = 15, size, leaves) {
->     super(size, leaves);
->     this.syrupQty = syrupQty;
+>     super(size, leaves)
+>     this.syrupQty = syrupQty
 >   }
 >
 >   changeSeason(season) {
->     super.changeSeason(season);
->     if (season === 'spring') {
->       this.syrupQty += 1;
+>     super.changeSeason(season)
+>     if (season === "spring") {
+>       this.syrupQty += 1
 >     }
 >   }
 >
 >   gatherSyrup() {
->     this.syrupQty -= 3;
+>     this.syrupQty -= 3
 >   }
 > }
 >
-> const myMaple = new Maple(15, 5);
-> myMaple.changeSeason('fall');
-> myMaple.gatherSyrup();
-> myMaple.changeSeason('spring');
+> const myMaple = new Maple(15, 5)
+> myMaple.changeSeason("fall")
+> myMaple.gatherSyrup()
+> myMaple.changeSeason("spring")
 > ```
 >
 > Both `Tree` and `Maple` are JavaScript classes. The `Maple` class is a "subclass" of `Tree` and uses the `extends` keyword to set itself as a "subclass".
@@ -1424,43 +1463,46 @@ Which of the following are true?
 > ```javascript
 > // ES5 --------------------------------------
 > function Tree() {
->   this.size = size || 10;
+>   this.size = size || 10
 >   this.leaves = leaves || {
->     spring: 'green', summer: 'green', fall: 'orange', winter: null
->   };
->   this.leafColor;
+>     spring: "green",
+>     summer: "green",
+>     fall: "orange",
+>     winter: null
+>   }
+>   this.leafColor
 > }
 >
 > Tree.prototype.changeSeason = function(season) {
->   this.leafColor = this.leaves[season];
->   if (season === 'spring') {
->     this.size += 1;
+>   this.leafColor = this.leaves[season]
+>   if (season === "spring") {
+>     this.size += 1
 >   }
 > }
 >
-> function Maple (syrupQty, size, leaves) {
->   Tree.call(this, size, leaves);
->   this.syrupQty = syrupQty || 15;
+> function Maple(syrupQty, size, leaves) {
+>   Tree.call(this, size, leaves)
+>   this.syrupQty = syrupQty || 15
 > }
 >
-> Maple.prototype = Object.create(Tree.prototype);
-> Maple.prototype.constructor = Maple;
+> Maple.prototype = Object.create(Tree.prototype)
+> Maple.prototype.constructor = Maple
 >
 > Maple.prototype.changeSeason = function(season) {
->   Tree.prototype.changeSeason.call(this, season);
->   if (season === 'spring') {
->     this.syrupQty += 1;
+>   Tree.prototype.changeSeason.call(this, season)
+>   if (season === "spring") {
+>     this.syrupQty += 1
 >   }
 > }
 >
 > Maple.prototype.gatherSyrup = function() {
->   this.syrupQty -= 3;
+>   this.syrupQty -= 3
 > }
 >
-> const myMaple = new Maple(15, 5);
-> myMaple.changeSeason('fall');
-> myMaple.gatherSyrup();
-> myMaple.changeSeason('spring');
+> const myMaple = new Maple(15, 5)
+> myMaple.changeSeason("fall")
+> myMaple.gatherSyrup()
+> myMaple.changeSeason("spring")
 > ```
 >
 > Both this code and the class-style code above achieve the same functionality.
@@ -1530,8 +1572,8 @@ Which of the following are true?
 > class Apple {}
 > class GrannySmith extends Apple {
 >   constructor(tartnessLevel, energy) {
->     this.tartnessLevel = tartnessLevel; // `this` before `super` throws an error!
->     super(energy);
+>     this.tartnessLevel = tartnessLevel // `this` before `super` throws an error!
+>     super(energy)
 >   }
 > }
 > ```
@@ -1543,13 +1585,13 @@ Take a look at the following code:
 ```javascript
 class Toy {}
 class Dragon extends Toy {}
-const dragon1 = new Dragon();
+const dragon1 = new Dragon()
 ```
 
 Given the code above, is the following statement true or false?
 
 ```javascript
-dragon1 instanceof Toy;
+dragon1 instanceof Toy
 ```
 
 <details>
@@ -1630,33 +1672,33 @@ honk honk
  */
 
 class Vehicle {
-  constructor(color = 'blue', wheels = 4, horn = 'beep beep') {
-    this.color = color;
-    this.wheels = wheels;
-    this.horn = horn;
+  constructor(color = "blue", wheels = 4, horn = "beep beep") {
+    this.color = color
+    this.wheels = wheels
+    this.horn = horn
   }
 
   honkHorn() {
-    console.log(this.horn);
+    console.log(this.horn)
   }
 }
 
 // your code goes here
 class Bicycle extends Vehicle {
-  constructor(color, wheels = 2, horn = 'honk honk') {
-    super(color, wheels, horn);
-    this.horn = horn;
+  constructor(color, wheels = 2, horn = "honk honk") {
+    super(color, wheels, horn)
+    this.horn = horn
   }
   honkHorn() {
-    super.honkHorn();
+    super.honkHorn()
   }
 }
 
 // tests
-const myVehicle = new Vehicle();
-myVehicle.honkHorn(); // beep beep
-const myBike = new Bicycle();
-myBike.honkHorn(); // honk honk
+const myVehicle = new Vehicle()
+myVehicle.honkHorn() // beep beep
+const myBike = new Bicycle()
+myBike.honkHorn() // honk honk
 ```
 
 > What Went Well

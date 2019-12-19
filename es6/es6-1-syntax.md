@@ -85,10 +85,10 @@ The [ES6 spec](https://www.ecma-international.org/ecma-262/6.0/) came out in Jun
 ```javascript
 function getClothing(isCold) {
   if (isCold) {
-    var freezing = 'Grab a jacket!';
+    var freezing = "Grab a jacket!"
   } else {
-    var hot = 'It’s a shorts kind of day.';
-    console.log(freezing);
+    var hot = "It’s a shorts kind of day."
+    console.log(freezing)
   }
 }
 ```
@@ -114,10 +114,10 @@ Answer: `undefined`. Got this on the first try.
 ```javascript
 function getClothing(isCold) {
   if (isCold) {
-    const freezing = 'Grab a jacket!';
+    const freezing = "Grab a jacket!"
   } else {
-    const hot = 'It’s a shorts kind of day.';
-    console.log(freezing);
+    const hot = "It’s a shorts kind of day."
+    console.log(freezing)
   }
 }
 ```
@@ -138,9 +138,9 @@ Answer: `ReferenceError: freezing is not defined`.
 > What do you expect to be output from running the following code?
 
 ```javascript
-let instructor = 'James';
-instructor = 'Richard';
-console.log(instructor);
+let instructor = "James"
+instructor = "Richard"
+console.log(instructor)
 ```
 
 Answer: Richard. Got it on the first try.
@@ -175,21 +175,21 @@ Replace `var` with `let` or `const`
  - Programming Quiz: Using Let and Const (1-1)
  */
 
-var CHARACTER_LIMIT = 255;
+var CHARACTER_LIMIT = 255
 var posts = [
   "#DeepLearning transforms everything from self-driving cars to language translations. AND it's our new Nanodegree!",
   "Within your first week of the VR Developer Nanodegree Program, you'll make your own virtual reality app",
   "I just finished @udacity's Front-End Web Developer Nanodegree. Check it out!"
-];
+]
 
 // prints posts to the console
 function displayPosts() {
   for (var i = 0; i < posts.length; i++) {
-    console.log(posts[i].slice(0, CHARACTER_LIMIT));
+    console.log(posts[i].slice(0, CHARACTER_LIMIT))
   }
 }
 
-displayPosts();
+displayPosts()
 ```
 
 <details>
@@ -200,21 +200,21 @@ displayPosts();
  - Programming Quiz: Using Let and Const (1-1)
  */
 
-const CHARACTER_LIMIT = 255;
+const CHARACTER_LIMIT = 255
 const posts = [
   "#DeepLearning transforms everything from self-driving cars to language translations. AND it's our new Nanodegree!",
   "Within your first week of the VR Developer Nanodegree Program, you'll make your own virtual reality app",
   "I just finished @udacity's Front-End Web Developer Nanodegree. Check it out!"
-];
+]
 
 // prints posts to the console
 function displayPosts() {
   for (let i = 0; i < posts.length; i++) {
-    console.log(posts[i].slice(0, CHARACTER_LIMIT));
+    console.log(posts[i].slice(0, CHARACTER_LIMIT))
   }
 }
 
-displayPosts();
+displayPosts()
 ```
 
 > What Went Well
@@ -240,16 +240,22 @@ displayPosts();
 >
 > ```javascript
 > const student = {
->   name: 'Richard Kalehoff',
->   guardian: 'Mr. Kalehoff'
-> };
->
-> const teacher = {
->   name: 'Mrs. Wilson',
->   room: 'N231'
+>   name: "Richard Kalehoff",
+>   guardian: "Mr. Kalehoff"
 > }
 >
-> let message = student.name + ' please see ' + teacher.name + ' in ' + teacher.room + ' to pick up your report card.';
+> const teacher = {
+>   name: "Mrs. Wilson",
+>   room: "N231"
+> }
+>
+> let message =
+>   student.name +
+>   " please see " +
+>   teacher.name +
+>   " in " +
+>   teacher.room +
+>   " to pick up your report card."
 > ```
 >
 > Returns:
@@ -261,11 +267,15 @@ displayPosts();
 > This works alright, but it gets more complicated when you need to build multi-line strings.
 >
 > ```javascript
-> let note = teacher.name + ',\n\n' +
->   'Please excuse ' + student.name + '.\n' +
->   'He is recovering from the flu.\n\n' +
->   'Thank you,\n' +
->   student.guardian;
+> let note =
+>   teacher.name +
+>   ",\n\n" +
+>   "Please excuse " +
+>   student.name +
+>   ".\n" +
+>   "He is recovering from the flu.\n\n" +
+>   "Thank you,\n" +
+>   student.guardian
 > ```
 >
 > Returns:
@@ -279,9 +289,10 @@ displayPosts();
 > Thank you,
 > Mr. Kalehoff
 > ```
+>
 > However, that’s changed with the introduction of **template literals** (previously referred to as "template strings" in development releases of ES6).
 >
-> *NOTE:* As an alternative to using the string concatenation operator ( + ), you can use the `concat()` method, but both options are rather clunky for simulating true string interpolation.
+> _NOTE:_ As an alternative to using the string concatenation operator ( + ), you can use the `concat()` method, but both options are rather clunky for simulating true string interpolation.
 
 #### Template Literals
 
@@ -293,17 +304,17 @@ displayPosts();
 >
 > ```javascript
 > const student = {
->   name: 'Richard Kalehoff',
->   guardian: 'Mr. Kalehoff'
-> };
->
-> const teacher = {
->   name: 'Mrs. Wilson',
->   room: 'N231'
+>   name: "Richard Kalehoff",
+>   guardian: "Mr. Kalehoff"
 > }
 >
-> let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
-> console.log(message);
+> const teacher = {
+>   name: "Mrs. Wilson",
+>   room: "N231"
+> }
+>
+> let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`
+> console.log(message)
 > ```
 >
 > Returns:
@@ -339,25 +350,25 @@ The JSON is read by Python as a dictionary. Note that it is no longer necessary 
 
 #### Quiz
 
->Change the `greeting` string below to use a template literal. Also, feel free to swap in your name for the placeholder.
+> Change the `greeting` string below to use a template literal. Also, feel free to swap in your name for the placeholder.
 
 ```javascript
 /*
  - Instructions: Change the `greeting` string to use a template literal.
  */
 
-const myName = '[NAME]';
-const greeting = 'Hello, my name is ' + myName;
-console.log(greeting);
+const myName = "[NAME]"
+const greeting = "Hello, my name is " + myName
+console.log(greeting)
 ```
 
 <details>
   <summary><em>Solution</em></summary>
 
 ```javascript
-const myName = '[NAME]';
-const greeting = `Hello, my name is ${myName}`;
-console.log(greeting);
+const myName = "[NAME]"
+const greeting = `Hello, my name is ${myName}`
+console.log(greeting)
 ```
 
 > What Went Well
@@ -376,24 +387,29 @@ console.log(greeting);
 > ...but what about the multi-line example from before?
 >
 > ```javascript
-> var note = teacher.name + ',\n\n' +
->   'Please excuse ' + student.name + '.\n' +
->   'He is recovering from the flu.\n\n' +
->   'Thank you,\n' +
->   student.guardian;
+> var note =
+>   teacher.name +
+>   ",\n\n" +
+>   "Please excuse " +
+>   student.name +
+>   ".\n" +
+>   "He is recovering from the flu.\n\n" +
+>   "Thank you,\n" +
+>   student.guardian
 > ```
 >
 > Becomes:
 >
 > ```javascript
 > var note = `${teacher.name},
->
+> 
 >   Please excuse ${student.name}.
 >   He is recovering from the flu.
->
+> 
 >   Thank you,
->   ${student.guardian}`;
+>   ${student.guardian}`
 > ```
+>
 > Here’s where template literals really shine. In the animation above, the quotes and string concatenation operator have been dropped, as well as the newline characters ( \n ). That's because template literals also preserve newlines as part of the string!
 >
 > TIP: Embedded expressions inside template literals can do more than just reference variables. You can perform operations, call functions and use loops inside embedded expressions!
@@ -410,37 +426,57 @@ Quiz
  */
 
 const cheetah = {
-    name: 'Cheetah',
-    scientificName: 'Acinonyx jubatus',
-    lifespan: '10-12 years',
-    speed: '68-75 mph',
-    diet: 'carnivore',
-    summary: 'Fastest mammal on land, the cheetah can reach speeds of 60 or perhaps even 70 miles (97 or 113 kilometers) an hour over short distances. It usually chases its prey at only about half that speed, however. After a chase, a cheetah needs half an hour to catch its breath before it can eat.',
-    fact: 'Cheetahs have “tear marks” that run from the inside corners of their eyes down to the outside edges of their mouth.'
-};
+  name: "Cheetah",
+  scientificName: "Acinonyx jubatus",
+  lifespan: "10-12 years",
+  speed: "68-75 mph",
+  diet: "carnivore",
+  summary:
+    "Fastest mammal on land, the cheetah can reach speeds of 60 or perhaps even 70 miles (97 or 113 kilometers) an hour over short distances. It usually chases its prey at only about half that speed, however. After a chase, a cheetah needs half an hour to catch its breath before it can eat.",
+  fact:
+    "Cheetahs have “tear marks” that run from the inside corners of their eyes down to the outside edges of their mouth."
+}
 
 // creates an animal trading card
 function createAnimalTradingCardHTML(animal) {
-    const cardHTML = '<div class="card">' +
-        '<h3 class="name">' + animal.name + '</h3>' +
-        '<img src="' + animal.name + '.jpg" alt="' + animal.name +'" class="picture">' +
-        '<div class="description">' +
-            '<p class="fact">' + animal.fact + '</p>' +
-            '<ul class="details">' +
-                '<li><span class="bold">Scientific Name</span>: ' + animal.scientificName + '</li>' +
-                '<li><span class="bold">Average Lifespan</span>: ' + animal.lifespan + '</li>' +
-                '<li><span class="bold">Average Speed</span>: ' + animal.speed + '</li>' +
-                '<li><span class="bold">Diet</span>: ' + animal.diet + '</li>' +
-            '</ul>' +
-            '<p class="brief">' + animal.summary + '</p>' +
-        '</div>' +
-    '</div>';
+  const cardHTML =
+    '<div class="card">' +
+    '<h3 class="name">' +
+    animal.name +
+    "</h3>" +
+    '<img src="' +
+    animal.name +
+    '.jpg" alt="' +
+    animal.name +
+    '" class="picture">' +
+    '<div class="description">' +
+    '<p class="fact">' +
+    animal.fact +
+    "</p>" +
+    '<ul class="details">' +
+    '<li><span class="bold">Scientific Name</span>: ' +
+    animal.scientificName +
+    "</li>" +
+    '<li><span class="bold">Average Lifespan</span>: ' +
+    animal.lifespan +
+    "</li>" +
+    '<li><span class="bold">Average Speed</span>: ' +
+    animal.speed +
+    "</li>" +
+    '<li><span class="bold">Diet</span>: ' +
+    animal.diet +
+    "</li>" +
+    "</ul>" +
+    '<p class="brief">' +
+    animal.summary +
+    "</p>" +
+    "</div>" +
+    "</div>"
 
-    return cardHTML;
+  return cardHTML
 }
 
-console.log(createAnimalTradingCardHTML(cheetah));
-
+console.log(createAnimalTradingCardHTML(cheetah))
 ```
 
 <details>
@@ -452,18 +488,20 @@ console.log(createAnimalTradingCardHTML(cheetah));
  */
 
 const cheetah = {
-    name: 'Cheetah',
-    scientificName: 'Acinonyx jubatus',
-    lifespan: '10-12 years',
-    speed: '68-75 mph',
-    diet: 'carnivore',
-    summary: 'Fastest mammal on land, the cheetah can reach speeds of 60 or perhaps even 70 miles (97 or 113 kilometers) an hour over short distances. It usually chases its prey at only about half that speed, however. After a chase, a cheetah needs half an hour to catch its breath before it can eat.',
-    fact: 'Cheetahs have “tear marks” that run from the inside corners of their eyes down to the outside edges of their mouth.'
-};
+  name: "Cheetah",
+  scientificName: "Acinonyx jubatus",
+  lifespan: "10-12 years",
+  speed: "68-75 mph",
+  diet: "carnivore",
+  summary:
+    "Fastest mammal on land, the cheetah can reach speeds of 60 or perhaps even 70 miles (97 or 113 kilometers) an hour over short distances. It usually chases its prey at only about half that speed, however. After a chase, a cheetah needs half an hour to catch its breath before it can eat.",
+  fact:
+    "Cheetahs have “tear marks” that run from the inside corners of their eyes down to the outside edges of their mouth."
+}
 
 // creates an animal trading card
 function createAnimalTradingCardHTML(animal) {
-    const cardHTML = `<div class="card">
+  const cardHTML = `<div class="card">
         <h3 class="name">${animal.name}</h3>
         <img src="${animal.name}.jpg" alt="${animal.name}" class="picture">
         <div class="description">
@@ -476,12 +514,12 @@ function createAnimalTradingCardHTML(animal) {
             </ul>
             <p class="brief">${animal.summary}</p>
         </div>
-    </div>`;
+    </div>`
 
-    return cardHTML;
+  return cardHTML
 }
 
-console.log(createAnimalTradingCardHTML(cheetah));
+console.log(createAnimalTradingCardHTML(cheetah))
 ```
 
 > What Went Well
@@ -506,13 +544,13 @@ console.log(createAnimalTradingCardHTML(cheetah));
 > This probably sounds like something you’ve done before, for example, look at the two code snippets below that extract data using pre-ES6 techniques:
 >
 > ```javascript
-> const point = [10, 25, -34];
+> const point = [10, 25, -34]
 >
-> const x = point[0];
-> const y = point[1];
-> const z = point[2];
+> const x = point[0]
+> const y = point[1]
+> const z = point[2]
 >
-> console.log(x, y, z);
+> console.log(x, y, z)
 > ```
 >
 > Prints: `10 25 -34`
@@ -521,16 +559,16 @@ console.log(createAnimalTradingCardHTML(cheetah));
 >
 > ```javascript
 > const gemstone = {
->   type: 'quartz',
->   color: 'rose',
+>   type: "quartz",
+>   color: "rose",
 >   carat: 21.29
-> };
+> }
 >
-> const type = gemstone.type;
-> const color = gemstone.color;
-> const carat = gemstone.carat;
+> const type = gemstone.type
+> const color = gemstone.color
+> const carat = gemstone.carat
 >
-> console.log(type, color, carat);
+> console.log(type, color, carat)
 > ```
 >
 > Prints: `quartz rose 21.29`
@@ -543,18 +581,18 @@ console.log(createAnimalTradingCardHTML(cheetah));
 
 #### Destructuring
 
-> **Destructuring** borrows inspiration from languages like [Perl](https://en.wikipedia.org/wiki/Perl) and [Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29) by allowing you to specify the elements you want to extract from an array or object *on the left side of an assignment*. It sounds a little weird, but you can actually achieve the same result as before, but with much less code; and it's still easy to understand.
+> **Destructuring** borrows inspiration from languages like [Perl](https://en.wikipedia.org/wiki/Perl) and [Python](https://en.wikipedia.org/wiki/Python_%28programming_language%29) by allowing you to specify the elements you want to extract from an array or object _on the left side of an assignment_. It sounds a little weird, but you can actually achieve the same result as before, but with much less code; and it's still easy to understand.
 >
 > Let’s take a look at both examples rewritten using destructuring.
 
 ##### Destructuring values from an array
 
 > ```javascript
-> const point = [10, 25, -34];
+> const point = [10, 25, -34]
 >
-> const [x, y, z] = point;
+> const [x, y, z] = point
 >
-> console.log(x, y, z);
+> console.log(x, y, z)
 > ```
 >
 > Prints: `10 25 -34`
@@ -566,9 +604,10 @@ console.log(createAnimalTradingCardHTML(cheetah));
 > **Question 1 of 2**
 >
 > What do you expect to be the value of `second` after running the following code?
+>
 > ```javascript
-> let positions = ['Gabrielle', 'Jarrod', 'Kate', 'Fernando', 'Mike', 'Walter'];
-> let [first, second, third] = positions;
+> let positions = ["Gabrielle", "Jarrod", "Kate", "Fernando", "Mike", "Walter"]
+> let [first, second, third] = positions
 > ```
 
 Answer: Jarrod. Got it on the first try.
@@ -579,14 +618,14 @@ Answer: Jarrod. Got it on the first try.
 
 > ```javascript
 > const gemstone = {
->   type: 'quartz',
->   color: 'rose',
+>   type: "quartz",
+>   color: "rose",
 >   carat: 21.29
-> };
+> }
 >
-> const {type, color, carat} = gemstone;
+> const { type, color, carat } = gemstone
 >
-> console.log(type, color, carat);
+> console.log(type, color, carat)
 > ```
 >
 > Prints: `quartz rose 21.29`
@@ -602,16 +641,16 @@ Answer: Jarrod. Got it on the first try.
 > ```javascript
 > const circle = {
 >   radius: 10,
->   color: 'orange',
+>   color: "orange",
 >   getArea: function() {
->     return Math.PI - this.radius - this.radius;
+>     return Math.PI - this.radius - this.radius
 >   },
 >   getCircumference: function() {
->     return 2 - Math.PI - this.radius;
+>     return 2 - Math.PI - this.radius
 >   }
-> };
+> }
 >
-> let {radius, getArea, getCircumference} = circle;
+> let { radius, getArea, getCircumference } = circle
 > ```
 
 Answer: NaN. Got it on my second try.
@@ -630,18 +669,28 @@ Use array destructuring to pull out the three colors from the array of things an
  - with the colors from the `things` array.
  */
 
-const things = ['red', 'basketball', 'paperclip', 'green', 'computer', 'earth', 'udacity', 'blue', 'dogs'];
+const things = [
+  "red",
+  "basketball",
+  "paperclip",
+  "green",
+  "computer",
+  "earth",
+  "udacity",
+  "blue",
+  "dogs"
+]
 
-const one = things;
-const two = '';
-const three = '';
+const one = things
+const two = ""
+const three = ""
 
 const colors = `List of Colors
 1. ${one}
 2. ${two}
-3. ${three}`;
+3. ${three}`
 
-console.log(colors);
+console.log(colors)
 ```
 
 <details>
@@ -652,18 +701,28 @@ First attempt
 Found that the arrays are zero indexed like Python.
 
 ```javascript
-const things = ['red', 'basketball', 'paperclip', 'green', 'computer', 'earth', 'udacity', 'blue', 'dogs'];
+const things = [
+  "red",
+  "basketball",
+  "paperclip",
+  "green",
+  "computer",
+  "earth",
+  "udacity",
+  "blue",
+  "dogs"
+]
 
-const one = things[0];
-const two = things[3];
-const three = things[7];
+const one = things[0]
+const two = things[3]
+const three = things[7]
 
 const colors = `List of Colors
 1. ${one}
 2. ${two}
-3. ${three}`;
+3. ${three}`
 
-console.log(colors);
+console.log(colors)
 ```
 
 ```text
@@ -693,16 +752,26 @@ Solution
 The solution produces the same answer, but using commas to skip items in the array instead of slicing. It was a little weird that they taught us the slicing method in [6.06. Destructuring](#606-destructuring), and not the comma method, but expected us to use the comma method here.
 
 ```javascript
-const things = ['red', 'basketball', 'paperclip', 'green', 'computer', 'earth', 'udacity', 'blue', 'dogs'];
+const things = [
+  "red",
+  "basketball",
+  "paperclip",
+  "green",
+  "computer",
+  "earth",
+  "udacity",
+  "blue",
+  "dogs"
+]
 
-const [one,,, two,,,, three] = things;
+const [one, , , two, , , , three] = things
 
 const colors = `List of Colors
 1. ${one}
 2. ${two}
-3. ${three}`;
+3. ${three}`
 
-console.log(colors);
+console.log(colors)
 ```
 
 ```text
@@ -741,33 +810,33 @@ List of Colors
 > But just in case you haven’t, here’s an example.
 >
 > ```javascript
-> let type = 'quartz';
-> let color = 'rose';
-> let carat = 21.29;
+> let type = "quartz"
+> let color = "rose"
+> let carat = 21.29
 >
 > const gemstone = {
 >   type: type,
 >   color: color,
 >   carat: carat
-> };
+> }
 >
-> console.log(gemstone);
+> console.log(gemstone)
 > ```
 >
 > Prints: `Object {type: "quartz", color: "rose", carat: 21.29}`
 >
 > Do you see the repetition? Doesn't `type: type`, `color: color`, and `carat: carat` seem redundant?
 >
-> The good news is that you can remove those duplicate variables names from object properties *if* the properties have the same name as the variables being assigned to them.
+> The good news is that you can remove those duplicate variables names from object properties _if_ the properties have the same name as the variables being assigned to them.
 >
 > Check it out!
 >
 > ```javascript
-> let type = 'quartz';
-> let color = 'rose';
-> let carat = 21.29;
+> let type = "quartz"
+> let color = "rose"
+> let carat = 21.29
 >
-> let gemstone = { type, color, carat };
+> let gemstone = { type, color, carat }
 > ```
 >
 > Speaking of shorthand, there’s also a shorthand way to add methods to objects.
@@ -775,9 +844,9 @@ List of Colors
 > To see how that looks, let’s start by adding a `calculateWorth()` method to our `gemstone` object. The `calculateWorth()` method will tell us how much our gemstone costs based on its `type`, `color`, and `carat`.
 >
 > ```javascript
-> let type = 'quartz';
-> let color = 'rose';
-> let carat = 21.29;
+> let type = "quartz"
+> let color = "rose"
+> let carat = 21.29
 >
 > const gemstone = {
 >   type,
@@ -786,7 +855,7 @@ List of Colors
 >   calculateWorth: function() {
 >     // will calculate worth of gemstone based on type, color, and carat
 >   }
-> };
+> }
 > ```
 >
 > In this example, an anonymous function is being assigned to the property `calculateWorth`, but is the **function** keyword really needed? In ES6, it’s not!
@@ -828,10 +897,10 @@ James and Richard explained it with a `for` loop.
 - The variable `i` is typically used to iterate because "iterator" starts with an i.
 
   ```javascript
-  const years = ['1999', '2001', '2013', '2016'];
+  const years = ["1999", "2001", "2013", "2016"]
 
   for (let i = 0; i < years.length; i++) {
-    console.log(years[i]);
+    console.log(years[i])
   }
   ```
 
@@ -853,10 +922,10 @@ James and Richard explained it with a `for` loop.
 > The for loop is obviously the most common type of loop there is, so this should be a quick refresher.
 >
 > ```javascript
-> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 >
 > for (let i = 0; i < digits.length; i++) {
->   console.log(digits[i]);
+>   console.log(digits[i])
 > }
 > ```
 >
@@ -886,10 +955,10 @@ James and Richard explained it with a `for` loop.
 > The for...in loop improves upon the weaknesses of the for loop by **eliminating the counting logic and exit condition**.
 >
 > ```javascript
-> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 >
 > for (const index in digits) {
->   console.log(digits[index]);
+>   console.log(digits[index])
 > }
 > ```
 >
@@ -915,14 +984,14 @@ James and Richard explained it with a `for` loop.
 > ```javascript
 > Array.prototype.decimalfy = function() {
 >   for (let i = 0; i < this.length; i++) {
->     this[i] = this[i].toFixed(2);
+>     this[i] = this[i].toFixed(2)
 >   }
-> };
+> }
 >
-> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 >
 > for (const index in digits) {
->   console.log(digits[index]);
+>   console.log(digits[index])
 > }
 > ```
 >
@@ -965,10 +1034,10 @@ James and Richard explained it with a `for` loop.
 > You write a **for...of loop** almost exactly like you would write a for...in loop, except you swap out `in` with `of` and you can **drop the index**.
 >
 > ```javascript
-> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 >
 > for (const digit of digits) {
->   console.log(digit);
+>   console.log(digit)
 > }
 > ```
 >
@@ -996,21 +1065,21 @@ James and Richard explained it with a `for` loop.
 ```javascript
 // comparison of javascript loops
 
-const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 // for loop
 for (let i = 0; i < digits.length; i++) {
-  console.log(digits[i]);
+  console.log(digits[i])
 }
 
 // for...in  loop
 for (let index in digits) {
-  console.log(digits[index]);
+  console.log(digits[index])
 }
 
 // for...of loop
 for (let digits of digit) {
-  console.log(digit);
+  console.log(digit)
 }
 ```
 
@@ -1029,13 +1098,13 @@ for digit in digits:
 > You can **stop or break a for...of loop at any time**.
 >
 > ```javascript
-> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 >
 > for (const digit of digits) {
 >   if (digit % 2 === 0) {
->     continue;
+>     continue
 >   }
->   console.log(digit);
+>   console.log(digit)
 > }
 > ```
 >
@@ -1054,14 +1123,14 @@ for digit in digits:
 > ```javascript
 > Array.prototype.decimalfy = function() {
 >   for (i = 0; i < this.length; i++) {
->     this[i] = this[i].toFixed(2);
+>     this[i] = this[i].toFixed(2)
 >   }
-> };
+> }
 >
-> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 >
 > for (const digit of digits) {
->   console.log(digit);
+>   console.log(digit)
 > }
 > ```
 >
@@ -1105,10 +1174,17 @@ Saturday
  - Programming Quiz: Writing a For...of Loop (1-4)
  */
 
-const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+const days = [
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday"
+]
 
 // your code goes here
-
 ```
 
 <details>
@@ -1119,11 +1195,19 @@ First attempt
 Got the days to print on my first try:
 
 ```javascript
-const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+const days = [
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday"
+]
 
 // your code goes here
 for (const day of days) {
-    console.log(day);
+  console.log(day)
 }
 ```
 
@@ -1142,24 +1226,40 @@ Next, I need to capitalize the first letter of each day. In Python, this would b
 This didn't work:
 
 ```javascript
-const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+const days = [
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday"
+]
 
 // your code goes here
 for (const day of days) {
-    day.upper();
-    console.log(day);
+  day.upper()
+  console.log(day)
 }
 ```
 
 I needed some reformatting:
 
 ```javascript
-const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+const days = [
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday"
+]
 
 // your code goes here
-for(let day of days) {
-    let word = day[0].toUpperCase() + day.substr(1);
-    console.log(word);
+for (let day of days) {
+  let word = day[0].toUpperCase() + day.substr(1)
+  console.log(word)
 }
 ```
 
@@ -1195,13 +1295,18 @@ Saturday
 
 #### Spread operator
 
-> The **spread operator**, written with three consecutive dots ( `...` ), is new in ES6 and gives you the ability to expand, or *spread*, [iterable objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#Iterators) into multiple elements.
+> The **spread operator**, written with three consecutive dots ( `...` ), is new in ES6 and gives you the ability to expand, or _spread_, [iterable objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#Iterators) into multiple elements.
 >
 > Let’s take a look at a few examples to see how it works.
 >
 > ```javascript
-> const books = ["Don Quixote", "The Hobbit", "Alice in Wonderland", "Tale of Two Cities"];
-> console.log(...books);
+> const books = [
+>   "Don Quixote",
+>   "The Hobbit",
+>   "Alice in Wonderland",
+>   "Tale of Two Cities"
+> ]
+> console.log(...books)
 > ```
 >
 > Prints:
@@ -1211,8 +1316,8 @@ Saturday
 > ```
 >
 > ```javascript
-> const primes = new Set([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
-> console.log(...primes);
+> const primes = new Set([2, 3, 5, 7, 11, 13, 17, 19, 23, 29])
+> console.log(...primes)
 > ```
 >
 > Prints:
@@ -1232,10 +1337,10 @@ Saturday
 > If you’ve ever needed to combine multiple arrays, prior to the spread operator, you were forced to use the array’s `concat()` method.
 >
 > ```javascript
-> const fruits = ["apples", "bananas", "pears"];
-> const vegetables = ["corn", "potatoes", "carrots"];
-> const produce = fruits.concat(vegetables);
-> console.log(produce);
+> const fruits = ["apples", "bananas", "pears"]
+> const vegetables = ["corn", "potatoes", "carrots"]
+> const produce = fruits.concat(vegetables)
+> console.log(produce)
 > ```
 >
 > Prints:
@@ -1250,13 +1355,13 @@ Saturday
 >
 > ⚠️ Upcoming `const` Warning ⚠️
 >
-> If you're following along by copy/pasting the code, then you've already declared the `produce` variable with the `const` keyword. The following code will try to redeclare *and- reassign the variable, so depending on how you're running the code, it might throw an error.
+> If you're following along by copy/pasting the code, then you've already declared the `produce` variable with the `const` keyword. The following code will try to redeclare \*and- reassign the variable, so depending on how you're running the code, it might throw an error.
 >
 > Remember that variables declared with `const` cannot be redeclared or reassigned in the same scope.
 >
 > ```javascript
-> const produce = [fruits, vegetables];
-> console.log(produce);
+> const produce = [fruits, vegetables]
+> console.log(produce)
 > ```
 >
 > Prints:
@@ -1278,12 +1383,12 @@ Saturday
  - Instructions: Use the spread operator to combine the `fruits` and `vegetables` arrays into the `produce` array.
  */
 
-const fruits = ["apples", "bananas", "pears"];
-const vegetables = ["corn", "potatoes", "carrots"];
+const fruits = ["apples", "bananas", "pears"]
+const vegetables = ["corn", "potatoes", "carrots"]
 
-const produce = [];
+const produce = []
 
-console.log(produce);
+console.log(produce)
 ```
 
 <details>
@@ -1292,12 +1397,12 @@ console.log(produce);
 Got it on the first try! Was trying out Pomodoros with @Bree on Slack. Completed 1.14 in one 25 minute Pomodoro.
 
 ```javascript
-const fruits = ["apples", "bananas", "pears"];
-const vegetables = ["corn", "potatoes", "carrots"];
+const fruits = ["apples", "bananas", "pears"]
+const vegetables = ["corn", "potatoes", "carrots"]
 
-const produce = [...fruits, ...vegetables];
+const produce = [...fruits, ...vegetables]
 
-console.log(produce);
+console.log(produce)
 ```
 
 ```text
@@ -1324,7 +1429,7 @@ console.log(produce);
 
 #### Intro to rest parameter
 
-> If you can use the spread operator to *spread* an array into multiple elements, then certainly there should be a way to bundle multiple elements back into an array, right?
+> If you can use the spread operator to _spread_ an array into multiple elements, then certainly there should be a way to bundle multiple elements back into an array, right?
 >
 > In fact, there is! It’s called the **rest parameter**, and it’s another new addition in ES6.
 
@@ -1335,9 +1440,9 @@ console.log(produce);
 > One situation is when assigning the values of an array to variables. For example,
 >
 > ```javascript
-> const order = [20.17, 18.67, 1.50, "cheese", "eggs", "milk", "bread"];
-> const [total, subtotal, tax, ...items] = order;
-> console.log(total, subtotal, tax, items);
+> const order = [20.17, 18.67, 1.5, "cheese", "eggs", "milk", "bread"]
+> const [total, subtotal, tax, ...items] = order
+> console.log(total, subtotal, tax, items)
 > ```
 >
 > Prints:
@@ -1352,8 +1457,8 @@ console.log(produce);
 >
 > ```javascript
 > // spread
-> const myPackage = ['cheese', 'eggs', 'milk', 'bread'];
-> console.log(...myPackage);
+> const myPackage = ["cheese", "eggs", "milk", "bread"]
+> console.log(...myPackage)
 > ```
 >
 > Prints:
@@ -1364,11 +1469,11 @@ console.log(produce);
 >
 > ```javascript
 > // rest
-> printPackageContents('cheese', 'eggs', 'milk', 'bread');
+> printPackageContents("cheese", "eggs", "milk", "bread")
 >
 > function printPackageContents(...items) {
 >   for (const item of items) {
->     console.log(item);
+>     console.log(item)
 >   }
 > }
 > ```
@@ -1382,9 +1487,9 @@ console.log(produce);
 > For example, let’s say we have a function called `sum()` which calculates the sum of an indefinite amount of numbers. How might the `sum()` function be called during execution?
 >
 > ```javascript
-> sum(1, 2);
-> sum(10, 36, 7, 84, 90, 110);
-> sum(-23, 3000, 575000);
+> sum(1, 2)
+> sum(10, 36, 7, 84, 90, 110)
+> sum(-23, 3000, 575000)
 > ```
 >
 > There’s literally an endless number of ways the `sum()` function could be called. Regardless of the amount of numbers passed to the function, it should always return the total sum of the numbers.
@@ -1397,20 +1502,20 @@ console.log(produce);
 >
 > ```javascript
 > function sum() {
->   let total = 0;
->   for(const argument of arguments) {
->     total += argument;
+>   let total = 0
+>   for (const argument of arguments) {
+>     total += argument
 >   }
->   return total;
+>   return total
 > }
 > ```
 >
 > Now this works fine, but it does have its issues:
 >
 > 1. If you look at the definition for the `sum()` function, it doesn’t have any parameters.
->     - This is misleading because we know the `sum()` function can handle an indefinite amount of arguments.
+>    - This is misleading because we know the `sum()` function can handle an indefinite amount of arguments.
 > 2. It can be hard to understand.
->     - If you’ve never used the arguments object before, then you would most likely look at this code and wonder where the arguments object is even coming from. Did it appear out of thin air? It certainly looks that way.
+>    - If you’ve never used the arguments object before, then you would most likely look at this code and wonder where the arguments object is even coming from. Did it appear out of thin air? It certainly looks that way.
 
 #### Using the rest parameter
 
@@ -1418,11 +1523,11 @@ console.log(produce);
 >
 > ```javascript
 > function sum(...nums) {
->   let total = 0;
->   for(const num of nums) {
->     total += num;
+>   let total = 0
+>   for (const num of nums) {
+>     total += num
 >   }
->   return total;
+>   return total
 > }
 > ```
 >
@@ -1432,7 +1537,7 @@ console.log(produce);
 
 Directions:
 
-Use the rest parameter to create an `average()` function that calculates the average of an *unlimited- amount of numbers.
+Use the rest parameter to create an `average()` function that calculates the average of an \*unlimited- amount of numbers.
 
 TIP: Make sure to test your code with different values. For example,
 
@@ -1448,14 +1553,12 @@ TIP: Make sure to test your code with different values. For example,
 
 // your code goes here
 
-function average() {
+function average() {}
 
-}
-
-console.log(average(2, 6));
-console.log(average(2, 3, 3, 5, 7, 10));
-console.log(average(7, 1432, 12, 13, 100));
-console.log(average());
+console.log(average(2, 6))
+console.log(average(2, 3, 3, 5, 7, 10))
+console.log(average(7, 1432, 12, 13, 100))
+console.log(average())
 ```
 
 <details>
@@ -1465,18 +1568,18 @@ First attempt:
 
 ```javascript
 function average(...nums) {
-  let total = 0;
-  for(const num of nums) {
-    total += num;
-    total / nums;
+  let total = 0
+  for (const num of nums) {
+    total += num
+    total / nums
   }
-  return total;
+  return total
 }
 
-console.log(average(2, 6));
-console.log(average(2, 3, 3, 5, 7, 10));
-console.log(average(7, 1432, 12, 13, 100));
-console.log(average());
+console.log(average(2, 6))
+console.log(average(2, 3, 3, 5, 7, 10))
+console.log(average(7, 1432, 12, 13, 100))
+console.log(average())
 ```
 
 Just printed the total:
@@ -1492,18 +1595,18 @@ I iterated several more times, but wasn't sure how to calculate or display the a
 
 ```javascript
 function average(...nums) {
-  let total = 0;
-  let avg = 0;
-  for(const num of nums) {
-    avg = (total += num) / nums;
+  let total = 0
+  let avg = 0
+  for (const num of nums) {
+    avg = (total += num) / nums
   }
-  return avg;
+  return avg
 }
 
-console.log(average(2, 6));
-console.log(average(2, 3, 3, 5, 7, 10));
-console.log(average(7, 1432, 12, 13, 100));
-console.log(average());
+console.log(average(2, 6))
+console.log(average(2, 3, 3, 5, 7, 10))
+console.log(average(7, 1432, 12, 13, 100))
+console.log(average())
 ```
 
 ```text
@@ -1531,20 +1634,20 @@ I checked [James Priest's work](https://github.com/james-priest/100-days-of-code
 
 ```javascript
 function average(...nums) {
-  let total = 0;
+  let total = 0
   for (const num of nums) {
-    total += num;
+    total += num
   }
   if (nums.length > 0) {
-    return total / nums.length;
+    return total / nums.length
   }
-  return 0;
+  return 0
 }
 
-console.log(average(2, 6));
-console.log(average(2, 3, 3, 5, 7, 10));
-console.log(average(7, 1432, 12, 13, 100));
-console.log(average());
+console.log(average(2, 6))
+console.log(average(2, 3, 3, 5, 7, 10))
+console.log(average(7, 1432, 12, 13, 100))
+console.log(average())
 ```
 
 ```text

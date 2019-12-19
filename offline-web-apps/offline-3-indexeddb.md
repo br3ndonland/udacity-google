@@ -64,39 +64,44 @@ br3ndonland
 - `IDBObjectStore.put()`: [MDN](https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/put)
 
 ```javascript
-import idb from 'idb';
+import idb from "idb"
 
-var dbPromise = idb.open('test-db', 1, function(upgradeDb) {
-  var keyValStore = upgradeDb.createObjectStore('keyval');
-  keyValStore.put('world', 'hello');
-});
+var dbPromise = idb.open("test-db", 1, function(upgradeDb) {
+  var keyValStore = upgradeDb.createObjectStore("keyval")
+  keyValStore.put("world", "hello")
+})
 ```
 
 #### Read from database
 
 ```javascript
-dbPromise.then(function(db) {
-  var tx = db.transaction('keyval');
-  var keyValStore = tx.objectStore('keyval');
-  return keyValStore.get('hello');
-}).then(function(val) {
-   console.log('The value of "hello" is:', val);
-});
+dbPromise
+  .then(function(db) {
+    var tx = db.transaction("keyval")
+    var keyValStore = tx.objectStore("keyval")
+    return keyValStore.get("hello")
+  })
+  .then(function(val) {
+    console.log('The value of "hello" is:', val)
+  })
 ```
 
 #### Add another value to the object store
 
 ```javascript
-dbPromise.then(function(db) {
-  var tx = db.transaction('keyval', 'readwrite');
-  var keyValStore = tx.objectStore('keyval');
-  keyValStore.put('bar', 'foo');
-  return tx.complete;
-}).then(function() {
-  console.log('Added foo:bar to keyval');
-}).catch(function(error) {
-  console.error('Transaction failed:', error);
-});
+dbPromise
+  .then(function(db) {
+    var tx = db.transaction("keyval", "readwrite")
+    var keyValStore = tx.objectStore("keyval")
+    keyValStore.put("bar", "foo")
+    return tx.complete
+  })
+  .then(function() {
+    console.log("Added foo:bar to keyval")
+  })
+  .catch(function(error) {
+    console.error("Transaction failed:", error)
+  })
 ```
 
 ### 3.03. Quiz: Getting Started with IDB
@@ -115,19 +120,22 @@ Git
 
 Based on the code [above](#add-another-value-to-the-object-store):
 
-Code in *public/js/idb-test/index.js*
+Code in _public/js/idb-test/index.js_
 
 ```javascript
-dbPromise.then(function(db) {
-  var tx = db.transaction('keyval', 'readwrite');
-  var keyValStore = tx.objectStore('keyval');
-  keyValStore.put('sloth', 'favoriteAnimal');
-  return tx.complete;
-}).then(function() {
-  console.log('Added favoriteAnimal:sloth to keyval');
-}).catch(function(error) {
-  console.error('Transaction failed:', error);
-});
+dbPromise
+  .then(function(db) {
+    var tx = db.transaction("keyval", "readwrite")
+    var keyValStore = tx.objectStore("keyval")
+    keyValStore.put("sloth", "favoriteAnimal")
+    return tx.complete
+  })
+  .then(function() {
+    console.log("Added favoriteAnimal:sloth to keyval")
+  })
+  .catch(function(error) {
+    console.error("Transaction failed:", error)
+  })
 ```
 
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
@@ -143,54 +151,54 @@ The code above was not very practical, because you would have to change and re-r
 
 ```javascript
 // upgrade database
-var dbPromise = idb.open('test-db', 2, function(upgradeDb) {
+var dbPromise = idb.open("test-db", 2, function(upgradeDb) {
   switch (upgradeDb.oldVersion) {
     case 0:
-      var keyValStore = upgradeDb.createObjectStore('keyval');
-      keyValStore.put('world', 'hello');
+      var keyValStore = upgradeDb.createObjectStore("keyval")
+      keyValStore.put("world", "hello")
     case 1:
-      upgradeDb.createObjectStore('people', {
-        keyPath: 'name'
-      });
+      upgradeDb.createObjectStore("people", {
+        keyPath: "name"
+      })
   }
-});
+})
 
 // add data to object store
 // each person is a javascript object
 dbPromise
   .then(function(db) {
-    var tx = db.transaction('people', 'readwrite');
-    var peopleStore = tx.objectStore('people');
+    var tx = db.transaction("people", "readwrite")
+    var peopleStore = tx.objectStore("people")
 
     peopleStore.put({
-      name: 'Sam Munoz',
+      name: "Sam Munoz",
       age: 25,
-      favoriteAnimal: 'dog'
-    });
+      favoriteAnimal: "dog"
+    })
 
     peopleStore.put({
-      name: 'Susan Keller',
+      name: "Susan Keller",
       age: 34,
-      favoriteAnimal: 'cat'
-    });
+      favoriteAnimal: "cat"
+    })
 
     peopleStore.put({
-      name: 'Lillie Wolfe',
+      name: "Lillie Wolfe",
       age: 28,
-      favoriteAnimal: 'dog'
-    });
+      favoriteAnimal: "dog"
+    })
 
     peopleStore.put({
-      name: 'Marc Stone',
+      name: "Marc Stone",
       age: 39,
-      favoriteAnimal: 'cat'
-    });
+      favoriteAnimal: "cat"
+    })
 
-    return tx.complete;
+    return tx.complete
   })
   .then(function() {
-    console.log('People added!');
-  });
+    console.log("People added!")
+  })
 ```
 
 ### 3.04. Quiz: More IDB
@@ -209,38 +217,38 @@ Git
 <details>
   <summary><em>Solution</em></summary>
 
-Code in *public/js/idb-test/index.js*
+Code in _public/js/idb-test/index.js_
 
 ```javascript
 // upgrade database
-var dbPromise = idb.open('test-db', 4, function(upgradeDb) {
+var dbPromise = idb.open("test-db", 4, function(upgradeDb) {
   switch (upgradeDb.oldVersion) {
     case 0:
-      var keyValStore = upgradeDb.createObjectStore('keyval');
-      keyValStore.put('world', 'hello');
+      var keyValStore = upgradeDb.createObjectStore("keyval")
+      keyValStore.put("world", "hello")
     case 1:
-      upgradeDb.createObjectStore('people', { keyPath: 'name' });
+      upgradeDb.createObjectStore("people", { keyPath: "name" })
     case 2:
-      var peopleStore = upgradeDb.transaction.objectStore('people');
-      peopleStore.createIndex('animal', 'favoriteAnimal');
+      var peopleStore = upgradeDb.transaction.objectStore("people")
+      peopleStore.createIndex("animal", "favoriteAnimal")
     case 3:
-      peopleStore = upgradeDb.transaction.objectStore('people');
-      peopleStore.createIndex('age', 'age');
+      peopleStore = upgradeDb.transaction.objectStore("people")
+      peopleStore.createIndex("age", "age")
   }
-});
+})
 
 // sort the people objects
 dbPromise
   .then(function(db) {
-    var tx = db.transaction('people');
-    var peopleStore = tx.objectStore('people');
-    var ageIndex = peopleStore.index('age');
+    var tx = db.transaction("people")
+    var peopleStore = tx.objectStore("people")
+    var ageIndex = peopleStore.index("age")
 
-    return ageIndex.getAll();
+    return ageIndex.getAll()
   })
   .then(function(people) {
-    console.log('People by age:', people);
-  });
+    console.log("People by age:", people)
+  })
 ```
 
 - Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "idb-age".
@@ -249,17 +257,17 @@ dbPromise
   ```javascript
   dbPromise
     .then(function(db) {
-      var tx = db.transaction('people');
-      var peopleStore = tx.objectStore('people');
-      var ageIndex = peopleStore.index('age');
+      var tx = db.transaction("people")
+      var peopleStore = tx.objectStore("people")
+      var ageIndex = peopleStore.index("age")
 
-      return ageIndex.openCursor();
+      return ageIndex.openCursor()
     })
     .then(function(cursor) {
-      if (!cursor) return;
-      console.log('Cursored at:', cursor.value.name);
-      return cursor.continue();
-    });
+      if (!cursor) return
+      console.log("Cursored at:", cursor.value.name)
+      return cursor.continue()
+    })
   ```
 
 - We can store the cursor cycle as a function, a "neat trick":
@@ -267,22 +275,22 @@ dbPromise
   ```javascript
   dbPromise
     .then(function(db) {
-      var tx = db.transaction('people');
-      var peopleStore = tx.objectStore('people');
-      var ageIndex = peopleStore.index('age');
+      var tx = db.transaction("people")
+      var peopleStore = tx.objectStore("people")
+      var ageIndex = peopleStore.index("age")
 
-      return ageIndex.openCursor();
+      return ageIndex.openCursor()
     })
     .then(function logPerson(cursor) {
-      if (!cursor) return;
-      console.log('Cursored at:', cursor.value.name);
+      if (!cursor) return
+      console.log("Cursored at:", cursor.value.name)
       // cursor.update(newValue)
       // cursor.delete()
-      return cursor.continue().then(logPerson);
+      return cursor.continue().then(logPerson)
     })
     .then(function() {
-      console.log('Done cursoring');
-    });
+      console.log("Done cursoring")
+    })
   ```
 
 - To restore the repo to this point in the future:
@@ -304,7 +312,7 @@ Next, we will create a database for wittr posts. The posts will still arrive via
 
 <img src="img/udacity-google-04-0501.png" alt="Using the IDB Cache and Display Entries" width="400px">
 
-- *public/js/main/IndexController.js*
+- _public/js/main/IndexController.js_
 - The `IndexController._openSocket` method is called to open the Web Socket.
 - `IndexController._openSocket` listens for the message event, and passes data to the `IndexController._onSocketMessage` method.
 - `IndexController._onSocketMessage` parses JSON data and passes it to `IndexController._postsView.addPosts`.
@@ -324,14 +332,14 @@ Task
 
 > Your task is to return a Promise for a database called 'wittr' that has an object store called 'wittrs' that uses 'id' as its key and has an index called called 'by-date', which is sorted by the 'time' property.
 >
-> Once you've done that, you'll need to add messages to the database. Down in the IndexController._onSocketMessage method, the database has been fetched. Your task is to add each of the messages to the Wittr store. Note that we're not using the entries in the database yet - we'll do that in the next chapter.
+> Once you've done that, you'll need to add messages to the database. Down in the IndexController.\_onSocketMessage method, the database has been fetched. Your task is to add each of the messages to the Wittr store. Note that we're not using the entries in the database yet - we'll do that in the next chapter.
 
 If the database gets messed up, run `indexedDB.deleteDatabase('wittr')` in DevTools to reset.
 
 <details>
   <summary><em>Solution</em></summary>
 
-Code in *public/js/main/IndexController.js*
+Code in _public/js/main/IndexController.js_
 
 ```javascript
 // Open the database
@@ -339,7 +347,7 @@ function openDatabase() {
   // If the browser doesn't support service worker,
   // we don't care about having a database
   if (!navigator.serviceWorker) {
-    return Promise.resolve();
+    return Promise.resolve()
   }
 
   // return a promise for a database called 'wittr'
@@ -347,35 +355,35 @@ function openDatabase() {
   // that uses 'id' as its key
   // and has an index called 'by-date', which is sorted
   // by the 'time' property
-  return idb.open('wittr', 1, function(upgradeDb) {
-    var store = upgradeDb.createObjectStore('wittrs', {
-      keyPath: 'id'
-    });
+  return idb.open("wittr", 1, function(upgradeDb) {
+    var store = upgradeDb.createObjectStore("wittrs", {
+      keyPath: "id"
+    })
 
-    store.createIndex('by-date', 'time');
-  });
+    store.createIndex("by-date", "time")
+  })
 }
 
 // called when the web socket sends message data
 IndexController.prototype._onSocketMessage = function(data) {
-  var messages = JSON.parse(data);
+  var messages = JSON.parse(data)
 
   this._dbPromise.then(function(db) {
-    if (!db) return;
+    if (!db) return
 
     // loop through messages and add to store
-    var tx = db.transaction('wittrs', 'readwrite');
-    var store = tx.objectStore('wittrs');
+    var tx = db.transaction("wittrs", "readwrite")
+    var store = tx.objectStore("wittrs")
 
     messages.forEach(function(message) {
-      store.put(message);
-    });
+      store.put(message)
+    })
 
-    return tx.complete;
-  });
+    return tx.complete
+  })
 
-  this._postsView.addPosts(messages);
-};
+  this._postsView.addPosts(messages)
+}
 ```
 
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
@@ -399,17 +407,17 @@ Git
 <details>
   <summary><em>Solution</em></summary>
 
-Code in *public/js/main/IndexController.js*
+Code in _public/js/main/IndexController.js_
 
 ```javascript
 IndexController.prototype._showCachedMessages = function() {
-  var indexController = this;
+  var indexController = this
 
   return this._dbPromise.then(function(db) {
     // if we're already showing posts, eg shift-refresh
     // or the very first load, there's no point fetching
     // posts from IDB
-    if (!db || indexController._postsView.showingPosts()) return;
+    if (!db || indexController._postsView.showingPosts()) return
 
     // TODO: get all of the wittr message objects from indexeddb,
     // then pass them to:
@@ -418,15 +426,15 @@ IndexController.prototype._showCachedMessages = function() {
     // Remember to return a promise that does all this,
     // so the websocket isn't opened until you're done!
     var index = db
-      .transaction('wittrs')
-      .objectStore('wittrs')
-      .index('by-date');
+      .transaction("wittrs")
+      .objectStore("wittrs")
+      .index("by-date")
 
     return index.getAll().then(function(messages) {
-      indexController._postsView.addPosts(messages.reverse());
-    });
-  });
-};
+      indexController._postsView.addPosts(messages.reverse())
+    })
+  })
+}
 ```
 
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
@@ -452,43 +460,43 @@ Git
 <details>
   <summary><em>Solution</em></summary>
 
-*public/js/main/IndexController.js*, `IndexController._onSocketMessage` method
+_public/js/main/IndexController.js_, `IndexController._onSocketMessage` method
 
 ```javascript
 IndexController.prototype._onSocketMessage = function(data) {
-  var messages = JSON.parse(data);
+  var messages = JSON.parse(data)
 
   this._dbPromise.then(function(db) {
-    if (!db) return;
+    if (!db) return
 
-    var store = db.transaction('wittrs', 'readwrite').objectStore('wittrs');
+    var store = db.transaction("wittrs", "readwrite").objectStore("wittrs")
     // create a variable to index the posts by date
-    var index = store.index('by-date');
+    var index = store.index("by-date")
 
     messages.forEach(function(message) {
-      store.put(message);
-    });
+      store.put(message)
+    })
 
     // keep the newest 30 entries in 'wittrs', delete the rest.
     //
     // Hint: you can use .openCursor(null, 'prev') to open a cursor
     // that goes through an index/store backwards.
     return index
-      .openCursor(null, 'prev')
+      .openCursor(null, "prev")
       .then(function(cursor) {
-        return cursor.advance(30);
+        return cursor.advance(30)
       })
       .then(function deletePost(cursor) {
         // if the entry is undefined, stop
-        if (!cursor) return;
-        cursor.delete();
+        if (!cursor) return
+        cursor.delete()
         // otherwise continue looping through and deleting posts
-        return cursor.continue().then(deletePost);
-      });
-  });
+        return cursor.continue().then(deletePost)
+      })
+  })
 
-  this._postsView.addPosts(messages);
-};
+  this._postsView.addPosts(messages)
+}
 ```
 
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
@@ -538,7 +546,7 @@ Git
   $ git checkout origin/task-cache-photos
   ```
 
-Code in *public/js/sw/index.js* (the service worker script)
+Code in _public/js/sw/index.js_ (the service worker script)
 
 <details>
   <summary><em>Solution</em></summary>
@@ -550,7 +558,7 @@ function servePhoto(request) {
   // But storageUrl has the -800px.jpg bit missing.
   // Use this url to store & match the image in the cache.
   // This means you only store one copy of each photo.
-  var storageUrl = request.url.replace(/-\d+px\.jpg$/, '');
+  var storageUrl = request.url.replace(/-\d+px\.jpg$/, "")
 
   // return images from the "wittr-content-imgs" cache
   // if they're in there. Otherwise, fetch the images from
@@ -563,12 +571,12 @@ function servePhoto(request) {
       return (
         response ||
         fetch(request).then(function(networkResponse) {
-          cache.put(storageUrl, networkResponse.clone());
-          return networkResponse;
+          cache.put(storageUrl, networkResponse.clone())
+          return networkResponse
         })
-      );
-    });
-  });
+      )
+    })
+  })
 }
 ```
 
@@ -584,7 +592,7 @@ As we saw in [4.08. Quiz: Cleaning IDB](#408-quiz-cleaning-idb), we eventually n
 If we want to remove specific entries from the cache, we can use `cache.delete`, passing in the URL or the request of the thing we want to delete:
 
 ```javascript
-cache.delete(request);
+cache.delete(request)
 ```
 
 There's also a `cache.keys` method that returns a Promise providing all the requests for entries in the cache:
@@ -592,7 +600,7 @@ There's also a `cache.keys` method that returns a Promise providing all the requ
 ```javascript
 cache.keys().then(function(requests) {
   // ...
-});
+})
 ```
 
 Next, we will clean the image cache.
@@ -608,7 +616,7 @@ Git
   $ git checkout origin/task-clean-photos
   ```
 
-Implement the `IndexController._cleanImageCache` method in *public/js/main/IndexController.js*.
+Implement the `IndexController._cleanImageCache` method in _public/js/main/IndexController.js_.
 
 <details>
   <summary><em>Solution</em></summary>
@@ -616,7 +624,7 @@ Implement the `IndexController._cleanImageCache` method in *public/js/main/Index
 ```javascript
 IndexController.prototype._cleanImageCache = function() {
   return this._dbPromise.then(function(db) {
-    if (!db) return;
+    if (!db) return
 
     // open the 'wittr' object store, get all the messages,
     // gather all the photo urls.
@@ -625,36 +633,36 @@ IndexController.prototype._cleanImageCache = function() {
     // that you no longer need.
     //
     // create an array of images to keep
-    var imagesNeeded = [];
+    var imagesNeeded = []
 
-    var tx = db.transaction('wittrs');
+    var tx = db.transaction("wittrs")
     // get object store and messages
     return tx
-      .objectStore('wittrs')
+      .objectStore("wittrs")
       .getAll()
       .then(function(messages) {
         messages.forEach(function(message) {
           if (message.photo) {
-            imagesNeeded.push(message.photo);
+            imagesNeeded.push(message.photo)
           }
-        });
+        })
 
         // open image cache and get stored image requests
-        return caches.open('wittr-content-imgs');
+        return caches.open("wittr-content-imgs")
       })
       .then(function(cache) {
         return cache.keys().then(function(requests) {
           requests.forEach(function(request) {
-            var url = new URL(request.url);
+            var url = new URL(request.url)
 
             if (!imagesNeeded.includes(url.pathname)) {
-              cache.delete(request);
+              cache.delete(request)
             }
-          });
-        });
-      });
-  });
-};
+          })
+        })
+      })
+  })
+}
 ```
 
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
@@ -675,10 +683,12 @@ IndexController.prototype._cleanImageCache = function() {
 Final task! Caching avatars. Avatars are also responsive images, but they vary by density rather than width. The URL pattern is, correspondingly, a little different than for other images:
 
 ```html
-<img width="40" height="40"
+<img
+  width="40"
+  height="40"
   src="/avatars/sam-1x.jpg"
-  srcset="/avatars/sam-2x.jpg 2x,
-          /avatars/sam-3x.jpb 3x">
+  srcset="/avatars/sam-2x.jpg 2x, /avatars/sam-3x.jpb 3x"
+/>
 ```
 
 Git
@@ -690,23 +700,23 @@ Git
   $ git checkout origin/task-cache-avatars
   ```
 
-Call and implement the `serveAvatar` function in *public/js/sw/index.js* (the service worker script)
+Call and implement the `serveAvatar` function in _public/js/sw/index.js_ (the service worker script)
 
 <details>
   <summary><em>Solution</em></summary>
 
-*Call the `serveAvatar` function from within the `fetch` event handler:*
+_Call the `serveAvatar` function from within the `fetch` event handler:_
 
 ```javascript
 // respond to avatar urls by responding with
 // the return value of serveAvatar(event.request)
-if (requestUrl.pathname.startsWith('/avatars/')) {
-  event.respondWith(serveAvatar(event.request));
-  return;
+if (requestUrl.pathname.startsWith("/avatars/")) {
+  event.respondWith(serveAvatar(event.request))
+  return
 }
 ```
 
-*Implement the `serveAvatar` function:*
+_Implement the `serveAvatar` function:_
 
 ```javascript
 function serveAvatar(request) {
@@ -715,7 +725,7 @@ function serveAvatar(request) {
   // But storageUrl has the -2x.jpg bit missing.
   // Use this url to store & match the image in the cache.
   // This means you only store one copy of each avatar.
-  var storageUrl = request.url.replace(/-\dx\.jpg$/, '');
+  var storageUrl = request.url.replace(/-\dx\.jpg$/, "")
 
   // return images from the "wittr-content-imgs" cache
   // if they're in there. But afterwards, go to the network
@@ -725,13 +735,13 @@ function serveAvatar(request) {
   return caches.open(contentImgsCache).then(function(cache) {
     return cache.match(storageUrl).then(function(response) {
       var fetchPromise = fetch(request).then(function(networkResponse) {
-        cache.put(storageUrl, networkResponse.clone());
-        return networkResponse;
-      });
+        cache.put(storageUrl, networkResponse.clone())
+        return networkResponse
+      })
 
-      return response || fetchPromise;
-    });
-  });
+      return response || fetchPromise
+    })
+  })
 }
 ```
 

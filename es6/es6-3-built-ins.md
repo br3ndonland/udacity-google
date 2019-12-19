@@ -72,8 +72,8 @@ Brendon Smith
 > To create a symbol, you write `Symbol()` with an optional string as its **description**.
 >
 > ```javascript
-> const sym1 = Symbol('apple');
-> console.log(sym1);
+> const sym1 = Symbol("apple")
+> console.log(sym1)
 > ```
 >
 > ```text
@@ -85,9 +85,9 @@ Brendon Smith
 > And just to show you how this works, if you compare two symbols with the same description…
 >
 > ```javascript
-> const sym2 = Symbol('banana');
-> const sym3 = Symbol('banana');
-> console.log(sym2 === sym3);
+> const sym2 = Symbol("banana")
+> const sym3 = Symbol("banana")
+> console.log(sym2 === sym3)
 > ```
 >
 > ```text
@@ -100,22 +100,22 @@ Brendon Smith
 >
 > ```javascript
 > const bowl = {
->   'apple': { color: 'red', weight: 136.078 },
->   'banana': { color: 'yellow', weight: 183.15 },
->   'orange': { color: 'orange', weight: 170.097 }
-> };
+>   apple: { color: "red", weight: 136.078 },
+>   banana: { color: "yellow", weight: 183.15 },
+>   orange: { color: "orange", weight: 170.097 }
+> }
 > ```
 >
 > The bowl contains fruit which are objects that are properties of the bowl. But, we run into a problem when the second banana gets added.
 >
 > ```javascript
 > const bowl = {
->   'apple': { color: 'red', weight: 136.078 },
->   'banana': { color: 'yellow', weight: 183.151 },
->   'orange': { color: 'orange', weight: 170.097 },
->   'banana': { color: 'yellow', weight: 176.845 }
-> };
-> console.log(bowl);
+>   apple: { color: "red", weight: 136.078 },
+>   banana: { color: "yellow", weight: 183.151 },
+>   orange: { color: "orange", weight: 170.097 },
+>   banana: { color: "yellow", weight: 176.845 }
+> }
+> console.log(bowl)
 > ```
 >
 > ```text
@@ -126,12 +126,12 @@ Brendon Smith
 >
 > ```javascript
 > const bowl = {
->   [Symbol('apple')]: { color: 'red', weight: 136.078 },
->   [Symbol('banana')]: { color: 'yellow', weight: 183.15 },
->   [Symbol('orange')]: { color: 'orange', weight: 170.097 },
->   [Symbol('banana')]: { color: 'yellow', weight: 176.845 }
-> };
-> console.log(bowl);
+>   [Symbol("apple")]: { color: "red", weight: 136.078 },
+>   [Symbol("banana")]: { color: "yellow", weight: 183.15 },
+>   [Symbol("orange")]: { color: "orange", weight: 170.097 },
+>   [Symbol("banana")]: { color: "yellow", weight: 176.845 }
+> }
+> console.log(bowl)
 > ```
 >
 > ```text
@@ -154,9 +154,9 @@ Brendon Smith
 > The **iterable protocol** is used for defining and customizing the iteration behavior of objects. What that really means is you now have the _flexibility_ in ES6 to specify a way for iterating through values in an object. For some objects, they already come built-in with this behavior. For example, strings and arrays are examples of built-in iterables.
 >
 > ```javascript
-> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 > for (const digit of digits) {
->   console.log(digit);
+>   console.log(digit)
 > }
 > ```
 >
@@ -191,18 +191,18 @@ Brendon Smith
 >
 > 1. `value`: the data representing the next value in the sequence of values within the object
 > 2. `done`: a boolean representing if the iterator is done going through the sequence of values
->     - If done is true, then the iterator has reached the end of its sequence of values.
->     - If done is false, then the iterator is able to produce another value in its sequence of values.
+>    - If done is true, then the iterator has reached the end of its sequence of values.
+>    - If done is false, then the iterator is able to produce another value in its sequence of values.
 >
 > Here’s the example from earlier, but instead we are using the array’s default iterator to step through each value in the array.
 >
 > ```javascript
-> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-> const arrayIterator = digits[Symbol.iterator]();
+> const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+> const arrayIterator = digits[Symbol.iterator]()
 >
-> console.log(arrayIterator.next());
-> console.log(arrayIterator.next());
-> console.log(arrayIterator.next());
+> console.log(arrayIterator.next())
+> console.log(arrayIterator.next())
+> console.log(arrayIterator.next())
 > ```
 >
 > ```text
@@ -222,14 +222,14 @@ Brendon Smith
 > In JavaScript, we can already represent something similar to a mathematical set using an array.
 >
 > ```javascript
-> const nums = [2, 4, 5, 6];
+> const nums = [2, 4, 5, 6]
 > ```
 >
 > However, arrays _do no enforce items to be unique_. If we try to add another `2` to `nums`, JavaScript won't complain and will add it without any issue.
 >
 > ```javascript
-> nums.push(2);
-> console.log(nums);
+> nums.push(2)
+> console.log(nums)
 > ```
 >
 > ```text
@@ -252,8 +252,8 @@ Brendon Smith
 > There’s a couple of different ways to create a Set. The first way, is pretty straightforward:
 >
 > ```javascript
-> const games = new Set();
-> console.log(games);
+> const games = new Set()
+> console.log(games)
 > ```
 >
 > ```text
@@ -265,8 +265,13 @@ Brendon Smith
 > If you want to create a Set from a list of values, you use an array:
 >
 > ```javascript
-> const games = new Set(['Super Mario Bros.', 'Banjo-Kazooie', 'Mario Kart', 'Super Mario Bros.']);
-> console.log(games);
+> const games = new Set([
+>   "Super Mario Bros.",
+>   "Banjo-Kazooie",
+>   "Mario Kart",
+>   "Super Mario Bros."
+> ])
+> console.log(games)
 > ```
 >
 > ```text
@@ -303,14 +308,18 @@ First try. Sets make a lot of sense. Thank you ES6!
 > After you’ve created a Set, you’ll probably want to add and delete items from the Set. So how do you that? You use the appropriately named, `.add()` and `.delete()` methods:
 >
 > ```javascript
+> const games = new Set([
+>   "Super Mario Bros.",
+>   "Banjo-Kazooie",
+>   "Mario Kart",
+>   "Super Mario Bros."
+> ])
 >
-> const games = new Set(['Super Mario Bros.', 'Banjo-Kazooie', 'Mario Kart', 'Super Mario Bros.']);
+> games.add("Banjo-Tooie")
+> games.add("Age of Empires")
+> games.delete("Super Mario Bros.")
 >
-> games.add('Banjo-Tooie');
-> games.add('Age of Empires');
-> games.delete('Super Mario Bros.');
->
-> console.log(games);
+> console.log(games)
 > ```
 >
 > ```text
@@ -321,7 +330,7 @@ First try. Sets make a lot of sense. Thank you ES6!
 >
 > ```javascript
 > games.clear()
-> console.log(games);
+> console.log(games)
 > ```
 >
 > ```text
@@ -330,7 +339,7 @@ First try. Sets make a lot of sense. Thank you ES6!
 >
 > **TIP:** If you attempt to `.add()` a duplicate item to a Set, you won’t receive an error, but the item will not be added to the Set. Also, if you try to `.delete() an item that is not in a Set, you won’t receive an error, and the Set will remain unchanged.
 >
->`.add()` returns the `Set` if an item is successfully added. On the other hand, `.delete()` returns a Boolean (`true` or `false`) depending on successful deletion.
+> `.add()` returns the `Set` if an item is successfully added. On the other hand, `.delete()` returns a Boolean (`true` or `false`) depending on successful deletion.
 
 ### 3.07. Working with Sets
 
@@ -341,8 +350,21 @@ First try. Sets make a lot of sense. Thank you ES6!
 > Use the `.size` property to return the number of items in a Set:
 >
 > ```javascript
-> const months = new Set(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
-> console.log(months.size);
+> const months = new Set([
+>   "January",
+>   "February",
+>   "March",
+>   "April",
+>   "May",
+>   "June",
+>   "July",
+>   "August",
+>   "September",
+>   "October",
+>   "November",
+>   "December"
+> ])
+> console.log(months.size)
 > ```
 >
 > ```text
@@ -356,7 +378,7 @@ First try. Sets make a lot of sense. Thank you ES6!
 > Use the `.has()` method to check if an item exists in a Set. If the item is in the Set, then `.has()` will return `true`. If the item doesn’t exist in the Set, then `.has()` will return `false`.
 >
 > ```javascript
-> console.log(months.has('September'));
+> console.log(months.has("September"))
 > ```
 >
 > ```text
@@ -368,7 +390,7 @@ First try. Sets make a lot of sense. Thank you ES6!
 > Finally, use the `.values()` method to return the values in a Set. The return value of the `.values()` method is a `SetIterator` object.
 >
 > ```javascript
-> console.log(months.values());
+> console.log(months.values())
 > ```
 >
 > ```text
@@ -385,7 +407,7 @@ First try. Sets make a lot of sense. Thank you ES6!
 
 > The last step to working with Sets is looping over them.
 >
-> If you remember back to our discussion on the new *iterable and iterator protocols* in ES6, then you’ll recall that Sets are built-in iterables. This means two things in terms of looping:
+> If you remember back to our discussion on the new _iterable and iterator protocols_ in ES6, then you’ll recall that Sets are built-in iterables. This means two things in terms of looping:
 >
 > 1. You can use the Set’s default iterator to step through each item in a Set, one by one.
 > 2. You can use the new `for...of` loop to loop through each item in a Set.
@@ -395,8 +417,8 @@ First try. Sets make a lot of sense. Thank you ES6!
 > Because the `.values()` method returns a new iterator object (called `SetIterator`), you can store that iterator object in a variable and loop through each item in the Set using `.next()`.
 >
 > ```javascript
-> const iterator = months.values();
-> iterator.next();
+> const iterator = months.values()
+> iterator.next()
 > ```
 >
 > ```text
@@ -406,7 +428,7 @@ First try. Sets make a lot of sense. Thank you ES6!
 > And if you run `.next()` again?
 >
 > ```javascript
-> iterator.next();
+> iterator.next()
 > ```
 >
 > ```text
@@ -415,19 +437,18 @@ First try. Sets make a lot of sense. Thank you ES6!
 >
 > And so on until `done` equals `true` which marks the end of the Set.
 >
->
 > ```javascript
-> const days = new Set(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']);
-> const iterator = days.values();
+> const days = new Set(["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
+> const iterator = days.values()
 >
-> iterator.next();  // {value: 'Mon', done: false}
-> iterator.next();  // {value: 'Tue', done: false}
-> iterator.next();  // {value: 'Wed', done: false}
-> iterator.next();  // {value: 'Thu', done: false}
-> iterator.next();  // {value: 'Fri', done: false}
-> iterator.next();  // {value: 'Sat', done: false}
-> iterator.next();  // {value: 'Mon', done: false}
-> iterator.next();  // {value: undefined, done: true}
+> iterator.next() // {value: 'Mon', done: false}
+> iterator.next() // {value: 'Tue', done: false}
+> iterator.next() // {value: 'Wed', done: false}
+> iterator.next() // {value: 'Thu', done: false}
+> iterator.next() // {value: 'Fri', done: false}
+> iterator.next() // {value: 'Sat', done: false}
+> iterator.next() // {value: 'Mon', done: false}
+> iterator.next() // {value: undefined, done: true}
 > ```
 
 #### Using a for...of Loop
@@ -435,9 +456,18 @@ First try. Sets make a lot of sense. Thank you ES6!
 > An easier method to loop through the items in a Set is the for...of loop.
 >
 > ```javascript
-> const colors = new Set(['red', 'orange', 'yellow', 'green', 'blue', 'violet', 'brown', 'black']);
+> const colors = new Set([
+>   "red",
+>   "orange",
+>   "yellow",
+>   "green",
+>   "blue",
+>   "violet",
+>   "brown",
+>   "black"
+> ])
 > for (const color of colors) {
->   console.log(color);
+>   console.log(color)
 > }
 > ```
 >
@@ -495,16 +525,16 @@ Then use the `.delete()` method to remove "strawberry" from the set.
  *
  - Then use the `.delete()` method to remove "strawberry" from the set.
  */
-const myFavoriteFlavors = new Set();
+const myFavoriteFlavors = new Set()
 
-myFavoriteFlavors.add('chocolate chip');
-myFavoriteFlavors.add('cookies and cream');
-myFavoriteFlavors.add('strawberry');
-myFavoriteFlavors.add('vanilla');
+myFavoriteFlavors.add("chocolate chip")
+myFavoriteFlavors.add("cookies and cream")
+myFavoriteFlavors.add("strawberry")
+myFavoriteFlavors.add("vanilla")
 
-myFavoriteFlavors.delete('strawberry');
+myFavoriteFlavors.delete("strawberry")
 
-console.log(myFavoriteFlavors);
+console.log(myFavoriteFlavors)
 ```
 
 ```text
@@ -541,12 +571,12 @@ Set { 'chocolate chip', 'cookies and cream', 'vanilla' }
 > You can create a WeakSet just like you would a normal Set, except that you use the `WeakSet` constructor.
 >
 > ```js
-> const student1 = { name: 'James', age: 26, gender: 'male' };
-> const student2 = { name: 'Julia', age: 27, gender: 'female' };
-> const student3 = { name: 'Richard', age: 31, gender: 'male' };
+> const student1 = { name: "James", age: 26, gender: "male" }
+> const student2 = { name: "Julia", age: 27, gender: "female" }
+> const student3 = { name: "Richard", age: 31, gender: "male" }
 >
-> const roster = new WeakSet([student1, student2, student3]);
-> console.log(roster);
+> const roster = new WeakSet([student1, student2, student3])
+> console.log(roster)
 > ```
 >
 > ```text
@@ -556,7 +586,7 @@ Set { 'chocolate chip', 'cookies and cream', 'vanilla' }
 > …but if you try to add something other than an object, you’ll get an error!
 >
 > ```js
-> roster.add('Amanda');
+> roster.add("Amanda")
 > ```
 >
 > ```text
@@ -572,14 +602,14 @@ Set { 'chocolate chip', 'cookies and cream', 'vanilla' }
 > WeakSets take advantage of this by exclusively working with objects. If you set an object to `null`, then you’re essentially deleting the object. And when JavaScript’s garbage collector runs, the memory that object previously occupied will be freed up to be used later in your program.
 >
 > ```js
-> let studentA = { name: 'Richard', age: 31 };
-> let studentB = { name: 'Alexis', age: 28 };
-> let studentC = { name: 'Jasmine', age: 29 };
+> let studentA = { name: "Richard", age: 31 }
+> let studentB = { name: "Alexis", age: 28 }
+> let studentC = { name: "Jasmine", age: 29 }
 >
-> let roster = new WeakSet([studentA, studentB, studentC]);
+> let roster = new WeakSet([studentA, studentB, studentC])
 >
-> studentC = null;
-> console.log(roster);
+> studentC = null
+> console.log(roster)
 > ```
 >
 > ```text
@@ -627,13 +657,13 @@ Use the `.add()` method to add the `flavor1` object to the `uniqueFlavors` set, 
   <summary><em>Solution</em></summary>
 
 ```js
-let uniqueFlavors = new WeakSet();
-let flavor1 = { flavor: 'chocolate' }
-let flavor2 = { flavor: 'peanut butter' }
+let uniqueFlavors = new WeakSet()
+let flavor1 = { flavor: "chocolate" }
+let flavor2 = { flavor: "peanut butter" }
 
-uniqueFlavors.add(flavor1);
-uniqueFlavors.add(flavor2);
-uniqueFlavors.add(flavor1);
+uniqueFlavors.add(flavor1)
+uniqueFlavors.add(flavor2)
+uniqueFlavors.add(flavor1)
 
 console.log(uniqueFlavors)
 ```
@@ -664,15 +694,15 @@ console.log(uniqueFlavors)
 >   ```js
 >   {
 >     key1: value1
->     richard: 'is awesome'
->     james: 'is also cool'
+>     richard: "is awesome"
+>     james: "is also cool"
 >   }
 >   ```
 >
 > - whereas Sets are **collections of unique values**.
 >
 >   ```js
->   [val1, val2, val3]
+>   ;[val1, val2, val3]
 >   ```
 >
 > - You could say that Sets are to arrays as maps are to objects.
@@ -681,7 +711,6 @@ console.log(uniqueFlavors)
 >   Sets :: Arrays
 >   Maps :: Objects
 >   ```
->
 
 ### 3.13. Creating & Modifying Maps
 
@@ -696,8 +725,8 @@ console.log(uniqueFlavors)
 > To create a Map, simply type:
 >
 > ```js
-> const employees = new Map();
-> console.log(employees);
+> const employees = new Map()
+> console.log(employees)
 > ```
 >
 > ```text
@@ -711,25 +740,25 @@ console.log(uniqueFlavors)
 > Unlike Sets, you can’t create Maps from a list of values; instead, you add key-values by using the Map’s `.set()` method.
 >
 > ```js
-> const employees = new Map();
+> const employees = new Map()
 >
-> employees.set('james.parkes@udacity.com', {
->     firstName: 'James',
->     lastName: 'Parkes',
->     role: 'Content Developer'
-> });
-> employees.set('julia@udacity.com', {
->     firstName: 'Julia',
->     lastName: 'Van Cleve',
->     role: 'Content Developer'
-> });
-> employees.set('richard@udacity.com', {
->     firstName: 'Richard',
->     lastName: 'Kalehoff',
->     role: 'Content Developer'
-> });
+> employees.set("james.parkes@udacity.com", {
+>   firstName: "James",
+>   lastName: "Parkes",
+>   role: "Content Developer"
+> })
+> employees.set("julia@udacity.com", {
+>   firstName: "Julia",
+>   lastName: "Van Cleve",
+>   role: "Content Developer"
+> })
+> employees.set("richard@udacity.com", {
+>   firstName: "Richard",
+>   lastName: "Kalehoff",
+>   role: "Content Developer"
+> })
 >
-> console.log(employees);
+> console.log(employees)
 > ```
 >
 > ```text
@@ -741,9 +770,9 @@ console.log(uniqueFlavors)
 > To remove key-value pairs, simply use the `.delete()` method.
 >
 > ```js
-> employees.delete('julia@udacity.com');
-> employees.delete('richard@udacity.com');
-> console.log(employees);
+> employees.delete("julia@udacity.com")
+> employees.delete("richard@udacity.com")
+> console.log(employees)
 > ```
 >
 > ```text
@@ -754,7 +783,7 @@ console.log(uniqueFlavors)
 >
 > ```js
 > employees.clear()
-> console.log(employees);
+> console.log(employees)
 > ```
 >
 > ```text
@@ -770,15 +799,15 @@ console.log(uniqueFlavors)
 > After you’ve built your Map, you can use the `.has()` method to check if a key-value pair exists in your Map by passing it a key.
 >
 > ```js
-> const members = new Map();
+> const members = new Map()
 >
-> members.set('Evelyn', 75.68);
-> members.set('Liam', 20.16);
-> members.set('Sophia', 0);
-> members.set('Marcus', 10.25);
+> members.set("Evelyn", 75.68)
+> members.set("Liam", 20.16)
+> members.set("Sophia", 0)
+> members.set("Marcus", 10.25)
 >
-> console.log(members.has('Xavier'));
-> console.log(members.has('Marcus'));
+> console.log(members.has("Xavier"))
+> console.log(members.has("Marcus"))
 > ```
 >
 > ```text
@@ -789,7 +818,7 @@ console.log(uniqueFlavors)
 > And you can also retrieve values from a Map, by passing a key to the `.get()` method.
 >
 > ```js
-> console.log(members.get('Evelyn'));
+> console.log(members.get("Evelyn"))
 > ```
 >
 > ```text
@@ -811,8 +840,8 @@ console.log(uniqueFlavors)
 > Using both the `.keys()` and `.values()` methods on a Map will return a new iterator object called MapIterator. You can store that iterator object in a new variable and use `.next()` to loop through each key or value. Depending on which method you use, will determine if your iterator has access to the Map’s keys or the Map’s values.
 >
 > ```js
-> let iteratorObjForKeys = members.keys();
-> iteratorObjForKeys.next();
+> let iteratorObjForKeys = members.keys()
+> iteratorObjForKeys.next()
 > ```
 >
 > ```text
@@ -822,7 +851,7 @@ console.log(uniqueFlavors)
 > Use `.next()` to the get the next key value.
 >
 > ```js
-> iteratorObjForKeys.next();
+> iteratorObjForKeys.next()
 > ```
 >
 > ```text
@@ -832,7 +861,7 @@ console.log(uniqueFlavors)
 > And so on.
 >
 > ```js
-> iteratorObjForKeys.next();
+> iteratorObjForKeys.next()
 > ```
 >
 > ```text
@@ -842,8 +871,8 @@ console.log(uniqueFlavors)
 > On the flipside, use the `.values()` method to access the Map’s values, and then repeat the same process.
 >
 > ```js
-> let iteratorObjForValues = members.values();
-> iteratorObjForValues.next();
+> let iteratorObjForValues = members.values()
+> iteratorObjForValues.next()
 > ```
 >
 > ```text
@@ -856,7 +885,7 @@ console.log(uniqueFlavors)
 >
 > ```js
 > for (const member of members) {
->   console.log(member);
+>   console.log(member)
 > }
 > ```
 >
@@ -877,15 +906,15 @@ console.log(uniqueFlavors)
  - keys and values of the `members` Map to the console.
  */
 
-const members = new Map();
+const members = new Map()
 
-members.set('Evelyn', 75.68);
-members.set('Liam', 20.16);
-members.set('Sophia', 0);
-members.set('Marcus', 10.25);
+members.set("Evelyn", 75.68)
+members.set("Liam", 20.16)
+members.set("Sophia", 0)
+members.set("Marcus", 10.25)
 
 for (const member of members) {
-    // console.log(key, value);
+  // console.log(key, value);
 }
 ```
 
@@ -898,16 +927,16 @@ for (const member of members) {
  - keys and values of the `members` Map to the console.
  */
 
-const members = new Map();
+const members = new Map()
 
-members.set('Evelyn', 75.68);
-members.set('Liam', 20.16);
-members.set('Sophia', 0);
-members.set('Marcus', 10.25);
+members.set("Evelyn", 75.68)
+members.set("Liam", 20.16)
+members.set("Sophia", 0)
+members.set("Marcus", 10.25)
 
 for (const member of members) {
-    const [key, value] = member;
-    console.log(key, value);
+  const [key, value] = member
+  console.log(key, value)
 }
 ```
 
@@ -935,7 +964,7 @@ for (const member of members) {
 > Your last option for looping through a Map is with the `.forEach()` method.
 >
 > ```js
-> members.forEach((key, value) => console.log(key, value));
+> members.forEach((key, value) => console.log(key, value))
 > ```
 >
 > ```text
@@ -962,16 +991,16 @@ for (const member of members) {
 > You can create a WeakMap just like you would a normal Map, except that you use the `WeakMap` constructor.
 >
 > ```js
-> let book1 = { title: 'Pride and Prejudice', author: 'Jane Austen' };
-> let book2 = { title: 'The Catcher in the Rye', author: 'J.D. Salinger' };
-> let book3 = { title: 'Gulliver’s Travels', author: 'Jonathan Swift' };
+> let book1 = { title: "Pride and Prejudice", author: "Jane Austen" }
+> let book2 = { title: "The Catcher in the Rye", author: "J.D. Salinger" }
+> let book3 = { title: "Gulliver’s Travels", author: "Jonathan Swift" }
 >
-> const library = new WeakMap();
-> library.set(book1, true);
-> library.set(book2, false);
-> library.set(book3, true);
+> const library = new WeakMap()
+> library.set(book1, true)
+> library.set(book2, false)
+> library.set(book3, true)
 >
-> console.log(library);
+> console.log(library)
 > ```
 >
 > ```text
@@ -981,7 +1010,7 @@ for (const member of members) {
 > ...but if you try to add something other than an object as a key, you’ll get an error!
 >
 > ```js
-> library.set('The Grapes of Wrath', false);
+> library.set("The Grapes of Wrath", false)
 > ```
 >
 > ```text
@@ -997,8 +1026,8 @@ for (const member of members) {
 > WeakMaps take advantage of this by exclusively working with objects as keys. If you set an object to null, then you’re essentially deleting the object. And when JavaScript’s garbage collector runs, the memory that object previously occupied will be freed up to be used later in your program.
 >
 > ```js
-> book1 = null;
-> console.log(library);
+> book1 = null
+> console.log(library)
 > ```
 >
 > ```text
@@ -1028,15 +1057,15 @@ for (const member of members) {
 > When you create the promise, you must give it the code that will be run asynchronously. You provide this code as the argument of the constructor function:
 >
 > ```js
-> new Promise(function () {
->     window.setTimeout(function createSundae(flavor = 'chocolate') {
->         const sundae = {};
->         // request ice cream
->         // get cone
->         // warm up ice cream scoop
->         // scoop generous portion into cone!
->     }, Math.random() - 2000);
-> });
+> new Promise(function() {
+>   window.setTimeout(function createSundae(flavor = "chocolate") {
+>     const sundae = {}
+>     // request ice cream
+>     // get cone
+>     // warm up ice cream scoop
+>     // scoop generous portion into cone!
+>   }, Math.random() - 2000)
+> })
 > ```
 >
 > This code creates a promise that will start in a few seconds after I make the request. Then there are a number of steps that need to be made in the `createSundae` function.
@@ -1048,16 +1077,16 @@ for (const member of members) {
 > The function gets passed to the function we provide the Promise constructor - typically the word "resolve" is used to indicate that this function should be called when the request completes successfully. Notice the `resolve` on the first line:
 >
 > ```js
-> new Promise(function (resolve, reject) {
->     window.setTimeout(function createSundae(flavor = 'chocolate') {
->         const sundae = {};
->         // request ice cream
->         // get cone
->         // warm up ice cream scoop
->         // scoop generous portion into cone!
->         resolve(sundae);
->     }, Math.random() - 2000);
-> });
+> new Promise(function(resolve, reject) {
+>   window.setTimeout(function createSundae(flavor = "chocolate") {
+>     const sundae = {}
+>     // request ice cream
+>     // get cone
+>     // warm up ice cream scoop
+>     // scoop generous portion into cone!
+>     resolve(sundae)
+>   }, Math.random() - 2000)
+> })
 > ```
 >
 > Now when the sundae has been successfully created, it calls the `resolve` method and passes it the data we want to return - in this case the data that's being returned is the completed sundae. So the `resolve` method is used to indicate that the request is complete and that it completed _successfully_.
@@ -1065,19 +1094,19 @@ for (const member of members) {
 > If there is a problem with the request and it couldn't be completed, then we could use the second function that's passed to the function. Typically, this function is stored in an identifier called "reject" to indicate that this function should be used if the request fails for some reason. Check out the `reject` on the first line:
 >
 > ```js
-> new Promise(function (resolve, reject) {
->     window.setTimeout(function createSundae(flavor = 'chocolate') {
->         const sundae = {};
->         // request ice cream
->         // get cone
->         // warm up ice cream scoop
->         // scoop generous portion into cone!
->         if ( /- iceCreamConeIsEmpty(flavor) */ ) {
->             reject(`Sorry, we're out of that flavor :-(`);
->         }
->         resolve(sundae);
->     }, Math.random() - 2000);
-> });
+> new Promise(function(resolve, reject) {
+>   window.setTimeout(function createSundae(flavor = "chocolate") {
+>     const sundae = {}
+>     // request ice cream
+>     // get cone
+>     // warm up ice cream scoop
+>     // scoop generous portion into cone!
+>     if (/- iceCreamConeIsEmpty(flavor) */) {
+>       reject(`Sorry, we're out of that flavor :-(`)
+>     }
+>     resolve(sundae)
+>   }, Math.random() - 2000)
+> })
 > ```
 >
 > So the `reject` method is used when the request _could not be completed_. Notice that even though the request fails, we can still return data - in this case we're just returning text that says we don't have the desired ice cream flavor.
@@ -1089,9 +1118,9 @@ for (const member of members) {
 > The first thing to understand is that a Promise will immediately return an object.
 >
 > ```js
-> const myPromiseObj = new Promise(function (resolve, reject) {
->     // sundae creation code
-> });
+> const myPromiseObj = new Promise(function(resolve, reject) {
+>   // sundae creation code
+> })
 > ```
 >
 > That object has a `.then()` method on it that we can use to have it notify us if the request we made in the promise was either successful or failed. The `.then()` method takes two functions:
@@ -1100,12 +1129,15 @@ for (const member of members) {
 > 2. the function to run if the request failed to complete
 >
 > ```js
-> mySundae.then(function(sundae) {
->     console.log(`Time to eat my delicious ${sundae}`);
-> }, function(msg) {
->     console.log(msg);
->     self.goCry(); // not a real method
-> });
+> mySundae.then(
+>   function(sundae) {
+>     console.log(`Time to eat my delicious ${sundae}`)
+>   },
+>   function(msg) {
+>     console.log(msg)
+>     self.goCry() // not a real method
+>   }
+> )
 > ```
 >
 > As you can see, the first function that's passed to `.then()` will be called and passed the data that the Promise's `resolve` function used. In this case, the function would receive the `sundae` object. The second function will be called and passed the data that the Promise's `reject` function was called with. In this case, the function receives the error message "Sorry, we're out of that flavor :-(" that the `reject` function was called with in the Promise code above.
@@ -1146,10 +1178,10 @@ Proxies are objects that stand in for other objects and handle all their interac
 > The simplest way to create a proxy is to provide an object and then an empty handler object.
 >
 > ```js
-> var richard = {status: 'looking for work'};
-> var agent = new Proxy(richard, {});
+> var richard = { status: "looking for work" }
+> var agent = new Proxy(richard, {})
 >
-> agent.status; // returns 'looking for work'
+> agent.status // returns 'looking for work'
 > ```
 >
 > The above doesn't actually do anything special with the proxy - it just passes the request directly to the source object! If we want the proxy object to actually intercept the request, that's what the handler object is for!
@@ -1161,17 +1193,17 @@ Proxies are objects that stand in for other objects and handle all their interac
 > The `get` trap is used to "intercept" calls to properties:
 >
 > ```js
-> const richard = {status: 'looking for work'};
+> const richard = { status: "looking for work" }
 > const handler = {
->     get(target, propName) {
->         console.log(target); // the `richard` object, not `handler`, not `agent`
->         console.log(propName); // the name of the property the proxy is checking
->                                // (`agent` in this case)
->     }
-> };
-> const agent = new Proxy(richard, handler);
-> agent.status; // logs out the richard object (not the agent object!)
->               // and logs out the name of the property being accessed (`status`)
+>   get(target, propName) {
+>     console.log(target) // the `richard` object, not `handler`, not `agent`
+>     console.log(propName) // the name of the property the proxy is checking
+>     // (`agent` in this case)
+>   }
+> }
+> const agent = new Proxy(richard, handler)
+> agent.status // logs out the richard object (not the agent object!)
+> // and logs out the name of the property being accessed (`status`)
 > ```
 >
 > In the code above, the `handler` object has a `get` method (called a "trap" since it's being used in a Proxy). When the code `agent.status;` is run on the last line, because the `get` trap exists, it "intercepts" the call to get the status property and runs the `get` trap function.
@@ -1185,17 +1217,17 @@ Proxies are objects that stand in for other objects and handle all their interac
 > If we wanted to actually provide the real result, we would need to return the property on the target object:
 >
 > ```js
-> const richard = {status: 'looking for work'};
+> const richard = { status: "looking for work" }
 > const handler = {
->     get(target, propName) {
->         console.log(target);
->         console.log(propName);
->         return target[propName];
->     }
-> };
-> const agent = new Proxy(richard, handler);
-> agent.status; // (1)logs the richard object, (2)logs the property being accessed,
->               // (3)returns the text in richard.status
+>   get(target, propName) {
+>     console.log(target)
+>     console.log(propName)
+>     return target[propName]
+>   }
+> }
+> const agent = new Proxy(richard, handler)
+> agent.status // (1)logs the richard object, (2)logs the property being accessed,
+> // (3)returns the text in richard.status
 > ```
 >
 > Notice we added the `return target[propName];` as the last line of the `get` trap. This will access the property on the target object and will return it.
@@ -1205,14 +1237,14 @@ Proxies are objects that stand in for other objects and handle all their interac
 > Alternatively, we could use the proxy to provide direct feedback:
 >
 > ```js
-> const richard = {status: 'looking for work'};
+> const richard = { status: "looking for work" }
 > const handler = {
->     get(target, propName) {
->         return `He's following many leads, so you should offer a contract ASAP!`;
->     }
-> };
-> const agent = new Proxy(richard, handler);
-> agent.status; // returns the text `He's following many leads, so you should ...`
+>   get(target, propName) {
+>     return `He's following many leads, so you should offer a contract ASAP!`
+>   }
+> }
+> const agent = new Proxy(richard, handler)
+> agent.status // returns the text `He's following many leads, so you should ...`
 > ```
 >
 > With this code, the Proxy doesn't even check the target object, it just directly responds to the calling code.
@@ -1222,19 +1254,19 @@ Proxies are objects that stand in for other objects and handle all their interac
 > The `set` trap is used for intercepting code that will _change a property_. The `set` trap receives: the object it proxies the property that is being set the new value for the proxy.
 >
 > ```js
-> const richard = {status: 'looking for work'};
+> const richard = { status: "looking for work" }
 > const handler = {
->     set(target, propName, value) {
->         // if the pay is being set, take 15% as commission
->         if (propName === 'payRate') {
->             value = value - 0.85;
->         }
->         target[propName] = value;
+>   set(target, propName, value) {
+>     // if the pay is being set, take 15% as commission
+>     if (propName === "payRate") {
+>       value = value - 0.85
 >     }
-> };
-> const agent = new Proxy(richard, handler);
-> agent.payRate = 1000; // set the actor's pay to $1,000
-> agent.payRate; // $850 the actor's actual pay
+>     target[propName] = value
+>   }
+> }
+> const agent = new Proxy(richard, handler)
+> agent.payRate = 1000 // set the actor's pay to $1,000
+> agent.payRate // $850 the actor's actual pay
 > ```
 >
 > In the code above, notice that the `set` trap checks to see if the `payRate` property is being set. If it is, then the proxy (the agent) takes 15 percent off the top for her own commission! Then, when the actor's pay is set to one thousand dollars, since the `payRate` property was used, the code took 15% off the top and set the actual `payRate` property to `850`;
@@ -1265,31 +1297,31 @@ Proxies are objects that stand in for other objects and handle all their interac
 >
 > ```js
 > var obj = {
->     _age: 5,
->     _height: 4,
->     get age() {
->         console.log(`getting the "age" property`);
->         console.log(this._age);
->     },
->     get height() {
->         console.log(`getting the "height" property`);
->         console.log(this._height);
->     }
-> };
+>   _age: 5,
+>   _height: 4,
+>   get age() {
+>     console.log(`getting the "age" property`)
+>     console.log(this._age)
+>   },
+>   get height() {
+>     console.log(`getting the "height" property`)
+>     console.log(this._height)
+>   }
+> }
 > ```
 >
 > With the code above, notice that we have to set `get age()` and `get height()` when initializing the object. So when we call the code below, we'll get the following results:
 >
 > ```js
-> obj.age; // logs 'getting the "age" property' & 5
-> obj.height; // logs 'getting the "height" property' & 4
+> obj.age // logs 'getting the "age" property' & 5
+> obj.height // logs 'getting the "height" property' & 4
 > ```
 >
 > But look what happens when we now add a new property to the object:
 >
 > ```js
-> obj.weight = 120; // set a new property on the object
-> obj.weight; // logs just 120
+> obj.weight = 120 // set a new property on the object
+> obj.weight // logs just 120
 > ```
 >
 > Notice that a `getting the "weight" property` message wasn't displayed like the `age` and `height` properties produced.
@@ -1297,22 +1329,25 @@ Proxies are objects that stand in for other objects and handle all their interac
 > With ES6 Proxies, we _do not need to know the properties beforehand_:
 >
 > ```js
-> const proxyObj = new Proxy({age: 5, height: 4}, {
+> const proxyObj = new Proxy(
+>   { age: 5, height: 4 },
+>   {
 >     get(targetObj, property) {
->         console.log(`getting the ${property} property`);
->         console.log(targetObj[property]);
+>       console.log(`getting the ${property} property`)
+>       console.log(targetObj[property])
 >     }
-> });
+>   }
+> )
 >
-> proxyObj.age; // logs 'getting the age property' & 5
-> proxyObj.height; // logs 'getting the height property' & 4
+> proxyObj.age // logs 'getting the age property' & 5
+> proxyObj.height // logs 'getting the height property' & 4
 > ```
 >
 > All well and good, just like the ES5 code, but look what happens when we add a new property:
 >
 > ```js
-> proxyObj.weight = 120; // set a new property on the object
-> proxyObj.weight; // logs 'getting the weight property' & 120
+> proxyObj.weight = 120 // set a new property on the object
+> proxyObj.weight // logs 'getting the weight property' & 120
 > ```
 >
 > See that?!? A `weight` property was added to the proxy object, and when it was later retrieved, it displayed a log message!
@@ -1342,18 +1377,26 @@ Proxies are objects that stand in for other objects and handle all their interac
 >
 > ```js
 > function getEmployee() {
->     console.log('the function has started');
+>   console.log("the function has started")
 >
->     const names = ['Amanda', 'Diego', 'Joe', 'James', 'Kagure', 'Kavita', 'Orit'];
+>   const names = [
+>     "Amanda",
+>     "Diego",
+>     "Joe",
+>     "James",
+>     "Kagure",
+>     "Kavita",
+>     "Orit"
+>   ]
 >
->     for (const name of names) {
->         console.log(name);
->     }
+>   for (const name of names) {
+>     console.log(name)
+>   }
 >
->     console.log('the function has ended');
+>   console.log("the function has ended")
 > }
 >
-> getEmployee();
+> getEmployee()
 > ```
 >
 > Running the code above produces the following output to the console:
@@ -1378,15 +1421,23 @@ Proxies are objects that stand in for other objects and handle all their interac
 >
 > ```js
 > function* getEmployee() {
->     console.log('the function has started');
+>   console.log("the function has started")
 >
->     const names = ['Amanda', 'Diego', 'Joe', 'James', 'Kagure', 'Kavita', 'Orit'];
+>   const names = [
+>     "Amanda",
+>     "Diego",
+>     "Joe",
+>     "James",
+>     "Kagure",
+>     "Kavita",
+>     "Orit"
+>   ]
 >
->     for (const name of names) {
->         console.log( name );
->     }
+>   for (const name of names) {
+>     console.log(name)
+>   }
 >
->     console.log('the function has ended');
+>   console.log("the function has ended")
 > }
 > ```
 >
@@ -1435,8 +1486,8 @@ My first try was just the first option (which is actually the community consensu
 > When a generator is invoked, it doesn't actually run any of the code inside the function. Instead, it creates and returns an iterator. This iterator can then be used to execute the actual generator's inner code.
 >
 > ```js
-> const generatorIterator = getEmployee();
-> generatorIterator.next();
+> const generatorIterator = getEmployee()
+> generatorIterator.next()
 > ```
 >
 > Produces the code we expect:
@@ -1461,24 +1512,32 @@ My first try was just the first option (which is actually the community consensu
 >
 > ```js
 > function* getEmployee() {
->     console.log('the function has started');
+>   console.log("the function has started")
 >
->     const names = ['Amanda', 'Diego', 'Joe', 'James', 'Kagure', 'Kavita', 'Orit'];
+>   const names = [
+>     "Amanda",
+>     "Diego",
+>     "Joe",
+>     "James",
+>     "Kagure",
+>     "Kavita",
+>     "Orit"
+>   ]
 >
->     for (const name of names) {
->         console.log(name);
->         yield;
->     }
+>   for (const name of names) {
+>     console.log(name)
+>     yield
+>   }
 >
->     console.log('the function has ended');
+>   console.log("the function has ended")
 > }
 > ```
 >
 > Notice that there's now a `yield` inside the `for..of` loop. If we invoke the generator (which produces an iterator) and then call `.next()`, we'll get the following output:
 >
 > ```js
-> const generatorIterator = getEmployee();
-> generatorIterator.next();
+> const generatorIterator = getEmployee()
+> generatorIterator.next()
 > ```
 >
 > Logs the following to the console:
@@ -1491,7 +1550,7 @@ My first try was just the first option (which is actually the community consensu
 > It's paused! But to really be sure, let's check out the next iteration:
 >
 > ```js
-> generatorIterator.next();
+> generatorIterator.next()
 > ```
 >
 > Logs the following to the console:
@@ -1510,23 +1569,31 @@ My first try was just the first option (which is actually the community consensu
 >
 > ```js
 > function* getEmployee() {
->     console.log('the function has started');
+>   console.log("the function has started")
 >
->     const names = ['Amanda', 'Diego', 'Joe', 'James', 'Kagure', 'Kavita', 'Orit'];
+>   const names = [
+>     "Amanda",
+>     "Diego",
+>     "Joe",
+>     "James",
+>     "Kagure",
+>     "Kavita",
+>     "Orit"
+>   ]
 >
->     for (const name of names) {
->         yield name;
->     }
+>   for (const name of names) {
+>     yield name
+>   }
 >
->     console.log('the function has ended');
+>   console.log("the function has ended")
 > }
 > ```
 >
 > Notice that now instead of `console.log(name)`; that it's been switched to `yield name;`. With this change, when the generator is run, it will "yield" the name back out to the function _and then pause its execution_. Let's see this in action:
 >
 > ```js
-> const generatorIterator = getEmployee();
-> let result = generatorIterator.next();
+> const generatorIterator = getEmployee()
+> let result = generatorIterator.next()
 > result.value // "Amanda"
 >
 > generatorIterator.next().value // "Diego"
@@ -1539,8 +1606,8 @@ How many times will the iterator's .next() method need to be called to fully com
 
 ```js
 function* udacity() {
-    yield 'Richard';
-    yield 'James'
+  yield "Richard"
+  yield "James"
 }
 ```
 
@@ -1565,14 +1632,14 @@ function* udacity() {
 >
 > ```js
 > function* displayResponse() {
->     const response = yield;
->     console.log(`Your response is "${response}"!`);
+>   const response = yield
+>   console.log(`Your response is "${response}"!`)
 > }
 >
-> const iterator = displayResponse();
+> const iterator = displayResponse()
 >
-> iterator.next(); // starts running the generator function
-> iterator.next('Hello Udacity Student'); // send data into the generator
+> iterator.next() // starts running the generator function
+> iterator.next("Hello Udacity Student") // send data into the generator
 > // the line above logs to the console: Your response is "Hello Udacity Student"!
 > ```
 >
@@ -1582,41 +1649,49 @@ function* udacity() {
 >
 > ```js
 > function* getEmployee() {
->     const names = ['Amanda', 'Diego', 'Joe', 'James', 'Kagure', 'Kavita', 'Orit'];
->     const facts = [];
+>   const names = [
+>     "Amanda",
+>     "Diego",
+>     "Joe",
+>     "James",
+>     "Kagure",
+>     "Kavita",
+>     "Orit"
+>   ]
+>   const facts = []
 >
->     for (const name of names) {
->         // yield *out- each name AND store the returned data into the facts array
->         facts.push(yield name);
->     }
+>   for (const name of names) {
+>     // yield *out- each name AND store the returned data into the facts array
+>     facts.push(yield name)
+>   }
 >
->     return facts;
+>   return facts
 > }
 >
-> const generatorIterator = getEmployee();
+> const generatorIterator = getEmployee()
 >
 > // get the first name out of the generator
-> let name = generatorIterator.next().value;
+> let name = generatorIterator.next().value
 >
 > // pass data in *and* get the next name
-> name = generatorIterator.next(`${name} is cool!`).value;
+> name = generatorIterator.next(`${name} is cool!`).value
 >
 > // pass data in *and* get the next name
-> name = generatorIterator.next(`${name} is awesome!`).value;
+> name = generatorIterator.next(`${name} is awesome!`).value
 >
 > // pass data in *and* get the next name
-> name = generatorIterator.next(`${name} is stupendous!`).value;
+> name = generatorIterator.next(`${name} is stupendous!`).value
 >
 > // you get the idea
-> name = generatorIterator.next(`${name} is impressive!`).value;
-> name = generatorIterator.next(`${name} is stunning!`).value;
-> name = generatorIterator.next(`${name} is awe-inspiring!`).value;
+> name = generatorIterator.next(`${name} is impressive!`).value
+> name = generatorIterator.next(`${name} is stunning!`).value
+> name = generatorIterator.next(`${name} is awe-inspiring!`).value
 >
 > // pass the last data in, generator ends and returns the array
-> const positions = generatorIterator.next(`${name} is magnificent!`).value;
+> const positions = generatorIterator.next(`${name} is magnificent!`).value
 >
 > // displays each name with description on its own line
-> positions.join('\n');
+> positions.join("\n")
 > ```
 
 #### Sending Data Quiz Question
@@ -1625,20 +1700,20 @@ What will happen if the following code is run?
 
 ```js
 function* createSundae() {
-    const toppings = [];
+  const toppings = []
 
-    toppings.push(yield);
-    toppings.push(yield);
-    toppings.push(yield);
+  toppings.push(yield)
+  toppings.push(yield)
+  toppings.push(yield)
 
-    return toppings;
+  return toppings
 }
 
-var it = createSundae();
-it.next('hot fudge');
-it.next('sprinkles');
-it.next('whipped cream');
-it.next();
+var it = createSundae()
+it.next("hot fudge")
+it.next("sprinkles")
+it.next("whipped cream")
+it.next()
 ```
 
 - The `toppings` array will have `undefined` as its last item
@@ -1652,7 +1727,7 @@ The `toppings` array will have `undefined` as its last item
 
 > Because the first call to `.next()` passes in some data. But that data doesn't get stored anywhere. The last call to `.next()` should have some data since it's being yielded into the last call to `toppings.push()`.
 
-*[Additional notes from James Priest](https://github.com/james-priest/100-days-of-code-log-r2/blob/master/ES6-Built-ins-Pt2.md#solution-2):*
+_[Additional notes from James Priest](https://github.com/james-priest/100-days-of-code-log-r2/blob/master/ES6-Built-ins-Pt2.md#solution-2):_
 
 > Remember that the first call to `.next()` will initiate the generator which will stop at the first `yield`. The second call to `.next()` is the call that will supply that `yield with the data.
 >

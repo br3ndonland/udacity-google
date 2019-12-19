@@ -46,13 +46,13 @@ One story winner was selected from each track of the program.
 
 Slack announcement:
 
-> *WAY TO GO, SCHOLARS!* You exceeded our 1,000 story goal by submitting 1,193 of your amazing Student Stories to us! :man_dancing::dancer:
+> _WAY TO GO, SCHOLARS!_ You exceeded our 1,000 story goal by submitting 1,193 of your amazing Student Stories to us! :man_dancing::dancer:
 >
 > And now, we'd like to introduce the five Mobile Web finalists:
 >
 > HUGE congrats to @jSick, @neuralnet, @derick_gross, @twip, and @Serenity :clap:
 >
-> Read their personal story and vote for your favorite in the doc below. You can only pick one! All votes need to be in by *tomorrow March 21st at 11:59 pm PT.*
+> Read their personal story and vote for your favorite in the doc below. You can only pick one! All votes need to be in by _tomorrow March 21st at 11:59 pm PT._
 >
 > Thank you to everyone who submitted a story! It was so much fun getting to know you better.
 >

@@ -28,7 +28,7 @@ I selected "Help move from academia to industry", but "Start a new career in thi
 
 > **What do you hope to accomplish through this program?**
 >
-> *Please comment on relevant personal and professional goals. Include information about professional achievements (e.g., projects) that demonstrate how you have worked towards your goal. Please answer using complete sentences and no more than 150 words.*
+> _Please comment on relevant personal and professional goals. Include information about professional achievements (e.g., projects) that demonstrate how you have worked towards your goal. Please answer using complete sentences and no more than 150 words._
 
 In the short term, I plan to build responsive and powerful web apps. I have already begun building my skills in the Udacity Full Stack Web Developer Nanodegree program. I am proficient with Python, HTML5, CSS3, Markdown, Git, and GitHub, and am starting to learn JavaScript and build websites. I created a [portfolio website](https://br3ndonland.github.io/udacity/). The website is fully responsive, built with Bootstrap and Jekyll, and hosted with GitHub Pages.
 
@@ -36,7 +36,7 @@ In the long term, I will use the skills I build with Udacity and Google to make 
 
 > Why do you deserve a scholarship?
 >
-> *Please include a detailed response between 100-250 words.*
+> _Please include a detailed response between 100-250 words._
 
 **I have a clear purpose.**
 

@@ -25,9 +25,10 @@ Here's how it went down:
 - Won the scholarship in January 2018!
 
   Social media message:
-  >I won a web development scholarship from Udacity and Google! I was accepted to the intermediate web developer track. There is a three month challenge round. If I do well, I can win another scholarship to a more advanced Mobile Web Specialist program.
+
+  > I won a web development scholarship from Udacity and Google! I was accepted to the intermediate web developer track. There is a three month challenge round. If I do well, I can win another scholarship to a more advanced Mobile Web Specialist program.
   >
-  >#GoogleUdacityScholars #GrowWithGoogle
+  > #GoogleUdacityScholars #GrowWithGoogle
 
 - Started the challenge course materials February 21, 2018.
 - Completed the challenge course materials on March 7, 2018 (working on Udacity basically full time). The course taught us how to build progressive web apps and use the new features in JavaScript ES6.

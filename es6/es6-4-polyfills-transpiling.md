@@ -112,7 +112,6 @@ section 14.2
 >
 > - [https://caniuse.com/#search=arrow](https://caniuse.com/#search=arrow)
 >
->
 > You can also use the ECMAScript Compatibility Table built by [@kangax](https://twitter.com/kangax):
 >
 > - [http://kangax.github.io/compat-table/es6/](http://kangax.github.io/compat-table/es6/)
@@ -167,10 +166,10 @@ The code below is a polyfill for the new ES6 String method, startsWith():
 
 ```js
 if (!String.prototype.startsWith) {
-  String.prototype.startsWith = function (searchString, position) {
-    position = position || 0;
-    return this.substr(position, searchString.length) === searchString;
-  };
+  String.prototype.startsWith = function(searchString, position) {
+    position = position || 0
+    return this.substr(position, searchString.length) === searchString
+  }
 }
 ```
 
@@ -209,16 +208,16 @@ I thought it would just check for `startsWith`, but didn't realize that overwrit
 >
 > ```js
 > if (!String.prototype.startsWith) {
->   String.prototype.startsWith = function (searchString, position) {
->     position = position || 0;
->     return this.substr(position, searchString.length) === searchString;
->   };
+>   String.prototype.startsWith = function(searchString, position) {
+>     position = position || 0
+>     return this.substr(position, searchString.length) === searchString
+>   }
 > }
 >
-> /- Sample usage */
-> 'Udacity'.startsWith('Udac'); // returns `true`
-> 'Udacity'.startsWith('Udac', 2); // returns `false`
-> 'Udacity'.startsWith('ES6'); // returns `false`
+> ;/- Sample usage */
+> "Udacity".startsWith("Udac") // returns `true`
+> "Udacity".startsWith("Udac", 2) // returns `false`
+> "Udacity".startsWith("ES6") // returns `false`
 > ```
 >
 > This adds a new method to String's prototype object. The function defaults to the position indicated by this second argument that's passed in or it'll be the first character of the string.
@@ -276,18 +275,18 @@ Transpiler
 
 ```js
 class Student {
-  constructor (name, major) {
-    this.name = name;
-    this.major = major;
+  constructor(name, major) {
+    this.name = name
+    this.major = major
   }
 
   displayInfo() {
-    console.log(`${this.name} is a ${this.major} student.`);
+    console.log(`${this.name} is a ${this.major} student.`)
   }
 }
 
-const richard = new Student('Richard', 'Music');
-const james = new Student('James', 'Electrical Engineering');
+const richard = new Student("Richard", "Music")
+const james = new Student("James", "Electrical Engineering")
 ```
 
 <img src="img/udacity-google-09-1101-babel-es6-to-es5.png" alt="Babel REPL" width="75%">
@@ -306,7 +305,7 @@ const james = new Student('James', 'Electrical Engineering');
 
 ```json
 {
-    "presets": ["es2015"]
+  "presets": ["es2015"]
 }
 ```
 
@@ -320,7 +319,7 @@ const james = new Student('James', 'Electrical Engineering');
 
 **Note that Richard has selected the MIT license for his materials. I have correspondingly also selected the MIT license for my course repo.**
 
-> The project's *package.json- file lists all of the NPM packages that this project depends on.
+> The project's \*package.json- file lists all of the NPM packages that this project depends on.
 >
 > This project depends on
 >
@@ -329,9 +328,9 @@ const james = new Student('James', 'Electrical Engineering');
 >
 > The babel 2015 preset is a collection of all es6 plugins. So these are the plugins that will be downloaded and installed.
 >
-> Once they're installed we need to tell the Babel CLI which plugins it should use to do the transpiling. The CLI will check the *.babelrc- file for which plugins and presets to use.
+> Once they're installed we need to tell the Babel CLI which plugins it should use to do the transpiling. The CLI will check the \*.babelrc- file for which plugins and presets to use.
 >
-> So the *package.json- file lists what should be installed and the *.babelrc- file tells babel which plugins to use when it does its transpiling.
+> So the _package.json- file lists what should be installed and the _.babelrc- file tells babel which plugins to use when it does its transpiling.
 >
 > Now that babel knows to use this preset we need to tell it to actually transpile the code. To do that we've added a build script that will tell babel to take the files in the ES6 directory, transpile them using the es2015 preset, and then put the transformed code in the ES5 directory.
 

@@ -72,7 +72,7 @@ Got this on my first try.
 ### 2.04. Quiz: Registering a Service Worker
 
 - **This was the first coding task of the course.**
-- */js/sw/index.js* is the ServiceWorker.
+- _/js/sw/index.js_ is the ServiceWorker.
 - JavaScript doesn't have "private methods," but it's common to call methods starting with an underscore, like `this._openSocket();`, if they will only be called by other methods of this object.
 - Service workers are limited to HTTPS, except localhost.
 
@@ -94,21 +94,24 @@ Git
   ```javascript
   IndexController.prototype._registerServiceWorker = function() {
     // register service worker
-    if (!navigator.serviceWorker) return;
+    if (!navigator.serviceWorker) return
 
-    navigator.serviceWorker.register('/sw.js').then(function() {
-      console.log('Registration worked!');
-    }).catch(function() {
-      console.log('Registration failed!');
-    });
-  };
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then(function() {
+        console.log("Registration worked!")
+      })
+      .catch(function() {
+        console.log("Registration failed!")
+      })
+  }
   ```
 
 - Go to [http://localhost:8889/](http://localhost:8889/) and type `registered`.
 - I tried several times, but it didn't work, and dev tools didn't help.
 - I basically had the answer, just needed a little more code.
 - I also needed to check my code in a different sequence:
-  - Save the JavaScript file *IndexController.js*
+  - Save the JavaScript file _IndexController.js_
   - Refresh [http://localhost:8888/](http://localhost:8888/)
   - Check JavaScript console with cmd+alt+j (note that Firefox developer tools separates the JavaScript console from the other dev tools)
   - Now go to [http://localhost:8889/](http://localhost:8889/) and type `registered`.
@@ -140,13 +143,12 @@ Git
 
 - **Finally using the service worker to intercept requests and serve offline content!**
 - This part demonstrated **general request hijacking.**
-- *sw/index.js*:
+- _sw/index.js_:
 
   ```javascript
-  self.addEventListener('fetch', function(event) {
-    event.respondWith(
-      new Response('Hello, Offline World!'));
-    });
+  self.addEventListener("fetch", function(event) {
+    event.respondWith(new Response("Hello, Offline World!"))
+  })
   ```
 
 ### 2.11. Quiz: Hijacking Requests 1 Quiz
@@ -171,7 +173,7 @@ Git
   Switched to branch 'task-custom-response'
   ```
 
-  But then the *sw/index.js* file was blank.
+  But then the _sw/index.js_ file was blank.
 
   I had to go back to master, find the branch on origin, and delete the branch I made:
 
@@ -202,15 +204,15 @@ Git
   $
   ```
 
-  This finally showed me the code I was supposed to see in *sw/index.js*:
+  This finally showed me the code I was supposed to see in _sw/index.js_:
 
   ```javascript
-  self.addEventListener('fetch', function(event) {
+  self.addEventListener("fetch", function(event) {
     // TODO: respond to all requests with an html response
     // containing an element with class="a-winner-is-me".
     // Ensure the Content-Type of the response is "text/html"
-    console.log(event.request);
-  });
+    console.log(event.request)
+  })
   ```
 
 <details>
@@ -219,16 +221,16 @@ Git
 - I had the HTML right on the first try, but didn't know how to set the content type so I checked the solution for that. So many curly braces.
 
   ```javascript
-    self.addEventListener('fetch', function(event) {
-      // respond to all requests with an html response
-      // containing an element with class="a-winner-is-me".
-      // Ensure the Content-Type of the response is "text/html"
-      event.respondWith(
-        new Response('<b class="a-winner-is-me">Hello, Offline HTML World!</b>', {
-          headers: {'Content-Type': 'text/html'}
-        })
-      );
-    });
+  self.addEventListener("fetch", function(event) {
+    // respond to all requests with an html response
+    // containing an element with class="a-winner-is-me".
+    // Ensure the Content-Type of the response is "text/html"
+    event.respondWith(
+      new Response('<b class="a-winner-is-me">Hello, Offline HTML World!</b>', {
+        headers: { "Content-Type": "text/html" }
+      })
+    )
+  })
   ```
 
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
@@ -289,18 +291,17 @@ Git
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
 - Test on settings page at [http://localhost:8889/](http://localhost:8889/)
 - Jake demonstrated the solution.
+
   - What other properties does `event.Request()` have? He acknowledged that we didn't have enough information yet, and Google searched "mdn request".
 
   ```javascript
-  self.addEventListener('fetch', function(event) {
+  self.addEventListener("fetch", function(event) {
     // TODO: only respond to requests with a
     // url ending in ".jpg"
-    if (event.request.url.endsWith('.jpg')) {
-      event.respondWith(
-        fetch('/imgs/dr-evil.gif')
-      );
+    if (event.request.url.endsWith(".jpg")) {
+      event.respondWith(fetch("/imgs/dr-evil.gif"))
     }
-  });
+  })
   ```
 
 </details>
@@ -310,18 +311,20 @@ Git
 - New code from video:
 
   ```javascript
-  self.addEventListener('fetch', function(event) {
+  self.addEventListener("fetch", function(event) {
     event.respondWith(
-      fetch(event.request).then(function(response) {
-        if (response.status == 404) {
-          return new Response("Whoops, not found");
-        }
-        return response;
-      }).catch(function() {
-        return new Response("Uh oh, that totally failed!");
-      })
-    );
-  });
+      fetch(event.request)
+        .then(function(response) {
+          if (response.status == 404) {
+            return new Response("Whoops, not found")
+          }
+          return response
+        })
+        .catch(function() {
+          return new Response("Uh oh, that totally failed!")
+        })
+    )
+  })
   ```
 
 ### 2.15. Quiz: Hijacking Requests 3 Quiz
@@ -329,21 +332,23 @@ Git
 - Respond with Dr. Evil GIF instead of custom text.
 
   ```javascript
-  self.addEventListener('fetch', function(event) {
+  self.addEventListener("fetch", function(event) {
     event.respondWith(
-      fetch(event.request).then(function(response) {
-        if (response.status === 404) {
-          // TODO: instead, respond with the gif at
-          // /imgs/dr-evil.gif
-          // using a network request
-          return new Response("Whoops, not found");
-        }
-        return response;
-      }).catch(function() {
-        return new Response("Uh oh, that totally failed!");
-      })
-    );
-  });
+      fetch(event.request)
+        .then(function(response) {
+          if (response.status === 404) {
+            // TODO: instead, respond with the gif at
+            // /imgs/dr-evil.gif
+            // using a network request
+            return new Response("Whoops, not found")
+          }
+          return response
+        })
+        .catch(function() {
+          return new Response("Uh oh, that totally failed!")
+        })
+    )
+  })
   ```
 
 Git
@@ -374,44 +379,48 @@ Git
 - First attempt:
 
   ```javascript
-  self.addEventListener('fetch', function(event) {
+  self.addEventListener("fetch", function(event) {
     event.respondWith(
-      fetch(event.request).then(function(response) {
-        if (response.status === 404) {
-      event.respondWith(
-        fetch('/imgs/dr-evil.gif'))
-          return new Response("Whoops, not found");
-        }
-        return response;
-      }).catch(function() {
-        return new Response("Uh oh, that totally failed!");
-      })
-    );
-  });
+      fetch(event.request)
+        .then(function(response) {
+          if (response.status === 404) {
+            event.respondWith(fetch("/imgs/dr-evil.gif"))
+            return new Response("Whoops, not found")
+          }
+          return response
+        })
+        .catch(function() {
+          return new Response("Uh oh, that totally failed!")
+        })
+    )
+  })
   ```
 
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
 - Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "gif-404"
 - Solution
+
   - I just needed to simplify my code a little bit.
   - If you return a promise within a promise, it returns the eventual value to the outer promise.
 
   ```javascript
-  self.addEventListener('fetch', function(event) {
+  self.addEventListener("fetch", function(event) {
     event.respondWith(
-      fetch(event.request).then(function(response) {
-        if (response.status === 404) {
-          // instead, respond with the gif at
-          // /imgs/dr-evil.gif
-          // using a network request
-          return fetch('/imgs/dr-evil.gif');
-        }
-        return response;
-      }).catch(function() {
-        return new Response("Uh oh, that totally failed!");
-      })
-    );
-  });
+      fetch(event.request)
+        .then(function(response) {
+          if (response.status === 404) {
+            // instead, respond with the gif at
+            // /imgs/dr-evil.gif
+            // using a network request
+            return fetch("/imgs/dr-evil.gif")
+          }
+          return response
+        })
+        .catch(function() {
+          return new Response("Uh oh, that totally failed!")
+        })
+    )
+  })
   ```
 
 </details>
@@ -426,24 +435,21 @@ Git
 - Start the cache
 
   ```javascript
-  caches.open('my-stuff').then(function(cache) {
+  caches.open("my-stuff").then(function(cache) {
     //...
-  });
+  })
   ```
 
 - Add cache items with `cache.put()`
 
   ```javascript
-  cache.put(request, response);
+  cache.put(request, response)
   ```
 
 - Add cache items with `cache.addAll()`: accepts array of URLs, fetches them, and puts the response pairs into the cache. This operation is **atomic**: if any fail to cache, none are added to the cache.
 
   ```javascript
-  cache.addAll([
-    '/foo',
-    'bar'
-  ]);
+  cache.addAll(["/foo", "bar"])
   ```
 
 - To retrieve items from the cache, use `cache.match`. It will return a promise if the query is found in the cache.
@@ -471,25 +477,25 @@ Git
 - Code
 
   ```javascript
-    self.addEventListener('install', function(event) {
-      event.waitUntil(
-        caches.open('wittr-static-v1').then(function(cache) {
-          return cache.addAll([
-            '/',
-            'js/main.js',
-            'css/main.css',
-            'imgs/icon.png',
-            'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff',
-            'https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff'
-          ])
-        })
-      );
-    });
+  self.addEventListener("install", function(event) {
+    event.waitUntil(
+      caches.open("wittr-static-v1").then(function(cache) {
+        return cache.addAll([
+          "/",
+          "js/main.js",
+          "css/main.css",
+          "imgs/icon.png",
+          "https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff",
+          "https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff"
+        ])
+      })
+    )
+  })
 
-    self.addEventListener('fetch', function(event) {
-      // Leave this blank for now.
-      // We'll get to this in the next task.
-    });
+  self.addEventListener("fetch", function(event) {
+    // Leave this blank for now.
+    // We'll get to this in the next task.
+  })
   ```
 
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
@@ -516,31 +522,31 @@ Git
 - Code (Combined 17. Quiz: Install and Cache Quiz and 18. Quiz: Cache Response Quiz)
 
   ```javascript
-  self.addEventListener('install', function(event) {
+  self.addEventListener("install", function(event) {
     event.waitUntil(
-      caches.open('wittr-static-v1').then(function(cache) {
+      caches.open("wittr-static-v1").then(function(cache) {
         return cache.addAll([
-          '/',
-          'js/main.js',
-          'css/main.css',
-          'imgs/icon.png',
-          'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff',
-          'https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff'
+          "/",
+          "js/main.js",
+          "css/main.css",
+          "imgs/icon.png",
+          "https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff",
+          "https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff"
         ])
       })
-    );
-  });
+    )
+  })
 
-  self.addEventListener('fetch', function(event) {
+  self.addEventListener("fetch", function(event) {
     // respond with an entry from the cache if there is one.
     // if not, fetch from network.
     event.respondWith(
       caches.match(event.request).then(function(response) {
-        if (response) return response;
-        return fetch(event.request);
+        if (response) return response
+        return fetch(event.request)
       })
-    );
-  });
+    )
+  })
   ```
 
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
@@ -563,7 +569,7 @@ Git
 - Disabling force update on page load, to more closely simulate the end user experience.
 - We are now going to clear the old cache, so that updates show up, even after disabling force update on page load.
 - We can use `caches.delete(cacheName)` or `caches.keys();`
-- Jake showed us the theme colors in the Sass .scss file at */public/scss/_theme.scss*.
+- Jake showed us the theme colors in the Sass .scss file at _/public/scss/\_theme.scss_.
 
 ### 2.20. Quiz: Update Your CSS Quiz
 
@@ -589,12 +595,12 @@ Git
   - Instead, maintain a safe list of wanted cache names and remove unwanted ones.
   - Store the name of the static cache in a variable (at top of service worker).
     ```javascript
-    var staticCacheName = 'wittr-static-v2';
+    var staticCacheName = "wittr-static-v2"
     ```
   - In the activate event, get all the cache names that exist.
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/)
 - Test on settings page at [http://localhost:8889/](http://localhost:8889/) with "new-cache-ready"
-- *Jake also recommends auto-generating hashes for filenames, so they can be updated and ensure the latest versions.*
+- _Jake also recommends auto-generating hashes for filenames, so they can be updated and ensure the latest versions._
 
 </details>
 
@@ -618,24 +624,24 @@ Git
 - We will also get three properties:
 
   ```javascript
-  reg.installing;
-  reg.waiting;
-  reg.active;
+  reg.installing
+  reg.waiting
+  reg.active
   ```
 
 - We can also operate on the service workers themselves.
 
   ```javascript
-  var sw = reg.installing;
-  console.log(sw.state); // ...logs "installing"
+  var sw = reg.installing
+  console.log(sw.state) // ...logs "installing"
   // state can also be:
   // "installed"
   // "activating"
   // "activated"
   // "redundant" means the service worker has been thrown away
-  sw.addEventListener('statechange', function() {
+  sw.addEventListener("statechange", function() {
     // statechange event created when the service worker changes
-  });
+  })
   ```
 
 - `navigator.serviceWorker.controller` refers to the service worker controlling the current page.
@@ -655,132 +661,134 @@ Git
 <details>
   <summary><em>Solution</em></summary>
 
-- Code: For this exercise, we worked with *wittr/public/js/main/IndexController.js*.
+- Code: For this exercise, we worked with _wittr/public/js/main/IndexController.js_.
 
   ```javascript
-  import PostsView from './views/Posts';
-  import ToastsView from './views/Toasts';
-  import idb from 'idb';
+  import PostsView from "./views/Posts"
+  import ToastsView from "./views/Toasts"
+  import idb from "idb"
 
   export default function IndexController(container) {
-    this._container = container;
-    this._postsView = new PostsView(this._container);
-    this._toastsView = new ToastsView(this._container);
-    this._lostConnectionToast = null;
-    this._openSocket();
-    this._registerServiceWorker();
+    this._container = container
+    this._postsView = new PostsView(this._container)
+    this._toastsView = new ToastsView(this._container)
+    this._lostConnectionToast = null
+    this._openSocket()
+    this._registerServiceWorker()
   }
 
   IndexController.prototype._registerServiceWorker = function() {
-    if (!navigator.serviceWorker) return;
+    if (!navigator.serviceWorker) return
 
-    var indexController = this;
+    var indexController = this
 
-    navigator.serviceWorker.register('/sw.js').then(function(reg) {
+    navigator.serviceWorker.register("/sw.js").then(function(reg) {
       // TODO: if there's no controller, this page wasn't loaded
       // via a service worker, so they're looking at the latest version.
       // In that case, exit early
-      if(!navigator.serviceWorker.controller) {
-        return;
+      if (!navigator.serviceWorker.controller) {
+        return
       }
 
       // TODO: if there's an updated worker already waiting, call
       // indexController._updateReady()
       if (reg.waiting) {
-        indexController._updateReady();
-        return;
+        indexController._updateReady()
+        return
       }
 
       // TODO: if there's an updated worker installing, track its
       // progress. If it becomes "installed", call
       // indexController._updateReady()
       if (reg.installing) {
-        indexController._trackInstalling(reg.installing);
-        return;
+        indexController._trackInstalling(reg.installing)
+        return
       }
 
       // TODO: otherwise, listen for new installing workers arriving.
       // If one arrives, track its progress.
       // If it becomes "installed", call
       // indexController._updateReady()
-      reg.addEventListener('updatefound', function() {
-        indexController._trackInstalling(reg.installing);
-      });
-    });
-  };
+      reg.addEventListener("updatefound", function() {
+        indexController._trackInstalling(reg.installing)
+      })
+    })
+  }
 
   IndexController.prototype._trackInstalling = function(worker) {
-    var indexController = this;
+    var indexController = this
     // if service worker is installed, notify user
-    worker.addEventListener('statechange', function() {
-      if (worker.state == 'installed') {
-        indexController._updateReady();
+    worker.addEventListener("statechange", function() {
+      if (worker.state == "installed") {
+        indexController._updateReady()
       }
-    });
-  };
+    })
+  }
 
   IndexController.prototype._updateReady = function() {
     var toast = this._toastsView.show("New version available", {
-      buttons: ['whatever']
-    });
-  };
+      buttons: ["whatever"]
+    })
+  }
 
   // open a connection to the server for live updates
   IndexController.prototype._openSocket = function() {
-    var indexController = this;
-    var latestPostDate = this._postsView.getLatestPostDate();
+    var indexController = this
+    var latestPostDate = this._postsView.getLatestPostDate()
 
     // create a url pointing to /updates with the ws protocol
-    var socketUrl = new URL('/updates', window.location);
-    socketUrl.protocol = 'ws';
+    var socketUrl = new URL("/updates", window.location)
+    socketUrl.protocol = "ws"
 
     if (latestPostDate) {
-      socketUrl.search = 'since=' + latestPostDate.valueOf();
+      socketUrl.search = "since=" + latestPostDate.valueOf()
     }
 
     // this is a little hack for the settings page's tests,
     // it isn't needed for Wittr
-    socketUrl.search += '&' + location.search.slice(1);
+    socketUrl.search += "&" + location.search.slice(1)
 
-    var ws = new WebSocket(socketUrl.href);
+    var ws = new WebSocket(socketUrl.href)
 
     // add listeners
-    ws.addEventListener('open', function() {
+    ws.addEventListener("open", function() {
       if (indexController._lostConnectionToast) {
-        indexController._lostConnectionToast.hide();
+        indexController._lostConnectionToast.hide()
       }
-    });
+    })
 
-    ws.addEventListener('message', function(event) {
+    ws.addEventListener("message", function(event) {
       requestAnimationFrame(function() {
-        indexController._onSocketMessage(event.data);
-      });
-    });
+        indexController._onSocketMessage(event.data)
+      })
+    })
 
-    ws.addEventListener('close', function() {
+    ws.addEventListener("close", function() {
       // tell the user
       if (!indexController._lostConnectionToast) {
-        indexController._lostConnectionToast = indexController._toastsView.show("Unable to connect. Retrying…");
+        indexController._lostConnectionToast = indexController._toastsView.show(
+          "Unable to connect. Retrying…"
+        )
       }
 
       // try and reconnect in 5 seconds
       setTimeout(function() {
-        indexController._openSocket();
-      }, 5000);
-    });
-  };
+        indexController._openSocket()
+      }, 5000)
+    })
+  }
 
   // called when the web socket sends message data
   IndexController.prototype._onSocketMessage = function(data) {
-    var messages = JSON.parse(data);
-    this._postsView.addPosts(messages);
-  };
+    var messages = JSON.parse(data)
+    this._postsView.addPosts(messages)
+  }
   ```
 
-- After completing the IndexController.js code, make a random change to the service worker in *sw/index.js*:
+- After completing the IndexController.js code, make a random change to the service worker in _sw/index.js_:
 
   ```javascript
-  var staticCacheName = 'wittr-static-v2';
+  var staticCacheName = "wittr-static-v2"
   // random change to trigger user notification
   ```
 
@@ -799,17 +807,17 @@ Git
   self.skipWaiting()
 
   // from a page
-  reg.installing.postMessage({foo: 'bar'});
+  reg.installing.postMessage({ foo: "bar" })
 
   // in the service worker
-  self.addEventListener('message', function(event) {
-    event.data; // {foo: 'bar'}
-  });
+  self.addEventListener("message", function(event) {
+    event.data // {foo: 'bar'}
+  })
 
   // when the new service worker has taken over, signal page reload
-  navigator.serviceWorker.addEventListener('controllerchange', function() {
+  navigator.serviceWorker.addEventListener("controllerchange", function() {
     // navigator.serviceWorker.controller has changed
-    });
+  })
   ```
 
 ### 2.25. Quiz: Triggering an Update Quiz
@@ -827,143 +835,145 @@ Git
   <summary><em>Solution</em></summary>
 
 - Code:
-- *wittr/public/js/main/IndexController.js*
+- _wittr/public/js/main/IndexController.js_
 
   ```javascript
-  import PostsView from './views/Posts';
-  import ToastsView from './views/Toasts';
-  import idb from 'idb';
+  import PostsView from "./views/Posts"
+  import ToastsView from "./views/Toasts"
+  import idb from "idb"
 
   export default function IndexController(container) {
-    this._container = container;
-    this._postsView = new PostsView(this._container);
-    this._toastsView = new ToastsView(this._container);
-    this._lostConnectionToast = null;
-    this._openSocket();
-    this._registerServiceWorker();
+    this._container = container
+    this._postsView = new PostsView(this._container)
+    this._toastsView = new ToastsView(this._container)
+    this._lostConnectionToast = null
+    this._openSocket()
+    this._registerServiceWorker()
   }
 
   IndexController.prototype._registerServiceWorker = function() {
-    if (!navigator.serviceWorker) return;
+    if (!navigator.serviceWorker) return
 
-    var indexController = this;
+    var indexController = this
 
-    navigator.serviceWorker.register('/sw.js').then(function(reg) {
+    navigator.serviceWorker.register("/sw.js").then(function(reg) {
       if (!navigator.serviceWorker.controller) {
-        return;
+        return
       }
 
       if (reg.waiting) {
-        indexController._updateReady(reg.waiting);
-        return;
+        indexController._updateReady(reg.waiting)
+        return
       }
 
       if (reg.installing) {
-        indexController._trackInstalling(reg.installing);
-        return;
+        indexController._trackInstalling(reg.installing)
+        return
       }
 
-      reg.addEventListener('updatefound', function() {
-        indexController._trackInstalling(reg.installing);
-      });
-    });
+      reg.addEventListener("updatefound", function() {
+        indexController._trackInstalling(reg.installing)
+      })
+    })
 
     // TODO: listen for the controlling service worker changing
     // and reload the page
-    navigator.serviceWorker.addEventListener('controllerchange', function() {
-      window.location.reload();
-    });
-  };
+    navigator.serviceWorker.addEventListener("controllerchange", function() {
+      window.location.reload()
+    })
+  }
 
   IndexController.prototype._trackInstalling = function(worker) {
-    var indexController = this;
-    worker.addEventListener('statechange', function() {
-      if (worker.state == 'installed') {
-        indexController._updateReady(worker);
+    var indexController = this
+    worker.addEventListener("statechange", function() {
+      if (worker.state == "installed") {
+        indexController._updateReady(worker)
       }
-    });
-  };
+    })
+  }
 
   IndexController.prototype._updateReady = function(worker) {
     var toast = this._toastsView.show("New version available", {
-      buttons: ['refresh', 'dismiss']
-    });
+      buttons: ["refresh", "dismiss"]
+    })
 
     toast.answer.then(function(answer) {
-      if (answer != 'refresh') return;
+      if (answer != "refresh") return
       // TODO: tell the service worker to skipWaiting
-      worker.postMessage({action: 'skipWaiting'});
-    });
-  };
+      worker.postMessage({ action: "skipWaiting" })
+    })
+  }
 
   // open a connection to the server for live updates
   IndexController.prototype._openSocket = function() {
-    var indexController = this;
-    var latestPostDate = this._postsView.getLatestPostDate();
+    var indexController = this
+    var latestPostDate = this._postsView.getLatestPostDate()
 
     // create a url pointing to /updates with the ws protocol
-    var socketUrl = new URL('/updates', window.location);
-    socketUrl.protocol = 'ws';
+    var socketUrl = new URL("/updates", window.location)
+    socketUrl.protocol = "ws"
 
     if (latestPostDate) {
-      socketUrl.search = 'since=' + latestPostDate.valueOf();
+      socketUrl.search = "since=" + latestPostDate.valueOf()
     }
 
     // this is a little hack for the settings page's tests,
     // it isn't needed for Wittr
-    socketUrl.search += '&' + location.search.slice(1);
+    socketUrl.search += "&" + location.search.slice(1)
 
-    var ws = new WebSocket(socketUrl.href);
+    var ws = new WebSocket(socketUrl.href)
 
     // add listeners
-    ws.addEventListener('open', function() {
+    ws.addEventListener("open", function() {
       if (indexController._lostConnectionToast) {
-        indexController._lostConnectionToast.hide();
+        indexController._lostConnectionToast.hide()
       }
-    });
+    })
 
-    ws.addEventListener('message', function(event) {
+    ws.addEventListener("message", function(event) {
       requestAnimationFrame(function() {
-        indexController._onSocketMessage(event.data);
-      });
-    });
+        indexController._onSocketMessage(event.data)
+      })
+    })
 
-    ws.addEventListener('close', function() {
+    ws.addEventListener("close", function() {
       // tell the user
       if (!indexController._lostConnectionToast) {
-        indexController._lostConnectionToast = indexController._toastsView.show("Unable to connect. Retrying…");
+        indexController._lostConnectionToast = indexController._toastsView.show(
+          "Unable to connect. Retrying…"
+        )
       }
 
       // try and reconnect in 5 seconds
       setTimeout(function() {
-        indexController._openSocket();
-      }, 5000);
-    });
-  };
+        indexController._openSocket()
+      }, 5000)
+    })
+  }
 
   // called when the web socket sends message data
   IndexController.prototype._onSocketMessage = function(data) {
-    var messages = JSON.parse(data);
-    this._postsView.addPosts(messages);
-  };
+    var messages = JSON.parse(data)
+    this._postsView.addPosts(messages)
+  }
   ```
 
-- *sw/index.js*
+- _sw/index.js_
 
   ```javascript
   // TODO: listen for the "message" event, and call
   // skipWaiting if you get the appropriate message
-  self.addEventListener('message', function(event) {
-    if (event.data.action == 'skipWaiting') {
-      self.skipWaiting();
+  self.addEventListener("message", function(event) {
+    if (event.data.action == "skipWaiting") {
+      self.skipWaiting()
     }
-  });
+  })
   ```
 
-- Again, after completing the IndexController.js code, make a random change to the service worker in *sw/index.js*:
+- Again, after completing the IndexController.js code, make a random change to the service worker in _sw/index.js_:
 
   ```javascript
-  var staticCacheName = 'wittr-static-v2';
+  var staticCacheName = "wittr-static-v2"
   // another random change to trigger user notification
   ```
 
@@ -998,68 +1008,71 @@ Git
   <summary><em>Solution</em></summary>
 
 - Code:
-- In the service worker *sw/index.js*, cache `/skeleton` instead of the root page, and respond to requests for the root page with `/skeleton` instead:
+- In the service worker _sw/index.js_, cache `/skeleton` instead of the root page, and respond to requests for the root page with `/skeleton` instead:
 
   ```javascript
-  var staticCacheName = 'wittr-static-v4';
+  var staticCacheName = "wittr-static-v4"
 
-  self.addEventListener('install', function(event) {
+  self.addEventListener("install", function(event) {
     // TODO: cache /skeleton rather than the root page
 
     event.waitUntil(
       caches.open(staticCacheName).then(function(cache) {
         return cache.addAll([
-          '/skeleton',
-          'js/main.js',
-          'css/main.css',
-          'imgs/icon.png',
-          'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff',
-          'https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff'
-        ]);
+          "/skeleton",
+          "js/main.js",
+          "css/main.css",
+          "imgs/icon.png",
+          "https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff",
+          "https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff"
+        ])
       })
-    );
-  });
+    )
+  })
 
-  self.addEventListener('activate', function(event) {
+  self.addEventListener("activate", function(event) {
     event.waitUntil(
       caches.keys().then(function(cacheNames) {
         return Promise.all(
-          cacheNames.filter(function(cacheName) {
-            return cacheName.startsWith('wittr-') &&
-                   cacheName != staticCacheName;
-          }).map(function(cacheName) {
-            return caches.delete(cacheName);
-          })
-        );
+          cacheNames
+            .filter(function(cacheName) {
+              return (
+                cacheName.startsWith("wittr-") && cacheName != staticCacheName
+              )
+            })
+            .map(function(cacheName) {
+              return caches.delete(cacheName)
+            })
+        )
       })
-    );
-  });
+    )
+  })
 
-  self.addEventListener('fetch', function(event) {
+  self.addEventListener("fetch", function(event) {
     // TODO: respond to requests for the root page with
     // the page skeleton from the cache
     // note that we wrote URL three different ways in the line below
-    var requestUrl = new URL(event.request.url);
+    var requestUrl = new URL(event.request.url)
 
     if (requestUrl.origin === location.origin) {
-      if (requestUrl.pathname === '/') {
-        event.respondWith(caches.match('/skeleton'));
-        return;
+      if (requestUrl.pathname === "/") {
+        event.respondWith(caches.match("/skeleton"))
+        return
       }
     }
 
     event.respondWith(
       caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
+        return response || fetch(event.request)
       })
-    );
-  });
+    )
+  })
 
-  self.addEventListener('message', function(event) {
-    if (event.data.action === 'skipWaiting') {
-      self.skipWaiting();
+  self.addEventListener("message", function(event) {
+    if (event.data.action === "skipWaiting") {
+      self.skipWaiting()
     }
-  });
+  })
   ```
 
 - Refresh the app at [http://localhost:8888/](http://localhost:8888/) and you will now need to also click "REFRESH" in the popup.
